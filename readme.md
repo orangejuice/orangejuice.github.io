@@ -1,0 +1,1 @@
+[build-info](https://travis-ci.org/cherrymeteor/cherrymeteor.github.io.svg)
