@@ -705,7 +705,7 @@ rating:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn to get AppID and AppKey.
 leancloud_visitors:
-  enable: false
+  enable: true
   app_id: eJ6eVDvhAOSBfJxP8YAQ7F2g-gzGzoHsz #<app_id>
   app_key: uIpb7JG4KTwY7LikvKBgIoEE #<app_key>
   # Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security

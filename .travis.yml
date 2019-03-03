@@ -28,6 +28,7 @@ cache:
 script:
   - hexo clean
   - hexo generate
+  - hexo lc-counter register baaas18vGYfaega ggsdfaeas12b31saY&
 
 after_script:
   - git config user.name "cherrymeteor"
