@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: life of juice
+title: 橘子汽水
 subtitle:
 description:
 keywords:
-author: Orangejuice
+author: orangejuice
 language:
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://orangejuice.cc/
 root: /
 permalink: :title/
 permalink_defaults:
@@ -81,3 +81,19 @@ deploy:
   type: git
   repo: https://github.com/cherrymeteor/cherrymeteor.github.io.git
   branch: master
+
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
+
+symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: true
+  total_time: true
+
+# Extensions
+## Plugins: http://hexo.io/plugins/
+plugins: hexo-generate-feed
