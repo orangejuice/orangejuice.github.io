@@ -5,11 +5,11 @@
 # Site
 title: 橘子汽水
 subtitle:
-description:
-keywords:
+description: 博客 blog 橘子汽水 orangejuice
+keywords: 
 author: orangejuice
-language: zh-cn
-timezone:
+language: default
+timezone: # Europe/Dublin Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
