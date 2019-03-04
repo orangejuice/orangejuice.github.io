@@ -120,18 +120,19 @@ live2d:
   tagMode: false # Whether only to replace live2d tag instead of inject to all pages
   log: false # Whether to show logs in console
   model:
-    scale: 0.5
-    hHeadPos: 0.5
-    vHeadPos: 0.618
+    # scale: 0.5
+    # hHeadPos: 0.5
+    # vHeadPos: 0.618
     use: live2d-widget-model-wanko # npm-module package name
     # use: wanko # folder name in (hexo base dir)/live2d_models/
     # use: ./wives/wanko # folder path relative to hexo base dir
     # use: https://cdn.jsdelivr.net/npm/live2d-widget-model-wanko@1.0.5/assets/wanko.model.json # Your custom url
   display:
     position: right
-    # width: 150
-    # height: 300
-    # hOffset: 0
-    # vOffset: -20
+    width: 100
+    height: 200
+    hOffset: 0
+    vOffset: 0
   mobile:
     show: true
+    scale: 0.5
