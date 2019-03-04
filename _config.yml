@@ -8,8 +8,8 @@ subtitle:
 description:
 keywords: 博客 blog 橘子汽水 orangejuice 技术分享 心得
 author: orangejuice
-language: zh-CN
-timezone: # Europe/Dublin Asia/Shanghai
+language: en
+timezone: Europe/Dublin # Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -63,7 +63,7 @@ tag_map:
 ## You can customize the date format as defined in
 ## http://momentjs.com/docs/#/displaying/format/
 date_format: YYYY-MM-DD
-time_format: HH:mm:ssz
+time_format: HH:mm:ss
 
 # Pagination
 ## Set per_page to 0 to disable pagination
