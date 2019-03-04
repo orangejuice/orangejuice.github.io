@@ -1,2 +1,2 @@
 git commit -m 'update'
-git push origin source
+git push --progress "origin" master:source
