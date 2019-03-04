@@ -5,10 +5,10 @@
 # Site
 title: 橘子汽水
 subtitle:
-description: 博客 blog 橘子汽水 orangejuice
-keywords: 
+description:
+keywords: 博客 blog 橘子汽水 orangejuice
 author: orangejuice
-language: default
+language: zh-CN
 timezone: # Europe/Dublin Asia/Shanghai
 
 # URL
