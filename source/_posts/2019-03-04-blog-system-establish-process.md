@@ -9,3 +9,13 @@ tags:
   - hexo
   - theme-next
 ---
+
+## Deploy Hexo site files
+
+## Install Next-Theme
+
+## Cusomize the appearence
+
+## Binding domain name
+
+## Start writing

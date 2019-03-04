@@ -187,7 +187,7 @@ site_state: true
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
 social:
-  GitHub: https://github.com/cherrymeteor || github
+  #GitHub: https://github.com/cherrymeteor || github
   #E-Mail: mailto:yourname@gmail.com || envelope
   #Weibo: https://weibo.com/yourname || weibo
   #Google: https://plus.google.com/yourname || google
@@ -200,7 +200,7 @@ social:
   #Skype: skype:yourname?call|chat || skype
 
 social_icons:
-  enable: false
+  enable: true
   icons_only: true
   transition: false
 
@@ -213,10 +213,10 @@ social_icons:
 # Blog rolls
 links_icon: link
 links_title: Links
-links_layout: block
-#links_layout: inline
+# links_layout: block
+links_layout: inline
 links:
-  Title: http://example.com
+  orangejuice: https://orangejuice.cc/
 
 # Sidebar Avatar
 avatar:
