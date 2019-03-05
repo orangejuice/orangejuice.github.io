@@ -6,34 +6,28 @@ branches:
   only:
   - source
 
-before_install:
-  - npm install -g hexo-cli
-
 # Start: Build Lifecycle
 install:
   - npm install
+  - npm install hexo-cli -g
   - npm install hexo-deployer-git --save
   - npm install hexo-generator-searchdb --save
   - npm install hexo-symbols-count-time --save
   - npm install hexo-generator-feed --save
-  - npm install hexo-leancloud-counter-security --save
+  # - npm install hexo-leancloud-counter-security --save
   - npm install hexo-helper-live2d --save
   - npm install live2d-widget-model-wanko
 
-# 缓存依赖，节省持续集成时间
 cache:
-  yarn: true
   directories:
-    # - node_modules
+    - node_modules
     - live2d_models
 
 script:
   - hexo clean
   - hexo generate
-  - hexo lc-counter register baaas18vGYfaega ggsdfaeas12b31saY&
+  # - hexo lc-counter register baaas18vGYfaega ggsdfaeas12b31saY&
 
 after_script:
-  - git config user.name "cherrymeteor"
-  - git config user.email "cherrymeteor@outlook.com"
   - sed -i "s~https://github.com/cherrymeteor/cherrymeteor.github.io.git~https://${ACCESS_TOKEN}@github.com/cherrymeteor/cherrymeteor.github.io.git~" _config.yml
   - hexo deploy
