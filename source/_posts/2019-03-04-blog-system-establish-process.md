@@ -14,7 +14,9 @@ tags:
 
 ## Install Next-Theme
 
-## Cusomize the appearence
+## Customize the appearance
+
+
 
 ## Binding domain name
 

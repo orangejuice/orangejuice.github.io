@@ -1,0 +1,6 @@
+function FindProxyForURL(url, host) {
+    if (url == "http://app.cognitiveleap.cn/purchased?tag=get_purchase_records&user_id=146538")
+        return "proxy 11.10.10.1:8888";
+
+    return "direct";
+}
