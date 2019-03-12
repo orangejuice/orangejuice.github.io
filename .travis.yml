@@ -18,6 +18,8 @@ cache:
 before_script:
   - sed -i "s~{github_client_id}~${github_client_id}~" ./themes/next/_config.yml
   - sed -i "s~{github_client_secret}~${github_client_secret}~" ./themes/next/_config.yml
+  - sed -i "s~{valine_appid}~${valine_appid}~" ./themes/next/_config.yml
+  - sed -i "s~{valine_appkey}~${valine_appkey}~" ./themes/next/_config.yml
 
 script:
   - hexo clean
