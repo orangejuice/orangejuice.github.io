@@ -17,11 +17,11 @@
     "hexo-renderer-marked": "^0.3.2",
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-server": "^0.3.1",
-    "hexo-generator-searchdb": "lastest",
-    "hexo-symbols-count-time": "lastest",
-    "hexo-generator-feed": "lastest",
-    "hexo-leancloud-counter-security": "lastest",
-    "hexo-helper-live2d": "lastest",
-    "live2d-widget-model-wanko": "lastest"
+    "hexo-generator-searchdb": "latest",
+    "hexo-symbols-count-time": "latest",
+    "hexo-generator-feed": "latest",
+    "hexo-leancloud-counter-security": "latest",
+    "hexo-helper-live2d": "latest",
+    "live2d-widget-model-wanko": "latest"
   }
 }
