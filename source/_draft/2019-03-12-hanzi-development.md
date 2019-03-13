@@ -1,6 +1,5 @@
 ---
 title: hanzi development
-layout: false
 categories:
   - history
 tags:
