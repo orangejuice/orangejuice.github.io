@@ -14,17 +14,17 @@ tags:
 
 Firstly, install node.js as the necessary runtime environment for javascript. Then we turn to the folder where we want to put the blog files in and run commands below:
 
-`
+```bash
 npm install hexo-cli -g
 hexo init blog
 cd blog
 npm install
-`
+```
 
 Congrats! Our blog is available now<!-- more -->, but it's running with the default theme and of course we need something different. Next is a great open source theme hosting on github. some ways to get the theme but I will download the theme files directly from [https://github.com/theme-next/hexo-theme-next/releases](https://github.com/theme-next/hexo-theme-next/releases).
 
 then, decompress the files into the folder `themes`, which in the folder you just opened.
-`
+```
 ├── _config.yml
 ├── package.json
 ├── scaffolds
@@ -32,7 +32,7 @@ then, decompress the files into the folder `themes`, which in the folder you jus
 |   ├── _drafts
 |   └── _posts
 └── themes
-`
+```
 
 Alright, now we can change the theme of Hexo to Next-Theme. In `_config.yml` file, find this line: `theme: xxx`, make it `theme: next`.
 
