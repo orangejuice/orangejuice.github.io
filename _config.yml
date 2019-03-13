@@ -99,7 +99,7 @@ symbols_count_time:
 plugins: hexo-generate-feed
 
 leancloud_counter_security:
-  enable_sync: true
+  enable_sync: false
   app_id: eJ6eVDvhAOSBfJxP8YAQ7F2g-gzGzoHsz
   app_key: uIpb7JG4KTwY7LikvKBgIoEE
   username: baaas18vGYfaega # Will be asked while deploying if is left blank
