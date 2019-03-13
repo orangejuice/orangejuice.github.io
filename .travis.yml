@@ -18,6 +18,8 @@ cache:
 before_script:
   - sed -i "s~{github_client_id}~${github_client_id}~" ./themes/next/_config.yml
   - sed -i "s~{github_client_secret}~${github_client_secret}~" ./themes/next/_config.yml
+  - sed -i "s~{leancloud_account}~${leancloud_account}~" _config.yml
+  - sed -i "s~{leancloud_password}~${leancloud_password}~" _config.yml
 
 script:
   - hexo clean
