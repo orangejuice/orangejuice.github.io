@@ -24,7 +24,7 @@ before_script:
 script:
   - hexo clean
   - hexo generate
-  # - hexo lc-counter register baaas18vGYfaega ggsdfaeas12b31saY&
+  - hexo lc-counter register baaas18vGYfaega ggsdfaeas12b31saY&
 
 after_script:
   - sed -i "s~https://github.com/orangejuice/orangejuice.github.io.git~https://${ACCESS_TOKEN}@github.com/orangejuice/orangejuice.github.io.git~" _config.yml
