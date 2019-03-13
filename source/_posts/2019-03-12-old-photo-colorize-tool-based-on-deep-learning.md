@@ -1,5 +1,5 @@
 ---
-title: old photo colorize tool based on deep learning
+title: 基于机器学习的老照片上色工具
 categories:
   - ai
 tags:
