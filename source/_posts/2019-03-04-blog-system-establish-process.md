@@ -270,7 +270,7 @@ It is a pet living on our pages and steering at the mouse cursor where you are p
 
 Details can be available [here](https://github.com/EYHN/hexo-helper-live2d), we won't talk more on this.
 
-![1552434468503](../../../../../Users/cherr/OneDrive/Apps/images/1552434468503.png)
+![1552434468503](../images/1552434468503.png)
 
 # Setup travis-ci auto deploy
 
@@ -322,14 +322,14 @@ Tips: you can always get the ip address of one domain name by `nslookup example.
 
 > note: choose A record is better, if not there will be some problems such as the website can not forward to https site automatically.
 
-![1552430834238](../../../../../Users/cherr/OneDrive/Apps/images/1552430834238.png)
+![1552430834238](../images/1552430834238.png)
 
 ## config github project settings
 
 1. modify custom domain value
 2. enforce https to ensure security.
 
-![1552430629201](../../../../../Users/cherr/OneDrive/Apps/images/1552430629201.png)
+![1552430629201](../images/1552430629201.png)
 
 # Start writing
 
