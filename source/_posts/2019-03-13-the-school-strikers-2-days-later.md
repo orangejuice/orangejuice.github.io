@@ -53,6 +53,10 @@ Thunberg 的父母一开始只是告诉她一切都会好转，可是这并不�
 
 然而无论如何，这个曾独自抗议的女孩成为了全球气候运动的一线希望，不少活动家和科学家都将她称为“几十年来这场运动中最好的新闻”。只是现在她不是一个人了，在周五的活动中，同学和来自其他学校的学生都会加入她。她确实改变了世界。
 
+#FridayForFuture 参与地图(截至3月13日)：
+
+![1552498099823](../images/1552498099823.png)
+
 题图来自 [Medium](https://medium.com/wedonthavetime/this-15-year-old-girl-breaks-swedish-law-for-the-climate-d1a48ab97e3a)
 
 [#FridayForuture](https://www.fridaysforfuture.org/)
