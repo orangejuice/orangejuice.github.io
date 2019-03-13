@@ -1,7 +1,7 @@
 ---
 title: 李约瑟问题简答[转]
 categories:
-  - social
+  - history
 tags:
   - social
   - Needham's Grand Question
