@@ -20,6 +20,7 @@ before_script:
   - sed -i "s~{github_client_secret}~${github_client_secret}~" ./themes/next/_config.yml
   - sed -i "s~{leancloud_account}~${leancloud_account}~" _config.yml
   - sed -i "s~{leancloud_password}~${leancloud_password}~" _config.yml
+  - sed -i "s~https://github.com/orangejuice/orangejuice.github.io.git~https://${ACCESS_TOKEN}@github.com/orangejuice/orangejuice.github.io.git~" _config.yml
 
 script:
   - hexo clean
@@ -27,5 +28,4 @@ script:
   # - hexo lc-counter register baaas18vGYfaega ggsdfaeas12b31saY&
 
 after_script:
-  - sed -i "s~https://github.com/orangejuice/orangejuice.github.io.git~https://${ACCESS_TOKEN}@github.com/orangejuice/orangejuice.github.io.git~" _config.yml
   - hexo deploy
