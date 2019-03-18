@@ -15,7 +15,7 @@ timezone: Europe/Dublin # Asia/Shanghai
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: http://orangejuice.cc/
 root: /
-permalink: :category/:title #:title/
+permalink: :category/:title/ #:title/
 permalink_defaults:
 
 # Directory
