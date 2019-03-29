@@ -1,5 +1,7 @@
 ---
 title: 基于机器学习的老照片上色工具
+date: 2019-03-12 15:17:32
+updated: 2019-03-12 15:17:32
 categories:
   - ai
 tags:
