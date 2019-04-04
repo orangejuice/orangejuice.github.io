@@ -8,7 +8,6 @@ tags:
   - ai
   - deep learning
   - colorize
-date: 2019-03-12 17:55:53
 ---
 
 图源《罗马假日》
