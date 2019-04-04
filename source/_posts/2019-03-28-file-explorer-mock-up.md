@@ -19,7 +19,7 @@ tags:
 
 
 
-Thanks for @[@itsmichaelwest](https://twitter.com/itsmichaelwest)'s nice work!
+Thanks for [@itsmichaelwest](https://twitter.com/itsmichaelwest) 's nice work!
 
 So great design but can only watch, no possibility to use it in a short time :(
 
