@@ -9,6 +9,7 @@ tags:
   - git pages
   - hexo
   - theme-next
+typora-root-url: ..
 ---
 
 # Deploy Hexo site files & Install Next-Theme
@@ -25,6 +26,7 @@ npm install
 Congrats! Our blog is available now<!-- more -->, but it's running with the default theme and of course we need something different. Next is a great open source theme hosting on github. some ways to get the theme but I will download the theme files directly from [https://github.com/theme-next/hexo-theme-next/releases](https://github.com/theme-next/hexo-theme-next/releases).
 
 then, decompress the files into the folder `themes`, which in the folder you just opened.
+
 ```
 ├── _config.yml
 ├── package.json
@@ -158,7 +160,6 @@ symbols_count_time:
   time: true
   total_symbols: true
   total_time: true
-
 ```
 
 then find these in `themes/next/_config.yml`:
@@ -172,7 +173,6 @@ symbols_count_time:
   item_text_total: false
   awl: 4
   wpm: 275
-
 ```
 
 more explains are available on github [here](https://github.com/theme-next/hexo-symbols-count-time).
@@ -180,9 +180,9 @@ more explains are available on github [here](https://github.com/theme-next/hexo-
 ## visitors/view counter
 
 1. total visitors number and total views.
-
+   
    open `themes/next/_config.yml` file and find the line `busuanzi_count`:
-
+   
    ```yml
    busuanzi_count:
      enable: true
@@ -192,13 +192,12 @@ more explains are available on github [here](https://github.com/theme-next/hexo-
      total_views_icon: eye
      post_views: false
      post_views_icon: eye
-   
    ```
 
 2. view number per post.
-
+   
    in this case we use leancloud as counter service provider. Apply an account and create a project, then put `app_id` and `app_key` here.
-
+   
    ```yml
    # Show number of visitors to each article.
    # You can visit https://leancloud.cn to get AppID and AppKey.
@@ -211,11 +210,10 @@ more explains are available on github [here](https://github.com/theme-next/hexo-
      # (without hexo-leancloud-counter-security plugin), set `security` to `false`.
      security: true
      betterPerformance: false
-   
    ```
-
+   
    if security set to `true`, run `npm install hexo-symbols-count-time --save` in blog folder to install the dependency.
-
+   
    > Tips: hexo-leancloud-counter-security is to make sure the data cannot be modified by others intentionally. refer to their document for more information.
 
 ## comment feature
@@ -238,8 +236,6 @@ valine:
   pageSize: 10 # pagination size
   visitor: false # leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html
   comment_count: true # if false, comment count will only be displayed in post page, not in home page
-
-
 ```
 
 > Tips: you don't need to apply new `leancloud_appid` and `leancloud_appkey` if you have do so in the last step.
@@ -260,7 +256,6 @@ creative_commons:
   sidebar: false
   post: true
   language:
-
 ```
 
 change post value from `false` to `ture` it will work.
@@ -271,7 +266,7 @@ It is a pet living on our pages and steering at the mouse cursor where you are p
 
 Details can be available [here](https://github.com/EYHN/hexo-helper-live2d), we won't talk more on this.
 
-![1552434468503](../images/1552434468503.png)
+![1552434468503](/images/1552434468503.png)
 
 # Setup travis-ci auto deploy
 
@@ -308,7 +303,6 @@ script:
 after_script:
   - sed -i "s~https://github.com/orangejuice/orangejuice.github.io.git~https://${ACCESS_TOKEN}@github.com/orangejuice/orangejuice.github.io.git~" _config.yml
   - hexo deploy
-
 ```
 
 With the help of it, we submit and push the codes to `source` branch, and travis-ci will help us to deploy it to `master` branch.
@@ -323,14 +317,14 @@ Tips: you can always get the ip address of one domain name by `nslookup example.
 
 > note: choose A record is better, if not there will be some problems such as the website can not forward to https site automatically.
 
-![1552430834238](../images/1552430834238.png)
+![1552430834238](/images/1552430834238.png)
 
 ## config github project settings
 
 1. modify custom domain value
 2. enforce https to ensure security.
 
-![1552430629201](../images/1552430629201.png)
+![1552430629201](/images/1552430629201.png)
 
 # Start writing
 

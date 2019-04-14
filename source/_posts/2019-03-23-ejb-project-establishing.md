@@ -7,6 +7,7 @@ categories:
 tags:
   - ejb
   - intellij
+typora-root-url: ..
 
 ---
 
@@ -16,7 +17,7 @@ tags:
 
 博主安装时选用了最新的稳定版本 Glassfish 5.
 
-![1553531968538](../images/1553531968538.png)
+![1553531968538](/images/1553531968538.png)
 
 有两个版本，选用Full Platform版本。
 
@@ -25,7 +26,7 @@ tags:
 
 ## 创建Java EE项目（无Maven）
 
-![1553440781877](../images/1553440781877.png)
+![1553440781877](/images/1553440781877.png)
 
 选择 `Web Application`、`JSF`、`EJB: Enterprise Java Beans` 后新建项目。
 
@@ -63,7 +64,7 @@ session过期。
 
 asadmin add-resources glassfish-resources.xml
 
-![1553450787754](../images/1553450787754.png)
+![1553450787754](/images/1553450787754.png)
 
 还需要把数据库驱动文件放到此目录下：`glassfish5\glassfish\domains\domain1\lib\ext`
 
@@ -90,7 +91,7 @@ asadmin add-resources glassfish-resources.xml
 
 可分别命名为`xxx-ejb`、`xxx-war`，创建后在`Pom.xml`文件中分别输入`<packaging>ejb</packaging>`, `<packaging>war</packaging>`。完成后即可在idea的项目设置（`Ctrl+Alt+shift+S`）->Artifacts中看到4个artifact。并可看到提示如下，
 
-![1553526993835](../images/1553526993835.png)
+![1553526993835](/images/1553526993835.png)
 
 创建Manifest即可。
 
@@ -293,7 +294,7 @@ private String content;
 </h:graphicImage>
 ```
 
-![1553767125017](../images/1553767125017.png)
+![1553767125017](/images/1553767125017.png)
 
 primeface我就没用成功过到现在，你开心就好。。
 
@@ -344,13 +345,13 @@ primeface我就没用成功过到现在，你开心就好。。
 
 效果：
 
-![1553786668497](../images/1553786668497.png)
+![1553786668497](/images/1553786668497.png)
 
 ### Test失效错误
 
-![1553794353905](../images/1553794353905.png)
+![1553794353905](/images/1553794353905.png)
 
-![1553794392525](../images/1553794392525.png)
+![1553794392525](/images/1553794392525.png)
 
 重启刷新都不管用。也没有任何错误提示。
 
@@ -365,7 +366,7 @@ primeface我就没用成功过到现在，你开心就好。。
         userDao.update(freelancer);
 ```
 
-![1553804207196](../images/1553804207196.png)
+![1553804207196](/images/1553804207196.png)
 
 当代码这样写时，结果如下：
 
@@ -374,7 +375,7 @@ primeface我就没用成功过到现在，你开心就好。。
         jobDao.update(job);
 ```
 
-![1553804302602](../images/1553804302602.png)
+![1553804302602](/images/1553804302602.png)
 
 ## 显示SQL语句以及相应参数
 
@@ -390,9 +391,9 @@ primeface我就没用成功过到现在，你开心就好。。
 
 ## JMS收到了消息我好快乐。。
 
-![1553818902766](../images/1553818902766.png)
+![1553818902766](/images/1553818902766.png)
 
-![1553818910513](../images/1553818910513.png)
+![1553818910513](/images/1553818910513.png)
 
 ## slf4j保存日志文件
 

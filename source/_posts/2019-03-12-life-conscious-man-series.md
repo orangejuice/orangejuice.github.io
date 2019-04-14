@@ -9,6 +9,7 @@ tags:
   - conscious
   - tv series
   - Liang Dong
+typora-root-url: ..
 ---
 
 # 郦波（觉，醒，儒释道）

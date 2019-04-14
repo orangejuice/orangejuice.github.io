@@ -8,22 +8,23 @@ tags:
   - ai
   - deep learning
   - colorize
+typora-root-url: ..
 ---
 
 图源《罗马假日》
 
 对比图
 
-![1552243721014](../images/1552243721014.png)
+![1552243721014](/images/1552243721014.png)
 
 <!-- more -->
 
 原图
 
-![1552243811403](../images/1552243811403.png)
+![1552243811403](/images/1552243811403.png)
 
 结果图
 
-![1552243769960](../images/1552243769960.png)
+![1552243769960](/images/1552243769960.png)
 
 website: https://colourise.sg/
