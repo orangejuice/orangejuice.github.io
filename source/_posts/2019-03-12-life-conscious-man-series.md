@@ -3,7 +3,7 @@ title: 《生命·觉者》梁冬对话系列观赏记录
 date: 2019-03-12 15:17:32
 updated: 2019-03-24 15:17:32
 categories:
-  - series
+  - notes
 tags:
   - life
   - conscious
