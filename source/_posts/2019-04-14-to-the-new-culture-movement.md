@@ -1,6 +1,5 @@
 ---
-title: [笔记]大家讲堂·秦晖-从诸子争鸣到新文化运动
-typora-root-url: ..
+title: "[笔记]大家讲堂·秦晖-从诸子争鸣到新文化运动"
 date: 2019-04-14 23:55:41
 updated: 2019-04-24 23:00:00
 categories:
@@ -8,6 +7,7 @@ categories:
 tags:
   - history
   - social
+typora-root-url: ..
 ---
 
 历史上人们把美德的来源归于家庭，封建秩序：亲属分封天下自成一家
