@@ -1,5 +1,5 @@
 ---
-title: [笔记] 阅读柏桦《在清朝》有感
+title: "[笔记] 阅读柏桦《在清朝》有感"
 categories:
   - notes
 tags:
