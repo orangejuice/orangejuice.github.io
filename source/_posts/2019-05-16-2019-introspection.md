@@ -1,5 +1,5 @@
 ---
-title: 深刻的反省自查
+title: 反省自查
 categories:
   - self
 tags:
