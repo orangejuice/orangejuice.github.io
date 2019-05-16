@@ -7,7 +7,6 @@ categories:
 tags:
   - life
   - conscious
-  - tv series
   - Liang Dong
 typora-root-url: ..
 ---
