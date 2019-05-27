@@ -1,7 +1,7 @@
 ---
-title: 反省自查
+title: "[日记] 5月16日"
 categories:
-  - self
+  - diary
 tags:
   - life
   - meaning

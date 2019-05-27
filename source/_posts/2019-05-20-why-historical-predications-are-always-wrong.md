@@ -1,5 +1,5 @@
 ---
-title: [转载]历史预测为什么总是错的
+title: "[转载] 历史预测为什么总是错的"
 categories:
   - why
 tags:
