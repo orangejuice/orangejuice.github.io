@@ -20,7 +20,7 @@
     "hexo-generator-searchdb": "latest",
     "hexo-symbols-count-time": "latest",
     "hexo-generator-feed": "latest",
-    // "hexo-leancloud-counter-security": "latest",
+    "hexo-leancloud-counter-security": "latest",
     "hexo-helper-live2d": "latest",
     "live2d-widget-model-wanko": "latest"
   }
