@@ -13,7 +13,7 @@ install:
 cache:
   directories:
     - node_modules
-    - live2d_models
+    # - live2d_models
 
 before_script:
   - sed -i "s~{github_client_id}~${github_client_id}~" ./themes/next/_config.yml
