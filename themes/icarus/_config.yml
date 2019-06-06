@@ -119,9 +119,9 @@ widgets:
         # Where should the widget be placed, left or right
         position: left
         # Author name to be shown in the profile widget
-        author: orangejuice
+        # author: orangejuice
         # Title of the author to be shown in the profile widget
-        author_title: 
+        author_title: Life is made up of accidents and mistakes. 生活是偶然跟错误构成的。
         # Author's current location to be shown in the profile widget
         # location: Your location
         # Path or URL to the avatar to be shown in the profile widget
