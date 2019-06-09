@@ -3,7 +3,7 @@ title: "[转载] 李约瑟问题简答"
 date: 2019-03-12 15:17:32
 updated: 2019-03-12 15:17:32
 categories:
-  - history
+  - notes
 tags:
   - social
   - Needham's Grand Question

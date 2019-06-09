@@ -3,7 +3,7 @@ title: 正则魅力 RegExp
 date: 2019-03-12 17:45:18
 updated: 2019-03-12 17:45:18
 categories:
-  - code
+  - notes
 tags:
   - regexp
   - code

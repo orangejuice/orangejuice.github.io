@@ -3,7 +3,7 @@ title: Hexo Blog Establishing Process
 date: 2019-03-04 21:26:39
 updated: 2019-03-04 21:26:39
 categories:
-  - github
+  - notes
 tags: 
   - github
   - git pages

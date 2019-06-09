@@ -3,7 +3,7 @@ title: 正视错觉 - 教育现状一窥
 date: 2019-03-12 15:17:32
 updated: 2019-03-12 15:17:32
 categories:
-  - data
+  - notes
 tags:
   - education
   - illusion

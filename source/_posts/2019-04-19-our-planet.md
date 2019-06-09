@@ -1,7 +1,7 @@
 ---
 title: 我们的星球第一季
 categories:
-  - series
+  - notes
 tags:
   - nature
   - planet
