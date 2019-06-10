@@ -6,7 +6,6 @@ categories:
   - notes
 tags: 
   - hexo
-  - hello-world
 typora-root-url: ..
 ---
 

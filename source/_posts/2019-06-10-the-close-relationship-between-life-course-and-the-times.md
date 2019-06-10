@@ -4,7 +4,6 @@ categories:
   - diary
 tags:
   - life
-  - relationship between life course and the times
 typora-root-url: ..
 date: 2019-06-10 15:53:09
 updated: 2019-06-10 15:53:09

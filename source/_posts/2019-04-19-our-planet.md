@@ -4,7 +4,7 @@ categories:
   - notes
 tags:
   - series
-  - planet&e
+  - planet&environment
 typora-root-url: ..
 date: 2019-04-19 23:25:17
 updated: 2019-04-19 23:25:17
