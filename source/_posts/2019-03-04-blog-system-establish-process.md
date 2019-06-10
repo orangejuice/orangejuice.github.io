@@ -8,7 +8,6 @@ tags:
   - github
   - git pages
   - hexo
-  - theme-next
 typora-root-url: ..
 ---
 

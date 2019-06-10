@@ -1,9 +1,9 @@
 ---
-title: 正视错觉 - 教育现状一窥
+title: "错觉 - 教育现状"
 date: 2019-03-12 15:17:32
 updated: 2019-03-12 15:17:32
 categories:
-  - notes
+  - why
 tags:
   - education
   - illusion

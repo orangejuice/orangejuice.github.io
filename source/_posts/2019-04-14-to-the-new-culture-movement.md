@@ -6,7 +6,6 @@ categories:
   - notes
 tags:
   - history
-  - social
 typora-root-url: ..
 ---
 

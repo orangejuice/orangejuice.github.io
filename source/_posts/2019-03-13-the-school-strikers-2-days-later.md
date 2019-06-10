@@ -5,7 +5,7 @@ updated: 2019-03-13 17:07:01
 categories:
   - news
 tags:
-  - climate
+  - planet&environment
 typora-root-url: ..
 ---
 

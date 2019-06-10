@@ -6,8 +6,7 @@ categories:
   - notes
 tags:
   - life
-  - conscious
-  - Liang Dong
+  - consciousness
 typora-root-url: ..
 ---
 

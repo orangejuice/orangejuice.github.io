@@ -3,9 +3,7 @@ title: "[笔记] 阅读柏桦《在清朝》有感"
 categories:
   - notes
 tags:
-  - poem
   - history
-  - live
 typora-root-url: ..
 date: 2019-05-07 23:13:12
 updated: 2019-05-07 23:13:12

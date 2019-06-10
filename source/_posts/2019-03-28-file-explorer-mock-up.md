@@ -3,9 +3,8 @@ title: Microsoft Design intern's File Explorer mock up
 date: 2019-03-28 09:04:32
 updated: 2019-03-28 09:04:32
 categories:
-  - notes
+  - news
 tags:
-  - file explorer
   - fluent design
 typora-root-url: ..
 ---

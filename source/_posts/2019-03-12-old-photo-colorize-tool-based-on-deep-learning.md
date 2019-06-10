@@ -5,9 +5,8 @@ updated: 2019-03-12 15:17:32
 categories:
   - notes
 tags:
-  - ai
   - deep learning
-  - colorize
+  - colorize pic
 typora-root-url: ..
 ---
 

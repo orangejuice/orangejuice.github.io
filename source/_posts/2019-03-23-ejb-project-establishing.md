@@ -13,6 +13,8 @@ typora-root-url: ..
 
 > 本文撰写前提为无任何EJB开发经验。中间问题可跳过直接浏览新建基于Maven的EJB项目。
 
+<!--more-->
+
 # 安装Glassfish
 
 博主安装时选用了最新的稳定版本 Glassfish 5.
@@ -22,8 +24,6 @@ typora-root-url: ..
 有两个版本，选用Full Platform版本。
 
 # 初步尝试
-<!--more-->
-
 ## 创建Java EE项目（无Maven）
 
 ![1553440781877](/images/1553440781877.png)

@@ -4,7 +4,6 @@ categories:
   - diary
 tags:
   - life
-  - meaning
 typora-root-url: ..
 date: 2019-05-16 17:57:44
 updated: 2019-05-16 17:57:44

@@ -3,9 +3,8 @@ title: 我们的星球第一季
 categories:
   - notes
 tags:
-  - nature
-  - planet
-  - future
+  - series
+  - planet&e
 typora-root-url: ..
 date: 2019-04-19 23:25:17
 updated: 2019-04-19 23:25:17
