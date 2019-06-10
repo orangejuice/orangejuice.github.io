@@ -6,7 +6,6 @@ categories:
   - notes
 tags:
   - deep learning
-  - colorize pic
 typora-root-url: ..
 ---
 

@@ -5,8 +5,7 @@ updated: 2019-03-12 15:17:32
 categories:
   - notes
 tags:
-  - social
-  - Needham's Grand Question
+  - history
 typora-root-url: ..
 ---
 

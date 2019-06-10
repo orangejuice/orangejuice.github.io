@@ -5,8 +5,7 @@ updated: 2019-03-29 15:17:32
 categories:
   - notes
 tags:
-  - ejb
-  - intellij
+  - code
 typora-root-url: ..
 
 ---

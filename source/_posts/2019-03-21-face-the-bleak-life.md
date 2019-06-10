@@ -6,7 +6,6 @@ categories:
   - notes
 tags:
   - life
-  - face
   - series
 typora-root-url: ..
 ---

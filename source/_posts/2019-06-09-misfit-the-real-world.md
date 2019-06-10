@@ -5,7 +5,7 @@ categories:
 tags:
   - life
   - misfit with the world
-  - social contract
+  - society
 typora-root-url: ..
 date: 2019-06-09 15:23:20
 updated: 2019-06-10 14:33:20

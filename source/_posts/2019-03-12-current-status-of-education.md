@@ -6,7 +6,6 @@ categories:
   - why
 tags:
   - education
-  - illusion
 ---
 
 大学专科以上学历占人口总数约为12.41%
