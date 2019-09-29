@@ -4,7 +4,6 @@ categories:
   - diary
 tags:
   - life
-  - misfit with the world
   - society
 typora-root-url: ..
 date: 2019-06-09 15:23:20

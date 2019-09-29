@@ -4,7 +4,6 @@ categories:
   - diary
 tags:
   - life
-  - "self-reconciliation"
 typora-root-url: ..
 date: 2019-06-10 15:50:23
 updated: 2019-06-10 15:50:23
