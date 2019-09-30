@@ -27,7 +27,7 @@ updated: 2019-09-29 23:16:18
 
 
 
-![Screenshot (298)]("/images/Screenshot (298).png")
+![Screenshot (298)](/images/Screenshot%20(298).png)
 
 src: The Planets BBC 2019
 
@@ -35,7 +35,7 @@ src: The Planets BBC 2019
 >
 >Mars is rich in resources, it has vast reservoirs of water below the surface, and minerals, iron, nitrogen, carbon, oxygen, all the things you need to support a civilization. And that's why, I think, in my lifetime, there will be Martians, but the Martians will be us. We will go to Mars and make it our home, and that old red word will become our first step beyond the cradle, and out to the stars.
 
-![Screenshot (299)]("/images/Screenshot (299).png")
+![Screenshot (299)](/images/Screenshot%20(299).png)
 
 src: The Planets BBC 2019
 
@@ -43,7 +43,7 @@ src: The Planets BBC 2019
 >
 >The planet that had born witness to some of the greatest dramas of the history of the solar system was now consuming the craft that had told its extraordinary story.
 
-![Screenshot (296)]("/images/Screenshot (296).png")
+![Screenshot (296)](/images/Screenshot%20(296).png)
 
 src: The Planets BBC 2019
 
@@ -51,7 +51,7 @@ src: The Planets BBC 2019
 >
 >Would it matter really if we found life on Enceladus? It would only be micros after all, yes, it would matter, we are at a time in our history, I think, where we need reassurance, or perhaps a reminder that there is beauty and knowledge, and perhaps even life and meaning beyond our shores.
 
-![Screenshot (202)]("/images/Screenshot (202).png")
+![Screenshot (202)](/images/Screenshot%20(202).png)
 
 src: Our Planet Netflix 2019
 
