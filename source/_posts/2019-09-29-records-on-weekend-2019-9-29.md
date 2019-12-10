@@ -21,13 +21,7 @@ updated: 2019-09-29 23:16:18
 
 生在地球纪年的尾巴，看着星际纪年的来袭，不知道自己有没有机会进行星际旅程，但总由衷觉得十分可惜。一步之遥就可亲历以星际旅行为思维常态的人类社会，那时人类又会是怎样无情无义，怎样兼爱宽容。我也许也不会像今生这样费尽心力和时间先是原地踏步怀疑人生，而后自我修复，探索成长。这些眼看到嘴边却要错过的美好已经够多，偏也没有好好体验现在，不免觉得懊悔。庆幸的是我依旧只是度过了预期寿命的短暂一部分，甚至还没过半。那么我就依旧有机会在未来以最优体验过活一段时间。这也便是我“虚渺”那一半的人生目的。至于现实世界那一半的目的，看来还需要一段时间去探索发现。
 
-
-
--看过5集BBC纪录片《星球》和30万字《废都》后有感。
-
-
-
-![Screenshot (298)](/images/Screenshot298.png)
+![卫星发射冲破云霄的一刻](/images/Screenshot298.png)
 
 src: The Planets BBC 2019
 
@@ -35,7 +29,7 @@ src: The Planets BBC 2019
 >
 >Mars is rich in resources, it has vast reservoirs of water below the surface, and minerals, iron, nitrogen, carbon, oxygen, all the things you need to support a civilization. And that's why, I think, in my lifetime, there will be Martians, but the Martians will be us. We will go to Mars and make it our home, and that old red word will become our first step beyond the cradle, and out to the stars.
 
-![Screenshot (299)](/images/Screenshot299.png)
+![探测器](/images/Screenshot299.png)
 
 src: The Planets BBC 2019
 
@@ -43,7 +37,7 @@ src: The Planets BBC 2019
 >
 >The planet that had born witness to some of the greatest dramas of the history of the solar system was now consuming the craft that had told its extraordinary story.
 
-![Screenshot (296)](/images/Screenshot296.png)
+![远方的世界](/images/Screenshot296.png)
 
 src: The Planets BBC 2019
 
@@ -51,7 +45,7 @@ src: The Planets BBC 2019
 >
 >Would it matter really if we found life on Enceladus? It would only be micros after all, yes, it would matter, we are at a time in our history, I think, where we need reassurance, or perhaps a reminder that there is beauty and knowledge, and perhaps even life and meaning beyond our shores.
 
-![Screenshot (202)](/images/Screenshot202.png)
+![优美的地球夜景](/images/Screenshot202.png)
 
 src: Our Planet Netflix 2019
 
@@ -59,3 +53,14 @@ src: Our Planet Netflix 2019
 >
 > life has woven itself into the fabric of the planet.
 
+
+
+> 想想看，大约40亿年前发生的所有偶然事件，只是为了创造出礁池中的这个微小生命。
+>
+> think about all the chance events that had to happen over four billion years, just to produce the little creatures in this rock pool.
+
+太阳100亿年的生命，我是多么渺小。一个人走完一辈子的艰难，体会着心酸和痛苦，忍受心灵不断的煎熬，纵使一刻不停的读书，拥有举世瞩目的成就，目光所及的范围相比太阳仍不值一提，地球上的热闹搅不动这万籁俱寂的宁静。
+
+
+
+看过5集BBC纪录片《星球》和30万字《废都》后有感。
