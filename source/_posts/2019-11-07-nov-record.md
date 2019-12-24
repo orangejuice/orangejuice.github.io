@@ -1,5 +1,5 @@
 ---
-title: "Nov record"
+title: 十一月杂记
 categories:
   - diary
 tags:
