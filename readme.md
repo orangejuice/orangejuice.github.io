@@ -8,9 +8,9 @@
 
 ### Release log
 
-February 14, 2020 remove theme files and replaced with submodule to facilitate better version control
+Feb 14, 2020: remove theme files and replaced with submodule to facilitate better version control
 
-November 28, 2018 Go online
+Nov 28, 2018: Go online
 
 --------
 
