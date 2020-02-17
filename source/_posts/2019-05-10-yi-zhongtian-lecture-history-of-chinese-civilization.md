@@ -5,6 +5,7 @@ categories:
 tags:
   - history
 typora-root-url: ..
+toc: true
 date: 2019-05-10 18:46:49
 updated: 2019-05-10 18:46:49
 ---

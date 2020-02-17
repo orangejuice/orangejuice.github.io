@@ -7,6 +7,7 @@ categories:
 tags:
   - deep learning
 typora-root-url: ..
+toc: true
 ---
 
 图源《罗马假日》

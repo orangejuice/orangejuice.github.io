@@ -7,6 +7,7 @@ categories:
 tags:
   - history
 typora-root-url: ..
+toc: true
 ---
 
 # 为什么要回顾

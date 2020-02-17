@@ -8,6 +8,7 @@ tags:
   - regexp
   - code
 typora-root-url: ..
+toc: true
 ---
 
 从pdf中复制到一堆原文，失了表格的格式，变成了这样的相貌：

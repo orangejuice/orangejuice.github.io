@@ -6,6 +6,7 @@ tags:
   - philosophy
   - life
 typora-root-url: ..
+toc: true
 date: 2019-05-20 13:06:00
 updated: 2019-05-20 13:06:00
 ---

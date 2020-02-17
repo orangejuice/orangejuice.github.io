@@ -7,6 +7,7 @@ categories:
 tags:
   - planet&environment
 typora-root-url: ..
+toc: true
 ---
 
 3 月 15 日，超过 71 个国家 700 个地点的学生将翘课进行全球气候大游行。

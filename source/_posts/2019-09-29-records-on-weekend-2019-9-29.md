@@ -5,6 +5,7 @@ categories:
 tags:
   - life
 typora-root-url: ..
+toc: true
 date: 2019-09-29 10:38:38
 updated: 2019-09-29 23:16:18
 ---

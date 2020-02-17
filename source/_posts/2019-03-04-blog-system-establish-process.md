@@ -9,6 +9,7 @@ tags:
   - git pages
   - hexo
 typora-root-url: ..
+toc: true
 ---
 
 # Deploy Hexo site files & Install Next-Theme

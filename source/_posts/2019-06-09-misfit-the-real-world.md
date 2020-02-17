@@ -6,6 +6,7 @@ tags:
   - life
   - society
 typora-root-url: ..
+toc: true
 date: 2019-06-09 15:23:20
 updated: 2019-06-10 14:33:20
 ---

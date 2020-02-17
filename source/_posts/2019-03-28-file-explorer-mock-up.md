@@ -7,6 +7,7 @@ categories:
 tags:
   - windows
 typora-root-url: ..
+toc: true
 ---
 
 ![1553763941204](/images/1553763941204.png)

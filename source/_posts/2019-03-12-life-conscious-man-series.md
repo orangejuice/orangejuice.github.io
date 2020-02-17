@@ -8,6 +8,7 @@ tags:
   - life
   - consciousness
 typora-root-url: ..
+toc: true
 ---
 
 # 郦波（觉，醒，儒释道）
