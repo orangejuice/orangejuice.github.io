@@ -47,7 +47,7 @@ As said on oracle's website, There are several always free benefits for a free t
 In order to use their services, a validate bank card is required, although on the website it says a credit card is necessary, but a 
 debit card is also effective. During the account registering, it will ask you about the home region setting.
 
-[![Oracle Region Overview][image-1]](https://www.oracle.com/cloud/data-regions.html)
+![Oracle Region Overview [3]][image-1]
 
 You may want to choose one that is near you geographically. 
 Some people said that the free slots might be full on some popular regions,
@@ -154,4 +154,5 @@ the storage by REST API, GET/POST/PUT/DELETE, or other protocols that just like 
 
 [1]: https://www.oracle.com/ie/cloud/free/#always-free
 [2]: https://github.com/ripienaar/free-for-dev
+[3]: https://www.oracle.com/cloud/data-regions.html
 [image-1]: /images/oracle-region.png
