@@ -9,6 +9,9 @@ date: 2020-02-17 14:26:49
 updated: 2020-02-17 14:26:49
 ---
 
+Already heard about that Oracle Cloud now provide free VM, lets try it today. 
+<!--more--> 
+
 # Introduction
 
 As said on oracle's website, There are several always free benefits for a free tier user account. [1] 
