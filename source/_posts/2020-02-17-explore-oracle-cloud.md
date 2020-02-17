@@ -10,7 +10,7 @@ date: 2020-02-17 14:26:49
 updated: 2020-02-17 16:07:29
 ---
 
-Already heard about that Oracle Cloud now provide free VM, lets try it today. 
+Already heard about that Oracle Cloud provides free VM, let's try it today. 
 <!--more--> 
 
 # Introduction
