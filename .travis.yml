@@ -6,7 +6,6 @@ branches:
   only:
   - source
 
-# Start: Build Lifecycle
 install:
   - npm install
 
