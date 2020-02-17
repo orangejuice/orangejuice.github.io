@@ -7,7 +7,7 @@ tags:
 typora-root-url: ..
 toc: true
 date: 2020-02-17 14:26:49
-updated: 2020-02-17 14:26:49
+updated: 2020-02-17 16:07:29
 ---
 
 Already heard about that Oracle Cloud now provide free VM, lets try it today. 
@@ -45,9 +45,9 @@ As said on oracle's website, There are several always free benefits for a free t
 
 # Register
 
-In order to use their services, a validate bank card is required, although on the website it says a credit card is necessary, but a debit card is also effective. During the account registering, it will ask you about the home region setting.
+In order to use their services, a validate bank card is required, although on the website it says a credit card is necessary, but a debit card is also effective. During the account registering, it will ask you about the home region setting [2].
 
-![Oracle Region Overview [3]][image-1]
+![Oracle Region Overview][image-1]
 
 You may want to choose one that is near you geographically. Some people said that the free slots might be full on some popular regions, I chose EMEA-UK South, which is working good.
 
@@ -118,7 +118,7 @@ This is my system situation, with a full Ubuntu 18.04 image source after install
   Swap usage:   0%                IP address for docker0: 172.17.0.1
 ```
 
-There are lots of other free service providers that are also available on the Internet [2]. 
+There are lots of other free service providers that are also available on the Internet [3]. 
 
 Have to say that being a developer today is so enjoyable and lucky. I didn't see any other fields that are so openable, so available, and meanwhile, so developed, so advanced and stands in the front of the era. 
 
@@ -144,6 +144,6 @@ the storage by REST API, GET/POST/PUT/DELETE, or other protocols that just like 
 
 
 [1]: https://www.oracle.com/ie/cloud/free/#always-free
-[2]: https://github.com/ripienaar/free-for-dev
-[3]: https://www.oracle.com/cloud/data-regions.html
+[2]: https://www.oracle.com/cloud/data-regions.html
+[3]: https://github.com/ripienaar/free-for-dev
 [image-1]: /images/oracle-region.png
