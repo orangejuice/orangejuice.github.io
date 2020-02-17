@@ -115,6 +115,7 @@ After these steps, the instance is well prepared to do anything you want.
 For example, you may want to bind a domain or subdomain to this server, or deploying a certificate.
 
 Then, a productive personal used instance is good to go.
+
 This is my system situation, with a full Ubuntu 18.04 image source after installing apache and docker.
 
 ```text
@@ -123,6 +124,17 @@ This is my system situation, with a full Ubuntu 18.04 image source after install
   Memory usage: 39%               IP address for ens3:    10.0.0.6
   Swap usage:   0%                IP address for docker0: 172.17.0.1
 ```
+
+There are lots of other free service providers that are also available on the Internet [2]. 
+
+Have to say that being a developer today is so enjoyable and lucky. I didn't see any other fields that are so openable, so available,
+and meanwhile, so developed, so advanced and stands in the front of the era. 
+
+It's a real community that are not separated by geolocation or the power, and see changes happened everyday here.
+
+It's the nearest place to see the future coming.
+
+It's the best time for each developer to do whatever he/she wants.
 
 #### Block Storage, File Storage and Object Storage
 A question should be wrote down, it is about what's the difference of these
@@ -141,4 +153,5 @@ the storage by REST API, GET/POST/PUT/DELETE, or other protocols that just like 
 
 
 [1]: https://www.oracle.com/ie/cloud/free/#always-free
+[2]: https://github.com/ripienaar/free-for-dev
 [image-1]: /images/oracle-region.png
