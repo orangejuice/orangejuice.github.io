@@ -7,10 +7,10 @@ tags:
 typora-root-url: ..
 toc: true
 date: 2020-02-17 14:26:49
-updated: 2020-02-17 16:07:29
+updated: 2020-02-18 09:53:29
 ---
 
-Already heard about that Oracle Cloud provides free VM, let's try it today. 
+Already heard about that Oracle Cloud provides free VM, let's try it today. This post will start from applying an account and until getting your own instance running.
 <!--more--> 
 
 # Introduction
@@ -102,6 +102,12 @@ In the Oracle Cloud Console, go to `Instances > View instance details`, find `At
 Select `RESERVED PUBLIC IP` to preserve the current IP address.
 
 To gain a new IP: select `NO PUBLIC IP` first, then reselect the option you prefer.
+
+# Crate a backup of the Block Volume
+
+With everything stand by, it's best to do an important task now -- backup our instance. It's very sweet that Oracle provide everyone with 5 free backup slots. Go to `Compute > Boot Volumes`, and there will be a `Create Manual Backup` option available in the context menu of your boot volume. Click it and let Oracle do that for us.
+
+With that Boot Volume Backup, you can create a boot volume all the time, and create a resurrected instance for that boot volume.
 
 # Conclusion
 
