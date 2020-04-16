@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>在 IntelliJ 中创建并运行EJB项目 - Blog of Orangejuice</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="description" content="本文撰写前提为无任何EJB开发经验。中间问题可跳过直接浏览新建基于Maven的EJB项目。">
+<meta name="keywords" content="code">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在 IntelliJ 中创建并运行EJB项目">
+<meta property="og:url" content="http://orangejuice.cc/notes/ejb-project-establishing/index.html">
+<meta property="og:site_name" content="Blog of Orangejuice">
+<meta property="og:description" content="本文撰写前提为无任何EJB开发经验。中间问题可跳过直接浏览新建基于Maven的EJB项目。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://orangejuice.cc/images/og_image.png">
+<meta property="og:updated_time" content="2019-03-29T15:17:32.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在 IntelliJ 中创建并运行EJB项目">
+<meta name="twitter:description" content="本文撰写前提为无任何EJB开发经验。中间问题可跳过直接浏览新建基于Maven的EJB项目。">
+<meta name="twitter:image" content="http://orangejuice.cc/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-136118548-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-136118548-1');
+</script>
+
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+<link rel="alternate" href="/atom.xml" title="Blog of Orangejuice" type="application/atom+xml">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+                <a class="navbar-item" href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-03-24T15:17:32.000Z">2019-03-24</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/notes/">notes</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    26 minutes read (About 3826 words)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span> visits
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                在 IntelliJ 中创建并运行EJB项目
+            
+        </h1>
+        <div class="content">
+            <blockquote>
+<p>本文撰写前提为无任何EJB开发经验。中间问题可跳过直接浏览新建基于Maven的EJB项目。</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="安装Glassfish"><a href="#安装Glassfish" class="headerlink" title="安装Glassfish"></a>安装Glassfish</h1><p>博主安装时选用了最新的稳定版本 Glassfish 5.</p>
+<p><img src="/images/1553531968538.png" alt="1553531968538"></p>
+<p>有两个版本，选用Full Platform版本。</p>
+<h1 id="初步尝试"><a href="#初步尝试" class="headerlink" title="初步尝试"></a>初步尝试</h1><h2 id="创建Java-EE项目（无Maven）"><a href="#创建Java-EE项目（无Maven）" class="headerlink" title="创建Java EE项目（无Maven）"></a>创建Java EE项目（无Maven）</h2><p><img src="/images/1553440781877.png" alt="1553440781877"></p>
+<p>选择 <code>Web Application</code>、<code>JSF</code>、<code>EJB: Enterprise Java Beans</code> 后新建项目。</p>
+<h2 id="尝试运行现有项目遇到的问题"><a href="#尝试运行现有项目遇到的问题" class="headerlink" title="尝试运行现有项目遇到的问题"></a>尝试运行现有项目遇到的问题</h2><h3 id="在Glassfish5上运行时，出现arget-Unreachable-identifier-‘bean’-resolved-to-null错误"><a href="#在Glassfish5上运行时，出现arget-Unreachable-identifier-‘bean’-resolved-to-null错误" class="headerlink" title="在Glassfish5上运行时，出现arget Unreachable, identifier ‘bean’ resolved to null错误"></a>在Glassfish5上运行时，出现arget Unreachable, identifier ‘bean’ resolved to null错误</h3><p>时间关系没有深入探究，在<a href="https://github.com/javaserverfaces/mojarra/issues/4264" target="_blank" rel="noopener">Github Issues</a>，<a href="https://github.com/eclipse-ee4j/glassfish/issues/22094" target="_blank" rel="noopener">Github Issues</a>中找到解决方法，须在Bean中标注FacesConfig。</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">package</span> configuration;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> javax.faces.annotation.FacesConfig.Version.JSF_2_3;</span><br><span class="line"><span class="hljs-keyword">import</span> javax.faces.annotation.FacesConfig;</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">@FacesConfig</span>(</span><br><span class="line">	<span class="hljs-comment">// Activates CDI build-in beans</span></span><br><span class="line">	version = JSF_2_3 </span><br><span class="line">)</span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConfigurationBean</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Unable-to-retrieve-EntityManagerFactory-for-unitName-xxx"><a href="#Unable-to-retrieve-EntityManagerFactory-for-unitName-xxx" class="headerlink" title="Unable to retrieve EntityManagerFactory for unitName xxx"></a>Unable to retrieve EntityManagerFactory for unitName xxx</h3><p>无persistence.xml文件或文件路径错误，最好使用IDEA的Add framework Support功能，自动生成META-INF下的persistence.xml文件。</p>
+<h3 id="View-example-xhtml-could-not-be-restored"><a href="#View-example-xhtml-could-not-be-restored" class="headerlink" title="View /example.xhtml could not be restored."></a>View /example.xhtml could not be restored.</h3><p>session过期。</p>
+<h3 id="JNDI-lookup-failed-for-the-resource-Name-Lookup-jdbc-Type"><a href="#JNDI-lookup-failed-for-the-resource-Name-Lookup-jdbc-Type" class="headerlink" title="JNDI lookup failed for the resource: Name: [], Lookup: [jdbc/ ], Type:"></a>JNDI lookup failed for the resource: Name: [], Lookup: [jdbc/ ], Type:</h3><p>在 <code>localhost:4848</code> 中新建data source.</p>
+<p>asadmin add-resources glassfish-resources.xml</p>
+<p><img src="/images/1553450787754.png" alt="1553450787754"></p>
+<p>还需要把数据库驱动文件放到此目录下：<code>glassfish5\glassfish\domains\domain1\lib\ext</code></p>
+<p>网上的已过时，现在的datasource Classname为: <code>com.mysql.cj.jdbc.MysqlDataSource</code></p>
+<h1 id="创建-Maven-项目"><a href="#创建-Maven-项目" class="headerlink" title="创建 Maven 项目"></a>创建 Maven 项目</h1><h2 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h2><p>添加 Javaee-api 依赖如下</p>
+<figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">&lt;!-- https://mvnrepository.com/artifact/javax/javaee-api --&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>javax<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>javaee-api<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>8.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>provided<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="创建两个Module"><a href="#创建两个Module" class="headerlink" title="创建两个Module"></a>创建两个Module</h2><p>可分别命名为<code>xxx-ejb</code>、<code>xxx-war</code>，创建后在<code>Pom.xml</code>文件中分别输入<code>&lt;packaging&gt;ejb&lt;/packaging&gt;</code>, <code>&lt;packaging&gt;war&lt;/packaging&gt;</code>。完成后即可在idea的项目设置（<code>Ctrl+Alt+shift+S</code>）-&gt;Artifacts中看到4个artifact。并可看到提示如下，</p>
+<p><img src="/images/1553526993835.png" alt="1553526993835"></p>
+<p>创建Manifest即可。</p>
+<p>之后可在Idea的Run Configurations中添加Glassfish Server，Deployment中注意添加ejb和war包。</p>
+<h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><h3 id="Error-while-binding-JNDI-name-dao-UserDao-dao-UserDao-for-EJB-UserDaoImpl-javax-naming-NameAlreadyBoundException-Use-rebind-to-override"><a href="#Error-while-binding-JNDI-name-dao-UserDao-dao-UserDao-for-EJB-UserDaoImpl-javax-naming-NameAlreadyBoundException-Use-rebind-to-override" class="headerlink" title="Error while binding JNDI name dao.UserDao#dao.UserDao for EJB UserDaoImpl,javax.naming.NameAlreadyBoundException: Use rebind to override"></a>Error while binding JNDI name dao.UserDao#dao.UserDao for EJB UserDaoImpl,javax.naming.NameAlreadyBoundException: Use rebind to override</h3><p>解决方法：关闭Glassfish的nonportable-jndi-names功能，命令如下<br><code>asadmin set server.ejb-container.property.disable-nonportable-jndi-names=&quot;true&quot;</code></p>
+<h3 id="javax-el-PropertyNotFoundException-The-class-‘‘-does-not-have-the-property-‘‘"><a href="#javax-el-PropertyNotFoundException-The-class-‘‘-does-not-have-the-property-‘‘" class="headerlink" title="javax.el.PropertyNotFoundException: The class ‘‘ does not have the property ‘‘."></a>javax.el.PropertyNotFoundException: The class ‘<name>‘ does not have the property ‘<name>‘.</name></name></h3><p>方法明明是有的，很大可能性是服务器没有更新。只能重启。</p>
+<h3 id="使用set方法为backing-bean设定值"><a href="#使用set方法为backing-bean设定值" class="headerlink" title="使用set方法为backing bean设定值"></a>使用set方法为backing bean设定值</h3><p>用到的情景是让Role选择框具有不确定的默认值。</p>
+<figure class="highlight jsp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;c:set target=<span class="hljs-string">"#&#123;userBean.user&#125;"</span> property=<span class="hljs-string">"role"</span> value=<span class="hljs-string">"#&#123;constantBean.userRoleList.get(0)&#125;"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="地址栏地址和实际文件路径不同步"><a href="#地址栏地址和实际文件路径不同步" class="headerlink" title="地址栏地址和实际文件路径不同步"></a>地址栏地址和实际文件路径不同步</h3><p>方法1：在<code>faces-config.xml</code>中进行配置。</p>
+<p>方法2：Backing Bean 返回地址时加上<code>?faces-redirect=true</code>。</p>
+<figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">navigation-rule</span>&gt;</span></span><br><span class="line">	<span class="hljs-tag">&lt;<span class="hljs-name">from-view-id</span>&gt;</span>/welcome.xhtml<span class="hljs-tag">&lt;/<span class="hljs-name">from-view-id</span>&gt;</span></span><br><span class="line">	<span class="hljs-tag">&lt;<span class="hljs-name">navigation-case</span>&gt;</span></span><br><span class="line">		<span class="hljs-tag">&lt;<span class="hljs-name">from-outcome</span>&gt;</span>logout<span class="hljs-tag">&lt;/<span class="hljs-name">from-outcome</span>&gt;</span></span><br><span class="line">		<span class="hljs-tag">&lt;<span class="hljs-name">to-view-id</span>&gt;</span>login<span class="hljs-tag">&lt;/<span class="hljs-name">to-view-id</span>&gt;</span></span><br><span class="line">		<span class="hljs-tag">&lt;<span class="hljs-name">redirect</span>/&gt;</span></span><br><span class="line">	<span class="hljs-tag">&lt;/<span class="hljs-name">navigation-case</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">navigation-rule</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="test-判断离奇失效"><a href="#test-判断离奇失效" class="headerlink" title="test 判断离奇失效"></a>test 判断离奇失效</h3><p>单个test无分支语句应该用</p>
+<figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;c:<span class="hljs-keyword">if</span> test=<span class="hljs-string">"? eq ?"</span>&gt;</span><br><span class="line">    ...</span><br><span class="line">&lt;/c:if&gt;</span><br></pre></td></tr></table></figure>
+<p>在我之前的用法中是如下的嵌套结构，无法正确运行。</p>
+<figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;c:choose&gt;</span><br><span class="line">    &lt;c:when test=<span class="hljs-string">"#&#123;userBean.currentUser != null&#125;"</span>&gt;</span><br><span class="line">         &lt;c:when test=<span class="hljs-string">""</span>&gt;</span><br><span class="line">         &lt;/c:when&gt;</span><br><span class="line">    &lt;/c:when&gt;</span><br><span class="line">    &lt;c:otherwise&gt;</span><br><span class="line">    &lt;/c:otherwise&gt;</span><br><span class="line">&lt;/c:choose&gt;</span><br></pre></td></tr></table></figure>
+<p>我就纳闷为什么我用的c:when死也不触发test条件，不知道到底哪里错了。还以为哪里的问题导致Bean值无法或许到。坑了我大半天的时间！现在这代码放这一看一眼就发现指定是傻子写出来的。</p>
+<h3 id="EJB注入不上一直报DAO空指针异常"><a href="#EJB注入不上一直报DAO空指针异常" class="headerlink" title="@EJB注入不上一直报DAO空指针异常"></a>@EJB注入不上一直报DAO空指针异常</h3><p>千万不要在类构造函数中搞这种初始化操作，要如下所示：</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@PostConstruct</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="在JSF中导入并使用Enum"><a href="#在JSF中导入并使用Enum" class="headerlink" title="在JSF中导入并使用Enum"></a>在JSF中导入并使用Enum</h3><p>要用到Primefaces，</p>
+<figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.primefaces<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>primefaces<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>6.2<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>namespace：<code>xmlns:p=&quot;http://primefaces.org/ui&quot;</code></p>
+<p>示例：</p>
+<figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;p:importEnum type=<span class="hljs-string">"javax.faces.application.ProjectStage"</span> <span class="hljs-keyword">var</span>=<span class="hljs-string">"JsfProjectStages"</span> allSuffix=<span class="hljs-string">"ALL_ENUM_VALUES"</span> /&gt;  </span><br><span class="line"> </span><br><span class="line">Development: #&#123;JsfProjectStages.Development&#125;</span><br><span class="line"> </span><br><span class="line">&lt;br/&gt;  </span><br><span class="line"> </span><br><span class="line">ALL:   </span><br><span class="line">&lt;ui:repeat <span class="hljs-keyword">var</span>=<span class="hljs-string">"current"</span> value=<span class="hljs-string">"#&#123;JsfProjectStages.ALL_ENUM_VALUES&#125;"</span>&gt;  </span><br><span class="line">    &lt;h:outputText value="#&#123;current&#125;" /&gt; &amp;#160;  </span><br><span class="line">&lt;/ui:repeat&gt;</span><br></pre></td></tr></table></figure>
+<p>注意这里出现了<code>Classnotfound</code>的死问题，怎么重启也不好使。所以博主转为另一种解决方案：</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> Job.<span class="hljs-function">JobStatus <span class="hljs-title">jobStatus</span><span class="hljs-params">(String name)</span> </span>&#123;</span><br><span class="line">   <span class="hljs-keyword">return</span> Job.JobStatus.valueOf(name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">test=&quot;#&#123;jobBean.job.jobStatus ne constantBean.jobStatus(&apos;Open&apos;)&#125;&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="c-choose中有其他分支会造成错误"><a href="#c-choose中有其他分支会造成错误" class="headerlink" title="c:choose中有其他分支会造成错误"></a>c:choose中有其他分支会造成错误</h3><figure class="highlight hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;c:choose&gt;</span><br><span class="line">    &lt;p:importEnum/&gt;</span><br><span class="line">    &lt;c:when&gt;</span><br><span class="line">    &lt;/c:when&gt;</span><br><span class="line">    &lt;c:when&gt;</span><br><span class="line">    &lt;/c:when&gt;</span><br><span class="line">    &lt;c:otherwise&gt;</span><br><span class="line">    &lt;/c:otherwise&gt;</span><br><span class="line">&lt;/c:choose&gt;</span><br></pre></td></tr></table></figure>
+<p>等着出错吧。</p>
+<h3 id="获取Entity的Id一直为null"><a href="#获取Entity的Id一直为null" class="headerlink" title="获取Entity的Id一直为null"></a>获取Entity的Id一直为null</h3><p>因为我拷贝了Entity后将拷贝后的Entity持久化，而返回时又返回了原先传递过来的Entity。故造成长时间没有找到原因，怎么查怎么改都是NullpointerException。</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Override</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> T <span class="hljs-title">save</span><span class="hljs-params">(T entity)</span> </span>&#123;</span><br><span class="line">    em.persist(entity);</span><br><span class="line">    flush();</span><br><span class="line">    <span class="hljs-keyword">return</span> entity;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>正确打开方式。</p>
+<h3 id="action-test方法调用时出现的异常不会被抛出"><a href="#action-test方法调用时出现的异常不会被抛出" class="headerlink" title="action/test方法调用时出现的异常不会被抛出"></a>action/test方法调用时出现的异常不会被抛出</h3><p>明明没有按预期工作，比如方法里的Log都没有输出，但就是没有任何错误迹象。不知道如何让JSF把错误给特喵的稍微输出一下啊/(ㄒoㄒ)/。遇到过多次了。这次的原因是更新entity用了save方法，该用<strong>update</strong>。</p>
+<p>*更新，这次的原因是当前用户放在了RequestScoped的Bean中，当action动作要获取当前用户的时候，当然是空值了！</p>
+<p>*更新2，不是不抛出异常，而是遇到[11] [12]描述的问题，导致默认情况下没有任何提示的失效。</p>
+<figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">context-param</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">param-name</span>&gt;</span>javax.faces.PROJECT_STAGE<span class="hljs-tag">&lt;/<span class="hljs-name">param-name</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">param-value</span>&gt;</span>Development<span class="hljs-tag">&lt;/<span class="hljs-name">param-value</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">context-param</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>配置为开发模式以显示错误。</p>
+<h3 id="JPA不保存Manytomany关系到数据库中"><a href="#JPA不保存Manytomany关系到数据库中" class="headerlink" title="JPA不保存Manytomany关系到数据库中"></a>JPA不保存Manytomany关系到数据库中</h3><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Entity</span></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>&#123;</span><br><span class="line">    <span class="hljs-meta">@ManyToMany</span>(cascade = CascadeType.ALL, fetch = FetchType.EAGER)</span><br><span class="line">    <span class="hljs-keyword">private</span> List&lt;User&gt; lanaguages = <span class="hljs-keyword">new</span> ArrayList&lt;User&gt;();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">@Entity</span></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Language</span> </span>&#123;</span><br><span class="line">    <span class="hljs-meta">@ManyToMany</span>(mappedBy = <span class="hljs-string">"languages"</span>)</span><br><span class="line">    <span class="hljs-keyword">private</span> List&lt;User&gt; users = <span class="hljs-keyword">new</span> ArrayList&lt;User&gt;();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Tip: Replace <code>CascadeType.ALL</code> with <code>CascadeType.MERGE</code>.</p>
+</blockquote>
+<h3 id="保存大字符串"><a href="#保存大字符串" class="headerlink" title="保存大字符串"></a>保存大字符串</h3><figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">@Lob</span> </span><br><span class="line"><span class="hljs-meta">@Column</span>(name=<span class="hljs-string">"CONTENT"</span>, length=<span class="hljs-number">512</span>)</span><br><span class="line"><span class="hljs-keyword">private</span> String content;</span><br></pre></td></tr></table></figure>
+<h3 id="Primeface-Tooltip显示位置错误，未解决"><a href="#Primeface-Tooltip显示位置错误，未解决" class="headerlink" title="Primeface Tooltip显示位置错误，未解决"></a>Primeface Tooltip显示位置错误，未解决</h3><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">h:graphicImage</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"comment-item-#&#123;loop.index&#125;"</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">pf:tooltip</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"comment-item-#&#123;loop.index&#125;"</span> <span class="hljs-attr">position</span>=<span class="hljs-string">"top"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">h:outputText</span> <span class="hljs-attr">escape</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"user: #&#123;comment.username&#125;"</span>/&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">pf:tooltip</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">h:graphicImage</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="/images/1553767125017.png" alt="1553767125017"></p>
+<p>primeface我就没用成功过到现在，你开心就好。。</p>
+<h3 id="Manytomany关系保存主实体后，查询从实体并没有更新"><a href="#Manytomany关系保存主实体后，查询从实体并没有更新" class="headerlink" title="Manytomany关系保存主实体后，查询从实体并没有更新"></a>Manytomany关系保存主实体后，查询从实体并没有更新</h3><p>查看数据库可以发现已经保存到数据库，但是从实体没有刷新。还是保存之前的数据。只有重启服务器后才会更新状态。</p>
+<p>搜了半天没找到什么有用的解决方案，但是给了一些启发。解决方法即是更新到所有相关的entity。如下：</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">revoke</span><span class="hljs-params">(Job job)</span> </span>&#123;</span><br><span class="line">      UserFreelancer freelancer = getFreelancer();</span><br><span class="line"></span><br><span class="line">      freelancer.getRequestedJobs().stream()</span><br><span class="line">              .filter(v -&gt; v.getId().equals(job.getId())).findFirst()</span><br><span class="line">              .ifPresent(j -&gt; freelancer.getRequestedJobs().remove(j));</span><br><span class="line"></span><br><span class="line">      job.getRequestedFreelancers().stream()</span><br><span class="line">              .filter(v -&gt; v.getId().equals(freelancer.getId())).findFirst()</span><br><span class="line">              .ifPresent(f -&gt; job.getRequestedFreelancers().remove(f));</span><br><span class="line"></span><br><span class="line">      jobDao.update(job);</span><br><span class="line">      userDao.update(freelancer);</span><br><span class="line">      <span class="hljs-keyword">return</span> HTTPUtil.returnUrl(<span class="hljs-string">"job?id="</span> + job.getId());</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">undertake</span><span class="hljs-params">(Job job)</span> </span>&#123;</span><br><span class="line">      UserFreelancer freelancer = getFreelancer();</span><br><span class="line"></span><br><span class="line">      freelancer.getRequestedJobs().add(job);</span><br><span class="line">      job.getRequestedFreelancers().add(freelancer);</span><br><span class="line"></span><br><span class="line">      userDao.update(freelancer);</span><br><span class="line">      <span class="hljs-keyword">return</span> HTTPUtil.returnUrl(<span class="hljs-string">"job?id="</span> + job.getId());</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="简单直接实现搜索框"><a href="#简单直接实现搜索框" class="headerlink" title="简单直接实现搜索框"></a>简单直接实现搜索框</h3><figure class="highlight html hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"sidebar-module"</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Search<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-control"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Press enter for searching..."</span></span></span><br><span class="line"><span class="hljs-tag">                   <span class="hljs-attr">onkeypress</span>=<span class="hljs-string">"if (event.keyCode === 13) &#123;location.href='jobs.xhtml?s='+this.value;&#125;"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<p><img src="/images/1553786668497.png" alt="1553786668497"></p>
+<h3 id="Test失效错误"><a href="#Test失效错误" class="headerlink" title="Test失效错误"></a>Test失效错误</h3><p><img src="/images/1553794353905.png" alt="1553794353905"></p>
+<p><img src="/images/1553794392525.png" alt="1553794392525"></p>
+<p>重启刷新都不管用。也没有任何错误提示。</p>
+<p>到最后终于发现问题：if test中的bean取值和上面看似相同实则不同。只能这么解释了。但经过输出日志发现这页面渲染是只有一个Request的，如果说Request已经销毁，if test是新的RequestScope也完全说不通。未解之谜。</p>
+<h3 id="SPA-多对多关系保存趣事"><a href="#SPA-多对多关系保存趣事" class="headerlink" title="SPA 多对多关系保存趣事"></a>SPA 多对多关系保存趣事</h3><p>当代码这样写时，结果如下：</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">jobDao.update(job);</span><br><span class="line">userDao.update(freelancer);</span><br></pre></td></tr></table></figure>
+<p><img src="/images/1553804207196.png" alt="1553804207196"></p>
+<p>当代码这样写时，结果如下：</p>
+<figure class="highlight java hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">userDao.update(freelancer);</span><br><span class="line">jobDao.update(job);</span><br></pre></td></tr></table></figure>
+<p><img src="/images/1553804302602.png" alt="1553804302602"></p>
+<h2 id="显示SQL语句以及相应参数"><a href="#显示SQL语句以及相应参数" class="headerlink" title="显示SQL语句以及相应参数"></a>显示SQL语句以及相应参数</h2><p>在<code>persistence.xml</code>文件中指定如下设置：</p>
+<figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">properties</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"javax.persistence.schema-generation.database.action"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"create"</span>/&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"eclipselink.logging.level.sql"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"FINE"</span> /&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"eclipselink.logging.parameters"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"true"</span> /&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">properties</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="JMS收到了消息我好快乐。。"><a href="#JMS收到了消息我好快乐。。" class="headerlink" title="JMS收到了消息我好快乐。。"></a>JMS收到了消息我好快乐。。</h2><p><img src="/images/1553818902766.png" alt="1553818902766"></p>
+<p><img src="/images/1553818910513.png" alt="1553818910513"></p>
+<h2 id="slf4j保存日志文件"><a href="#slf4j保存日志文件" class="headerlink" title="slf4j保存日志文件"></a>slf4j保存日志文件</h2><figure class="highlight xml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.slf4j<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>slf4j-api<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.7.21<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>ch.qos.logback<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>logback-core<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.1.7<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>ch.qos.logback<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>logback-classic<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.1.7<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>日志文件保存在对应domain文件夹下的logs文件夹中。</p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>EJB(Enterprise JavaBean)是J2EE(javaEE)的一部分，定义了一个用于开发基于组件的企业多重应用程序的标准。其特点包括网络服务支持和核心开发工具(SDK)。 在J2EE里，Enterprise Java Beans(EJB)称为Java 企业Bean，是Java的核心代码，分别是无状态会话Bean（Stateless Session Beans），有状态会话 Bean（Stateful Session Beans）、实体Bean（Entity Bean）和消息驱动Bean（MessageDriven Bean）。</p>
+<ol>
+<li><p>什么是”服务集群”？什么是”企业级开发”？ </p>
+<p> 既然说了EJB 是为了”服务集群”和”企业级开发”，那么，总得说说什么是所谓的”服务集群”和”企业级开发”吧！        这个问题其实挺关键的，因为J2EE 中并没有说明白，也没有具体的指标或者事例告诉广大程序员什么时候用EJB 什么时候不用。于是大家都产生一些联想，认为EJB”分布式运算”指得是”负载均衡”提高系统的运行效率。然而，估计很多人都搞错了，这个”服务群集”和”分布式运算”并没有根本解决运行负载的问题，尤其是针对数据库的应用系统。为什么？我们先把EJB打回原形给大家来慢慢分析。</p>
+</li>
+<li><p>什么是EJB?</p>
+<p> 1) EJB 概念的剖析</p>
+<p> 我们先看一下，EJB 的官方解释：</p>
+<p> “商务软件的核心部分是它的业务逻辑。业务逻辑抽象了整个商务过程的流程，并使用计算机语言将他们实现。……J2EE 对于这个问题的处理方法是将业务逻辑从客户端软件中抽取出来，封装在一个组件中。这个组件运行在一个独立的服务器上，客户端软件通过网络调用组件提供的服务以实现业务逻辑，而客户端软件的功能单纯到只负责发送调用请求和显示处理结果。在J2EE 中，这个运行在一个独立的服务器上，并封装了业务逻辑的组件就是EJB（Enterprise JavaBean）组件。”<br> 这其中我们主要关注这么几点，我们来逐条剖析：</p>
+<p> 剖析1：”业务逻辑” ：我们注意到在EJB 的概念中主要提到的就是”业务逻辑”的封装，而这个业务逻辑到底是什么？说的那么悬乎，其实这个所谓的”业务逻辑”我们完全可以理解成执行特定任务的”类”。</p>
+<p> 剖析2：”将业务逻辑从客户端软件中抽取出来，封装在组件中……运行在一个服务器上”：既然我们知道了”业务逻辑”的概念就是执行特定任务的”类”，那么，什么叫”从客户端软件中抽取出来”？其实，这个就是把原来放到客户端的”类”，拿出来不放到客户端了，放到一个组件中，并将这个组件放到一个服务器上去运行。</p>
+<p> 2)把EJB 这个概念变成大白话就是：“把你编写的软件中那些需要执行制定的任务的类，不放到客户端软件上了，而是给他打成包放到一个服务器上了”。其中有个词——“客户端软件”，”客户端软件”？难道EJB 的概念中说的是C/S 软件？是的，没错！EJB 就是将那些”类”放到一个服务器上，用C/S 形式的软件客户端对服务器上的”类”进行调用。EJB和JSP 有什么关系？EJB 和JSP 有关系，但是关系还真不怎么大，至多是在JSP 的服务器端调用远端服务上的EJB 类，仅此而已。</p>
+</li>
+<li><p>EJB 的最底层究竟是什么？</p>
+<p>1) EJB 的实现技术</p>
+<p>EJB 是运行在独立服务器上的组件，客户端是通过网络对EJB 对象进行调用的。在Java中，能够实现远程对象调用的技术是RMI，而EJB 技术基础正是RMI。通过RMI 技术，J2EE将EJB 组件创建为远程对象，客户端就可以通过网络调用EJB 对象了。</p>
+<p>2)RMI 是什么</p>
+<p>RMI 英文全称是”Remote Method Invocation”，它的中文名称是”远程方法调用”。它是一种机制，能够让在某个 Java 虚拟机上的对象调用另一个 Java 虚拟机中的对象上的方法。可以用此方法调用的任何对象必须实现该远程接口。</p>
+<p>J2EE 将EJB 组件创建为远程对象，EJB 虽然用了RMI 技术，但是却只需要定义远程接口而无需生成他们的实现类，这样就将RMI 技术中的一些细节问题屏蔽了。但不管怎么说，EJB 的基础仍然是RMI，所以，如果你想了解EJB 的原理，只要把RMI的原理搞清楚就行了。你也就弄清楚了什么时候用EJB 什么时候不需要用EJB 了。</p>
+</li>
+</ol>
+<h1 id="Persistence-xml-文件"><a href="#Persistence-xml-文件" class="headerlink" title="Persistence.xml 文件"></a>Persistence.xml 文件</h1><p>persistence.xml文件要打包到EJB Jar文件的META-INF目录。</p>
+<p>persistence.xml文件用于指定实体Bean使用的数据源及EntityManager对象的默认行为。</p>
+<p>persistence-unit节点可以有一个或多个，每个persistence-unit节点定义了持久化内容名称、使用的数据源及持久化产品专有属性。name 属性定义持久化名称。jta-data-source 节点指定实体Bean使用的数据源JNDI 名称，如果应用发布在jboss下数据源名称必须带有java:/前缀，数据源名称大小写敏感。properties节点用作指定持久化产品的各项属性，各个应用服务器使用的持久化产品都不一样如Jboss使用 Hibernate，weblogic10使用Kodo，glassfish/sun application server/Oralce使用Toplink。</p>
+<p>因为jboss 采用Hibernate，Hibernate 有一项属性hibernate.hbm2ddl.auto，该属性指定实体Bean发布时是否同步数据库结构，如果 hibernate.hbm2ddl.auto的值设为create-drop，在实体Bean发布及卸载时将自动创建及删除相应数据库表(注意：Jboss 服务器启动或关闭时也会引发实体Bean 的发布及卸载)。TopLink产品的toplink.ddl-generation属性也起到同样的作用。</p>
+<p>小提示：如果你的表已经存在,并且想保留数据，发布实体bean 时可以把hibernate.hbm2ddl.auto 的值设为none或update,以后为了实体bean的改动能反应到数据表，建议使用update，这样实体Bean 添加一个属性时能同时在数据表增加相应字段。 </p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ol>
+<li><a href="https://www.jetbrains.com/help/idea/creating-and-running-your-first-java-ee-application.html" target="_blank" rel="noopener">https://www.jetbrains.com/help/idea/creating-and-running-your-first-java-ee-application.html</a></li>
+<li><a href="https://blog.csdn.net/qq_27816307/article/details/54670678" target="_blank" rel="noopener">https://blog.csdn.net/qq_27816307/article/details/54670678</a></li>
+<li><a href="http://www.qingpingshan.com/rjbc/java/136555.html" target="_blank" rel="noopener">www.qingpingshan.com/rjbc/java/136555.html</a></li>
+<li><a href="https://github.com/YouthLin/JBlog" target="_blank" rel="noopener">https://github.com/YouthLin/JBlog</a></li>
+<li><a href="http://www.cnblogs.com/yangyquin/p/5328344.html" target="_blank" rel="noopener">http://www.cnblogs.com/yangyquin/p/5328344.html</a></li>
+<li><a href="https://github.com/YouthLin/Library-with-JSF-EJB-JPA" target="_blank" rel="noopener">https://github.com/YouthLin/Library-with-JSF-EJB-JPA</a></li>
+<li>what’s a message-driven bean? - oracle <a href="https://docs.oracle.com/javaee/7/tutorial/ejb-intro003.htm" target="_blank" rel="noopener">https://docs.oracle.com/javaee/7/tutorial/ejb-intro003.htm</a></li>
+<li><a href="https://blog.csdn.net/jojo52013145/article/details/5783677" target="_blank" rel="noopener">EJB到底是什么，真的那么神秘吗？？- https://blog.csdn.net/jojo52013145/article/details/5783677</a></li>
+<li><a href="https://javabeat.net/jsf-2-redirect-navigation/" target="_blank" rel="noopener">JSF 2 Redirect Navigation Example - https://javabeat.net/jsf-2-redirect-navigation/</a></li>
+<li><a href="https://stackoverflow.com/questions/38742749/show-logging-parameter-for-insert-update-select-in-eclipselink-jpa" target="_blank" rel="noopener">https://stackoverflow.com/questions/38742749/show-logging-parameter-for-insert-update-select-in-eclipselink-jpa</a></li>
+<li><a href="https://www.primefaces.org/showcase/ui/misc/importEnum.xhtml" target="_blank" rel="noopener">https://www.primefaces.org/showcase/ui/misc/importEnum.xhtml</a></li>
+<li><a href="https://stackoverflow.com/questions/14077155/commandlink-action-not-performed" target="_blank" rel="noopener">commandLink action not performed</a>, <a href="https://stackoverflow.com/questions/2118656/commandbutton-commandlink-ajax-action-listener-method-not-invoked-or-input-value" target="_blank" rel="noopener">commandButton/commandLink/ajax action/listener method not invoked or input value not set/updated</a></li>
+<li><a href="https://stackoverflow.com/questions/39802264/jpa-how-to-persist-many-to-many-relation" target="_blank" rel="noopener">JPA: how to persist many to many relation</a></li>
+<li><a href="https://stackoverflow.com/questions/7031885/how-to-choose-the-right-bean-scope" target="_blank" rel="noopener">How to choose the right bean scope?</a></li>
+<li><a href="https://thoughts-on-java.org/complete-guide-inheritance-strategies-jpa-hibernate/" target="_blank" rel="noopener">Complete Guide: Inheritance strategies with JPA and Hibernate</a></li>
+<li><a href="https://github.com/eugenp/tutorials/tree/master/spring-ejb/wildfly/wildfly-mdb" target="_blank" rel="noopener">https://github.com/eugenp/tutorials</a></li>
+<li><a href="https://www.baeldung.com/ejb-message-driven-beans" target="_blank" rel="noopener">A Guide to Message Driven Beans in EJB</a></li>
+<li>还有很多参考地址疏忽遗漏，太感谢丰富的互联网资源拯救了一星期开发JOB-MARKET项目。</li>
+</ol>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/code/">code</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/news/file-explorer-mock-up/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">Microsoft Design intern&#39;s File Explorer mock up</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/notes/face-the-bleak-life/">
+                <span class="level-item">[转载] 直面惨淡人生</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<script>
+    var disqus_config = function () {
+        this.page.url = 'http://orangejuice.cc/notes/ejb-project-establishing/';
+        this.page.identifier = 'notes/ejb-project-establishing/';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'orangejuicecc' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    
+                        <figure class="image container is-128x128 has-mb-6">
+                            <img class="is-rounded" src="/images/avatar.jpg" alt="orangejuice">
+                        </figure>
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        orangejuice
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Life is made up of accidents and mistakes.
+                    </p>
+                    
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        29
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        4
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        15
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/orangejuice/" target="_blank">
+                Follow</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/orangejuice/">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/atom.xml">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Catalogue
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#安装Glassfish">
+        <span class="has-mr-6">1</span>
+        <span>安装Glassfish</span>
+        </a></li><li>
+        <a class="is-flex" href="#初步尝试">
+        <span class="has-mr-6">2</span>
+        <span>初步尝试</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#创建Java-EE项目（无Maven）">
+        <span class="has-mr-6">2.1</span>
+        <span>创建Java EE项目（无Maven）</span>
+        </a></li><li>
+        <a class="is-flex" href="#尝试运行现有项目遇到的问题">
+        <span class="has-mr-6">2.2</span>
+        <span>尝试运行现有项目遇到的问题</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#在Glassfish5上运行时，出现arget-Unreachable-identifier-‘bean’-resolved-to-null错误">
+        <span class="has-mr-6">2.2.1</span>
+        <span>在Glassfish5上运行时，出现arget Unreachable, identifier ‘bean’ resolved to null错误</span>
+        </a></li><li>
+        <a class="is-flex" href="#Unable-to-retrieve-EntityManagerFactory-for-unitName-xxx">
+        <span class="has-mr-6">2.2.2</span>
+        <span>Unable to retrieve EntityManagerFactory for unitName xxx</span>
+        </a></li><li>
+        <a class="is-flex" href="#View-example-xhtml-could-not-be-restored">
+        <span class="has-mr-6">2.2.3</span>
+        <span>View /example.xhtml could not be restored.</span>
+        </a></li><li>
+        <a class="is-flex" href="#JNDI-lookup-failed-for-the-resource-Name-Lookup-jdbc-Type">
+        <span class="has-mr-6">2.2.4</span>
+        <span>JNDI lookup failed for the resource: Name: [], Lookup: [jdbc/ ], Type:</span>
+        </a></li></ul></li></ul></li><li>
+        <a class="is-flex" href="#创建-Maven-项目">
+        <span class="has-mr-6">3</span>
+        <span>创建 Maven 项目</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#添加依赖">
+        <span class="has-mr-6">3.1</span>
+        <span>添加依赖</span>
+        </a></li><li>
+        <a class="is-flex" href="#创建两个Module">
+        <span class="has-mr-6">3.2</span>
+        <span>创建两个Module</span>
+        </a></li><li>
+        <a class="is-flex" href="#遇到的问题">
+        <span class="has-mr-6">3.3</span>
+        <span>遇到的问题</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Error-while-binding-JNDI-name-dao-UserDao-dao-UserDao-for-EJB-UserDaoImpl-javax-naming-NameAlreadyBoundException-Use-rebind-to-override">
+        <span class="has-mr-6">3.3.1</span>
+        <span>Error while binding JNDI name dao.UserDao#dao.UserDao for EJB UserDaoImpl,javax.naming.NameAlreadyBoundException: Use rebind to override</span>
+        </a></li><li>
+        <a class="is-flex" href="#javax-el-PropertyNotFoundException-The-class-‘‘-does-not-have-the-property-‘‘">
+        <span class="has-mr-6">3.3.2</span>
+        <span>javax.el.PropertyNotFoundException: The class ‘‘ does not have the property ‘‘.</span>
+        </a></li><li>
+        <a class="is-flex" href="#使用set方法为backing-bean设定值">
+        <span class="has-mr-6">3.3.3</span>
+        <span>使用set方法为backing bean设定值</span>
+        </a></li><li>
+        <a class="is-flex" href="#地址栏地址和实际文件路径不同步">
+        <span class="has-mr-6">3.3.4</span>
+        <span>地址栏地址和实际文件路径不同步</span>
+        </a></li><li>
+        <a class="is-flex" href="#test-判断离奇失效">
+        <span class="has-mr-6">3.3.5</span>
+        <span>test 判断离奇失效</span>
+        </a></li><li>
+        <a class="is-flex" href="#EJB注入不上一直报DAO空指针异常">
+        <span class="has-mr-6">3.3.6</span>
+        <span>@EJB注入不上一直报DAO空指针异常</span>
+        </a></li><li>
+        <a class="is-flex" href="#在JSF中导入并使用Enum">
+        <span class="has-mr-6">3.3.7</span>
+        <span>在JSF中导入并使用Enum</span>
+        </a></li><li>
+        <a class="is-flex" href="#c-choose中有其他分支会造成错误">
+        <span class="has-mr-6">3.3.8</span>
+        <span>c:choose中有其他分支会造成错误</span>
+        </a></li><li>
+        <a class="is-flex" href="#获取Entity的Id一直为null">
+        <span class="has-mr-6">3.3.9</span>
+        <span>获取Entity的Id一直为null</span>
+        </a></li><li>
+        <a class="is-flex" href="#action-test方法调用时出现的异常不会被抛出">
+        <span class="has-mr-6">3.3.10</span>
+        <span>action/test方法调用时出现的异常不会被抛出</span>
+        </a></li><li>
+        <a class="is-flex" href="#JPA不保存Manytomany关系到数据库中">
+        <span class="has-mr-6">3.3.11</span>
+        <span>JPA不保存Manytomany关系到数据库中</span>
+        </a></li><li>
+        <a class="is-flex" href="#保存大字符串">
+        <span class="has-mr-6">3.3.12</span>
+        <span>保存大字符串</span>
+        </a></li><li>
+        <a class="is-flex" href="#Primeface-Tooltip显示位置错误，未解决">
+        <span class="has-mr-6">3.3.13</span>
+        <span>Primeface Tooltip显示位置错误，未解决</span>
+        </a></li><li>
+        <a class="is-flex" href="#Manytomany关系保存主实体后，查询从实体并没有更新">
+        <span class="has-mr-6">3.3.14</span>
+        <span>Manytomany关系保存主实体后，查询从实体并没有更新</span>
+        </a></li><li>
+        <a class="is-flex" href="#简单直接实现搜索框">
+        <span class="has-mr-6">3.3.15</span>
+        <span>简单直接实现搜索框</span>
+        </a></li><li>
+        <a class="is-flex" href="#Test失效错误">
+        <span class="has-mr-6">3.3.16</span>
+        <span>Test失效错误</span>
+        </a></li><li>
+        <a class="is-flex" href="#SPA-多对多关系保存趣事">
+        <span class="has-mr-6">3.3.17</span>
+        <span>SPA 多对多关系保存趣事</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#显示SQL语句以及相应参数">
+        <span class="has-mr-6">3.4</span>
+        <span>显示SQL语句以及相应参数</span>
+        </a></li><li>
+        <a class="is-flex" href="#JMS收到了消息我好快乐。。">
+        <span class="has-mr-6">3.5</span>
+        <span>JMS收到了消息我好快乐。。</span>
+        </a></li><li>
+        <a class="is-flex" href="#slf4j保存日志文件">
+        <span class="has-mr-6">3.6</span>
+        <span>slf4j保存日志文件</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#简介">
+        <span class="has-mr-6">4</span>
+        <span>简介</span>
+        </a></li><li>
+        <a class="is-flex" href="#Persistence-xml-文件">
+        <span class="has-mr-6">5</span>
+        <span>Persistence.xml 文件</span>
+        </a></li><li>
+        <a class="is-flex" href="#参考">
+        <span class="has-mr-6">6</span>
+        <span>参考</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">5</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">10</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/diary/">
+            <span class="level-start">
+                <span class="level-item">diary</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">12</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/news/">
+            <span class="level-start">
+                <span class="level-item">news</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/notes/">
+            <span class="level-start">
+                <span class="level-item">notes</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">13</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/why/">
+            <span class="level-start">
+                <span class="level-item">why</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/diary/received-a-penalty-notice-today/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="今天收到了一张意料之中的罚单">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-06T18:44:16.000Z">2020-03-06</time></div>
+                    <a href="/diary/received-a-penalty-notice-today/" class="has-link-black-ter is-size-6">今天收到了一张意料之中的罚单</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/diary/">diary</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/notes/explore-oracle-cloud/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Explore Oracle Cloud Free tier">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T14:26:49.000Z">2020-02-17</time></div>
+                    <a href="/notes/explore-oracle-cloud/" class="has-link-black-ter is-size-6">Explore Oracle Cloud Free tier</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/notes/">notes</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/diary/dec-record/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="十二月杂记">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-11T19:26:49.000Z">2019-12-11</time></div>
+                    <a href="/diary/dec-record/" class="has-link-black-ter is-size-6">十二月杂记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/diary/">diary</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/diary/nov-record/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="十一月杂记">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-07T19:05:23.000Z">2019-11-07</time></div>
+                    <a href="/diary/nov-record/" class="has-link-black-ter is-size-6">十一月杂记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/diary/">diary</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/diary/records-on-weekend-2019-9-29/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="周末札记(9.29)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-29T09:38:38.000Z">2019-09-29</time></div>
+                    <a href="/diary/records-on-weekend-2019-9-29/" class="has-link-black-ter is-size-6">周末札记(9.29)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/diary/">diary</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/code/">
+                        <span class="tag">code</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/consciousness/">
+                        <span class="tag">consciousness</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/deep-learning/">
+                        <span class="tag">deep learning</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/education/">
+                        <span class="tag">education</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/git-pages/">
+                        <span class="tag">git pages</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/github/">
+                        <span class="tag">github</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hexo/">
+                        <span class="tag">hexo</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/history/">
+                        <span class="tag">history</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/life/">
+                        <span class="tag">life</span>
+                        <span class="tag is-grey">15</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/philosophy/">
+                        <span class="tag">philosophy</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/planet-environment/">
+                        <span class="tag">planet&amp;environment</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/regexp/">
+                        <span class="tag">regexp</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/series/">
+                        <span class="tag">series</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/society/">
+                        <span class="tag">society</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/windows/">
+                        <span class="tag">windows</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/code/" style="font-size: 15px;">code</a> <a href="/tags/consciousness/" style="font-size: 10px;">consciousness</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/education/" style="font-size: 10px;">education</a> <a href="/tags/git-pages/" style="font-size: 10px;">git pages</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/history/" style="font-size: 17.5px;">history</a> <a href="/tags/life/" style="font-size: 20px;">life</a> <a href="/tags/philosophy/" style="font-size: 10px;">philosophy</a> <a href="/tags/planet-environment/" style="font-size: 12.5px;">planet&environment</a> <a href="/tags/regexp/" style="font-size: 10px;">regexp</a> <a href="/tags/series/" style="font-size: 12.5px;">series</a> <a href="/tags/society/" style="font-size: 10px;">society</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a>
+    </div>
+</div>
+
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/diary/received-a-penalty-notice-today/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="今天收到了一张意料之中的罚单">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-06T18:44:16.000Z">2020-03-06</time></div>
+                    <a href="/diary/received-a-penalty-notice-today/" class="has-link-black-ter is-size-6">今天收到了一张意料之中的罚单</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/diary/">diary</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/notes/explore-oracle-cloud/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Explore Oracle Cloud Free tier">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T14:26:49.000Z">2020-02-17</time></div>
+                    <a href="/notes/explore-oracle-cloud/" class="has-link-black-ter is-size-6">Explore Oracle Cloud Free tier</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/notes/">notes</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/diary/dec-record/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="十二月杂记">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-11T19:26:49.000Z">2019-12-11</time></div>
+                    <a href="/diary/dec-record/" class="has-link-black-ter is-size-6">十二月杂记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/diary/">diary</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/diary/nov-record/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="十一月杂记">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-07T19:05:23.000Z">2019-11-07</time></div>
+                    <a href="/diary/nov-record/" class="has-link-black-ter is-size-6">十一月杂记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/diary/">diary</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/diary/records-on-weekend-2019-9-29/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="周末札记(9.29)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-29T09:38:38.000Z">2019-09-29</time></div>
+                    <a href="/diary/records-on-weekend-2019-9-29/" class="has-link-black-ter is-size-6">周末札记(9.29)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/diary/">diary</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/code/">
+                        <span class="tag">code</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/consciousness/">
+                        <span class="tag">consciousness</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/deep-learning/">
+                        <span class="tag">deep learning</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/education/">
+                        <span class="tag">education</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/git-pages/">
+                        <span class="tag">git pages</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/github/">
+                        <span class="tag">github</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hexo/">
+                        <span class="tag">hexo</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/history/">
+                        <span class="tag">history</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/life/">
+                        <span class="tag">life</span>
+                        <span class="tag is-grey">15</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/philosophy/">
+                        <span class="tag">philosophy</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/planet-environment/">
+                        <span class="tag">planet&amp;environment</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/regexp/">
+                        <span class="tag">regexp</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/series/">
+                        <span class="tag">series</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/society/">
+                        <span class="tag">society</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/windows/">
+                        <span class="tag">windows</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/code/" style="font-size: 15px;">code</a> <a href="/tags/consciousness/" style="font-size: 10px;">consciousness</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/education/" style="font-size: 10px;">education</a> <a href="/tags/git-pages/" style="font-size: 10px;">git pages</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/history/" style="font-size: 17.5px;">history</a> <a href="/tags/life/" style="font-size: 20px;">life</a> <a href="/tags/philosophy/" style="font-size: 10px;">philosophy</a> <a href="/tags/planet-environment/" style="font-size: 12.5px;">planet&environment</a> <a href="/tags/regexp/" style="font-size: 10px;">regexp</a> <a href="/tags/series/" style="font-size: 12.5px;">series</a> <a href="/tags/society/" style="font-size: 10px;">society</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a>
+    </div>
+</div>
+
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="在 IntelliJ 中创建并运行EJB项目" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 orangejuice&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                <br>
+                <span id="busuanzi_container_site_uv">
+                Visited by <span id="busuanzi_value_site_uv">0</span> users
+                </span>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300,"hOffset":50,"vOffset":-40},"mobile":{"show":false,"scale":0.5}});</script></body>
+</html>

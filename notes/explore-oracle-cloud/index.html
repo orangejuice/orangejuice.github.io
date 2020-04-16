@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>Explore Oracle Cloud Free tier - Blog of Orangejuice</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="description" content="Already heard about that Oracle Cloud provides free VM, let’s try it today. This post will start from applying an account and until getting your own instance running.">
+<meta name="keywords" content="code">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Explore Oracle Cloud Free tier">
+<meta property="og:url" content="http://orangejuice.cc/notes/explore-oracle-cloud/index.html">
+<meta property="og:site_name" content="Blog of Orangejuice">
+<meta property="og:description" content="Already heard about that Oracle Cloud provides free VM, let’s try it today. This post will start from applying an account and until getting your own instance running.">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://orangejuice.cc/images/og_image.png">
+<meta property="og:updated_time" content="2020-02-18T09:53:29.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Explore Oracle Cloud Free tier">
+<meta name="twitter:description" content="Already heard about that Oracle Cloud provides free VM, let’s try it today. This post will start from applying an account and until getting your own instance running.">
+<meta name="twitter:image" content="http://orangejuice.cc/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-136118548-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-136118548-1');
+</script>
+
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+<link rel="alternate" href="/atom.xml" title="Blog of Orangejuice" type="application/atom+xml">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+                <a class="navbar-item" href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-02-17T14:26:49.000Z">2020-02-17</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/notes/">notes</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7 minutes read (About 1086 words)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span> visits
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Explore Oracle Cloud Free tier
+            
+        </h1>
+        <div class="content">
+            <p>Already heard about that Oracle Cloud provides free VM, let’s try it today. This post will start from applying an account and until getting your own instance running.<br><a id="more"></a> </p>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>As said on oracle’s website, There are several always free benefits for a free tier user account <a href="https://www.oracle.com/ie/cloud/free/#always-free" target="_blank" rel="noopener">1</a>. </p>
+<blockquote>
+<h2 id="What-are-Always-Free-cloud-services"><a href="#What-are-Always-Free-cloud-services" class="headerlink" title="What are Always Free cloud services?"></a>What are Always Free cloud services?</h2><h3 id="Databases"><a href="#Databases" class="headerlink" title="Databases"></a>Databases</h3><p>Your choice of Autonomous Transaction Processing or Autonomous Data Warehouse. </p>
+<p>2 databases total, each with 1 OCPU and 20 GB storage.</p>
+<h3 id="Compute"><a href="#Compute" class="headerlink" title="Compute"></a>Compute</h3><p>2 virtual machines with 1/8 OCPU and 1 GB memory each.</p>
+<h3 id="Storage"><a href="#Storage" class="headerlink" title="Storage"></a>Storage</h3><p>2 Block Volumes, 100 GB total. 10 GB Object Storage. 10 GB Archive Storage.</p>
+<h3 id="Additional-Services"><a href="#Additional-Services" class="headerlink" title="Additional Services"></a>Additional Services</h3><p>Load Balancer: 1 instance, 10 Mbps bandwidth. </p>
+<p>Monitoring: 500 million ingestion datapoints, 1 billion retrieval datapoints. </p>
+<p>Notifications: 1 million sent through https per month, 1,000 sent through email per month.</p>
+<p>Outbound Data Transfer: 10 TB per month.</p>
+</blockquote>
+<h1 id="Register"><a href="#Register" class="headerlink" title="Register"></a>Register</h1><p>In order to use their services, a validate bank card is required, although on the website it says a credit card is necessary, but a debit card is also effective. During the account registering, it will ask you about the home region setting <a href="https://www.oracle.com/cloud/data-regions.html" target="_blank" rel="noopener">2</a>.</p>
+<p><img src="/images/oracle-region.png" alt="Oracle Region Overview"></p>
+<p>You may want to choose one that is near you geographically. Some people said that the free slots might be full on some popular regions, I chose EMEA-UK South, which is working good.</p>
+<p>After applying for an account, it takes some seconds for the oracle system to setup your account credentials and workspace. Then an email will be sent to you saying that your account is ready.</p>
+<p>Congrats! Finally we can start our journey on exploring the real oracle cloud world.</p>
+<h1 id="Create-an-Instance"><a href="#Create-an-Instance" class="headerlink" title="Create an Instance"></a>Create an Instance</h1><p>In the left-side navigator, goto <code>compute &gt; Instances</code>, hit the <code>Create Instance</code> button.</p>
+<p>At first choose an image source that match your taste. After that, you may want to hit <code>Show Shape, Network and Storage Options</code> to change the Boot Volume from default 46.6GB to 100GB, which is the maximum volume that we are allowed to use.  Then add your SSH key, choosing the <code>.pub</code> key file from your computer.</p>
+<blockquote>
+<p><strong>TIP:</strong> in <code>Shown Advanced Options &gt; Networking &gt; Hostname</code>, you can set up a preferred hostname instead of the boring long default one. </p>
+</blockquote>
+<p>We can hit on <code>Create</code> to let oracle preparing our instance now.</p>
+<h1 id="Login-to-the-Instance"><a href="#Login-to-the-Instance" class="headerlink" title="Login to the Instance"></a>Login to the Instance</h1><p>Based on my experience, you need to login as ubuntu / opc on a Ubuntu / CentOS image source.</p>
+<p>A quick reference of the command: <code>$ ssh -l the/path/of/your/private/key &lt;username&gt;@&lt;ip address&gt;</code> </p>
+<h2 id="Allow-to-login-as-the-root-account"><a href="#Allow-to-login-as-the-root-account" class="headerlink" title="Allow to login as the root account"></a>Allow to login as the root account</h2><p>After logged in, the first thing you may want to do is allowing the ssh login of root account. Switched to root user, and just input <code>vi ~/.ssh/authorized_keys</code>, and delete the very first line, which is something looks like:</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">no-port-forwarding,no-agent-forwarding,no-X11-forwarding,command=&quot;echo &apos;Please login as the user \&quot;ubuntu\&quot; rather than the user \&quot;root\&quot;.&apos;;echo;sleep 10&quot; ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDEFYU...</span><br></pre></td></tr></table></figure>
+<h1 id="Manage-the-connectivity"><a href="#Manage-the-connectivity" class="headerlink" title="Manage the connectivity"></a>Manage the connectivity</h1><h2 id="Allow-the-come-in-traffic"><a href="#Allow-the-come-in-traffic" class="headerlink" title="Allow the come-in traffic"></a>Allow the come-in traffic</h2><p>In the Oracle Cloud Console, go to <code>Instances &gt; View instance details</code>, in Instance Information part, click on the Virtual Cloud Network link. Then select <code>Security Lists</code> on the Resources column.</p>
+<p>In <code>Ingress Rules</code>, open the rule detail that you want to make modification, e.g. <code>Ingress Rule 1</code>, change the <code>DESTINATION PORT RANGE</code> from default <code>22</code> to empty.  </p>
+<h2 id="Remove-the-firewall"><a href="#Remove-the-firewall" class="headerlink" title="Remove the firewall"></a>Remove the firewall</h2><p>SSH into the Instance, switch to root user, and input this in the console:</p>
+<figure class="highlight shell hljs"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt purge netfilter-persistent &amp;&amp; reboot    # purge: remove package and configuration</span><br></pre></td></tr></table></figure>
+<h2 id="Preserve-or-change-ip-address"><a href="#Preserve-or-change-ip-address" class="headerlink" title="Preserve or change ip address"></a>Preserve or change ip address</h2><p>In the Oracle Cloud Console, go to <code>Instances &gt; View instance details</code>, find <code>Attached VNICs</code> in the Resources column. Then go <code>View VNIC detials &gt; IP Addresses &gt; Edit</code>.</p>
+<p>Select <code>RESERVED PUBLIC IP</code> to preserve the current IP address.</p>
+<p>To gain a new IP: select <code>NO PUBLIC IP</code> first, then reselect the option you prefer.</p>
+<h1 id="Crate-a-backup-of-the-Block-Volume"><a href="#Crate-a-backup-of-the-Block-Volume" class="headerlink" title="Crate a backup of the Block Volume"></a>Crate a backup of the Block Volume</h1><p>With everything stand by, it’s best to do an important task now – backup our instance. It’s very sweet that Oracle provide everyone with 5 free backup slots. Go to <code>Compute &gt; Boot Volumes</code>, and there will be a <code>Create Manual Backup</code> option available in the context menu of your boot volume. Click it and let Oracle do that for us.</p>
+<p>With that Boot Volume Backup, you can create a boot volume all the time, and create a resurrected instance for that boot volume.</p>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p>After these steps, the instance is well prepared to do anything you want. For example, you may want to bind a domain or subdomain to this server, or deploying a certificate.</p>
+<p>Then, a productive personal used instance is good to go.</p>
+<p>This is my system situation, with a full Ubuntu 18.04 image source after installing apache and docker.</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">System load:  0.0               Processes:              112</span><br><span class="line">Usage of /:   2.1% of 96.75GB   Users logged in:        1</span><br><span class="line">Memory usage: 39%               IP address for ens3:    10.0.0.6</span><br><span class="line">Swap usage:   0%                IP address for docker0: 172.17.0.1</span><br></pre></td></tr></table></figure>
+<p>There are lots of other free service providers that are also available on the Internet <a href="https://github.com/ripienaar/free-for-dev" target="_blank" rel="noopener">3</a>. </p>
+<p>Have to say that being a developer today is so enjoyable and lucky. I didn’t see any other fields that are so openable, so available, and meanwhile, so developed, so advanced and stands in the front of the era. </p>
+<p>It’s a real community that are not separated by geolocation or the power, and see changes happened everyday here.</p>
+<p>It’s the nearest place to see the future coming.</p>
+<p>It’s the best time for each developer to do whatever he/she wants.</p>
+<h2 id="Block-Storage-File-Storage-and-Object-Storage"><a href="#Block-Storage-File-Storage-and-Object-Storage" class="headerlink" title="Block Storage, File Storage and Object Storage"></a>Block Storage, File Storage and Object Storage</h2><p>A question should be wrote down, it is about what’s the difference of these 3 storage mechanisms.</p>
+<p>Based on the findings on the website, I think the essential difference is the communication protocol, which is designed, or to say, used for different aims.</p>
+<ul>
+<li><p>for block storage, the direct interaction between user and hardware is established, user can directly operate on the raw byte data.<br>Although, most of the time we will format it with a particular powerful and user-friendly file system.</p>
+</li>
+<li><p>for file storage, the direct interaction between user and hardware is hidden. User operates on the provided file systems, accessing<br>path tree, folders, write and save files.</p>
+</li>
+<li><p>for object storage, the concepts of path tree, folders or even files are all gone, the only concept left is object. User operates<br>the storage by REST API, GET/POST/PUT/DELETE, or other protocols that just like what you can used to operate objects.</p>
+</li>
+</ul>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/code/">code</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/diary/received-a-penalty-notice-today/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">今天收到了一张意料之中的罚单</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/diary/dec-record/">
+                <span class="level-item">十二月杂记</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<script>
+    var disqus_config = function () {
+        this.page.url = 'http://orangejuice.cc/notes/explore-oracle-cloud/';
+        this.page.identifier = 'notes/explore-oracle-cloud/';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'orangejuicecc' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    
+                        <figure class="image container is-128x128 has-mb-6">
+                            <img class="is-rounded" src="/images/avatar.jpg" alt="orangejuice">
+                        </figure>
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        orangejuice
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Life is made up of accidents and mistakes.
+                    </p>
+                    
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        29
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        4
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        15
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/orangejuice/" target="_blank">
+                Follow</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/orangejuice/">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/atom.xml">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Catalogue
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#Introduction">
+        <span class="has-mr-6">1</span>
+        <span>Introduction</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#What-are-Always-Free-cloud-services">
+        <span class="has-mr-6">1.1</span>
+        <span>What are Always Free cloud services?</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Databases">
+        <span class="has-mr-6">1.1.1</span>
+        <span>Databases</span>
+        </a></li><li>
+        <a class="is-flex" href="#Compute">
+        <span class="has-mr-6">1.1.2</span>
+        <span>Compute</span>
+        </a></li><li>
+        <a class="is-flex" href="#Storage">
+        <span class="has-mr-6">1.1.3</span>
+        <span>Storage</span>
+        </a></li><li>
+        <a class="is-flex" href="#Additional-Services">
+        <span class="has-mr-6">1.1.4</span>
+        <span>Additional Services</span>
+        </a></li></ul></li></ul></li><li>
+        <a class="is-flex" href="#Register">
+        <span class="has-mr-6">2</span>
+        <span>Register</span>
+        </a></li><li>
+        <a class="is-flex" href="#Create-an-Instance">
+        <span class="has-mr-6">3</span>
+        <span>Create an Instance</span>
+        </a></li><li>
+        <a class="is-flex" href="#Login-to-the-Instance">
+        <span class="has-mr-6">4</span>
+        <span>Login to the Instance</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Allow-to-login-as-the-root-account">
+        <span class="has-mr-6">4.1</span>
+        <span>Allow to login as the root account</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Manage-the-connectivity">
+        <span class="has-mr-6">5</span>
+        <span>Manage the connectivity</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Allow-the-come-in-traffic">
+        <span class="has-mr-6">5.1</span>
+        <span>Allow the come-in traffic</span>
+        </a></li><li>
+        <a class="is-flex" href="#Remove-the-firewall">
+        <span class="has-mr-6">5.2</span>
+        <span>Remove the firewall</span>
+        </a></li><li>
+        <a class="is-flex" href="#Preserve-or-change-ip-address">
+        <span class="has-mr-6">5.3</span>
+        <span>Preserve or change ip address</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Crate-a-backup-of-the-Block-Volume">
+        <span class="has-mr-6">6</span>
+        <span>Crate a backup of the Block Volume</span>
+        </a></li><li>
+        <a class="is-flex" href="#Conclusion">
+        <span class="has-mr-6">7</span>
+        <span>Conclusion</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#Block-Storage-File-Storage-and-Object-Storage">
+        <span class="has-mr-6">7.1</span>
+        <span>Block Storage, File Storage and Object Storage</span>
+        </a></li></ul></li></ul>
+        </div>
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">5</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">10</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/diary/">
+            <span class="level-start">
+                <span class="level-item">diary</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">12</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/news/">
+            <span class="level-start">
+                <span class="level-item">news</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/notes/">
+            <span class="level-start">
+                <span class="level-item">notes</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">13</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/why/">
+            <span class="level-start">
+                <span class="level-item">why</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/diary/received-a-penalty-notice-today/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="今天收到了一张意料之中的罚单">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-06T18:44:16.000Z">2020-03-06</time></div>
+                    <a href="/diary/received-a-penalty-notice-today/" class="has-link-black-ter is-size-6">今天收到了一张意料之中的罚单</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/diary/">diary</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/notes/explore-oracle-cloud/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Explore Oracle Cloud Free tier">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T14:26:49.000Z">2020-02-17</time></div>
+                    <a href="/notes/explore-oracle-cloud/" class="has-link-black-ter is-size-6">Explore Oracle Cloud Free tier</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/notes/">notes</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/diary/dec-record/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="十二月杂记">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-11T19:26:49.000Z">2019-12-11</time></div>
+                    <a href="/diary/dec-record/" class="has-link-black-ter is-size-6">十二月杂记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/diary/">diary</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/diary/nov-record/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="十一月杂记">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-07T19:05:23.000Z">2019-11-07</time></div>
+                    <a href="/diary/nov-record/" class="has-link-black-ter is-size-6">十一月杂记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/diary/">diary</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/diary/records-on-weekend-2019-9-29/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="周末札记(9.29)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-29T09:38:38.000Z">2019-09-29</time></div>
+                    <a href="/diary/records-on-weekend-2019-9-29/" class="has-link-black-ter is-size-6">周末札记(9.29)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/diary/">diary</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/code/">
+                        <span class="tag">code</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/consciousness/">
+                        <span class="tag">consciousness</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/deep-learning/">
+                        <span class="tag">deep learning</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/education/">
+                        <span class="tag">education</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/git-pages/">
+                        <span class="tag">git pages</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/github/">
+                        <span class="tag">github</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hexo/">
+                        <span class="tag">hexo</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/history/">
+                        <span class="tag">history</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/life/">
+                        <span class="tag">life</span>
+                        <span class="tag is-grey">15</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/philosophy/">
+                        <span class="tag">philosophy</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/planet-environment/">
+                        <span class="tag">planet&amp;environment</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/regexp/">
+                        <span class="tag">regexp</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/series/">
+                        <span class="tag">series</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/society/">
+                        <span class="tag">society</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/windows/">
+                        <span class="tag">windows</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/code/" style="font-size: 15px;">code</a> <a href="/tags/consciousness/" style="font-size: 10px;">consciousness</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/education/" style="font-size: 10px;">education</a> <a href="/tags/git-pages/" style="font-size: 10px;">git pages</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/history/" style="font-size: 17.5px;">history</a> <a href="/tags/life/" style="font-size: 20px;">life</a> <a href="/tags/philosophy/" style="font-size: 10px;">philosophy</a> <a href="/tags/planet-environment/" style="font-size: 12.5px;">planet&environment</a> <a href="/tags/regexp/" style="font-size: 10px;">regexp</a> <a href="/tags/series/" style="font-size: 12.5px;">series</a> <a href="/tags/society/" style="font-size: 10px;">society</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a>
+    </div>
+</div>
+
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/diary/received-a-penalty-notice-today/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="今天收到了一张意料之中的罚单">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-06T18:44:16.000Z">2020-03-06</time></div>
+                    <a href="/diary/received-a-penalty-notice-today/" class="has-link-black-ter is-size-6">今天收到了一张意料之中的罚单</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/diary/">diary</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/notes/explore-oracle-cloud/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Explore Oracle Cloud Free tier">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T14:26:49.000Z">2020-02-17</time></div>
+                    <a href="/notes/explore-oracle-cloud/" class="has-link-black-ter is-size-6">Explore Oracle Cloud Free tier</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/notes/">notes</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/diary/dec-record/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="十二月杂记">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-11T19:26:49.000Z">2019-12-11</time></div>
+                    <a href="/diary/dec-record/" class="has-link-black-ter is-size-6">十二月杂记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/diary/">diary</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/diary/nov-record/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="十一月杂记">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-07T19:05:23.000Z">2019-11-07</time></div>
+                    <a href="/diary/nov-record/" class="has-link-black-ter is-size-6">十一月杂记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/diary/">diary</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/diary/records-on-weekend-2019-9-29/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="周末札记(9.29)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-29T09:38:38.000Z">2019-09-29</time></div>
+                    <a href="/diary/records-on-weekend-2019-9-29/" class="has-link-black-ter is-size-6">周末札记(9.29)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/diary/">diary</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/code/">
+                        <span class="tag">code</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/consciousness/">
+                        <span class="tag">consciousness</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/deep-learning/">
+                        <span class="tag">deep learning</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/education/">
+                        <span class="tag">education</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/git-pages/">
+                        <span class="tag">git pages</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/github/">
+                        <span class="tag">github</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hexo/">
+                        <span class="tag">hexo</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/history/">
+                        <span class="tag">history</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/life/">
+                        <span class="tag">life</span>
+                        <span class="tag is-grey">15</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/philosophy/">
+                        <span class="tag">philosophy</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/planet-environment/">
+                        <span class="tag">planet&amp;environment</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/regexp/">
+                        <span class="tag">regexp</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/series/">
+                        <span class="tag">series</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/society/">
+                        <span class="tag">society</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/windows/">
+                        <span class="tag">windows</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/code/" style="font-size: 15px;">code</a> <a href="/tags/consciousness/" style="font-size: 10px;">consciousness</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/education/" style="font-size: 10px;">education</a> <a href="/tags/git-pages/" style="font-size: 10px;">git pages</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/history/" style="font-size: 17.5px;">history</a> <a href="/tags/life/" style="font-size: 20px;">life</a> <a href="/tags/philosophy/" style="font-size: 10px;">philosophy</a> <a href="/tags/planet-environment/" style="font-size: 12.5px;">planet&environment</a> <a href="/tags/regexp/" style="font-size: 10px;">regexp</a> <a href="/tags/series/" style="font-size: 12.5px;">series</a> <a href="/tags/society/" style="font-size: 10px;">society</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a>
+    </div>
+</div>
+
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="Explore Oracle Cloud Free tier" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 orangejuice&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                <br>
+                <span id="busuanzi_container_site_uv">
+                Visited by <span id="busuanzi_value_site_uv">0</span> users
+                </span>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300,"hOffset":50,"vOffset":-40},"mobile":{"show":false,"scale":0.5}});</script></body>
+</html>

@@ -1,0 +1,1083 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/notes/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash hljs"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="hljs-string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash hljs"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash hljs"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash hljs"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo Blog Establishing Process</title>
+    <url>/notes/blog-system-establish-process/</url>
+    <content><![CDATA[<h1 id="Deploy-Hexo-site-files-amp-Install-Next-Theme"><a href="#Deploy-Hexo-site-files-amp-Install-Next-Theme" class="headerlink" title="Deploy Hexo site files &amp; Install Next-Theme"></a>Deploy Hexo site files &amp; Install Next-Theme</h1><p>Firstly, install node.js as the necessary runtime environment for javascript. Then we turn to the folder where we want to put the blog files in and run commands below:</p>
+<figure class="highlight bash hljs"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init blog</span><br><span class="line"><span class="hljs-built_in">cd</span> blog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p>Congrats! Our blog is available now<a id="more"></a>, but it’s running with the default theme and of course we need something different. Next is a great open source theme hosting on github. some ways to get the theme but I will download the theme files directly from <a href="https://github.com/theme-next/hexo-theme-next/releases" target="_blank" rel="noopener">https://github.com/theme-next/hexo-theme-next/releases</a>.</p>
+<p>then, decompress the files into the folder <code>themes</code>, which in the folder you just opened.</p>
+<figure class="highlight plain hljs"><table><tr><td class="code"><pre><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
+<p>Alright, now we can change the theme of Hexo to Next-Theme. In <code>_config.yml</code> file, find this line: <code>theme: xxx</code>, make it <code>theme: next</code>.</p>
+<figure class="highlight yml hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-comment"># Extensions</span></span><br><span class="line"><span class="hljs-comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="hljs-comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="hljs-attr">theme:</span> <span class="hljs-string">next</span></span><br></pre></td></tr></table></figure>
+<p>4 theme schemes can be chose in Next-Theme, as we can see in <code>themes/next/_config.yml</code>, find this line: <code>scheme: xxx</code>, leave anyone you like without <code>#</code>.</p>
+<figure class="highlight yml hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-comment"># Schemes</span></span><br><span class="line"><span class="hljs-comment">#scheme: Muse</span></span><br><span class="line"><span class="hljs-comment">#scheme: Mist</span></span><br><span class="line"><span class="hljs-comment">#scheme: Pisces</span></span><br><span class="line"><span class="hljs-attr">scheme:</span> <span class="hljs-string">Gemini</span></span><br></pre></td></tr></table></figure>
+<p>Done. If you want to preview the effect just run <code>hexo server</code> or <code>hexo s</code> in blog folder. </p>
+<h1 id="Customize-the-appearance"><a href="#Customize-the-appearance" class="headerlink" title="Customize the appearance"></a>Customize the appearance</h1><h2 id="change-avatar"><a href="#change-avatar" class="headerlink" title="change avatar"></a>change avatar</h2><p>Prepare an image of the avatar and place the image in the <code>source/images/</code> folder, then modify the config file <code>themes/next/_config.yml</code>:</p>
+<figure class="highlight yml hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-comment"># Sidebar Avatar</span></span><br><span class="line"><span class="hljs-attr">avatar:</span></span><br><span class="line">  <span class="hljs-comment"># In theme directory (source/images): /images/avatar.gif</span></span><br><span class="line">  <span class="hljs-comment"># In site directory (source/uploads): /uploads/avatar.gif</span></span><br><span class="line">  <span class="hljs-comment"># You can also use other linking images.</span></span><br><span class="line"><span class="hljs-attr">  url:</span> <span class="hljs-string">/images/avatar.jpg</span></span><br><span class="line">  <span class="hljs-comment"># If true, the avatar would be dispalyed in circle.</span></span><br><span class="line"><span class="hljs-attr">  rounded:</span> <span class="hljs-literal">true</span></span><br><span class="line">  <span class="hljs-comment"># The value of opacity should be choose from 0 to 1 to set the opacity of the avatar.</span></span><br><span class="line"><span class="hljs-attr">  opacity:</span> <span class="hljs-number">1</span></span><br><span class="line">  <span class="hljs-comment"># If true, the avatar would be rotated with the cursor.</span></span><br><span class="line"><span class="hljs-attr">  rotated:</span> <span class="hljs-literal">false</span></span><br></pre></td></tr></table></figure>
+<p>Just change url value to the address of the image.</p>
+<h2 id="generate-and-add-sub-pages"><a href="#generate-and-add-sub-pages" class="headerlink" title="generate and add sub-pages"></a>generate and add sub-pages</h2><p>Hexo generates only two pages by default, namely the home page and archive page. In <code>themes/next/_config.yml</code> we can find:</p>
+<figure class="highlight yml hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-attr">menu:</span></span><br><span class="line"><span class="hljs-attr">  home:</span> <span class="hljs-string">/</span> <span class="hljs-string">||</span> <span class="hljs-string">home</span></span><br><span class="line"><span class="hljs-attr">  about:</span> <span class="hljs-string">/about/</span> <span class="hljs-string">||</span> <span class="hljs-string">user</span></span><br><span class="line"><span class="hljs-attr">  tags:</span> <span class="hljs-string">/tags/</span> <span class="hljs-string">||</span> <span class="hljs-string">tags</span></span><br><span class="line"><span class="hljs-attr">  categories:</span> <span class="hljs-string">/categories/</span> <span class="hljs-string">||</span> <span class="hljs-string">th</span></span><br><span class="line"><span class="hljs-attr">  archives:</span> <span class="hljs-string">/archives/</span> <span class="hljs-string">||</span> <span class="hljs-string">archive</span></span><br><span class="line">  <span class="hljs-comment">#schedule: /schedule/ || calendar</span></span><br><span class="line">  <span class="hljs-comment">#sitemap: /sitemap.xml || sitemap</span></span><br><span class="line">  <span class="hljs-comment">#commonweal: /404/ || heartbeat</span></span><br></pre></td></tr></table></figure>
+<p>Here I have removed the comments of which page I need, and you can consider the pages you need. At this time, we can see these pages show up on our homepage navigator.</p>
+<p>Go back to blog folder, run <code>hexo new page about</code>, <code>hexo new page tags</code>, <code>hexo new page categories</code> individually. <strong>For tags and categories page file, you need to add one line <code>type: &quot;categories&quot;</code> or <code>type: &quot;tags&quot;</code> in Front Matter to let the Hexo know what this page it is.</strong> </p>
+<p>Ok, about page can be modified freely now, but tags and categories are not our jobs because Hexo will help us to manage these pages automatically ヾ(•ω•`)o.</p>
+<blockquote>
+<p>Tips: <code>comments: false</code> flag can keep one page out of comment feature.</p>
+</blockquote>
+<h2 id="search-feature"><a href="#search-feature" class="headerlink" title="search feature"></a>search feature</h2><p>It’s not available out-of-box, we need do some work.</p>
+<p>Run  <code>npm install hexo-generator-searchdb --save</code> under the blog folder. Then find <code>search</code> in <code>_config.yml</code>, add the following at the end:</p>
+<figure class="highlight yml hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-attr">search:</span></span><br><span class="line"><span class="hljs-attr">  path:</span> <span class="hljs-string">search.xml</span></span><br><span class="line"><span class="hljs-attr">  field:</span> <span class="hljs-string">post</span></span><br><span class="line"><span class="hljs-attr">  format:</span> <span class="hljs-string">html</span></span><br><span class="line"><span class="hljs-attr">  limit:</span> <span class="hljs-number">10000</span></span><br></pre></td></tr></table></figure>
+<p>and <code>local_seaerch</code> in <code>themes/next/_config.yml</code>:</p>
+<figure class="highlight yml hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-comment"># Local search</span></span><br><span class="line"><span class="hljs-attr">local_search:</span></span><br><span class="line"><span class="hljs-attr">  enable:</span> <span class="hljs-literal">true</span></span><br></pre></td></tr></table></figure>
+<h2 id="RSS-feed"><a href="#RSS-feed" class="headerlink" title="RSS feed"></a>RSS feed</h2><p>run <code>npm install --save hexo-generator-feed</code> in blog folder, then open and append these content in <code>_config.yml</code>:</p>
+<figure class="highlight yml hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-comment"># Extensions</span></span><br><span class="line"><span class="hljs-comment">## Plugins: http://hexo.io/plugins/</span></span><br><span class="line"><span class="hljs-attr">plugins:</span> <span class="hljs-string">hexo-generate-feed</span></span><br></pre></td></tr></table></figure>
+<p>and then find this line and modify it in <code>themes/next/_config.yml</code>:</p>
+<figure class="highlight yml hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-comment"># Set rss to false to disable feed link.</span></span><br><span class="line"><span class="hljs-comment"># Leave rss as empty to use site's feed link, and install hexo-generator-feed: `npm install hexo-generator-feed --save`.</span></span><br><span class="line"><span class="hljs-comment"># Set rss to specific value if you have burned your feed already.</span></span><br><span class="line"><span class="hljs-attr">rss:</span> <span class="hljs-string">/atom.xml</span></span><br></pre></td></tr></table></figure>
+<h2 id="fork-me-on-github"><a href="#fork-me-on-github" class="headerlink" title="fork me on github"></a>fork me on github</h2><p>Choose a favorite icon <a href="http://tholman.com/github-corners/" target="_blank" rel="noopener">here (image version)</a> or <a href="https://github.com/blog/273-github-ribbons" target="_blank" rel="noopener">here (text version)</a>, then copy the code next to the icon and put it in<code>themes/next/layout/_layout.swig</code> under <code>&lt;div class=&quot;headband&quot;&gt;&lt;/div&gt;</code>.</p>
+<h2 id="word-count-and-reading-time"><a href="#word-count-and-reading-time" class="headerlink" title="word count and reading time"></a>word count and reading time</h2><p>run <code>npm install hexo-symbols-count-time --save</code> in blog folder. Go to the site configuration file <code>_config.yml</code> and copy the following code to the end:</p>
+<figure class="highlight yml hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-attr">symbols_count_time:</span></span><br><span class="line"><span class="hljs-attr">  symbols:</span> <span class="hljs-literal">true</span></span><br><span class="line"><span class="hljs-attr">  time:</span> <span class="hljs-literal">true</span></span><br><span class="line"><span class="hljs-attr">  total_symbols:</span> <span class="hljs-literal">true</span></span><br><span class="line"><span class="hljs-attr">  total_time:</span> <span class="hljs-literal">true</span></span><br></pre></td></tr></table></figure>
+<p>then find these in <code>themes/next/_config.yml</code>:</p>
+<figure class="highlight yml hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-comment"># Post wordcount display settings</span></span><br><span class="line"><span class="hljs-comment"># Dependencies: https://github.com/theme-next/hexo-symbols-count-time</span></span><br><span class="line"><span class="hljs-attr">symbols_count_time:</span></span><br><span class="line"><span class="hljs-attr">  separated_meta:</span> <span class="hljs-literal">true</span></span><br><span class="line"><span class="hljs-attr">  item_text_post:</span> <span class="hljs-literal">true</span></span><br><span class="line"><span class="hljs-attr">  item_text_total:</span> <span class="hljs-literal">false</span></span><br><span class="line"><span class="hljs-attr">  awl:</span> <span class="hljs-number">4</span></span><br><span class="line"><span class="hljs-attr">  wpm:</span> <span class="hljs-number">275</span></span><br></pre></td></tr></table></figure>
+<p>more explains are available on github <a href="https://github.com/theme-next/hexo-symbols-count-time" target="_blank" rel="noopener">here</a>.</p>
+<h2 id="visitors-view-counter"><a href="#visitors-view-counter" class="headerlink" title="visitors/view counter"></a>visitors/view counter</h2><ol>
+<li><p>total visitors number and total views.</p>
+<p>open <code>themes/next/_config.yml</code> file and find the line <code>busuanzi_count</code>:</p>
+<figure class="highlight yml hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-attr">busuanzi_count:</span></span><br><span class="line"><span class="hljs-attr">  enable:</span> <span class="hljs-literal">true</span></span><br><span class="line"><span class="hljs-attr">  total_visitors:</span> <span class="hljs-literal">true</span></span><br><span class="line"><span class="hljs-attr">  total_visitors_icon:</span> <span class="hljs-string">user</span></span><br><span class="line"><span class="hljs-attr">  total_views:</span> <span class="hljs-literal">true</span></span><br><span class="line"><span class="hljs-attr">  total_views_icon:</span> <span class="hljs-string">eye</span></span><br><span class="line"><span class="hljs-attr">  post_views:</span> <span class="hljs-literal">false</span></span><br><span class="line"><span class="hljs-attr">  post_views_icon:</span> <span class="hljs-string">eye</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>view number per post.</p>
+<p>in this case we use leancloud as counter service provider. Apply an account and create a project, then put <code>app_id</code> and <code>app_key</code> here.</p>
+<figure class="highlight yml hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-comment"># Show number of visitors to each article.</span></span><br><span class="line"><span class="hljs-comment"># You can visit https://leancloud.cn to get AppID and AppKey.</span></span><br><span class="line"><span class="hljs-attr">leancloud_visitors:</span></span><br><span class="line"><span class="hljs-attr">  enable:</span> <span class="hljs-literal">true</span></span><br><span class="line"><span class="hljs-attr">  app_id:</span> <span class="hljs-string">&#123;leancloud_appid&#125;</span> <span class="hljs-comment">#&lt;app_id&gt;</span></span><br><span class="line"><span class="hljs-attr">  app_key:</span> <span class="hljs-string">&#123;leancloud_appkey&#125;</span> <span class="hljs-comment">#&lt;app_key&gt;</span></span><br><span class="line">  <span class="hljs-comment"># Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security</span></span><br><span class="line">  <span class="hljs-comment"># If you don't care about security in leancloud counter and just want to use it directly</span></span><br><span class="line">  <span class="hljs-comment"># (without hexo-leancloud-counter-security plugin), set `security` to `false`.</span></span><br><span class="line"><span class="hljs-attr">  security:</span> <span class="hljs-literal">true</span></span><br><span class="line"><span class="hljs-attr">  betterPerformance:</span> <span class="hljs-literal">false</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>   if security set to <code>true</code>, run <code>npm install hexo-symbols-count-time --save</code> in blog folder to install the dependency.</p>
+<blockquote>
+<p>Tips: hexo-leancloud-counter-security is to make sure the data cannot be modified by others intentionally. refer to their document for more information.</p>
+</blockquote>
+<h2 id="comment-feature"><a href="#comment-feature" class="headerlink" title="comment feature"></a>comment feature</h2><p>Valine is a service based on Leancloud to provide comment storage. We use Valine in this case but you can use any other implementations freely.</p>
+<figure class="highlight yml hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-comment"># Valine</span></span><br><span class="line"><span class="hljs-comment"># You can get your appid and appkey from https://leancloud.cn</span></span><br><span class="line"><span class="hljs-comment"># More info available at https://valine.js.org</span></span><br><span class="line"><span class="hljs-attr">valine:</span></span><br><span class="line"><span class="hljs-attr">  enable:</span> <span class="hljs-literal">true</span> <span class="hljs-comment"># When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.</span></span><br><span class="line"><span class="hljs-attr">  appid:</span> <span class="hljs-string">&#123;leancloud_appid&#125;</span> <span class="hljs-comment"># your leancloud application appid</span></span><br><span class="line"><span class="hljs-attr">  appkey:</span> <span class="hljs-string">&#123;leancloud_appkey&#125;</span> <span class="hljs-comment"># your leancloud application appkey</span></span><br><span class="line"><span class="hljs-attr">  notify:</span> <span class="hljs-literal">false</span> <span class="hljs-comment"># mail notifier, See: https://github.com/xCss/Valine/wiki</span></span><br><span class="line"><span class="hljs-attr">  verify:</span> <span class="hljs-literal">false</span> <span class="hljs-comment"># Verification code</span></span><br><span class="line"><span class="hljs-attr">  placeholder:</span> <span class="hljs-string">Just</span> <span class="hljs-string">go</span> <span class="hljs-string">go</span> <span class="hljs-comment"># comment box placeholder</span></span><br><span class="line"><span class="hljs-attr">  avatar:</span> <span class="hljs-string">mm</span> <span class="hljs-comment"># gravatar style</span></span><br><span class="line"><span class="hljs-attr">  guest_info:</span> <span class="hljs-string">nick,mail,link</span> <span class="hljs-comment"># custom comment header</span></span><br><span class="line"><span class="hljs-attr">  pageSize:</span> <span class="hljs-number">10</span> <span class="hljs-comment"># pagination size</span></span><br><span class="line"><span class="hljs-attr">  visitor:</span> <span class="hljs-literal">false</span> <span class="hljs-comment"># leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html</span></span><br><span class="line"><span class="hljs-attr">  comment_count:</span> <span class="hljs-literal">true</span> <span class="hljs-comment"># if false, comment count will only be displayed in post page, not in home page</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Tips: you don’t need to apply new <code>leancloud_appid</code> and <code>leancloud_appkey</code> if you have do so in the last step.</p>
+</blockquote>
+<h2 id="copyright-per-post"><a href="#copyright-per-post" class="headerlink" title="copyright per post"></a>copyright per post</h2><p>open the file <code>_config.yml</code>, and find follow content:</p>
+<figure class="highlight yml hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-comment"># Creative Commons 4.0 International License.</span></span><br><span class="line"><span class="hljs-comment"># See: https://creativecommons.org/share-your-work/licensing-types-examples</span></span><br><span class="line"><span class="hljs-comment"># Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero</span></span><br><span class="line"><span class="hljs-comment"># You can set a language value if you prefer a translated version of CC license.</span></span><br><span class="line"><span class="hljs-comment"># CC licenses are available in 39 languages, where you can find the specific and correct abbreviation you need.</span></span><br><span class="line"><span class="hljs-comment"># Valid values of language: deed.zh, deed.fr, deed.de , etc.</span></span><br><span class="line"><span class="hljs-attr">creative_commons:</span></span><br><span class="line"><span class="hljs-attr">  license:</span> <span class="hljs-string">by-nc-sa</span></span><br><span class="line"><span class="hljs-attr">  sidebar:</span> <span class="hljs-literal">false</span></span><br><span class="line"><span class="hljs-attr">  post:</span> <span class="hljs-literal">true</span></span><br><span class="line"><span class="hljs-attr">  language:</span></span><br></pre></td></tr></table></figure>
+<p>change post value from <code>false</code> to <code>ture</code> it will work.</p>
+<h2 id="live2d-pet"><a href="#live2d-pet" class="headerlink" title="live2d pet"></a>live2d pet</h2><p>It is a pet living on our pages and steering at the mouse cursor where you are pointing at. Very lovely.</p>
+<p>Details can be available <a href="https://github.com/EYHN/hexo-helper-live2d" target="_blank" rel="noopener">here</a>, we won’t talk more on this.</p>
+<p><img src="/images/1552434468503.png" alt="1552434468503"></p>
+<h1 id="Setup-travis-ci-auto-deploy"><a href="#Setup-travis-ci-auto-deploy" class="headerlink" title="Setup travis-ci auto deploy"></a>Setup travis-ci auto deploy</h1><p>The process of registering for this website is omitted. :), here attached is the <code>.travis.yml</code> of mine blog.</p>
+<figure class="highlight yml hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-attr">language:</span> <span class="hljs-string">node_js</span></span><br><span class="line"><span class="hljs-attr">node_js:</span> <span class="hljs-string">stable</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-attr">branches:</span></span><br><span class="line"><span class="hljs-attr">  only:</span></span><br><span class="line"><span class="hljs-bullet">  -</span> <span class="hljs-string">source</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># Start: Build Lifecycle</span></span><br><span class="line"><span class="hljs-attr">install:</span></span><br><span class="line"><span class="hljs-bullet">  -</span> <span class="hljs-string">npm</span> <span class="hljs-string">install</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-attr">cache:</span></span><br><span class="line"><span class="hljs-attr">  directories:</span></span><br><span class="line"><span class="hljs-bullet">    -</span> <span class="hljs-string">node_modules</span></span><br><span class="line"><span class="hljs-bullet">    -</span> <span class="hljs-string">live2d_models</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-attr">before_script:</span></span><br><span class="line"><span class="hljs-bullet">  -</span> <span class="hljs-string">sed</span> <span class="hljs-bullet">-i</span> <span class="hljs-string">"s~&#123;github_client_id&#125;~$&#123;github_client_id&#125;~"</span> <span class="hljs-string">./themes/next/_config.yml</span></span><br><span class="line"><span class="hljs-bullet">  -</span> <span class="hljs-string">sed</span> <span class="hljs-bullet">-i</span> <span class="hljs-string">"s~&#123;github_client_secret&#125;~$&#123;github_client_secret&#125;~"</span> <span class="hljs-string">./themes/next/_config.yml</span></span><br><span class="line"><span class="hljs-bullet">  -</span> <span class="hljs-string">sed</span> <span class="hljs-bullet">-i</span> <span class="hljs-string">"s~&#123;valine_appid&#125;~$&#123;valine_appid&#125;~"</span> <span class="hljs-string">./themes/next/_config.yml</span></span><br><span class="line"><span class="hljs-bullet">  -</span> <span class="hljs-string">sed</span> <span class="hljs-bullet">-i</span> <span class="hljs-string">"s~&#123;valine_appkey&#125;~$&#123;valine_appkey&#125;~"</span> <span class="hljs-string">./themes/next/_config.yml</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-attr">script:</span></span><br><span class="line"><span class="hljs-bullet">  -</span> <span class="hljs-string">hexo</span> <span class="hljs-string">clean</span></span><br><span class="line"><span class="hljs-bullet">  -</span> <span class="hljs-string">hexo</span> <span class="hljs-string">generate</span></span><br><span class="line">  <span class="hljs-comment"># - hexo lc-counter register baaas18vGYfaega ggsdfaeas12b31saY&amp;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-attr">after_script:</span></span><br><span class="line"><span class="hljs-bullet">  -</span> <span class="hljs-string">sed</span> <span class="hljs-bullet">-i</span> <span class="hljs-string">"s~https://github.com/orangejuice/orangejuice.github.io.git~https://$&#123;ACCESS_TOKEN&#125;@github.com/orangejuice/orangejuice.github.io.git~"</span> <span class="hljs-string">_config.yml</span></span><br><span class="line"><span class="hljs-bullet">  -</span> <span class="hljs-string">hexo</span> <span class="hljs-string">deploy</span></span><br></pre></td></tr></table></figure>
+<p>With the help of it, we submit and push the codes to <code>source</code> branch, and travis-ci will help us to deploy it to <code>master</code> branch.</p>
+<h1 id="Binding-custom-domain-name"><a href="#Binding-custom-domain-name" class="headerlink" title="Binding custom domain name"></a>Binding custom domain name</h1><h2 id="setup-domain-name-resolution"><a href="#setup-domain-name-resolution" class="headerlink" title="setup domain name resolution"></a>setup domain name resolution</h2><p>First, select the domain name resolution function from your domain name registry. Record type (as shown in the figure) we can choose A or CNAME.</p>
+<p>Tips: you can always get the ip address of one domain name by <code>nslookup example.com</code> command in windows.</p>
+<blockquote>
+<p>note: choose A record is better, if not there will be some problems such as the website can not forward to https site automatically.</p>
+</blockquote>
+<p><img src="/images/1552430834238.png" alt="1552430834238"></p>
+<h2 id="config-github-project-settings"><a href="#config-github-project-settings" class="headerlink" title="config github project settings"></a>config github project settings</h2><ol>
+<li>modify custom domain value</li>
+<li>enforce https to ensure security.</li>
+</ol>
+<p><img src="/images/1552430629201.png" alt="1552430629201"></p>
+<h1 id="Start-writing"><a href="#Start-writing" class="headerlink" title="Start writing"></a>Start writing</h1><ol>
+<li><code>hexo new post &quot;your post title&quot;</code></li>
+<li>modify the post content.</li>
+<li>commit and push the file.</li>
+</ol>
+<blockquote>
+<p>Tips: there are some tricks to help us organize posts more efficiently. For example, how to keep out the draft out of rendering? you can find more on the docs of Hexo: <a href="https://hexo.io/docs/writing" target="_blank" rel="noopener">https://hexo.io/docs/writing</a></p>
+</blockquote>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
+<li>Hexo docs   <a href="https://hexo.io/docs/" target="_blank" rel="noopener">https://hexo.io/docs/</a></li>
+<li>Next-Theme Github homepage   <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">https://github.com/theme-next/hexo-theme-next</a></li>
+<li>summarize of hexo blog establishing process  <a href="http://eternalzttz.com/hexo-next.html" target="_blank" rel="noopener">http://eternalzttz.com/hexo-next.html</a></li>
+<li>cloudflare <a href="https://medium.com/tool-s/將你的網站加上-https-cloudflare-6569f5365c7d" target="_blank" rel="noopener">https://medium.com/tool-s/將你的網站加上-https-cloudflare-6569f5365c7d</a></li>
+<li>domain name resolution <a href="https://segmentfault.com/a/1190000011203711" target="_blank" rel="noopener">https://segmentfault.com/a/1190000011203711</a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>github</tag>
+        <tag>git pages</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>正则魅力 RegExp</title>
+    <url>/notes/charm-of-regexp/</url>
+    <content><![CDATA[<p>从pdf中复制到一堆原文，失了表格的格式，变成了这样的相貌：</p>
+<p><img src="/images/1552413925437.png" alt="1552413925437"></p>
+<a id="more"></a>
+<p>这时候，按 <code>Crtl</code> + <code>H</code> 出现查找替换工具，就用最简单直接的语法吧。</p>
+<p><img src="/images/1552413973793.png" alt="1552413973793"></p>
+<p>执行替换后，世界清净了。</p>
+<p><img src="/images/1552414043628.png" alt="1552414043628"></p>
+<p>给生活增添惊喜。<code>╰(*°▽°*)╯</code></p>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>regexp</tag>
+        <tag>code</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>错觉 - 教育现状</title>
+    <url>/why/current-status-of-education/</url>
+    <content><![CDATA[<p>大学专科以上学历占人口总数约为12.41%</p>
+<p>计算过程如下：</p>
+<p>1、参考2016年国家统计年鉴数据，2015年的数据。</p>
+<a id="more"></a>
+<p>大学专科+大学本科+研究生总人数=1351837+1175198+116455=2643490（人）</p>
+<p>2、以上结果是全国抽样比为1.55%的人数，所以全国的大学生总人数为：</p>
+<p>2643490/1.55%≈170547742（人）</p>
+<p>3、2015年全国年末总人数为137462（万人）</p>
+<p>4、大学生比例=170547742/1374620000≈12.41%</p>
+<p>另一方面，在年轻群体中大学生比例得到了十足可观的提升。</p>
+<p>source: <a href="https://www.zhihu.com/question/53053402/answer/252775870" target="_blank" rel="noopener">知乎-中国大学生占全国人口的比例是多少？</a></p>
+]]></content>
+      <categories>
+        <category>why</category>
+      </categories>
+      <tags>
+        <tag>education</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[笔记]《生命·觉者》梁冬对话系列</title>
+    <url>/notes/life-conscious-man-series/</url>
+    <content><![CDATA[<h1 id="郦波（觉，醒，儒释道）"><a href="#郦波（觉，醒，儒释道）" class="headerlink" title="郦波（觉，醒，儒释道）"></a>郦波（觉，醒，儒释道）</h1><ul>
+<li>寐：劳作之后倒头就睡。睡：坐寐，眠：息目。息目：眼睛关上，不再对外，反过来对内。</li>
+<li>觉：沉睡之后醒来。醒：沉醉之后神智渐清晰。</li>
+<li>觉是通过感知和体验认识到深刻的真理与规律。你可能有聪明，但是不叫智慧。</li>
+<li>静坐的最高状态，人生的最高状态：人心惟危 道心惟微 惟精惟一 允执厥中。</li>
+<li>微：隐形（必须自审，自省），精：纯而不杂，一：正而不离，允：信，诚，与天地大道合一，天人合一。</li>
+<li>儒释道最终的心灵归宿：打开内在的心灵世界。</li>
+<li>年轻一代，能力很强，视野非常广阔，格局好像很大，地球都成村了嘛，最大的危机就是内心的精神世界日渐萎缩。<a id="more"></a></li>
+<li>志：不是一个念头，不是我要做什么人。心之所之，心要去的地方，不是外在的人要去的地方。</li>
+<li>生活即修行，工作即修行。心上学，事上练。你亲近道，让道来染你。</li>
+<li>有一种意志不是人类的意志而是宇宙的意志，突破时间的局限，不朽。</li>
+<li>观自在菩萨，行深般若波罗蜜多时，照见五蕴皆空，度一切苦厄。</li>
+<li>入乎其内，出乎其外，驭乎其上。</li>
+<li>觉察，观想，觉知，理性。</li>
+<li>终极归宿你看不到时，现实的磨难不是三座大山是无数座大山。</li>
+<li>阳明心学：心外无物是原点，构建我的精神世界空间。致良知是归宿。路上只需要一样东西，事上练，所有的事情就可以坦坦荡荡的做。</li>
+<li>随时清空自我，看看一草一木一花一叶一云。</li>
+<li>知识分子最大的标签是理性精神，不是知识，不是知道。</li>
+<li>欲望，情绪，习性。</li>
+</ul>
+<h1 id="尹烨"><a href="#尹烨" class="headerlink" title="尹烨"></a>尹烨</h1><h1 id="陈履安"><a href="#陈履安" class="headerlink" title="陈履安"></a>陈履安</h1><h1 id="蔡志忠"><a href="#蔡志忠" class="headerlink" title="蔡志忠"></a>蔡志忠</h1><h1 id="潘宗光"><a href="#潘宗光" class="headerlink" title="潘宗光"></a>潘宗光</h1><h1 id="彼得·圣吉-教育"><a href="#彼得·圣吉-教育" class="headerlink" title="彼得·圣吉(教育)"></a>彼得·圣吉(教育)</h1><ul>
+<li>all these problems are created by very highly educated people</li>
+<li>leaders are people who have the courage to step ahead or helping to shape the future. they have a deep sense of commitment beyond themselves.</li>
+<li>money is a means, not the end.</li>
+</ul>
+<h1 id="斯蒂芬·吉利根-催眠，潜意识"><a href="#斯蒂芬·吉利根-催眠，潜意识" class="headerlink" title="斯蒂芬·吉利根(催眠，潜意识)"></a>斯蒂芬·吉利根(催眠，潜意识)</h1><ul>
+<li>we need human connections most of all.</li>
+<li>you are part of the universe, and the universe is part of you.</li>
+<li>life is to be enjoy. no matter how difficult your life is, you have been given this great gift.</li>
+<li>it’s still make, it doesn’t get rid of the fact that one part of life is always very very hard, they wasn’t avoiding some of the hard trips of life. if you are a living person, you’ll experience a lot of suffer, this is part of every human life. but if you can realize, even meet the suffer, i can be grateful, and enjoy this life, then everything is ok.</li>
+</ul>
+<h1 id="托马斯·希伯尔-道德经"><a href="#托马斯·希伯尔-道德经" class="headerlink" title="托马斯·希伯尔(道德经)"></a>托马斯·希伯尔(道德经)</h1><ul>
+<li>their break-troughs that came for them out of space.</li>
+<li>when the hand is as fast as the flow of the river, you don’t feel the water, because there is no pressure here and there is no pressure there. so i don’t push life, and i don’t stop life, as fast as life.</li>
+<li>when people are separated from their source, from the dao, they always feel there are something lacking.</li>
+<li>in many families when there is trauma in the family, the hundred percent energy already reduced, because the parents cannot channel the energy, the kids have little energy. not enough body contact, not enough emotional warmth, not enough protection, not enough solving problem together, time of attention and love, and then we create, many people walk through their life later on with the feeling there is always something is missing.</li>
+<li>in the dao, because it gives birth to everything there’s natural abundance, and this is the basis of generosity, this is the basis of giving, the culture to everybody, and this is the basis of happiness.</li>
+<li>make more and more people feel connected to the abundant source of energy.</li>
+</ul>
+<h1 id="久保田競-脑科学，孩子"><a href="#久保田競-脑科学，孩子" class="headerlink" title="久保田競(脑科学，孩子)"></a>久保田競(脑科学，孩子)</h1><ul>
+<li>小孩出生以后，就是要多跟小孩玩，就是要多跟他玩“藏猫儿”的游戏，这个是记忆的训练。每天每天跟孩子这么玩，每一天都玩歌个几次就好了，持续这么做的话，孩子的记忆能力会不断增强。而且，运动时是用前额叶的，所以孩子就会慢慢的通过自己的意识来做一些事情，也就是说慢慢的变得会思考事情了。</li>
+<li>那之后要做的事情，是努力培养孩子的海马体功能，海马体是长时间记忆工作的区域，从小时候就需要开始培养训练的，越培养锻炼思考能力，孩子就会变得越聪明，就会慢慢地能够思考自己每天要做些什么事情，会用自己的意志自主决定自己要干的事情，记住越来越多的事物，这样以来知识也会慢慢增加。</li>
+<li>思考是从0岁开始，通过最近的脑科学研究，发现教孩子心算，从孩子会数123456789的时候就可以开始教个位数加减法心算了，一般差不多是2岁左右的时候。大概学习3个月左右，孩子们就能够记住了。能够运用数字的话，就意味着能够进行思考了，因为数学是一种抽象概念。所谓的能够处理思想想法，能够对抽象的概念进行思考处理，其实就是说只要妈妈说出她喜欢什么不喜欢什么的想法，就能让孩子知道怎么做会比较好，所以孩子就会像大人一样思考。因此，不应该说是用批评教育来让孩子做得更好，而是让孩子根据他自己的想法意识去选择更好的做法。</li>
+<li>要让孩子好好在子宫内成长，不要让孕妇有精神压力。研究显示孕妇在受到精神压力的时候为了消除该精神压力，身体会分泌出荷尔蒙，而荷尔蒙随着母亲的血液进入到胎儿身体，会对胎儿的脑部产生不良影响。因此有孕在身的时候，为了胎儿孕妇要好好进食，保持均衡营养以确保胎儿的健康成长，同时要尽量轻松的生活不要给自己造成精神压力。</li>
+<li>掌握多种语言的人，在年老之后其大脑衰退的速度也会比一般人要慢一些。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>life</tag>
+        <tag>consciousness</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[转载] 李约瑟问题简答</title>
+    <url>/notes/needham-s-grand-question/</url>
+    <content><![CDATA[<p>古代中国曾有过辉煌的科技成就，对于几乎每一件重要发明的应用，中国人都可以骄傲的宣称西方又落后了多少多少年；尤其是震古烁今的“四大发明”，更是在中世纪末期彻底改变了欧洲乃至世界的面貌：火药炸毁了封建骑士阶层的堡垒和铠甲，指南针开辟了5大洲之间的新航路，而造纸术和印刷术则打破了封建教会的文化垄断……然而近代以后，中国科技便裹足不前，近代科学的大门反而被原先远远落后于中国的牛顿法拉第们打开。在科技史上曾经独占鳌头的中国从此几乎销声匿迹，科学技术被西方人一统天下。为什么会这样？——这便是著有《中国科学技术史》的英国著名汉学家李约瑟终其一生也未能给出完美答案的旷世之迷：“李约瑟难题”。</p>
+<a id="more"></a>
+<p>​    同时，纵观中国和欧洲的经济发展史，不难发现：不仅仅在科技领域存在这种疑问。中国封建社会的生产方式同样远远领先于西方，明代以前的农业、城市商业、金融业以至航海业，西方都不能望中国之项背。长江和黄河两大水系灌溉出中原地区大规模的、成熟的农业；在农业最发达的江南、汉中、关中和四川等地区又星罗棋布的坐落着大量建筑宏伟、工商业繁荣的都市；在这些大都市中，又最早在四川出现了世界上第一枚纸币；而郑和下西洋，则使中国先于西方半个世纪有了大规模的远洋探险与贸易……同样的，近代以后，当中国经济在封建桎梏下举步维艰时，资本主义的生产方式却开始在百年之内为西方创造出比整个人类过去5000年里创造出的所有财富还要多的财富。如果李约瑟是经济学学者的话，他肯定也会提出类似的问题：在16世纪前后，为什么原先远远领先的中国没有能够率先进入资本主义阶段而反被欧洲大幅赶超呢？</p>
+<p>​    当然，以作者现在的学术水平，还不可能对这个问题作出完整、严密的解答，本文的目的在于总结作者关于这个经济史上的“李约瑟难题”的一些思考，提出一个可能的解答。</p>
+<p>​    我们首先来分析中国和欧洲在地理和气候上的差别。中国古代文明的发源地主要是在中原地区，即主要是温带和亚热带气候长江和黄河流域。长江和黄河的长度和流量都很大，处在她们的中下游的华北、华中、汉中和江南地区，也都是降雨充沛、土地肥沃、交通便利的大平原；而且宏观的看中国所处的地理环境，在中原地区相互紧密联结的农业大平原的周边：北方是寒冷荒芜的西伯利亚和贫瘠干燥的蒙古高原，且不谈西伯利亚，就是历史上先后在蒙古和东北地区崛起的匈奴、金、蒙古等强悍的游牧民族，要么不是中原发达的农业经济的对手，要么入主中原后不得不接受中原的生产方式和文化传统从而被同化；东方和东南是浩瀚广阔的太平洋，在中世纪也不可能成为强大外敌的发源地；西南方是青藏高原的崇山峻岭和东南亚环境险恶的热带丛林，东南亚的少数民族和因为自身社会发展落后而不能威胁中原，而南亚次大陆上的强大的古印度文明又因为喜马拉雅山的屏蔽而与中原地区殊少往来；西部和西北则是中亚的沙漠、戈壁和帕米尔高原，古代西域的少数民族无力抗衡中原，西亚的大食和玻斯人虽然实力雄厚，但要越过广阔而且条件恶劣的西域地区大规模的远犯中原也殊非易事。所以，古代中国所拥有的是非常有利于农业生产而又几乎是四周封闭、安全的广阔的大平原。而欧洲则大相径庭：欧洲尤其是西欧的版图支离破碎,海岸线蜿蜒曲折，而且内陆也遍布山脉，没有大的冲积平原，北欧又属于高寒地区；同时欧洲文明还面临着来自东方的突厥、蒙古等游牧民族强大的威胁，历史上这些民族都曾对欧洲文明带来致命的打击。所以欧洲的地理环境是支离破碎而且易受强敌入侵的。</p>
+<p>​    基于这样的地理环境，古代中国和欧洲开始走上不同的发展道路。农耕很早就在中原地区发展起来，世界上首先开始栽培水稻和养蚕便是中国。长江和黄河中下游肥沃的冲积平原和湿润的气候孕育了古代中国发达的农业以及依附于农业的手工业，为封建的上层建筑提供良好的经济和社会基础；同时因为中原地区没有大的天堑，人民在相互交往中逐渐形成了统一的方块文字和文化意识形态。人民在农业劳作中互相交往、融合，并在合作劳动尤其是修筑大农业社会必不可少的水渠、运河、河堤等大型水利工程中逐渐组织起来，形成星罗棋布的村落、城邦乃至遍布中原的大大小小的诸侯国。中国在夏、商、周时期就有了在井田制基础上建立的等级森严的分封制度，整个中原地区开始被一个中央政权所直接和间接的控制；发展到秦汉时，中央集权开始建立，天下大一统于皇权；汉唐以下，直至明清，中央集权不断完善加强直至极端，封建主义的上层建筑发育得出奇的完善和坚固，同时与之伴生的儒道法家思想和科举取士制度又对封建政权有着极大的维护和巩固作用。这些都是直接或间接与中原地区特殊的地理环境相关的：互相连接的适宜于农业发展的大平原、统一的方块象形文字、统一的宗教图腾、大农业所必须和必然的人民的定居以至紧密的联合。而欧洲则不同，它的地理环境既不利于发展像古代中国一样发达的农业，也不利于建立广泛的大一统政权。所以中世纪的欧洲被英吉利海峡、比利牛斯山、阿尔卑斯山等天堑分割成相对独立的英格兰、法兰西、德意志、西班牙等国度，没有共同的语言文字，而且它们的农业生产力也一直在低水平上徘徊，农业、手工业和科技文化均远远落后于在地理上得天独厚的中国。所以，古代欧洲的政治组织形式，继承古罗马的传统，也更倾向于分散和民主，一直保留着与我国夏、商、周政权相类似的分封政体，封建贵族与国王之间也不是绝对服从与支配的关系；土地制度上，国王只能控制王室所有的一小块土地，对于封给贵族的土地及其之上的人民并没有多大的实际控制权。所以欧洲国家在很长时期内没有建立像中国一样的完善巩固的中央集权，而是在事实上实行一种所谓“贵族民主制”。</p>
+<p>​    所以，根本上由地理和气候原因决定的社会和经济因素，决定了东西方不同的封建政治体制。</p>
+<p>​    历史是一环扣一环的。这样的基础和前提决定了东西方不同往后不同的发展道路。中世纪后期，在原有基础上，东西方的政治体制和经济发展状况又有了进一步的重要变化。东方的皇权空前加强，废丞相、权分六部、设立特务机构、八股取士、文字狱……地主封建阶级的政权进一步的巩固完善，旧封建贵族们建立的一系列“完美”的体制确保了整个国家机器忠实的为他们的利益服务，从东海之滨到西域雪山，从紫禁皇城到荒野小村，中国的封建士绅们通过保甲制度、儒家教条、乡官税吏牢牢的控制着这片广袤的土地。同时，强大统一的中华帝国基本征服了周边的少数民族政权，从西伯利亚到东南亚半岛，从喜马拉雅山和帕米尔高原到海外的台湾、琉球，统统臣服于中央政权之下，放眼海内，似乎没有什么外在的势力能够挑战和威胁这强大的“中央之国”了——如果说有的话，那就是内乱——同时因为中原周边剩下的都是沙漠、高原、冻土和海洋，似乎也没有了可进一步拓殖的空间。虽然当时东南沿海面临着倭寇和早期西欧殖民者的骚扰，但这对于中央政权来说是无关大局的，同时倭寇等海上强盗越骚扰，统治者越要加紧维持原有统治次序和更加严格的禁止人民出海。秦始皇和唐太宗时期统治者身上开拓进取、热衷扩张的蓬勃朝气再也找不到了，取而代之的是猜疑身边臣子“夺权”的“野心”，拼命维持原有秩序，限制可能破坏原有“繁荣”的新事物……古老的中华帝国开始走向停滞、守旧、腐朽和破落。2000年前的孟子所作出的“外无敌国外患，内无法家弼士，国恒亡”的预言正悄悄的变成现实……而与此同时，欧洲正走向黎明。从宋代以后，欧洲经济的发展速度就开始超过中国：从11世纪到16世纪中期，中国农产品总量增长0.5倍，而西欧则增长了1.7倍。到十二、十三世纪一些有技术、工具和资金的农奴，从庄园逃到交通方便的地方，或城堡地带去从事手工业生产，从而从农业中分离出来，建立新的城镇。他们按氏族公社那套民主制度 建立起行会和城市自治公社，并通过各种途径取得独立权，从此市民阶级等上历史舞台。为了发展工商业，要求消除贵族民主制下的无政府的和分散的状态，逐渐与王权结成同盟。同时王权为了削弱封建贵族势力从而巩固和提高自身地位，也在政权上利用了所谓的“第三等级”，并于中世纪后期在逐渐发展起来的工商业者（早期的资本主义者）势力的支持下进行一系列削弱地方贵族势力、加强军队力量、发展工商业、普及文化教育的改革，建立起专制王权并开始大力推行重商主义。这个时期东西方之所以有这样的差别，一个原因是二者政权结构与功能迥异：中国是代表封建旧贵族严密控制社会各方面的高度集中的专制皇权；而西欧则是刚刚部分依靠于新兴工商业者而建立的，相对松散软弱的王权。另一个原因是东西方的政治地图不同：中国是统一的大帝国，四海清平，没有外患；而西欧则支离破碎，国家与国家之间进行着旷日持久的竞争。 </p>
+<p>source: <a href="http://wenda.tianya.cn/question/5265461d61c782ee" target="_blank" rel="noopener">天涯问答</a> </p>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>history</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于机器学习的老照片上色工具</title>
+    <url>/notes/old-photo-colorize-tool-based-on-deep-learning/</url>
+    <content><![CDATA[<p>图源《罗马假日》</p>
+<p>对比图</p>
+<p><img src="/images/1552243721014.png" alt="1552243721014"></p>
+<a id="more"></a>
+<p>原图</p>
+<p><img src="/images/1552243811403.png" alt="1552243811403"></p>
+<p>结果图</p>
+<p><img src="/images/1552243769960.png" alt="1552243769960"></p>
+<p>website: <a href="https://colourise.sg/" target="_blank" rel="noopener">https://colourise.sg/</a></p>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>deep learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2天后的全球气候问题学生游行始于去年独自抗议的瑞典女孩</title>
+    <url>/news/the-school-strikers-2-days-later/</url>
+    <content><![CDATA[<p>3 月 15 日，超过 71 个国家 700 个地点的学生将翘课进行全球气候大游行。</p>
+<p>16 岁的瑞典学生 Greta Thunberg，她在 2018 年 8 月 20 日逃课坐在了瑞典议会大楼门口，呼吁政府对气候变化做出回应，就此引起了一串全球性的连锁效应。</p>
+<p>那个夏天，热浪和野火在瑞典肆虐，当时 9 年级的 Thunberg 拒绝在 9 月 9 日大选前上学，对气候危机担忧已久的她，想要瑞典政府依据巴黎协定减少碳排放，因此从 20 日起，她每天都会在上学时间坐到议会大楼外，身旁放着一块手写着“skolstrejk för klimatet”（学校气候游行）的标牌。靠这个简单的举动，她不小心成为了瑞典首个学生气候抗议的发起人。</p>
+<p><img src="/images/20190313015259oWZiARsmKvG6Cn2x.jpeg-WebpWebW640" alt="img"></p>
+<a id="more"></a>
+<p>Thunberg 独自一人的“游行”很快被拍下来传遍了网络。从第二天开始，陆续有人加入了她的抗议，她受到的全球性关注也在累积。大选之后，她仍旧会在每周五去议会门口举牌，直到瑞典政府拿出《巴黎协定》中规定的 2℃ 目标的政策方案。</p>
+<p>她的标语逐渐被翻成各国语言流行于全球，原本只是她一个人的抗议行为，激励了同样对气候议题有想法的学生。2018 年 12 月，在全球 270 多个城市，有超过 2 万名学生参与了气候大游行。今年的 2 月和 3 月，欧洲又有万名学生走上街头呼吁政府积极应对气候变化。<a href="https://www.fridaysforfuture.org/" target="_blank" rel="noopener">“周五为未来”的学生罢课游行项目建立了</a>，Thunberg 的照片就挂在网站首页——“亲爱的大人们，使用你们的能力！”</p>
+<p>Thunberg 就这样成为了气候议题代表人物。她和家人游遍全球，参与各国气候游行、在 TED 做演讲、见了马克龙和默克尔在内的一批政治领袖、在联合国气候峰会 COP24 上发言、参与达沃斯经济论坛等。她在接受<a href="https://www.theguardian.com/world/2019/mar/11/greta-thunberg-schoolgirl-climate-change-warrior-some-people-can-let-things-go-i-cant" target="_blank" rel="noopener">《卫报》</a>访谈时说，这一切在一年之前都很难想象。</p>
+<p><img src="/images/20190313015601GlHu295SaiRmMLjX.jpg-WebpWebW640" alt="img"></p>
+<p><a href="https://www.youtube.com/watch?v=VFkQSGyeCWg" target="_blank" rel="noopener">Thunberg 在 COP24 上演讲</a></p>
+<p>Greta Thunberg 从小就是个内向的孩子，每天过着两点一线的生活，“我的生活中并没有发生什么重大的事件，我一直都是坐在教室最后面的那个女生，什么话也不说。我觉得我太小了，根本无法对周围有什么影响。” </p>
+<p>她在 11 岁时被诊断出<a href="https://zh.wikipedia.org/wiki/亞斯伯格症候群" target="_blank" rel="noopener">亚斯伯格症候群</a>。这是神经发展障碍的一种，被外界认为是“没有智力障碍的自闭症”，其重要特征就是社交困难。但这并没有阻碍她的大脑不停歇地运转。</p>
+<blockquote>
+<p>“我想得太多了，有些人可以轻松地让事情过掉，我不能。尤其是那些让我忧虑和伤心的事情。”<br>Greta Thunberg</p>
+</blockquote>
+<p>她记得老师在课堂上为他们播放了关于海洋塑料、饥饿的北极熊等等影片，她的同学们在看片时也都很忧心，但在看完后就去关注别的了。她却无法忘记看到的东西，不但是在观影中从头哭到尾，之后也会不停想起那些画面。她在 8 岁的时候第一次知道了气候变化，惊讶于成人们对此漫不经心，这甚至加重了她之后几年的忧虑症状。</p>
+<p>“我一直在想这回事，我在思考我还能不能有一个未来，但我把这些憋在心里，因为我又不怎么说话，这就非常不健康。我忧郁得厉害，也停了课。当我回到家，我的爸妈会照顾我、跟我谈话，因为也没别的事情可做，我就跟他们倾诉了自己对气候危机和环境的担忧，最终能畅快地说出来，感觉很好。”</p>
+<p><img src="/images/20190313015733ZgI1pFRwjWs0tze3.jpg-WebpWebW640" alt="img"></p>
+<p><a href="https://www.ted.com/talks/greta_thunberg_the_disarming_case_to_act_right_now_on_climate" target="_blank" rel="noopener">Thunberg 在 TED 演讲</a></p>
+<p>Thunberg 的父母一开始只是告诉她一切都会好转，可是这并不管用，女儿仍旧不懈地找来各种图片、数据、报告和电影展示给他们看。最终，这对父母开始真的聆听 Thunberg 的气候忧虑，她的母亲放弃了飞机出行，父亲变成了素食主义者。也是在这时，她意识到如果自己可以改变父母，那她也可以改变其他人。她总算挣脱了忧郁的束缚，脑子里想的是，“有那种情绪就是浪费时间，因为我明明可以做更多好事。”</p>
+<p>受到帕克兰学生参与控枪游行的启发，又正值北欧经历了史无前例的热浪和野火袭击，Thunberg 做出了一人抗议的决定。在那之后，她又同意在一场数千人的气候游行中演讲。父母想说服她拒绝邀请，因为她曾被诊断出<a href="https://zh.wikipedia.org/wiki/选择性缄默症" target="_blank" rel="noopener">选择性缄默症</a>，但是 Thunberg 去意已决，最终也真的用流利的英语完成了讲话，并鼓励观众将图片发上社交网站。</p>
+<p>患有选择性缄默症的人往往比其他人更爱操心，她也将这种心情武器化了——<a href="https://www.theguardian.com/science/video/2019/jan/25/i-want-you-to-panic-16-year-old-greta-thunberg-issues-climate-warning-at-davos-video" target="_blank" rel="noopener">在今年的达沃斯论坛上，她警告道</a>：</p>
+<blockquote>
+<p>“我不想让你们充满希望，我想让你们恐慌。我想让你们感知我每天都在感知的恐惧。我想让你们行动。”<br>Greta Thunberg</p>
+</blockquote>
+<p><img src="/images/20190313015823dWYX8GH57tuyvTJm.jpg-WebpWebW640" alt="img"></p>
+<p><a href="https://www.theguardian.com/science/video/2019/jan/25/i-want-you-to-panic-16-year-old-greta-thunberg-issues-climate-warning-at-davos-video" target="_blank" rel="noopener">Thunberg 参与达沃斯世界经济论坛</a></p>
+<p>虽然拥有了“气候抗议红人”的地位，Thunberg 还是对人们实际行动太少而感到不满。有的政客在抱怨更强力的气候政策不现实，除非公众将之放在首位，也有人想尽办法要转移话题，因为他们什么都没做。Thunberg 承认：“我没有比自己开始抗议时抱有更大的希望，因为排放还在上升。”</p>
+<p>然而无论如何，这个曾独自抗议的女孩成为了全球气候运动的一线希望，不少活动家和科学家都将她称为“几十年来这场运动中最好的新闻”。只是现在她不是一个人了，在周五的活动中，同学和来自其他学校的学生都会加入她。她确实改变了世界。</p>
+<p>#FridayForFuture 参与地图(截至3月13日)：</p>
+<p><img src="/images/1552498099823.png" alt="1552498099823"></p>
+<p>题图来自 <a href="https://medium.com/wedonthavetime/this-15-year-old-girl-breaks-swedish-law-for-the-climate-d1a48ab97e3a" target="_blank" rel="noopener">Medium</a></p>
+<p><a href="https://www.fridaysforfuture.org/" target="_blank" rel="noopener">#FridayForuture</a></p>
+<p>source: <a href="www.qdaily.com/articles/62005.html">好奇心日报</a></p>
+]]></content>
+      <categories>
+        <category>news</category>
+      </categories>
+      <tags>
+        <tag>planet&amp;environment</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[转载] 直面惨淡人生</title>
+    <url>/notes/face-the-bleak-life/</url>
+    <content><![CDATA[<blockquote>
+<p>萨特：“在不存在和这种浑身充满快感的存在之间，是没有中立的。如果我们存在，就必须存在到这样的程度。”</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="直面惨淡人生-李银河"><a href="#直面惨淡人生-李银河" class="headerlink" title="直面惨淡人生 李银河"></a>直面惨淡人生 李银河</h1><p>​      在我的一生当中，人生哲学对我来说是一位不可或缺的朋友，是一位频繁来访的朋友，又是一位永远无法彻底了解他的、神秘而可怕的朋友。</p>
+<p>​       像罗素在5岁时想道：我的漫长的生涯才过了1/14，因而感到无边的惆怅一样，我也是从很小就开始思索宇宙和人生的问题。有一段时间，我不敢长时间地仰望星空，因为从中看到人生的荒芜，冰冷，无意义。我无法接受这个可怜的生命仅仅在无边的宇宙中像一粒微尘一样存在过短短的一段时间然后永远消失不见的残酷事实。荣格说，这个问题不能常想，否则人会疯掉。我却常常想，不由自主，至今尚未疯掉只能说明我的神经质地坚韧，而且不是一般的坚韧。</p>
+<p>​       这种思考方式和生活方式也并非全无益处。一个显而易见的益处就是，无论碰到什么样的灾难或看似难以逾越的障碍，只要像我惯常所做的那样，往深处想想宇宙和人生，想想宇宙的广袤，想想人生的无意义，这些貌似难以逾越的大墙就会登时分崩离析，轰然倒塌，消除于无形。就连让人一想起来就热泪盈眶的爱情之火都可以熄灭，就连最令人心旷神怡的景色都可以黯然失色。因为在宇宙最终的熵增的一片混沌中，所有这一切都不过是一粒微尘而已，甚至连微尘都算不上，如果它仅仅是人这种渺小生物的一种感觉或痴迷。</p>
+<p>​       我相信，宗教最初就是这样产生的，因为宇宙和人生的这个真相实在太过残酷，令人无法直视，人们只好幻想出种种美好的天堂、神祗、意义和价值，使得人生可以忍受，使得真相不显得那么生硬刺目，那么赤裸裸，那么令人惨不忍睹。在这个意义上，我羡慕那些信神的人，哪怕是那些不是清醒地而只是懵懵懂懂地信神的人，他们的人生比我的比较容易忍受。但是难道他们真是清醒的吗，他们坚信不疑的事情是真实的吗？</p>
+<p>​       我的心底始终是无神论的。至多不过是古希腊罗马人那样泛神论的。他们心目中的神祗不过是一种美好的神话传说，就像童话故事一样。虽然不情不愿，但是我的理智和我所受到的所有教育都告诉我，无神论是唯一的真理。承认这个是需要一点勇气的：既然根本无神，你就只能把眼睛拼命地睁开，直面宇宙的荒芜和人生的无意义。</p>
+<p>​       我很年轻时就接触过存在主义，它立即吸引了我的全部注意力，因为它说出残酷的真理：存在纯属偶然，人生全无意义。存在主义同时为人生指明出路：人可以选择，并自己去承受选择的后果。既然人生没有意义，人为什么还要活着，还有什么必要？既然没有必要，是不是只有去死这一种选择了呢？</p>
+<p>​       存在主义的回答是，可以有多种选择：可以选择死，也可以选择活；可以选择这样活，也可以选择那样活。于是，我愿意我的人生更多出于自己的选择，较少出于外部力量的强迫。即便这样，有些事情还是会强加在我身上。比如，我选择了爱情，但是命运（偶然性）却最终残忍地让它夭折；我想选择文学，命运却不给我艺术家的忧郁，而随手给了我明晰和单纯（本雅明认为这两项品质不属于艺术家）。当然，在可能的范围内，我还是要尽量地选择，而不是被动地接受命运的安排，因为这才是存在，否则不是存在。</p>
+<p>​       萨特有一次说：“在不存在和这种浑身充满快感的存在之间，是没有中立的。如果我们存在，<strong>就必须存在到这样的程度</strong>。”这话说得够决绝，人或者存在，或者不存在，没有中间项；而存在与否的标准在于是否浑身充满快感。按照这个标准，这个地球上存在的人并不太多，至少不是时时存在的。这个标准听上去简单，但是实施起来却并非易事，仅仅观念一项就可以扼杀无数人获得快感的愿望和机会，遑论习俗、文化、五花八门的行为规范。可是，萨特所指出的难道不是唯一可能的存在方式吗？</p>
+<p>​       既然宇宙是如此浩渺荒芜，既然人生全无意义，快感的存在是我们唯一的选择。我愿意选择存在，尽管它最终还是无法改变存在并无意义这一残酷事实。</p>
+<p>Source: 李银河</p>
+<p>ps: 最近看完的《我的天才女友》台词</p>
+<p><img src="/images/1553207038051.png" alt="1553207038051"></p>
+<p><img src="/images/1553207043033.png" alt="1553207043033"></p>
+<p><img src="/images/1553207047164.png" alt="1553207047164"></p>
+<p><img src="/images/1553207053272.png" alt="1553207053272"></p>
+<p><img src="/images/1553207057984.png" alt="1553207057984"></p>
+<p><img src="/images/1553207062013.png" alt="1553207062013"></p>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>life</tag>
+        <tag>series</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在 IntelliJ 中创建并运行EJB项目</title>
+    <url>/notes/ejb-project-establishing/</url>
+    <content><![CDATA[<blockquote>
+<p>本文撰写前提为无任何EJB开发经验。中间问题可跳过直接浏览新建基于Maven的EJB项目。</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="安装Glassfish"><a href="#安装Glassfish" class="headerlink" title="安装Glassfish"></a>安装Glassfish</h1><p>博主安装时选用了最新的稳定版本 Glassfish 5.</p>
+<p><img src="/images/1553531968538.png" alt="1553531968538"></p>
+<p>有两个版本，选用Full Platform版本。</p>
+<h1 id="初步尝试"><a href="#初步尝试" class="headerlink" title="初步尝试"></a>初步尝试</h1><h2 id="创建Java-EE项目（无Maven）"><a href="#创建Java-EE项目（无Maven）" class="headerlink" title="创建Java EE项目（无Maven）"></a>创建Java EE项目（无Maven）</h2><p><img src="/images/1553440781877.png" alt="1553440781877"></p>
+<p>选择 <code>Web Application</code>、<code>JSF</code>、<code>EJB: Enterprise Java Beans</code> 后新建项目。</p>
+<h2 id="尝试运行现有项目遇到的问题"><a href="#尝试运行现有项目遇到的问题" class="headerlink" title="尝试运行现有项目遇到的问题"></a>尝试运行现有项目遇到的问题</h2><h3 id="在Glassfish5上运行时，出现arget-Unreachable-identifier-‘bean’-resolved-to-null错误"><a href="#在Glassfish5上运行时，出现arget-Unreachable-identifier-‘bean’-resolved-to-null错误" class="headerlink" title="在Glassfish5上运行时，出现arget Unreachable, identifier ‘bean’ resolved to null错误"></a>在Glassfish5上运行时，出现arget Unreachable, identifier ‘bean’ resolved to null错误</h3><p>时间关系没有深入探究，在<a href="https://github.com/javaserverfaces/mojarra/issues/4264" target="_blank" rel="noopener">Github Issues</a>，<a href="https://github.com/eclipse-ee4j/glassfish/issues/22094" target="_blank" rel="noopener">Github Issues</a>中找到解决方法，须在Bean中标注FacesConfig。</p>
+<figure class="highlight java hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-keyword">package</span> configuration;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> javax.faces.annotation.FacesConfig.Version.JSF_2_3;</span><br><span class="line"><span class="hljs-keyword">import</span> javax.faces.annotation.FacesConfig;</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">@FacesConfig</span>(</span><br><span class="line">	<span class="hljs-comment">// Activates CDI build-in beans</span></span><br><span class="line">	version = JSF_2_3 </span><br><span class="line">)</span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConfigurationBean</span> </span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Unable-to-retrieve-EntityManagerFactory-for-unitName-xxx"><a href="#Unable-to-retrieve-EntityManagerFactory-for-unitName-xxx" class="headerlink" title="Unable to retrieve EntityManagerFactory for unitName xxx"></a>Unable to retrieve EntityManagerFactory for unitName xxx</h3><p>无persistence.xml文件或文件路径错误，最好使用IDEA的Add framework Support功能，自动生成META-INF下的persistence.xml文件。</p>
+<h3 id="View-example-xhtml-could-not-be-restored"><a href="#View-example-xhtml-could-not-be-restored" class="headerlink" title="View /example.xhtml could not be restored."></a>View /example.xhtml could not be restored.</h3><p>session过期。</p>
+<h3 id="JNDI-lookup-failed-for-the-resource-Name-Lookup-jdbc-Type"><a href="#JNDI-lookup-failed-for-the-resource-Name-Lookup-jdbc-Type" class="headerlink" title="JNDI lookup failed for the resource: Name: [], Lookup: [jdbc/ ], Type:"></a>JNDI lookup failed for the resource: Name: [], Lookup: [jdbc/ ], Type:</h3><p>在 <code>localhost:4848</code> 中新建data source.</p>
+<p>asadmin add-resources glassfish-resources.xml</p>
+<p><img src="/images/1553450787754.png" alt="1553450787754"></p>
+<p>还需要把数据库驱动文件放到此目录下：<code>glassfish5\glassfish\domains\domain1\lib\ext</code></p>
+<p>网上的已过时，现在的datasource Classname为: <code>com.mysql.cj.jdbc.MysqlDataSource</code></p>
+<h1 id="创建-Maven-项目"><a href="#创建-Maven-项目" class="headerlink" title="创建 Maven 项目"></a>创建 Maven 项目</h1><h2 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h2><p>添加 Javaee-api 依赖如下</p>
+<figure class="highlight xml hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-comment">&lt;!-- https://mvnrepository.com/artifact/javax/javaee-api --&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>javax<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>javaee-api<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>8.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>provided<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="创建两个Module"><a href="#创建两个Module" class="headerlink" title="创建两个Module"></a>创建两个Module</h2><p>可分别命名为<code>xxx-ejb</code>、<code>xxx-war</code>，创建后在<code>Pom.xml</code>文件中分别输入<code>&lt;packaging&gt;ejb&lt;/packaging&gt;</code>, <code>&lt;packaging&gt;war&lt;/packaging&gt;</code>。完成后即可在idea的项目设置（<code>Ctrl+Alt+shift+S</code>）-&gt;Artifacts中看到4个artifact。并可看到提示如下，</p>
+<p><img src="/images/1553526993835.png" alt="1553526993835"></p>
+<p>创建Manifest即可。</p>
+<p>之后可在Idea的Run Configurations中添加Glassfish Server，Deployment中注意添加ejb和war包。</p>
+<h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><h3 id="Error-while-binding-JNDI-name-dao-UserDao-dao-UserDao-for-EJB-UserDaoImpl-javax-naming-NameAlreadyBoundException-Use-rebind-to-override"><a href="#Error-while-binding-JNDI-name-dao-UserDao-dao-UserDao-for-EJB-UserDaoImpl-javax-naming-NameAlreadyBoundException-Use-rebind-to-override" class="headerlink" title="Error while binding JNDI name dao.UserDao#dao.UserDao for EJB UserDaoImpl,javax.naming.NameAlreadyBoundException: Use rebind to override"></a>Error while binding JNDI name dao.UserDao#dao.UserDao for EJB UserDaoImpl,javax.naming.NameAlreadyBoundException: Use rebind to override</h3><p>解决方法：关闭Glassfish的nonportable-jndi-names功能，命令如下<br><code>asadmin set server.ejb-container.property.disable-nonportable-jndi-names=&quot;true&quot;</code></p>
+<h3 id="javax-el-PropertyNotFoundException-The-class-‘‘-does-not-have-the-property-‘‘"><a href="#javax-el-PropertyNotFoundException-The-class-‘‘-does-not-have-the-property-‘‘" class="headerlink" title="javax.el.PropertyNotFoundException: The class ‘‘ does not have the property ‘‘."></a>javax.el.PropertyNotFoundException: The class ‘<name>‘ does not have the property ‘<name>‘.</name></name></h3><p>方法明明是有的，很大可能性是服务器没有更新。只能重启。</p>
+<h3 id="使用set方法为backing-bean设定值"><a href="#使用set方法为backing-bean设定值" class="headerlink" title="使用set方法为backing bean设定值"></a>使用set方法为backing bean设定值</h3><p>用到的情景是让Role选择框具有不确定的默认值。</p>
+<figure class="highlight jsp hljs"><table><tr><td class="code"><pre><span class="line">&lt;c:set target=<span class="hljs-string">"#&#123;userBean.user&#125;"</span> property=<span class="hljs-string">"role"</span> value=<span class="hljs-string">"#&#123;constantBean.userRoleList.get(0)&#125;"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="地址栏地址和实际文件路径不同步"><a href="#地址栏地址和实际文件路径不同步" class="headerlink" title="地址栏地址和实际文件路径不同步"></a>地址栏地址和实际文件路径不同步</h3><p>方法1：在<code>faces-config.xml</code>中进行配置。</p>
+<p>方法2：Backing Bean 返回地址时加上<code>?faces-redirect=true</code>。</p>
+<figure class="highlight xml hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">navigation-rule</span>&gt;</span></span><br><span class="line">	<span class="hljs-tag">&lt;<span class="hljs-name">from-view-id</span>&gt;</span>/welcome.xhtml<span class="hljs-tag">&lt;/<span class="hljs-name">from-view-id</span>&gt;</span></span><br><span class="line">	<span class="hljs-tag">&lt;<span class="hljs-name">navigation-case</span>&gt;</span></span><br><span class="line">		<span class="hljs-tag">&lt;<span class="hljs-name">from-outcome</span>&gt;</span>logout<span class="hljs-tag">&lt;/<span class="hljs-name">from-outcome</span>&gt;</span></span><br><span class="line">		<span class="hljs-tag">&lt;<span class="hljs-name">to-view-id</span>&gt;</span>login<span class="hljs-tag">&lt;/<span class="hljs-name">to-view-id</span>&gt;</span></span><br><span class="line">		<span class="hljs-tag">&lt;<span class="hljs-name">redirect</span>/&gt;</span></span><br><span class="line">	<span class="hljs-tag">&lt;/<span class="hljs-name">navigation-case</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">navigation-rule</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="test-判断离奇失效"><a href="#test-判断离奇失效" class="headerlink" title="test 判断离奇失效"></a>test 判断离奇失效</h3><p>单个test无分支语句应该用</p>
+<figure class="highlight hljs"><table><tr><td class="code"><pre><span class="line">&lt;c:<span class="hljs-keyword">if</span> test=<span class="hljs-string">"? eq ?"</span>&gt;</span><br><span class="line">    ...</span><br><span class="line">&lt;/c:if&gt;</span><br></pre></td></tr></table></figure>
+<p>在我之前的用法中是如下的嵌套结构，无法正确运行。</p>
+<figure class="highlight hljs"><table><tr><td class="code"><pre><span class="line">&lt;c:choose&gt;</span><br><span class="line">    &lt;c:when test=<span class="hljs-string">"#&#123;userBean.currentUser != null&#125;"</span>&gt;</span><br><span class="line">         &lt;c:when test=<span class="hljs-string">""</span>&gt;</span><br><span class="line">         &lt;/c:when&gt;</span><br><span class="line">    &lt;/c:when&gt;</span><br><span class="line">    &lt;c:otherwise&gt;</span><br><span class="line">    &lt;/c:otherwise&gt;</span><br><span class="line">&lt;/c:choose&gt;</span><br></pre></td></tr></table></figure>
+<p>我就纳闷为什么我用的c:when死也不触发test条件，不知道到底哪里错了。还以为哪里的问题导致Bean值无法或许到。坑了我大半天的时间！现在这代码放这一看一眼就发现指定是傻子写出来的。</p>
+<h3 id="EJB注入不上一直报DAO空指针异常"><a href="#EJB注入不上一直报DAO空指针异常" class="headerlink" title="@EJB注入不上一直报DAO空指针异常"></a>@EJB注入不上一直报DAO空指针异常</h3><p>千万不要在类构造函数中搞这种初始化操作，要如下所示：</p>
+<figure class="highlight java hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-meta">@PostConstruct</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="在JSF中导入并使用Enum"><a href="#在JSF中导入并使用Enum" class="headerlink" title="在JSF中导入并使用Enum"></a>在JSF中导入并使用Enum</h3><p>要用到Primefaces，</p>
+<figure class="highlight xml hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.primefaces<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>primefaces<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>6.2<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>namespace：<code>xmlns:p=&quot;http://primefaces.org/ui&quot;</code></p>
+<p>示例：</p>
+<figure class="highlight hljs"><table><tr><td class="code"><pre><span class="line">&lt;p:importEnum type=<span class="hljs-string">"javax.faces.application.ProjectStage"</span> <span class="hljs-keyword">var</span>=<span class="hljs-string">"JsfProjectStages"</span> allSuffix=<span class="hljs-string">"ALL_ENUM_VALUES"</span> /&gt;  </span><br><span class="line"> </span><br><span class="line">Development: #&#123;JsfProjectStages.Development&#125;</span><br><span class="line"> </span><br><span class="line">&lt;br/&gt;  </span><br><span class="line"> </span><br><span class="line">ALL:   </span><br><span class="line">&lt;ui:repeat <span class="hljs-keyword">var</span>=<span class="hljs-string">"current"</span> value=<span class="hljs-string">"#&#123;JsfProjectStages.ALL_ENUM_VALUES&#125;"</span>&gt;  </span><br><span class="line">    &lt;h:outputText value="#&#123;current&#125;" /&gt; &amp;#160;  </span><br><span class="line">&lt;/ui:repeat&gt;</span><br></pre></td></tr></table></figure>
+<p>注意这里出现了<code>Classnotfound</code>的死问题，怎么重启也不好使。所以博主转为另一种解决方案：</p>
+<figure class="highlight java hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-keyword">public</span> Job.<span class="hljs-function">JobStatus <span class="hljs-title">jobStatus</span><span class="hljs-params">(String name)</span> </span>&#123;</span><br><span class="line">   <span class="hljs-keyword">return</span> Job.JobStatus.valueOf(name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain hljs"><table><tr><td class="code"><pre><span class="line">test=&quot;#&#123;jobBean.job.jobStatus ne constantBean.jobStatus(&apos;Open&apos;)&#125;&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="c-choose中有其他分支会造成错误"><a href="#c-choose中有其他分支会造成错误" class="headerlink" title="c:choose中有其他分支会造成错误"></a>c:choose中有其他分支会造成错误</h3><figure class="highlight hljs"><table><tr><td class="code"><pre><span class="line">&lt;c:choose&gt;</span><br><span class="line">    &lt;p:importEnum/&gt;</span><br><span class="line">    &lt;c:when&gt;</span><br><span class="line">    &lt;/c:when&gt;</span><br><span class="line">    &lt;c:when&gt;</span><br><span class="line">    &lt;/c:when&gt;</span><br><span class="line">    &lt;c:otherwise&gt;</span><br><span class="line">    &lt;/c:otherwise&gt;</span><br><span class="line">&lt;/c:choose&gt;</span><br></pre></td></tr></table></figure>
+<p>等着出错吧。</p>
+<h3 id="获取Entity的Id一直为null"><a href="#获取Entity的Id一直为null" class="headerlink" title="获取Entity的Id一直为null"></a>获取Entity的Id一直为null</h3><p>因为我拷贝了Entity后将拷贝后的Entity持久化，而返回时又返回了原先传递过来的Entity。故造成长时间没有找到原因，怎么查怎么改都是NullpointerException。</p>
+<figure class="highlight java hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-meta">@Override</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> T <span class="hljs-title">save</span><span class="hljs-params">(T entity)</span> </span>&#123;</span><br><span class="line">    em.persist(entity);</span><br><span class="line">    flush();</span><br><span class="line">    <span class="hljs-keyword">return</span> entity;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>正确打开方式。</p>
+<h3 id="action-test方法调用时出现的异常不会被抛出"><a href="#action-test方法调用时出现的异常不会被抛出" class="headerlink" title="action/test方法调用时出现的异常不会被抛出"></a>action/test方法调用时出现的异常不会被抛出</h3><p>明明没有按预期工作，比如方法里的Log都没有输出，但就是没有任何错误迹象。不知道如何让JSF把错误给特喵的稍微输出一下啊/(ㄒoㄒ)/。遇到过多次了。这次的原因是更新entity用了save方法，该用<strong>update</strong>。</p>
+<p>*更新，这次的原因是当前用户放在了RequestScoped的Bean中，当action动作要获取当前用户的时候，当然是空值了！</p>
+<p>*更新2，不是不抛出异常，而是遇到[11] [12]描述的问题，导致默认情况下没有任何提示的失效。</p>
+<figure class="highlight xml hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">context-param</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">param-name</span>&gt;</span>javax.faces.PROJECT_STAGE<span class="hljs-tag">&lt;/<span class="hljs-name">param-name</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">param-value</span>&gt;</span>Development<span class="hljs-tag">&lt;/<span class="hljs-name">param-value</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">context-param</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>配置为开发模式以显示错误。</p>
+<h3 id="JPA不保存Manytomany关系到数据库中"><a href="#JPA不保存Manytomany关系到数据库中" class="headerlink" title="JPA不保存Manytomany关系到数据库中"></a>JPA不保存Manytomany关系到数据库中</h3><figure class="highlight java hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-meta">@Entity</span></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>&#123;</span><br><span class="line">    <span class="hljs-meta">@ManyToMany</span>(cascade = CascadeType.ALL, fetch = FetchType.EAGER)</span><br><span class="line">    <span class="hljs-keyword">private</span> List&lt;User&gt; lanaguages = <span class="hljs-keyword">new</span> ArrayList&lt;User&gt;();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">@Entity</span></span><br><span class="line"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Language</span> </span>&#123;</span><br><span class="line">    <span class="hljs-meta">@ManyToMany</span>(mappedBy = <span class="hljs-string">"languages"</span>)</span><br><span class="line">    <span class="hljs-keyword">private</span> List&lt;User&gt; users = <span class="hljs-keyword">new</span> ArrayList&lt;User&gt;();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Tip: Replace <code>CascadeType.ALL</code> with <code>CascadeType.MERGE</code>.</p>
+</blockquote>
+<h3 id="保存大字符串"><a href="#保存大字符串" class="headerlink" title="保存大字符串"></a>保存大字符串</h3><figure class="highlight java hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-meta">@Lob</span> </span><br><span class="line"><span class="hljs-meta">@Column</span>(name=<span class="hljs-string">"CONTENT"</span>, length=<span class="hljs-number">512</span>)</span><br><span class="line"><span class="hljs-keyword">private</span> String content;</span><br></pre></td></tr></table></figure>
+<h3 id="Primeface-Tooltip显示位置错误，未解决"><a href="#Primeface-Tooltip显示位置错误，未解决" class="headerlink" title="Primeface Tooltip显示位置错误，未解决"></a>Primeface Tooltip显示位置错误，未解决</h3><figure class="highlight html hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">h:graphicImage</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"comment-item-#&#123;loop.index&#125;"</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">pf:tooltip</span> <span class="hljs-attr">for</span>=<span class="hljs-string">"comment-item-#&#123;loop.index&#125;"</span> <span class="hljs-attr">position</span>=<span class="hljs-string">"top"</span>&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;<span class="hljs-name">h:outputText</span> <span class="hljs-attr">escape</span>=<span class="hljs-string">"false"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"user: #&#123;comment.username&#125;"</span>/&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;/<span class="hljs-name">pf:tooltip</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">h:graphicImage</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="/images/1553767125017.png" alt="1553767125017"></p>
+<p>primeface我就没用成功过到现在，你开心就好。。</p>
+<h3 id="Manytomany关系保存主实体后，查询从实体并没有更新"><a href="#Manytomany关系保存主实体后，查询从实体并没有更新" class="headerlink" title="Manytomany关系保存主实体后，查询从实体并没有更新"></a>Manytomany关系保存主实体后，查询从实体并没有更新</h3><p>查看数据库可以发现已经保存到数据库，但是从实体没有刷新。还是保存之前的数据。只有重启服务器后才会更新状态。</p>
+<p>搜了半天没找到什么有用的解决方案，但是给了一些启发。解决方法即是更新到所有相关的entity。如下：</p>
+<figure class="highlight java hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">revoke</span><span class="hljs-params">(Job job)</span> </span>&#123;</span><br><span class="line">      UserFreelancer freelancer = getFreelancer();</span><br><span class="line"></span><br><span class="line">      freelancer.getRequestedJobs().stream()</span><br><span class="line">              .filter(v -&gt; v.getId().equals(job.getId())).findFirst()</span><br><span class="line">              .ifPresent(j -&gt; freelancer.getRequestedJobs().remove(j));</span><br><span class="line"></span><br><span class="line">      job.getRequestedFreelancers().stream()</span><br><span class="line">              .filter(v -&gt; v.getId().equals(freelancer.getId())).findFirst()</span><br><span class="line">              .ifPresent(f -&gt; job.getRequestedFreelancers().remove(f));</span><br><span class="line"></span><br><span class="line">      jobDao.update(job);</span><br><span class="line">      userDao.update(freelancer);</span><br><span class="line">      <span class="hljs-keyword">return</span> HTTPUtil.returnUrl(<span class="hljs-string">"job?id="</span> + job.getId());</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">undertake</span><span class="hljs-params">(Job job)</span> </span>&#123;</span><br><span class="line">      UserFreelancer freelancer = getFreelancer();</span><br><span class="line"></span><br><span class="line">      freelancer.getRequestedJobs().add(job);</span><br><span class="line">      job.getRequestedFreelancers().add(freelancer);</span><br><span class="line"></span><br><span class="line">      userDao.update(freelancer);</span><br><span class="line">      <span class="hljs-keyword">return</span> HTTPUtil.returnUrl(<span class="hljs-string">"job?id="</span> + job.getId());</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="简单直接实现搜索框"><a href="#简单直接实现搜索框" class="headerlink" title="简单直接实现搜索框"></a>简单直接实现搜索框</h3><figure class="highlight html hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"sidebar-module"</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Search<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span></span><br><span class="line">            <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"form-control"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"Press enter for searching..."</span></span></span><br><span class="line"><span class="hljs-tag">                   <span class="hljs-attr">onkeypress</span>=<span class="hljs-string">"if (event.keyCode === 13) &#123;location.href='jobs.xhtml?s='+this.value;&#125;"</span>/&gt;</span></span><br><span class="line">        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>效果：</p>
+<p><img src="/images/1553786668497.png" alt="1553786668497"></p>
+<h3 id="Test失效错误"><a href="#Test失效错误" class="headerlink" title="Test失效错误"></a>Test失效错误</h3><p><img src="/images/1553794353905.png" alt="1553794353905"></p>
+<p><img src="/images/1553794392525.png" alt="1553794392525"></p>
+<p>重启刷新都不管用。也没有任何错误提示。</p>
+<p>到最后终于发现问题：if test中的bean取值和上面看似相同实则不同。只能这么解释了。但经过输出日志发现这页面渲染是只有一个Request的，如果说Request已经销毁，if test是新的RequestScope也完全说不通。未解之谜。</p>
+<h3 id="SPA-多对多关系保存趣事"><a href="#SPA-多对多关系保存趣事" class="headerlink" title="SPA 多对多关系保存趣事"></a>SPA 多对多关系保存趣事</h3><p>当代码这样写时，结果如下：</p>
+<figure class="highlight java hljs"><table><tr><td class="code"><pre><span class="line">jobDao.update(job);</span><br><span class="line">userDao.update(freelancer);</span><br></pre></td></tr></table></figure>
+<p><img src="/images/1553804207196.png" alt="1553804207196"></p>
+<p>当代码这样写时，结果如下：</p>
+<figure class="highlight java hljs"><table><tr><td class="code"><pre><span class="line">userDao.update(freelancer);</span><br><span class="line">jobDao.update(job);</span><br></pre></td></tr></table></figure>
+<p><img src="/images/1553804302602.png" alt="1553804302602"></p>
+<h2 id="显示SQL语句以及相应参数"><a href="#显示SQL语句以及相应参数" class="headerlink" title="显示SQL语句以及相应参数"></a>显示SQL语句以及相应参数</h2><p>在<code>persistence.xml</code>文件中指定如下设置：</p>
+<figure class="highlight xml hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">properties</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"javax.persistence.schema-generation.database.action"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"create"</span>/&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"eclipselink.logging.level.sql"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"FINE"</span> /&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"eclipselink.logging.parameters"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"true"</span> /&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">properties</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="JMS收到了消息我好快乐。。"><a href="#JMS收到了消息我好快乐。。" class="headerlink" title="JMS收到了消息我好快乐。。"></a>JMS收到了消息我好快乐。。</h2><p><img src="/images/1553818902766.png" alt="1553818902766"></p>
+<p><img src="/images/1553818910513.png" alt="1553818910513"></p>
+<h2 id="slf4j保存日志文件"><a href="#slf4j保存日志文件" class="headerlink" title="slf4j保存日志文件"></a>slf4j保存日志文件</h2><figure class="highlight xml hljs"><table><tr><td class="code"><pre><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.slf4j<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>slf4j-api<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.7.21<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>ch.qos.logback<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>logback-core<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.1.7<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>ch.qos.logback<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>logback-classic<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.1.7<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span></span><br><span class="line"><span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>日志文件保存在对应domain文件夹下的logs文件夹中。</p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>EJB(Enterprise JavaBean)是J2EE(javaEE)的一部分，定义了一个用于开发基于组件的企业多重应用程序的标准。其特点包括网络服务支持和核心开发工具(SDK)。 在J2EE里，Enterprise Java Beans(EJB)称为Java 企业Bean，是Java的核心代码，分别是无状态会话Bean（Stateless Session Beans），有状态会话 Bean（Stateful Session Beans）、实体Bean（Entity Bean）和消息驱动Bean（MessageDriven Bean）。</p>
+<ol>
+<li><p>什么是”服务集群”？什么是”企业级开发”？ </p>
+<p> 既然说了EJB 是为了”服务集群”和”企业级开发”，那么，总得说说什么是所谓的”服务集群”和”企业级开发”吧！        这个问题其实挺关键的，因为J2EE 中并没有说明白，也没有具体的指标或者事例告诉广大程序员什么时候用EJB 什么时候不用。于是大家都产生一些联想，认为EJB”分布式运算”指得是”负载均衡”提高系统的运行效率。然而，估计很多人都搞错了，这个”服务群集”和”分布式运算”并没有根本解决运行负载的问题，尤其是针对数据库的应用系统。为什么？我们先把EJB打回原形给大家来慢慢分析。</p>
+</li>
+<li><p>什么是EJB?</p>
+<p> 1) EJB 概念的剖析</p>
+<p> 我们先看一下，EJB 的官方解释：</p>
+<p> “商务软件的核心部分是它的业务逻辑。业务逻辑抽象了整个商务过程的流程，并使用计算机语言将他们实现。……J2EE 对于这个问题的处理方法是将业务逻辑从客户端软件中抽取出来，封装在一个组件中。这个组件运行在一个独立的服务器上，客户端软件通过网络调用组件提供的服务以实现业务逻辑，而客户端软件的功能单纯到只负责发送调用请求和显示处理结果。在J2EE 中，这个运行在一个独立的服务器上，并封装了业务逻辑的组件就是EJB（Enterprise JavaBean）组件。”<br> 这其中我们主要关注这么几点，我们来逐条剖析：</p>
+<p> 剖析1：”业务逻辑” ：我们注意到在EJB 的概念中主要提到的就是”业务逻辑”的封装，而这个业务逻辑到底是什么？说的那么悬乎，其实这个所谓的”业务逻辑”我们完全可以理解成执行特定任务的”类”。</p>
+<p> 剖析2：”将业务逻辑从客户端软件中抽取出来，封装在组件中……运行在一个服务器上”：既然我们知道了”业务逻辑”的概念就是执行特定任务的”类”，那么，什么叫”从客户端软件中抽取出来”？其实，这个就是把原来放到客户端的”类”，拿出来不放到客户端了，放到一个组件中，并将这个组件放到一个服务器上去运行。</p>
+<p> 2)把EJB 这个概念变成大白话就是：“把你编写的软件中那些需要执行制定的任务的类，不放到客户端软件上了，而是给他打成包放到一个服务器上了”。其中有个词——“客户端软件”，”客户端软件”？难道EJB 的概念中说的是C/S 软件？是的，没错！EJB 就是将那些”类”放到一个服务器上，用C/S 形式的软件客户端对服务器上的”类”进行调用。EJB和JSP 有什么关系？EJB 和JSP 有关系，但是关系还真不怎么大，至多是在JSP 的服务器端调用远端服务上的EJB 类，仅此而已。</p>
+</li>
+<li><p>EJB 的最底层究竟是什么？</p>
+<p>1) EJB 的实现技术</p>
+<p>EJB 是运行在独立服务器上的组件，客户端是通过网络对EJB 对象进行调用的。在Java中，能够实现远程对象调用的技术是RMI，而EJB 技术基础正是RMI。通过RMI 技术，J2EE将EJB 组件创建为远程对象，客户端就可以通过网络调用EJB 对象了。</p>
+<p>2)RMI 是什么</p>
+<p>RMI 英文全称是”Remote Method Invocation”，它的中文名称是”远程方法调用”。它是一种机制，能够让在某个 Java 虚拟机上的对象调用另一个 Java 虚拟机中的对象上的方法。可以用此方法调用的任何对象必须实现该远程接口。</p>
+<p>J2EE 将EJB 组件创建为远程对象，EJB 虽然用了RMI 技术，但是却只需要定义远程接口而无需生成他们的实现类，这样就将RMI 技术中的一些细节问题屏蔽了。但不管怎么说，EJB 的基础仍然是RMI，所以，如果你想了解EJB 的原理，只要把RMI的原理搞清楚就行了。你也就弄清楚了什么时候用EJB 什么时候不需要用EJB 了。</p>
+</li>
+</ol>
+<h1 id="Persistence-xml-文件"><a href="#Persistence-xml-文件" class="headerlink" title="Persistence.xml 文件"></a>Persistence.xml 文件</h1><p>persistence.xml文件要打包到EJB Jar文件的META-INF目录。</p>
+<p>persistence.xml文件用于指定实体Bean使用的数据源及EntityManager对象的默认行为。</p>
+<p>persistence-unit节点可以有一个或多个，每个persistence-unit节点定义了持久化内容名称、使用的数据源及持久化产品专有属性。name 属性定义持久化名称。jta-data-source 节点指定实体Bean使用的数据源JNDI 名称，如果应用发布在jboss下数据源名称必须带有java:/前缀，数据源名称大小写敏感。properties节点用作指定持久化产品的各项属性，各个应用服务器使用的持久化产品都不一样如Jboss使用 Hibernate，weblogic10使用Kodo，glassfish/sun application server/Oralce使用Toplink。</p>
+<p>因为jboss 采用Hibernate，Hibernate 有一项属性hibernate.hbm2ddl.auto，该属性指定实体Bean发布时是否同步数据库结构，如果 hibernate.hbm2ddl.auto的值设为create-drop，在实体Bean发布及卸载时将自动创建及删除相应数据库表(注意：Jboss 服务器启动或关闭时也会引发实体Bean 的发布及卸载)。TopLink产品的toplink.ddl-generation属性也起到同样的作用。</p>
+<p>小提示：如果你的表已经存在,并且想保留数据，发布实体bean 时可以把hibernate.hbm2ddl.auto 的值设为none或update,以后为了实体bean的改动能反应到数据表，建议使用update，这样实体Bean 添加一个属性时能同时在数据表增加相应字段。 </p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><ol>
+<li><a href="https://www.jetbrains.com/help/idea/creating-and-running-your-first-java-ee-application.html" target="_blank" rel="noopener">https://www.jetbrains.com/help/idea/creating-and-running-your-first-java-ee-application.html</a></li>
+<li><a href="https://blog.csdn.net/qq_27816307/article/details/54670678" target="_blank" rel="noopener">https://blog.csdn.net/qq_27816307/article/details/54670678</a></li>
+<li><a href="http://www.qingpingshan.com/rjbc/java/136555.html" target="_blank" rel="noopener">www.qingpingshan.com/rjbc/java/136555.html</a></li>
+<li><a href="https://github.com/YouthLin/JBlog" target="_blank" rel="noopener">https://github.com/YouthLin/JBlog</a></li>
+<li><a href="http://www.cnblogs.com/yangyquin/p/5328344.html" target="_blank" rel="noopener">http://www.cnblogs.com/yangyquin/p/5328344.html</a></li>
+<li><a href="https://github.com/YouthLin/Library-with-JSF-EJB-JPA" target="_blank" rel="noopener">https://github.com/YouthLin/Library-with-JSF-EJB-JPA</a></li>
+<li>what’s a message-driven bean? - oracle <a href="https://docs.oracle.com/javaee/7/tutorial/ejb-intro003.htm" target="_blank" rel="noopener">https://docs.oracle.com/javaee/7/tutorial/ejb-intro003.htm</a></li>
+<li><a href="https://blog.csdn.net/jojo52013145/article/details/5783677" target="_blank" rel="noopener">EJB到底是什么，真的那么神秘吗？？- https://blog.csdn.net/jojo52013145/article/details/5783677</a></li>
+<li><a href="https://javabeat.net/jsf-2-redirect-navigation/" target="_blank" rel="noopener">JSF 2 Redirect Navigation Example - https://javabeat.net/jsf-2-redirect-navigation/</a></li>
+<li><a href="https://stackoverflow.com/questions/38742749/show-logging-parameter-for-insert-update-select-in-eclipselink-jpa" target="_blank" rel="noopener">https://stackoverflow.com/questions/38742749/show-logging-parameter-for-insert-update-select-in-eclipselink-jpa</a></li>
+<li><a href="https://www.primefaces.org/showcase/ui/misc/importEnum.xhtml" target="_blank" rel="noopener">https://www.primefaces.org/showcase/ui/misc/importEnum.xhtml</a></li>
+<li><a href="https://stackoverflow.com/questions/14077155/commandlink-action-not-performed" target="_blank" rel="noopener">commandLink action not performed</a>, <a href="https://stackoverflow.com/questions/2118656/commandbutton-commandlink-ajax-action-listener-method-not-invoked-or-input-value" target="_blank" rel="noopener">commandButton/commandLink/ajax action/listener method not invoked or input value not set/updated</a></li>
+<li><a href="https://stackoverflow.com/questions/39802264/jpa-how-to-persist-many-to-many-relation" target="_blank" rel="noopener">JPA: how to persist many to many relation</a></li>
+<li><a href="https://stackoverflow.com/questions/7031885/how-to-choose-the-right-bean-scope" target="_blank" rel="noopener">How to choose the right bean scope?</a></li>
+<li><a href="https://thoughts-on-java.org/complete-guide-inheritance-strategies-jpa-hibernate/" target="_blank" rel="noopener">Complete Guide: Inheritance strategies with JPA and Hibernate</a></li>
+<li><a href="https://github.com/eugenp/tutorials/tree/master/spring-ejb/wildfly/wildfly-mdb" target="_blank" rel="noopener">https://github.com/eugenp/tutorials</a></li>
+<li><a href="https://www.baeldung.com/ejb-message-driven-beans" target="_blank" rel="noopener">A Guide to Message Driven Beans in EJB</a></li>
+<li>还有很多参考地址疏忽遗漏，太感谢丰富的互联网资源拯救了一星期开发JOB-MARKET项目。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>code</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Microsoft Design intern&#39;s File Explorer mock up</title>
+    <url>/news/file-explorer-mock-up/</url>
+    <content><![CDATA[<p><img src="/images/1553763941204.png" alt="1553763941204"></p>
+<a id="more"></a>
+<p><img src="/images/1553763951111.png" alt="1553763951111"></p>
+<p><img src="/images/1553763956400.png" alt="1553763956400"></p>
+<p>Thanks for <a href="https://twitter.com/itsmichaelwest" target="_blank" rel="noopener">@itsmichaelwest</a> ‘s nice work!</p>
+<p>So great design but can only watch, no possibility to use it in a short time :(</p>
+]]></content>
+      <categories>
+        <category>news</category>
+      </categories>
+      <tags>
+        <tag>windows</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[笔记] 大家讲堂·秦晖-从诸子争鸣到新文化运动</title>
+    <url>/notes/to-the-new-culture-movement/</url>
+    <content><![CDATA[<h1 id="为什么要回顾"><a href="#为什么要回顾" class="headerlink" title="为什么要回顾"></a>为什么要回顾</h1><p>诸子争鸣和新文化运动都被认为是文化事件或者说思想事件，但以往只从文化或思想角度来看，很多问题是不清楚的。观念的转变不只是学术师承的问题，受到社会变革的影响也很大。思想史和观念史不能分开，曾为社会演变观念变化的过程起名“世道与心路”，两者是紧密相扣的。《新青年》创办被认为是新文化运动的起始，所谓新文化运动又叫做“大五四”，五四那天就是因为巴黎和会大家一起去抗议。现在弘扬传统文化，但新文化运动是以批判传统为业。</p>
+<p><strong>从广阔的视角谈起，先谈谈我们的传统是怎么来的，再谈为什么会有反传统的运动，后来为什么又走向了当初人们都没有料到的方向，到底有什么值得我们现在进行回顾和反思乃至进行继承的一些东西。</strong></p>
+<a id="more"></a>
+<h1 id="传统演变"><a href="#传统演变" class="headerlink" title="传统演变"></a>传统演变</h1><p>传统有两个：1.自秦始皇后的百代皆行秦政制，2.现在听到的经常提的是孔子，以儒家为骨干。文革期间毛泽东以为两者是截然对立的“儒法斗争延续了两千多年”。讲到儒家大家知道在历史上儒家的祖宗是孔子，但这在历史上曾经是一个争议话题。在汉代儒学分为古文经学和今文经学，两者有一些争论，因为他们引据的经典不同。其中一个争论就是宗师到底是谁。其实儒家宣传的是周公之道，周公才是儒家的教主，孔子当然也很伟大，但他伟大在于弘扬了周公之道。孔子自己说都不是自己的东西，而是来自三代，三代到了西周发展到顶峰，周公的东西是非常完美的，现在礼崩乐坏。“述而不作”，他只传承三代主要是周公的东西，他不创造，他反对创造。他认为所处的时代人们“离经叛道”，“人心不古世风日下，高岸为谷深谷为陵”。孔子的主要文字工作在于整理文献，主要是《六经》。但从另一个角度说，孔子建立了儒学流派。</p>
+<p>孔子生活的时代，东周两百年，是一个大变动的时代，这个变动可以说晚清以前中国最深刻的一场运动。在马克思主义中，三代是奴隶社会，秦制是封建社会，所以孔子叫做“复辟奴隶制的反动派”“开历史的倒车”。弘扬孔子的人认为孔子是中国历史上有名的社会良心，伟大的批判家，代表知识分子的社会批判精神和对抗社会弊病的良知。“恒言君之恶者谓之忠”，老是批评社会君主的不对的地方是忠于道统的。“<strong>周秦之变</strong>”令孔子乃至后来的孟子痛心疾首，认为很糟糕。针对这个变化，社会各界有不一样的看法，所以有了百家争鸣，其中两家立场是最鲜明的，一家坚决捍卫周制反对秦制的儒家，一家主张抛弃周制推进秦制的法家。在这个时代儒法斗争是有道理的。批评孔子的人往往相信社会进化论，认为现在一定比过去好，说孔子是复辟倒退。但如果从正义的角度，批判的角度，现实不一定比过去好，社会单线从黑暗向光明发展的说法既没有逻辑的支持，也没有失实的支持，人类历史上经常出现和历史序列相反的变化。<strong>人类历史上很多追求进步的运动往往是基于复古的方式提出来的，比如欧洲“文艺复兴”一词本来的含义和文艺没有关系，拉丁文就是复古的意思。</strong></p>
+<p>周秦之变：马克思主义者认为，宗族奴隶社会变成了封建社会，一些人认为，宗族社会到大一统的军国社会的转变，一些人认为周秦都是封建社会，一种宗法封建社会，一种产权封建社会，从宗族领主的封建制变成了地主的封建制。一个事实：西周时代是一个族群，血缘共同体起重要作用的时代，到了秦，有人说用经济上的产权关系来取代了，有人说用政治上的暴力关系来取代了。<strong>三代是一个温情脉脉的大家庭，由长辈伦理进行统治，到了秦谁有权利谁说了算。长者政治变成强者政治</strong>，王道（王是血缘中最高的位置，所以意尊老之道）变成了霸道。</p>
+<p>历史上人们把美德的来源归于家庭。封建秩序：亲属分封天下自成一家。熟人社会：重复博弈，非一锤子买卖，信息对称，信任降低成本。中世纪：依附关系，农奴，我的主人的主人不是我的主人。共同体指非自由结合的，身份性的关系，小共同体关系在当时最重要，是当时的道德观。<strong>儒：“为父绝君，不为君绝父。”</strong></p>
+<p>儒家的小共同体本位不是只讲某一个小共同体。”人各亲其亲，长其长，则天下太平。“，如同近代个人本位不等于自私自利，没有凝聚力，强调个人权利，独立性，自由的形成联合，国家，重视每一个人的权利，而非只认自己的权利去剥夺别人的权利。特征：共同体越小，伦理道德越管用。儒：抚我则后，虐我则仇，在家靠亲情，在国靠革命。法：强权，军虽不肖，臣不敢悖也。”范，中行氏皆众人遇我，至于智伯，国士遇我，我故国士报之。“</p>
+<p>孝高于忠。儒家的性善论：基于小共同体本位，重视伦理道德，重教化，关系以道德为主，不赞同严刑峻法。</p>
+<p>科举考试：以文辞取人。八股文：复杂的智力游戏，和道德，治国能力一点关系没有。朝廷把聪明人控制起来套在利禄的圈子里。唐太宗：天下英雄入吾彀中。多智为英，大胆为雄，野心家。汉武帝后名义上宣称儒家，所以取其用语叫孝廉，但已不是荐举，也非考道德。科举代替察举，儒家不平：1.相亲伦理没了 2.取人没有道德，玩小聪明 3.培养的人没有理想，只为谋官求职。</p>
+<p>儒家强调上下尊卑，但其需权责对应。以何保障这一点？小团体：亲情，大团体：革命。无管理与被管理之分的无政府主义不现实，但被管理的人也有权利要求服务，要求管理者承担责任。后人需用一种可行的制度安排解决权责对应的落实问题。法家：皇帝对庶民可以行使权利，没有责任。</p>
+<p>儒家体系建立的制度结构松散，小共同体本位面对霸道主义毫无竞争力。</p>
+<p>东周铁器牛耕以前，个人无法生存，所以自然小共同体。铁器便宜，生产力增加，人们开始单干。战国天天打仗，儒家那一套不能打仗，不能打赢强制野蛮的中央集权。礼崩乐坏的危机的产生其实就是小共同体本位的危机。进入经济社会陌生人社会，熟人社会中的规则往往行不通。</p>
+<p>杨朱：拔一毛以利天下而不为。墨子以天下为本位，反对人亲疏之别，兼爱。摩顶放踵以利天下而为之。孟子：逃墨必归于杨，逃杨必归于儒。杨朱：利己不利人。墨翟：利人不利己，损己。</p>
+<p>孟子强调：要有自己的价值判断，不可一味折中杨墨，我的一毛属于小共同体，非我，非天下。</p>
+<p>秦晖：要讲有权利做什么，一件好事你没有权利做，做了就不是好事；<strong>中国不讲人们可以做什么，只讲应该做什么，应该就变成强制，往往不尊重人的权力，而只要变成强制，就变成坏事了</strong>。right(权利)高于good. 权利：一件事可以做，也可以不做，这件事就是你的权利。</p>
+<p>法家天下归于皇上，字面上的平等其实非法律面前人人平等，而是皇帝的意志面前人人平等。彻底的性恶论，皇帝的意志就是法律。平等循吏：重教化，酷吏：重赏罚，严刑峻法。主张德治并不妨碍法治，法家不讲道德，却自己也不忠于法律。</p>
+<p>秦晖：强调法制就要排斥德治的说法是不对的，古代导致徇私舞弊枉法的不是德治，不是重视道德不按法律办事，恰恰不按法律办事是因为这些人没有什么道德观念。</p>
+<p>有道德的人比较能够坚持法律。法家哪怕很熟悉法律，制定法律，他们看重的是皇帝的眼色。法家喜欢大家图赏赐，怕死，不可罚禁不可赏使的人是无益之臣，一定要铲除。</p>
+<p>54时被批“满嘴的仁义道德，满肚子男盗女娼。” 秦晖：虚伪不虚伪不取决于学派，取决于言论自由的环境，隐私是人合理的权利。伪恶：不得不做坏事，不能做好事的情况。批儒伪善没有问题，儒调子很高，在秦制的大共同体本位下不可能实现，但心里有这个想法并不是坏事。批评儒家伪善，那么法家不是伪善的问题，而是制造了伪恶的氛围。</p>
+<p>秦制：反宗法。长者政治行不通-&gt;1.平民政治，2.强者政治。商鞅变法：强制解散大家庭。扬忠抑孝，大利灭亲。把人从家庭中解放出来，变成皇帝的工具。</p>
+<p>儒家：百姓足，君孰与不足。如果老百姓都富裕，那么皇上还愁什么呢。</p>
+<p>韩非：足民何可以为治。治国需要赏赐，赏赐奏效：1.老百姓自私，2.老百姓穷。民 家不积粟，上藏也。利出一孔。</p>
+<p>西周非土地国有制，层层分封，土地是小共同体的，个人无法劳作生存，没有个体经济。周秦生产力发展，铁器牛耕。秦汉才是土地国有制，的确又有私有制，商鞅坏井田开阡陌民得买卖，小共同体私有制，小共同体财产被破坏。</p>
+<p>秦制胜出并不是因为在道德上多崇高，恰恰相反是因为不择手段。比比较高调的儒家一套实用的多。法家的存在有历史合理性。亲的经济是古拉格（劳改营）经济。战胜人民是法家思想的一个主题，与人民为敌。治主无忠臣，慈父无孝子。1.不让老百姓聪明，民不贵学则愚，愚农不知，不好学问，则务疾农。民愚，则智可以王。农有余食，则薄燕于岁。行间无所逃，迁徙无所入。让想摆脱桎梏的人，上天无路，入地无门。商鞅死在自己的政策下。任民之所善，故奸多，民贫则力，民富则淫。民，辱则贵爵，弱则尊官，贫则重赏。政作民之所恶，民弱，政作民之所乐，民强。民弱而弱之，民重强。</p>
+<p>统治者如果说要为民谋福利，那么还可观其言，观其行。如果公然说要把老百姓搞得辱弱贫愚，那么老百姓的苦难还用得着怀疑吗。</p>
+<p>秦15年。之后直到汉武帝可以说又恢复了秦制。</p>
+<p>道家：清静无为，顺其自然。轻徭薄赋，与民休息。虽孔子主张有为，老子主张无为，但他们都是捍卫周制，故孔子老子时代儒道没有什么矛盾。战国后顺其自然就逐渐百变成顺从秦制不讲是否的犬儒主义。故被汉作为官方语言。到之后就没儒法互补，而是法道互补，专制和犬儒的互补。</p>
+<p>叔孙通是一个灵活的儒家，大抵皆袭亲故，儒表法里，受皇帝喜爱。但最时兴的还是道家黄老。汉武帝时，董仲舒开始新儒家，新儒主要就是为和秦制兼容，罢黜百家独尊儒术。五常孔孟时代就有，三纲是法家韩非的东西。另加入图谶纬书，一套来自阴阳家的神秘主义的东西希望制约君主。天人感应：人作恶作好上天会有感觉，就会通过一些象征符号体现出来，图谶：神秘图形，纬书：不知所以然的文字。实际证明这种制约是没有效果的，甚至有人以为北魏和隋初的两次杀谶纬焚图书的运动甚至超过焚书坑儒的规模。</p>
+<p>故儒成为主流意识形态还需要加以改造。礼在汉代出现变化，原本礼求异：体现上下尊卑，乐求同。战国时军队中的军法叫礼，本是小共同体中的一种温情知遇礼貌，变成了陌生人社会中具有军事色彩恐惧的事情，到了叔孙通那儿更是如此。到了西汉晚年，河间王刘德民间访到《周官》，刘向刘歆把周官改叫周礼，讲六官，天地春夏秋冬，即后来的吏户礼兵刑工。至此这个强调中央集权的礼已经完全变了。</p>
+<p>秦汉时儒和吏矛盾激烈，儒强调从道不从君，“恒言君之恶者谓之忠”，吏强调贯彻君的命令，而法强调以吏为师。汉武帝独尊儒术，但直到东汉末年，人们认为儒的地位还是很低的。后来采用科举制，把儒变成吏，实际上科举制题目思想来自儒家，整套制度来自法家，不考虑德望人员，唐太宗：天下英雄（多智为英，有胆为雄）入吾彀中，天下聪明大胆人都收入囊中。开始曾考社论，讨论治国天下之道，之后逐渐考聪明人才能写的没有用的文章，用客观标准来衡量。宋朱熹批评科举，科举不如九品中正，九品中正不如察举征辟，察举征辟不如周的乡举里选，但明清时科举的标准答案来自朱熹。朱熹：德行之于人大矣，挑人就要挑有德行的人。故古之教者，莫不以是为先，至于成周而法始大备，其人材之胜，风俗之美，后世莫能及之。有了科举以后，尚德之举不复见矣。积至于今，流弊以极。</p>
+<p>政务官靠选举，掌权的是选出来的，事务官，办事的是考出来的。法家的科举与现代是对立的，现代以为应该是选出来的官却是考出来的，在专制体制下无所谓政务官，所有官都是替皇上办事的。反而具体办事的人不是考试的，衙门钱粮和刑名靠吏。官是考试，吏在传统中国后期变得非常复杂，没有正式规定，由官自行决定，吏的地位非常低。所以过去的科举和现在的文官制度有本质的区别。</p>
+<p>儒到宋明，出现了宋明理学，理学有两大分支，程朱理学（客观唯物）和陆王心学（主观唯心，理不是掌握在一两个人手里，人人皆舜尧），之所以出现两派，因为那时社会存在很大弊病，一方面人人不守规矩不讲理乱来，一方面百姓又被束缚很厉害，举手投足，动辄得咎。两种意见针对这两点而来。其实说多点自由多点管束，跟之前讲到的道家的有为无为一样，要看对谁而言。秦制下统治者太自由，权力不受制约，百姓没有自由。程朱陆王的实际效果都是走向了反面，程朱的存天理灭人欲，结果皇帝骄奢淫欲都是天理，百姓柴米油盐酱醋都成了人欲；阳明讲百姓日用即是理，百姓没有得到自由，贪官污吏却得到启发。有人说阳明学对明代后期的官场腐败起了很大作用。当官的喜欢阳明之学，给了他们自由，也喜欢程朱之学，把老百姓管的更死。</p>
+<p>经济学“尺蠖效应”，政策一下左（管的禁）一下右（放的开），不管放开还是收紧都成了有利于上层不利于下层。中国历史上在经济思想上也经常有这种左右争论。西汉年间的盐铁会议，贤良文学为代表的建议政策放开，桑弘羊为代表的，文革时被捧得很厉害的，号称是法家，认为国家要管死。极左绝不是为了给老百姓提供社会保障福利，而是为政府为皇上，强化国家机器，国家权力。而贤良文学也非主张自由市场，自由竞争，而是想回到秦汉以前，盐铁由诸侯王经营的制度。明末出现对陆王和程朱两者共同的批评，说当下问题就是秦制造成的，代表：明末黄宗羲。提出很多惊世骇俗的观点，“为天下之大害者，君而已矣”。他说三代老百姓：人人得而自私也，人人得而自利也，有圣人焉。人人是可以为自己考虑的，有一个人不为自己考虑，就是圣人，把他推上台去，他就出于公心为大家办事，公天下。秦反过来了，天下之人不得自私，不得自利，而以我之大私为天下之大公。这是一种最糟糕的最自私的制度。法家统治了两千年，社会一直有很大的不满。在我国晚清以前的历史上，主要的批判资源还是来自儒家，崇周仇秦的情绪。在诸子百家中，主要的分歧就是周秦的对立。但从秦到晚清的两千多年历史上，儒家虽不满，但没有实际上能行得通的解决办法，直到晚清才有了可操作性。</p>
+<h1 id="近代大变"><a href="#近代大变" class="headerlink" title="近代大变"></a>近代大变</h1><p>世界有古老文明的民族，接受外来影响到这个程度的，晚清是一个非常罕见的例外。印度接受了宪政民主，机器技术，但现在的印度人和以前的印度人还是差不多，吃的饭，穿的衣服，信的教，社会结构，种姓，形而上世界。而中国除了政治制度还有什么没有接受的吗。我们现在保留下来的唯一的传统大概就是秦制。<strong>为什么中国会把西方接受的这么彻底</strong>，过去一种说法三段论：一开始我们被他们的船坚炮利打败了，开始学习西方器物，二发现有洋枪洋炮还是不行，这些人说除了器物之外，制度也不行，学习西方制度。戊戌，辛亥。三建立了共和，但还是不行，就搞心灵，国民性，新文化运动改造国民性。如果看官方允许的主流变化可以说这是对的，但这种说法受到了挑战。美国学者说不是那么回事，明清一直很发达，鸦片战争前夕中国的GDP占到当时世界的36%（今美国20%左右）。官僚制取代贵族制就是政治的理性化，现代化。韦伯认为只有新主教能够实现真正的现代化，儒教也不行。那么中国秦以来就是官僚制，早就现代化了。韦伯为了解决这个矛盾，提出中国有限官僚制，中国以前的皇帝的官僚制只管到县，县以下自制乡村，其实非常自由。县以下还是宗法。所以说中国还是很落后的。但后来自由概念盛行，人们从正面理解他的结论，秦制专制出现诗意化。</p>
+<p>这么说，政治制度没有多大问题，经济比得过美国，政治完善，伦理道德更不得了。那么为什么晚清产生了那么强的学习西方的冲动？这些人说晚清时的中国人傻了，西方没有任何比中国好的，除了比中国人野蛮能打仗。打不过西方，中国人就产生了错觉，认为落后就要挨打，挨打证明落后，佩服打我们的人。</p>
+<p>这个说法完全不能成立，最简单的例子：有人说金女真鲜卑匈奴都是中国，如果是这样，那中国当然是从没有被打败过，成吉思汗把南宋灭掉也不叫打败而是统一，那么文天祥岳飞算什么，还是爱国吗还是在提倡分裂，把话讲到这一部就已经是胡说八道了。实事求是的讲：那个时候我们的国家就是汉族的中原王朝，夷狄就是敌人，难道我们被夷狄打败只有晚清这一次么。中国历史上被夷狄打败，败之惨完全是晚清不能比的。西晋北宋皇帝被抓走，死在夷狄手里。剩下的人走到南方苟且。南宋南明覆巢之下无完卵，全玩完了。为什么败到如此地步也没有想到学习所谓先进者呢，反而最后都是他们汉化了。</p>
+<p>满清所谓被打败无非是丢了一些边疆，藩属不再纳贡了。大清也是被自己人推翻的。所以就被打败，以及因为被打败而丧失了军事上的信心而言，晚清算不了什么。中国以前被打败到一败涂地连军事抵抗的信心都没有了，在历史上多次发生过，但文化的信心从来没有动摇过，不管东晋南朝隋唐宋后明后，中国对自己的文化道统对文明从来没有怀疑。黄宗羲在南明败亡后，《明夷待访录》说明朝的失败原因惨痛，总结的经验还是没有遵守孔孟之道，秦制不行，我们的道统是很好的，只是没有照样做。<strong>所以说仅仅是因为被打败了是说不过去的。</strong></p>
+<p><strong>中国人在晚清要学习西方的原因是什么呢</strong>：用中国第一个驻外大使郭嵩焘(tao)的话，那个时候中国人第一次看到西方最深的感触不是船坚炮利，而是“每叹羡西洋国政民风之美”，他们的制度比我们正义，仁义。所谓西方比我们更仁义不是指国际关系的弱肉强食，而是内政，西方国家对自己的老百姓对比我们国家真是要好的太多了，草民连人都不是，他们才真是活的像人的样子，经济发达，天下为公，法律讲道理，吏治清明。“反法之儒”，是当时中国向西方学习运动的最初的推动者，一直到新文化运动之前，一直在推动。在学习西方上的特点：1.学习西方主要是基于一种道德理想，带有古儒三代色彩的理想，拿西方现实和中国现实用三代的观念去套，发现西方比中国更像三代。而所谓富国强兵，功利主义目标反而是次要的顺带的。2.引西救儒的思路，儒家儒学孔孟理想要复兴，要向西方学习。3.强调学习西方的西体西本（张之洞：中学为体，西学为用），根据古儒的三代观念，封建观念民本观念所理解的西方共和民主制才是最需要学习的本和体。他们认为西方的民主共和非常符合他们的理想，就是所谓的天下为公。他们主要就是拿儒学，儒学中最反对秦制的思孟学派。5.他们不太注意西方文化对个人权利的重视。跟他们说西方文明是个性自由解放，个人权利，他们是不会喜欢的，但他们喜欢民主共和。最后导致辛亥革命。</p>
+<p>启蒙带来的思想解放是政治变革的前提，在西方在十八世纪先有了启蒙运动，才有了革命。先没有启蒙怎么会有革命呢。第一次启蒙是辛亥以前，特点是反对法里，不反对儒表。恰恰是古儒的崇周仇亲的情绪被激发，成为动力，所以这一次启蒙比我们想象的要重要的多。郭嵩焘在《伦敦与巴黎日记》中：三代以前独中国有教化耳，自汉以来，中国教化日益微灭，而政教风俗欧洲各国乃独擅其胜，其视中国，亦犹三代盛时之视夷狄也。从鸦片战争后直到戊戌，先进的儒者痛恨秦以来法家过程，希望所谓西儒来消除法家化，复兴古儒道德理想。谭嗣同：两千年来之学荀学也，皆乡愿也。乡愿：墙头草没有原则。反义词乡绅，乡举里选产生的小共同体代表，从道不从君，捍卫道统。他们认为西方乡绅很多，议会最早被翻译成乡绅房。到了晚清儒者从西方找到了支点。</p>
+<p>赴美正史陈兰彬。副史容闳，中国第一个海归留学生，建议留美学童事业，但因陈兰彬打报告夭折了。赴欧正史郭嵩焘，副史刘锡鸿与陈容相反，刘锡鸿打郭嵩焘报告（秦晖老师举的例子让人生笑又让人难过）。郭嵩焘最终被调回革职。过了一段时间刘锡鸿的日记出版了，人们才发现他对英国实际大加赞扬。他明白知道我们天下为家，所见是天下为公，他们的东西我们搞不了，不是因为文化不能接受，而是既得利益不能接受。这些人心里想的和嘴上说的有很大区别。</p>
+<p>晚清还有一批人，李鸿章系，中有一人叫张树声，遗折“西人育才于学校，论证于议院，居民一体，上下一心，此其体也”，其建议采西人之体，以行其用。郭嵩焘“国政一公之臣民，其君不以为私” 国家不是国王的私有财产，“直言极论，无所忌讳，庶人上书，皆与酬答”，他把英国看成儒者向往的礼仪之邦。《瀛环志略》详述西方大夸其礼仪，三代。（美国有武器的人组织起民兵赶跑了英国前去收缴枪支的队伍立国，所以老百姓可以持枪成为了国家意识形态）《资政新篇》也是夸赞美国。他们之所以对美国大加赞扬，就是因为对所谓的三代之治天下为公感兴趣。</p>
+<p>他们当时在认为应该学习西方的时候，其实认为富国强兵只是顺带的，如果国家制度是欺负老百姓的，政府有钱不如没有钱，军队强大不如不强大。郭嵩焘“岂有百姓困穷，而国家自求富强之理”。他说“抑不知西洋之富专在民，不在国家也”西方的富就是富在老百姓，不是富在国家财政。儒家思想“藏富于民”“官不与民争利”“百姓足，君孰与不足”。戊戌时代，谭嗣同《仁学》说幸亏当时中国兵力不强大，不然要像对待准噶尔一样对待整个世界，会是多大一场灾难。这是上天仁爱，削弱中国实力。但其实他不是不爱国，而是要改革不是使中国兵力强大，而是使中国成为遵从公理的国家，礼仪之邦，对老百姓好的国家。他认为民主共和比强大兵力更重要。就是现代的“人权高于主权”。谭嗣同讲，西方站在道德制高点上借仗义之美名，在国际政治中谋取他们的利益。但是国际政治中的自私是不是就可以成为中国不学习民主的理由呢。慈溪：既然他们侵略我们不是为我们好，我们就偏应该对着干，偏不搞民主，偏对老百姓坏，以此作为反对侵略的内容。谭嗣同：1.民主还是要搞的，2.要自己搞。搞民主是对本国人民好。所以辛亥革命是反法之儒搞的启蒙，“儒家与西方没有什么矛盾，有矛盾的是中国的秦制”。中国不太可能搞君主立宪，受到法家的传统影响，大权旁落，虚君在法家秦制中性命难保。</p>
+<p>清末士大夫搞了一场启蒙运动，“引西救儒”，西学可以把儒家的那一套从法家的那一套压迫下解救出来。他们在看到西方之前已经对现状非常不满，所以以这样的眼光看待西方，当然觉得没有秦制的西方很好。儒家不见得对自由民主有多少认同，但显然不认同秦制，认同封建，认同小共同体。所以他们出于喜欢封建，反对秦制（崇周仇亲）出发，对宪政，民主共和天下为公有好感完全合乎逻辑。</p>
+<p>启蒙在建立了民国以后，发生了变化，严格的说从戊戌后就开始。维新派是要保留帝制反对共和，不排除暴力手段搞立宪。辛亥革命为何发生，清朝调兵到西川去镇压立宪派发动的保路运动，结果新军陈虚而起，出现了武昌的辛亥革命。</p>
+<p>新文化运动从自由民主的口号开始，从来逐渐转向了民族主义。一种说法：救亡压倒启蒙是主张由于救亡的民族主义兴起，把自由主义压下去了，帮助了列宁主义的兴起。列宁主义极度排斥民族主义。列宁搞世界革命，无产阶级革命，“把帝国主义战争变成国内战争”“使本国政府在帝国主义战争中失败”，批判爱国主义，民族主义。当时列宁主义传入中国后是一种打着国际主义的亲苏的情绪，他们亲苏不是把苏联当成国际政治中合纵连横的助力，而是把社会主义视为比自由主义更进步的人类理想，与苏联与中国有主权冲突无关，甚至发生主权冲突站在苏联一边。另一种说法：主要强调巴黎和会的影响，五四为了抗议一战后巴黎和会对中国不公正，导致民族主义在新文化运动中占了上风。一战比十月革命对新文化运动的影响还要大。《新青年》在一战前期强调协约国是公理战胜强权的正义一方，精英对中国参战后能够享受公理，享受战胜国待遇，改变晚清以来被列强欺负状态抱有很大期望。在巴黎和会后改口一战没有任何正义可言，逐渐接受列宁的说法，帝国主义战争，双方都是非正义的。1916年到一战结束新文化人士都站在协约国一边。自陈独秀等新人转向马克思主义后才大量提及巴黎和会。《新青年》最后存在的一年多1925-1926，已成为共产主义的刊物，巴黎和会炒的越来越热。所以巴黎和会虽然是54学生上街的直接原因，但从思想史的角度说，还不能被视为影响中国知识界转向的一个重要因素。推动知识分子放弃自由主义的主要是一些其他原因。巴黎和会的意义被如此凸显，是在中国接受马克思主义意识形态的过程之中被不断强化深化的。</p>
+<p>巴黎和会不止中国不接受，美国虽然签字了但国会没有批准。威尔逊原则：公里胜过强权，支持民族自决，建立公正的国际秩序以消除战争。美国外交思想传统：1.威尔逊主义，美国式的理想主义，2.汉密尔顿主义，外交追求经济利益，为美国带来尽可能多的经济利益，3.杰弗逊主义，强调美国人的自由民主权利，孤立主义不参与外国事务，4.杰克逊主义，扩张美国影响，以军事实力为后盾。简单讲：私利公义，每个国家都要考虑这些东西，区别在于不同体制所讲的国家利益不同。</p>
+<p>巴黎和会上本来美国是倾向于向日本施压的，但其他国家比较迁就日本，没有做成。美国国会没有批准，中国没有签字，所以和会实际上没有解决远东的秩序问题。英国和日本在一战以前是英日同盟，这也是日本一战能加入协约国的一个重要原因，但一战后解体了，矛盾开始尖锐，英国更愿意附和美国。这些使得纠正巴黎和会的不公有了可能。于是和会两年后在美国倡议下召开了华盛顿会议，会议上中国（北洋军阀）政府迫于国内压力据理力争，美国尽量在维护自己在华权益下给日本施加压力，最后达成明显有利于中国的协议，归还山东，还纠正了战前列强的一些无理要求，二十一条和民四条约被废除，并允许在之后一段时间重新商讨过去晚清签订的不平等协议，自华盛顿会议到九一八事变，中国在这件事上取得了很多进展，比如关税自主，收回租借地，撤退外邮，限制取消治外法权。</p>
+<p>新文化运动对华盛顿会议的态度是无视，和巴黎和会形成鲜明对比。在《新青年》上，已经被华盛顿会议纠正的巴黎和会随着时间越炒越热，而华盛顿会议却很快被忘记了。中国人很早就知道学习打我们的人和抵抗侵略实际上是没有矛盾的，师夷长技以制夷。所以十九世纪面临西方威胁国内学习西方的呼声一浪高过一浪，二十世纪面临主要威胁变成了俄国和日本。这时学习对象也发生了转变。在华盛顿会议7年后，中国面临的外部压力空前加大，1929年中东路事件，1931年九一八事件，救亡仍是头等大事。在《新青年》，“十月革命”和“巴黎和会”类似，在当时甚至乃后几年提及的次数很少，1920年下半年突然对十月革命有了很大兴趣，当时中共正在筹办，1921年爆炸性增长成为《新青年》革命。有人提出：与其说十月革命一声炮响使国人知道了社会主义，毋宁说接受了社会主义，才使国人听进去了俄国这一声炮响。是由于知识分子越来越认同社会革命，乃至接受社会主义以后，才对十月革命越来越有兴趣。巴黎和会上西方没有主持公道令国人心寒，十月革命初期苏俄对华曾有高调平等表态，并发出《卡拉汉宣言》退还沙俄不合理侵占，于是中国人一下子倒向列宁。很快这件事走向反面，巴黎和会的不公平在华盛顿会议上纠正，而慷慨宣言的苏联不仅什么都没归还还得寸进尺，继承沙俄在中国的一切权益。<strong>启蒙转向不是因为救亡</strong>：国人无视华盛顿会议不是因为列强没有让步，而是使他们让步的是北京政府（北洋军阀），国人（高级知识分子以及新文化运动催生的后来的国共两党）不喜欢这个政府，而是因为对苏俄的社会改造和新社会模式越来越看好，和救亡没有多大关系。国人启蒙的兴趣转向了社会革命，转向了所谓的社会主义。</p>
+<p>现在很多人认为五四运动的主题是“民主与科学”，“德先生与赛先生”，不讲自由，共产党认为最大意义是引进了社会主义。实际上五四以前国人不怎么讲自由，之后才开始讲自由，再之后不讲自由了讲解放，其实还是自由。不同意识形态认为的自由是不一样的。社会主义讲的自由更多是所谓“人类自由”，解放全人类，自由主义讲的自由是个人自由，个性解放个人权利。五四当然有自由诉求，但不起于五四，也不是五四中最引人注意的地方。个人的概念很晚才传入中国，一直到辛亥革命还是讲天下为公，个人权利讲的很少，甚至刚传入的时候还受到抵制。1907年鲁迅“个人一语，入中国未三四年，号称识时之士，多引此为大诟，苟被其谥，与民贼同”（个人这个概念传入中国只有不到三四年，一些号称很时髦前卫的人，一讲到个人就骂起来。如果说自己是个人主义者，听起来就像民贼一样），鲁迅认为这些人是落后的，个人主义和自私自利不是一回事。正是新文化运动改变了整个局面，使得个性解放个人权利个人自由成为一个潮流。所以后来很多人（包括胡适，郁达夫，王元化等）认为个人解放才是新文化运动的首要特征和主要贡献。</p>
+<p>五四这个以倡导个人自由为特征的运动，以后对个人自由的态度越来越奇怪，到49年以后，个人自由基本上被消灭掉了。为什么会走向这个方向呢。说新文化运动是中国的启蒙运动，有明显的缺陷，没法解释辛亥革命。辛亥革命不可能没有思想变化就稀里糊涂推翻帝制建立共和。不管英国启蒙运动和光荣革命，还是法国启蒙运动和大革命，都是思想变化在前才有了政治变化。在辛亥以前也有思想变化，只是后来被人低估了，五四（戊戌）以前的国人虽主张学习西方，民主共和，反对秦制，但是不反儒家。<strong>五四是启蒙运动的一次变调</strong>，从原来强调共和民主，天下为公，变成强调个性自由，针对的矛头从法里变成了儒表，从秦制变成了礼教。这个变化在巴黎和会以前已经发生，戊戌一直到谭嗣同都没有反儒意识，但戊戌后另一种声音就出现了，而且逐渐扩大，到一战已经占到主流，新文化运动集这些改变之大成。这个改变的产生与自由个性的观念引进中国有密切关系。</p>
+<p>儒学成为五四主要的敌人很难说，1.相比儒家，法家的大共同体本位更值得被声讨，2.如同西方与基督教，个人自由可以在儒学中继续发展。有一个因素值得重视：个性自由的概念传入中国不是由欧美而是由日本，“日本式的自由主义”。甲午（庚子）之后，日本当时人民和政府被认为是学习西方成功的典型，故国人以日本作为学习西方的中介。张之洞说西学太大了，日本人已经帮我们对西学做过选择，他们认为重要的就是重要的了。所以留日大潮兴起，当时是人类历史上规模最大的出国留学潮，1905年留日8600+人，回国2000+人。维新派在戊戌失败后，革命派在辛亥成功前，都以日本为主要流亡地，并在之后把受到日本的影响带回国。所以以个人自由思潮为标志的新文化运动主要是留日学生带来的。最初倡导个人自由的典型人物就是章太炎，带出弟子包括鲁迅周作人，共产党的缔造者南陈（独秀）北李（大钊）。日本的自由意识虽然来自西方，但明显被明治时期独特的问题意识所培育，他们的近代化不是走出秦制的过程，而更像是走出周制的过程，日本一直以来是一个类似我国西周时代的封建体制，在明治中新就新在受到西方的自由启示。</p>
+<p>日本式的社会主义就是皇道社会主义，强调兵农结合，军民一体，天皇和最底层的老百姓结合起来，他们不喜欢贵族也不看不惯财阀，但狂热的忠于天皇。由明治到昭和的主流，使得日本走向了军部鸱张，天皇独断，以举国体制穷兵黩武，制造虎狼之师的军国主义道路。军国，军国主义一开始是褒义词，传到中国很多人认为军国主义是我们发展的方向，严复在英国留学，最早提出军国是中国的方向，另有汪精卫胡汉民等。为了实行军国主义，个人必须独立自由，所以自由主义在日本流行起来，但这种自由主义是一种独特的自由主义，让他们独立就是为了让他们能成为国家或者天皇的伟大事业的工具。实际上就是要教人从父母的人变成天皇的人，而不是成为真正独立的人。这种状态到了极致，即成了二战时我们看到的“养儿不尽孝，而去当神风队，养女不侍夫，而去当慰安妇，子女可以不从父母，不守妇道，私奔苟合不以为意”，日本式的军国主义和自由主义就这样成为了二为一体的怪胎。日本式自由主义反儒不反法，把要遵孔孟之道的儒家当作主要的敌人，批判以前受儒家影响变得懦弱甘于岛国不求上进。1.他们反儒反西，2.推崇法家，认为其代表一种所谓的大陆精神，称霸大陆的精神。极力想要摆脱岛国的劣根性，不想在岛上建设让岛民住的更舒服，要发展就到大陆去发展，反儒反西批判国民性唯独崇尚法家暴力。学日不等于亲日，要把学习思想精神与利益反侵略隔离开。向日本学习不是为了日本的利益而是为了中国的利益。</p>
+<p>中日现代化的目标都是由普世价值决定的，要建立一个个人本位的自由民主的体制。但日本首先要走出周制，中国没有走出这个问题。但主要由留日学生主张发动的新文化运动很大程度上受日本的影响，在思想上主要表现为反儒反礼教而不是反法家，在社会层面主要以反家庭家族和家长制而不是反秦制反集权为特色，而且这样的自由诉求不仅在新文化运动的后期，甚至在其后的左派文化运动中仍然是高涨的。章太炎提倡“独”，并以独反“小群”，提倡大群，说小共同体是大共同体的敌人，个人主义是大共同体之母。激进的个人主义在章太炎这里转成了激进的国家主义。章太炎《秦献记》《秦政记》对秦始皇捧的很高，为了克服一盘散沙的现象，他把大独大群拉到了一起，为何一盘散沙因为家庭太重要了。当时是一种很流行的思想。巴金《家》《春》《秋》，说是以自己家庭作为原型的，但自己家庭其实并没有那么糟糕。可见，个人主义只针对小共同体，不针对大共同体，只针对儒家，不针对法家，并不是从陈独秀开始的，也不是从新文化运动开始的。早在二十世纪初，就由章太炎等开始倡导了，新文化运动发展到了高潮。继续针对家庭家族的个人主义，也没有终结于陈独秀，更没有终结于新文化运动。后来的左派运动也一直是支持的。很多人反抗父权，族权，家长权，抗婚，逃婚，逃离家庭加入革命队伍。</p>
+<p>清末新政，日留学生与日本顾问等修订《大清刑律》去除家长权，形成两派，法理派，和反对的礼教派。杨度发文变革应以国家主义为宗旨，消除家族主义，人民只知有家，不知有国，人们要听命于天子。礼教派的劳乃宣反驳，他指出人民漠视国家的原因是专制国家漠视民权奴役人民，是专制使人民与国家隔膜，而且老百姓不能过问国事，又怎么能爱国呢。<strong>今乃谓 民之不爱国 由于专爱家 必先禁其爱家 乃能令其爱国 亦不揣其本之论矣</strong>。为家庭而贪污腐朽更是无稽之谈，中国自古把忠孝结合在一起。正宜利用旧有之广义家族主义为之宿根。爱家和爱国是不矛盾的，国就是家的扩大。劳乃宣认为：废除秦制，先搞宪政。杨度：要宪政限制家长的权利而不是君主的权利。杨度的宪政不是民间立宪派期望的日本式的虚君宪政，而是日本式的实君宪政。实际上劳乃宣和杨度之前更像是儒法之争，而不是礼法之争。杨度出身军事之家，迷信武力权威。整个西方文明一半起源于雅典，斯巴达军营式社会没有留下任何文化遗产，但杨度称赞斯巴达，按照他的说法古今中外文明都是无用的，谁最野蛮谁最牛。到了二十世纪头10年，中国人认为西方不但是实力的象征，也是公理的象征，尤其是庚子之后。庚子之后对国民性的谴责非常厉害，于是对西方产生了不切实际的期望。巴黎和会造成他们的失望。杨度是用西学反对国粹么，是用法治反对德治么，这是用现代法学反对传统儒学么，其实是用霸道反对王道，法家反对儒家，野蛮反对文明，乃至反对一切道德观念。其实劳乃宣继承的倒真的是从徐继yu到谭嗣同的“西儒汇融，以排秦制”的思路。凭借袁世凯是一个军头，杨度又是最支持他的谋士，如果他们真的搞成，那可能是虚君立宪吗。</p>
+<p>所以中国社会要说有什么大的变化并不是发生在巴黎和会以后，导致中国人对西方失望了。而是在新文化运动之前。中国的启蒙运动比我们认为的要长，从鸦片战争后就开始了。最早民主共和，辛亥革命，新文化运动反礼教，54强调个性解放个人自由，不是从巴黎和会后。启蒙发生真正的大变化是从徐继yu郭嵩焘谭嗣同时代的“西儒汇融 反对法道互补，反法之儒，引西斥秦”转向了章太炎陈独秀时代的西儒对立，脱儒入法，这个转变开始于甲午 戊戌和日本对中国的影响和国人从直接学习西方到改由从日本中介学习西方有重大关系。辛亥后由于一战彰显所谓西方弊病，日本思想界留日学人对中国的影响大增。这个转变在新文化运动的时候得到了更为凸显的反应。虽然都是反传统，要西化，但传统和西化的形象发生了巨大变化。最为明显的是康有为和谭嗣同，政治观点本来很接近，戊戌时代死难的谭嗣同追羡三代之文化”两千年来之政，秦政也，皆大盗也“，康有为活到民国后，不再以三代为然，转而夸装自秦代已废封建，人人平等，秦始皇时代是一个最自由的时代。这时康有为变成了秦制的狂热推崇者。以前说西洋好是郭嵩焘“彬彬然见礼让之行焉，足知彼土富强之基之非苟然也”，54之后像杨度一样歌颂西方的野蛮，陈独秀“西洋民主以战争为本位，东阳民族以安息为本位。儒者不尚力争，何况于战，若西洋之民族好战健斗，根诸天性，成为风俗，自古宗教之战，政治之战，商业之战，欧罗巴之全部文明史无一字非鲜血所书。”</p>
+<p>陈独秀指责儒家人各亲其亲长其长，与法家论调一样，但都听命于天子后，看到的不是博爱，而是法家的政胜其民，国强民弱。中国人从为反秦制而学西，到仿效日本为反周制而学西，从反法不反儒，到反儒不反法，从萌芽中的市民社会成长起个性因素，与传统小共同体自治的因素联手，先要摆脱秦制，变成集中攻击小共同体的日本式的个性解放，为大共同体的一元化控制而开路。中国的启蒙早在巴黎和会导致救亡呼声高涨之前，已经很明显了，实际整个新文化运动都是这个变化的产物。 新文化运动是反礼教的，反礼教当然就是反儒。个性解放的新文化在反宗族主义的旗号下走向了国家主义。所谓反宗族主义不反国家主义并不是说新文化时代的人反民主主张专制，反族长不反皇帝，这场文化革命当时人们自认为是继承了辛亥革命的，认为辛亥革命不彻底。袁世凯和张勋的两次的两次复辟是直接刺激新文化运动走向激进化的两场高潮。他们基本上只把专制当作皇帝个人或家族的家天下来反，而缺乏对大共同体扼杀公民个人权利甚至也扼杀小共同体权利的批判。54里面的民主理念的确可以说是比较正宗的民主理念，既反对父权也反对皇权，但54主要的是自由的理念，个性自由是54最大的特征，而54的自由理念是一种日本式的自由理念，它的性质与真正的自由主义的自由理念不尽相同。在54的理念中，我可以不为家族理念而嫁人，但却应该为人民的利益而嫁人，反对代表家族利益的家长包办婚姻，但却接受代表人民利益的组织上的包办婚姻是当时不罕见的现象，而且后来越变越厉害。</p>
+<p>要说新文化运动本身发生了变化，那也是很明显的，前期主要是受日式自由主义为主流，后期变成了俄式的社会主义为主流。世界大战和后来的大萧条导致人们对西方的仰慕发生了变化。在新文化运动的后期，经过日本中介的学习西方降温，与西方对立的苏俄成为了新的老师。两点：1.学习和救亡不存在关系，学习苏俄和救亡没有什么关系。中国人能分清学习和威胁，和西方侵略我们，我们对西方还很有好感是一样的。2.杨度批礼教打着国家主义的旗号，大清是本位。新文化运动时期不是这样，早期曾有无政府主义和民粹主义的倾向，个性解放不仅要摆脱家族，还要摆脱国家。由于两次帝制复辟，引起国人对民主和革命的情绪反弹，使得社会更加民粹化激进化。他们说国家可以不服从是指当时的政府可以不服从，但是人民你还是要服从的，要为人民牺牲自己的一切。人民就是当时的革命党，革命党可以要求你牺牲一切，因为它代表人民。显示出当时打压自由的不是民族主义或救亡需要而是一种民粹倾向。3.在大共同体和个人自由关系的问题上，原来是持用个人主义来建立大共同体的权威，新文化运动的后期大群也不容忍大独，所以针对家庭家族的个性解放仍然支持鼓励。所以从日式自由主义到俄式社会主义的转变不是太大，是比较容易的。在大共同体层面，个人权利或许仍然可以不服从皇上，或者不服从革命者反对的那个政府的专制决定，但是人民的意志或自称代表了人民意志的组织下，个人权利就无效了。换句话说，小共同体中，无论专制还是民主都不能取消自由，但是大共同体中，皇上好像是不能取消的，但是人民或是人民的权利是可以取消的。</p>
+<p>我们已经看到，日式只对小共同体有效的自由或个人主义是靠不住的，可以和军国主义结合，可以和俄式社会主义结合，到新文化运动发生时，日本已经发生了变化，日本偏偏在中国新文化运动时产生了短暂的“大正民主”，明治宪政一时有一种向英式的宪政演变的趋势，福泽谕吉式的日本自由主义也似乎在向一般的民主自由主义发展，但是日本思想界这个时期对中国有影响的已经不是所谓的自由民主思想了，而是当时的左派社会主义思想。而中国更多受到来自俄国的社会主义思想影响，日式自由主义对中国新文化运动的影响就更大，而这些影响基本上还是明治时期的遗产，中国基本上没有接受到日本大正民主时代的思想。</p>
+<p>鲁迅敏锐的感到娜拉（挪威益普生《玩偶之家》中一个追求自由个性而离家出走的女主角）出走后走向何方是中国的一个敏锐问题，娜拉出走后在当时中国条件下无非只有两个结局，或者堕落，或者回来，鲁迅的结论是出走后的娜拉应该投身于变革社会事业，投身于社会革命。实际上当时很多娜拉也确实是那样。如果大独消灭了小群后，实现的是所谓的大群强制一元化，那么所谓的独也就岌岌可危了，这种情况下有独吗，甚至相比熟人共同体小群的温情脉脉来看，集权式的大群肯定要冷酷的多。清末礼法之争时，大共同体本位主要是君主本位，杨度和明治时期的日本人一样明言要把人从家之孝子解放成为君之忠臣，辛亥以后不讲君之本位了，因为已经没有皇帝了，大共同体本位主要表现在国家本位，君主可以违背但国家很重要，新文化运动初期个性解放最高潮出现无政府和民粹倾向，之后的时候就变成了人民本位，革命本位。</p>
+<p>以个人权利为基础，由身份到契约，以个人同意让渡某些权利来建立公共领域这些原则是共同的。马克思：我们越往前追溯历史，个人越表现为不独立，从属于一个较大的整体（共同体）。现代化就是要摆脱这种状况，追求人的自由个性。作为一个客观过程描述是否正确可以商量，但作为价值诉求，与自由主义没有多大区别。个人独立，个人自由从来不是一蹴而就的，而且自由个性倾向在任何一个国家都不能同时摆脱所有的束缚。总是有一个路径，有一个先后的。西方中世纪是一个小共同体本位的体制，所谓封建制，这时摆脱小共同体是第一位的。所以西方走出中世纪的过程中曾需要一个市民与王权的联盟，那时专制是有利于人民的。也就是西方思想史上的霍布斯和博丹的时代。到市民摆脱封建以后，开始与王权做斗争，要求摆脱大共同体的束缚了，这个时候就是洛克和卢梭的时代。</p>
+<p>日本的近代化从走出周制开始，自由诉求不是冲着王权，而是小共同体。日本人建立了秦制那样的军国主义体制，导致明治以后没有建立宪政民主，而建立了一君“亿兆臣民”。使得明治以后振兴，一战以后崛起的日本，在二战后变成了一片废墟。二战后在美国的强势影响下才摆脱了秦制，走向了宪政民主的轨道，从而转向了和平发展。从历史逻辑上看，明治维新的脱儒入法，所谓的伪个人主义和军国主义结合，在日本的发展中是合乎逻辑的。“封建生于国初草昧之世，而郡县成于稍具文明之秋”。中国在这方面向日本学习就是东施效颦，比日本还不如。中国并没有走出周制的问题，由反法之儒承接的西学东渐所开启的中国现代化，实际上就是要走出秦制，但是由于后来的国人太过于急功近利，看到日本学习西方非常之速效，使得国人想走捷径，明治的富国强兵我们没有学来，因为道理很简单，没有周制可以走出，也就没有办法获得走出周制的好处，但反倒使秦制之弊变本加厉，以儒家而非法家为敌的日本式自由主义使中国的新文化运动也走向了伪个人主义破坏小共同体而为军国主义开路的方向。但军国主义没有像日本那样解决我们的贫弱问题。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>走向现代化，现代化的内容是一样的。真正的问题在于：这个时候对于中国自身的近代化诉求而言，学习日本造成了严重的问题错位，而之所以会造成这样的问题错位，我们自身的因素起了很关键的作用，这就是我们自身的秦政荀学的传统是很深厚的，这个深厚也是一个我们之所以学习西方半途而废，而学习日本好像显得很顺理成章的一个原因。学习西方学习日本学习俄国乃至学习一切外国的思想，只要是我们自主的，那么应该反省的是我们，而不是对方。谴责有些人不承认这个历史责任。国人在自身改革中学习他人的思想借鉴他山之石，只要不是别人强加的而是我们的自主行为，这个过程中的错位是不应该怪别人的。新文化运动的全力反儒和作为其反弹的反西之儒一味排斥西方，都是找错了敌人。其结果是在我们的本土传统方面，古儒的仁义道德很轻易被抛弃，但法家的强国弱民却变本加厉，在外来的影响方面，西方的自由主义和福利国家影响对我们非常有限，但军国主义和极权主义的影响一直是一个大问题。这就是我们今天在反思新文化运动一百周年时应该注意的。</p>
+<p>于二零一九年四月二十六日。</p>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>history</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我们的星球第一季</title>
+    <url>/notes/our-planet/</url>
+    <content><![CDATA[<p><img src="/images/1555713393372.png" alt="1555713393372"></p>
+<a id="more"></a>
+<blockquote>
+<p>转自 <a href="https://www.thepaper.cn/newsDetail_forward_3238147" target="_blank" rel="noopener">澎湃新闻</a></p>
+</blockquote>
+<p>苍鹰鏖战，紧锁利爪，座头鲸捕猎，吞下鲱鱼群，还有天堂鸟、切叶蚁，四年50多个国家，涉及工作人员600余人，最新的4K摄影技术，从《我们的星球》预告片和官方公布信息看，怎么看都像《地球脉动》3，只不过制作人艾雷斯泰·法瑟吉尔认为，有了网飞的助力，《我们的星球》将吸引完全不同量级的观众数目。除此之外，他还将赋予节目更多的现实意义，即游说政治家和公众关注环境问题：从现在开始，我们必须作出改变！</p>
+<p>至于为何要和合作多年的BBC分手，转投网飞的怀抱，法瑟吉尔解释，网飞可以在同一时刻于190个国家上线，节目可以保留数月甚至数年，而BBC只能在iPlayer上保留30天，而且也无法多国同时上线。网飞的观众多在16到30岁，他们根本不看电视，但却很关心这些（环境）问题，他们是我们星球的继承者，所以从这个角度上来说，网飞是最佳合作方。大卫·艾登堡爵士也表示非常期待网飞带来的巨大传播力，“尽管BBC非常具有影响力，可也无法做到一晚上抵达两千万观众。”爵士接受《太阳报》采访时表示，“我们要传递的讯息非常紧迫。大自然陷入了危机，我们不能再轻声细语地表达意见。再说什么‘我们要开个会商讨这个问题’毫无意义。我们希望观众们现在就知道正在发生的事情。”</p>
+<p><img src="/images/0.jfif" alt="img"></p>
+<p>大卫·艾登堡</p>
+<p>网飞显然也意识到与金牌制作团队合作后产生的全球影响力，邀请来了萨尔玛·海耶克和佩内洛普·克鲁兹为西班牙版本配音。</p>
+<p>想要影响更多更年轻的观众，唤起更多人的环保意识，法瑟吉尔和大卫·艾登堡选择了更具流量优势的网飞也在情理之中。而为了达到环境教育的目的，纪录片一而再、再而三地提醒观众，眼前的壮阔奇观正遭受人类活动的危害。</p>
+<p>在婆罗洲，摄制组将镜头对准了红毛猩猩路易、艾登和布鲁托的温馨一家，解说词却告诉我们，每星期有100个红毛猩猩死于过度的人类活动。在延时镜头中，婆罗洲的原始丛林逐渐变成单一栽培的油棕，大卫·艾登堡那浑厚沧桑的解说此时又一次响起，提醒观众路易和艾登们已经是最后一代野生红毛猩猩了。</p>
+<p>相比脉动系列，《我们的星球》显然没准备只给观众洗眼睛用，它还是一样壮阔恢弘，美轮美奂，只是加了负罪感和紧迫感的佐料，没那么好下咽了，唤起的情感共鸣势必更加五味杂陈。</p>
+<p>对于那些情感上认为《我们的星球》是《地球脉动》3的观众来说，这部网飞新剧假设观众们已经长大，是时候给他们看点真相了。</p>
+<p>BBC的自然纪录片系列曾向无数观众传递了自然的壮丽肃穆，毫无疑问是经典中的经典。不过，此前也不是没有质疑的声音发出，其中最突出的一点就是，对于消失的物种、萎缩的栖息地、污染横行、气候变化这些问题，脉动系列千言万语只有剧终时刻一句不痛不痒的点题：要么毁灭，要么现在开始珍惜，选择权在你们身上！</p>
+<p>有观众不满这种不痛不痒，其实法瑟吉尔才是最不满的那个。他在一次采访中表示：此前我们有个习惯，那就是在前45分钟中，万物生长，岁月静好，到了最后5分钟，我们忽然提出一个严峻的问题。我觉得这个太套路了。</p>
+<p>《地球脉动》2重复了法瑟吉尔提到的问题，自然历史纪录片制作人马丁·休斯·加梅斯也表示，这一系列“以一种错误的安全感，给全世界的观众们带来安抚和催眠”。</p>
+<p>尽管如此，在《我们的星球》中，团队仍然保留了此前脉动系列难以复制的趣味性和王牌视觉体验。看到树鼩拿猪笼草当厕所，幼年食猿雕第一次展翅飞翔，难得一见的巨型皇带鱼仿佛从神话中游弋出来，两只幸存的阿拉伯豹谈恋爱，观众的心情想必还是很愉悦的。</p>
+<p>除了自然生机和警示之外，人类行为对于环境有意或者无意的改善，也被考虑了进去。这可以说是《我们的星球》第一季中最为正能量的部分。比如，看到五只猎豹合力拿下一只角马时，你将被告知，之所以能看到野性十足的这一幕，是因为塞伦盖蒂已经对此物种进行了数十年如一日的保护工作。在切尔诺贝利的废墟中，野马、狐狸和野狼数量成倍增长，“辐射把我们赶走，却给这些野生动物留出了生存空间。”大卫·艾登堡用他警世恒言般的解说词念道。</p>
+<p>“五年前，当我们开始这样做时，总是很难将环保类节目挤进黄金时段，”法瑟吉尔在采访中说，“但现在情况变了，连英国广播公司现在也说，他们希望在节目中传递环保讯息。”</p>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>planet&amp;environment</tag>
+        <tag>series</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[笔记] 阅读柏桦《在清朝》有感</title>
+    <url>/notes/enlightment-after-reading-At-Qing-Dynasty/</url>
+    <content><![CDATA[<p>读到柏桦的《在清朝》，察觉一代代人不停的生活下去，他们肩负的任务或者说命运，是与生俱来的，是不可脱离现实，不可脱离历史进程的，是非常明了的。<a id="more"></a></p>
+<p>每秒都有人降生在了这个世界上，一个人，一个新生命诞生，凑巧衍生出了“我”的意识，全然与别人没有什么不同，只是硕大人群族落中的一份子，没有生前死后的体验和记忆，唯与自己的躯体为伴。生前自有其他人在存活，死后也有其他人继续奔波，不断地繁衍生息下去。</p>
+<p>看看中华大地上最时兴的东西就能明白一个时刻是什么模样，在什么进程中，该做什么，做什么是顺水推舟轻松幸福的，不该做什么，做是违背自然规律违背历史科学的。但这个实在是太难把握，大多数如鱼得水游刃世间的人并不是已参透了问题最底，其实也并不需要，一直较真探索下去本就是个哲学问题的无底洞，无非是想找一个为了什么嘛，其实这个理由是理应无差的传承下去的。</p>
+<p>父母亲友师秉持了同样的观念以耳濡目染，其实本是不需耽搁时间找理由问为什么的，便可以踏踏实实去做该做的事情了，过去人们也便如此维护着健壮的社会秩序。现在的信息自由与爆炸打破了这个平衡，父母与亲友开始脱节，友师与网络开始脱节，本该眼中是一个完整的世界——哪怕角度偏倚无比，而现在变成了支离破碎，各个角度都有却都不完整都不足以支撑自己。所以近代开来，才在精神上出现了普遍的大范围的问题，焦虑不安，迷茫失落，无去无从。</p>
+<p>而另一方面，也自然有一些人很好的传承了意志，或轻松度日或忍辱负重，或学术世家或警医商旅，抑或小商小贩养家糊口也能够踏踏实实，自得其乐。</p>
+<p>附：</p>
+<p>《在清朝》柏桦</p>
+<p>在清朝<br>安闲和理想越来越深<br>牛羊无事，百姓下棋<br>科举也大公无私<br>货币两地不同<br>有时还用谷物兑换<br>茶叶、丝、瓷器<br>在清朝<br>山水画臻于完美<br>纸张泛滥，风筝遍地<br>灯笼得了要领<br>一座座庙宇向南<br>财富似乎过分<br>在清朝<br>诗人不事营生、爱面子<br>饮酒落花，风和日丽<br>池塘的水很肥<br>二只鸭子迎风游泳<br>风马牛不相及<br>在清朝<br>一个人梦见一个人<br>夜读太史公，清晨扫地<br>而朝廷增设军机处<br>每年选拔长指甲的官吏<br>在清朝<br>多胡须和无胡须的人<br>严于身教，不苟言谈<br>农村人不愿认字<br>孩子们敬老<br>母亲屈从于儿子<br>在清朝<br>用款税激励人民<br>办水利、办学校、办祠堂<br>编印书籍、整理地方志<br>建筑弄得古香古色<br>在清朝<br>哲学如雨，科学不能适应<br>有一个人朝三暮四<br>无端端的着急<br>愤怒成为他毕生的事业<br>他于一八四〇年死去</p>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>history</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[笔记] 易中天中华文明史 - 三大文明的历史关系</title>
+    <url>/notes/yi-zhongtian-lecture-history-of-chinese-civilization/</url>
+    <content><![CDATA[<p>人类文明分两个阶段：史前史，文明史。分界点在国家的诞生，国家诞生的标志是城市的出现。根据考古结果，本届文明共有7000年历史。<br><a id="more"></a></p>
+<h1 id="三大文明"><a href="#三大文明" class="headerlink" title="三大文明"></a>三大文明</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>人类文明分两个阶段：史前史，文明史。分界点在国家的诞生，国家诞生的标志是城市的出现。根据考古结果，以城市遗骸为证据，本届文明共有7000年历史。</p>
+<h2 id="中华文明"><a href="#中华文明" class="headerlink" title="中华文明"></a>中华文明</h2><p>中华文明诞生于3700年前。上下五千年说法不科学。3700年又分为两段。分界线在公元前200年，罗马统一地中海，秦汉统一大中华，形成了当时世界上最大的两个文明圈。从此人类文明史进入世界史阶段。史前有一个鼎盛时期：春秋战国，史后有一个鼎盛时期：汉唐盛世。到中唐以后中华文明开始逐渐退出世界舞台，分界点在751年的怛罗斯战役，以及4年后的安史之乱。从此开始盛极而衰，起伏跌宕的走下坡路。李泽厚《美的历程》讲宋代说“时代精神不在马上，而在闺房里”，读一读唐诗宋词就知道了。商周是用眼睛看世界的，文化特点是绚烂多彩，春秋战国用脑袋看世界，有先秦诸子，百家争鸣，汉唐用心胸看世界，强悍，广阔。全世界的留学生到长安留学。宋明有心无胸，向外的目光开始往里收，禅宗兴盛。明时代精神就在裤裆了，代表作是《金瓶梅》。清时代精神到膝盖了，最会做的事情就是下跪，培养了大批的马屁精。</p>
+<p>为什么会起伏跌宕的盛极而衰？与制度有关系。周分权，秦集权，明专制，清独裁。越来越差。而在此之间，汉唐宋元在集权与民权中找到了平衡点。就在中华文明跌宕起伏的由盛而衰的时候，伊斯兰文明崛起，欣欣向荣。</p>
+<h2 id="伊斯兰文明"><a href="#伊斯兰文明" class="headerlink" title="伊斯兰文明"></a>伊斯兰文明</h2><p>伊斯兰文明的起点：公元662年，标志是穆罕穆德在麦地那建国。一兴起就势不可挡，只用了短短的一百多年阿拉伯帝国就成为世界性文明，把地中海变成内海。在1258年蒙古人灭亡阿拉伯帝国文明后，伊斯兰文明圈也没有停止脚步。为什么如此强悍，一个原因是先立教再建国。对于他们来说宗教和文明是同步起源发展的，是世界上的唯一。穆罕默德把信仰体系社会制度生活方式文化形态历史传统都囊括在内，上管天下管地中间管空气。所有穆斯林按照伊斯兰的教义在生活。历史上能够管到这种程度的只有中国的儒教，但是儒家思想不是与中华文明同步产生，也不是宗教。还有一个原因，皈依的手续极为简便，只需作证：万物非主，唯有真主。在简便的手续背后体现的是一种文明精神，是能够成为世界性文明的重要原因。伊斯兰的精神是致人至此。尊重生命，反对杀戮。为真正而奋斗，不意味战争。封斋的习俗就是为了提醒他们 世界上还有人在挨饿，为了知道挨饿有多痛苦。因为挨饿而盗窃，本人无罪，追政府责任。伊斯兰文明崇尚平等，做礼拜坐的位置没有区分。一夫多妻来源于当时战乱男丁少，很多女的嫁不出去，因此允许一夫多妻，在平等态度对待，财产平均，做爱次数也一样的条件下。因此很多伊斯兰不会一夫多妻，因为做不到。而中国古代是一夫一妻多妾。因为这种伊斯兰精神的作用，伊斯兰文明走向了世界。到16世纪，才慢慢走向了衰弱，因为西方现代文明崛起。</p>
+<h2 id="西方文明"><a href="#西方文明" class="headerlink" title="西方文明"></a>西方文明</h2><p>西方现代文明如果从文艺复兴算起，至今660年（1400左右）。他们是站在伊斯兰文明的平台上起跳的，因为阿拉伯帝国曾做了一场百年翻译运动，出重金雇人翻译古希腊波斯印度的各种文献，得以保存希腊文明火种，西方文明从阿拉伯接过了希腊文明火炬。西方文明一上来就势不可挡，现在人类文明已经无法想象没有西方文明的生活了。</p>
+<p>西方文明靠的什么？有信仰，但西方文明不能叫基督教文明。西方要保护的不是宗教信仰，而是信仰自由。独立自由平等是核心价值。“这是我的破房子，风能进，雨能进，国王不能进。” 拆迁？只能跟土地拥有者协商。观念体现价值，制度保障观念。这才有崛起和科学发达。</p>
+<h1 id="我们的命运和选择"><a href="#我们的命运和选择" class="headerlink" title="我们的命运和选择"></a>我们的命运和选择</h1><p>伊斯兰文明由信仰产生精神，西方现代文明是信仰背后体现价值，中华文明的特点是没有宗教没有信仰。信仰：对超现实超世俗的存在坚信不疑，它是人类智慧的创造者，不能证明。我们文明无宗教无信仰。信而不仰。信诸神诸佛。中国人的态度与希腊人是很像的，希腊神话的神泡妞偷情私生子，希腊的宗教是艺术。又仰而不信，什么都戴，祭祀的时候存在，祭祀完就不存在了。即使说有信仰，信仰也是没有定准的，非常的实用主义。</p>
+<p>世界三大一神教：犹太教（油），基督教（酒），伊斯兰教（奶）。犹太教有特权思想，他们是上帝挑选出来的，最聪明的人。有利有弊。能在国破后继续存在，但像油，在人群中是孤立的，像油浮在水面。伊斯兰特慈，对伊斯兰特别慈爱，普慈，对所有人都很慈爱。基督教更进一步，没有普和特的区别，上帝面前人人有罪人人平等。他们有一个问题：普世情怀。每个发达的文明都有普世情怀，是人之本能。一神教认为世界是主创造的，认为人是糊涂的需要启蒙，神派了天启的使者把爱洒向人间。但他们的信仰不同，所以就打起来了。中华文明像水，什么都可以进来，像一个开放的平台。有好处：可以成为消除文明之争的平台，坏处：核心价值观不能恒定。</p>
+<h2 id="为什么民族需要信仰？"><a href="#为什么民族需要信仰？" class="headerlink" title="为什么民族需要信仰？"></a>为什么民族需要信仰？</h2><p>需要核心价值和核心价值观来凝聚，成为世界性的民族。所以非常重要，换句话说信仰就是要一个核心价值观。因此我们没有一个核心的价值观，只有阶段性的。比如说汉以后的三纲五常，改革开放前的阶级斗争。这都是适应于当时经济基础的，所以管用起作用。所以如果经济基础不发生变化，核心价值观依然起作用。经济基础变了，小农-&gt;计划-&gt;市场，维持会，纠察队没了，又没有适用于市场经济的核心价值观，所以结果：<strong>东张西望，身强力壮，钱包鼓鼓，六神无主</strong>。</p>
+<h2 id="怎么办？"><a href="#怎么办？" class="headerlink" title="怎么办？"></a>怎么办？</h2><p>找到全人类的共同价值。为什么有共同价值？有共同人性。那么就有共同追求，共同理想，是非善恶有共同判断。自由是共同价值（虽然有点不同。东方：自由宝贵，剥夺自由，以示惩罚，杀一儆百；西方：自由是选择的，选择的前提条件是负责。提前告知盗窃7年牢，你自由的选择了盗窃，那么就要负责任的坐7年牢）</p>
+<p>这些共同价值体现为文明意志。文明意志就是为人类谋求幸福，为人类实现共同价值找到最合理最可行最博爱的途径方式。各个文明是为了共同追求进行各自的探索。“共同追求，各自实现，文明求同，文化存异”。</p>
+<h2 id="我们怎么办？"><a href="#我们怎么办？" class="headerlink" title="我们怎么办？"></a>我们怎么办？</h2><p>中华文明到了最关键的时刻：1.无信仰的人民有责任为全球人民提供一个开放的平台，担负天下兴亡。2.由于无信仰，所以无恒定价值观，我们应该找到全人类的核心价值观，全人类的共同价值，找到我们文明自己的实现方式。</p>
+<p>因此说中华文明到了最关键的时刻。我们有必要反躬自省，只有知道自己从哪里来，才知道自己往哪里去，才知道我们该怎么办。</p>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>history</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[日记] 5月16日</title>
+    <url>/diary/2019-introspection/</url>
+    <content><![CDATA[<p>面对矛盾重重，是时候对自己做一个观察解剖。</p>
+<a id="more"></a>
+<h1 id="做人"><a href="#做人" class="headerlink" title="做人"></a>做人</h1><p>在我记忆中，算是挺不幸，毫无预兆因果便生而为人。而至于是否是自由意志，或出于怎样的缘由便做一个人降生在地球上，目前应该算是一个世世代代的大问题，虽然有许许多多的解释，解释也都有许许多多的信徒，但于我而言还是没有一个能信服的说法。对于在充满爱的环境中成长的人也不会有这种疑问和烦恼，他们会睁大双眼回问，活着便是活着，家人的陪伴，朋友恋人的异同，让生活本身就成了理由。过好生活，自己快乐也不辜负他人便足够，要考虑发问这种没有答案的终极问题实在伤神，想也想不通。</p>
+<p>这是一种很积极的状态了。积极与消极或许没有一刀切的分界线。积极不代表所有事情都会积极，消极也非所有事情都足够绝望。更像是一个滚动条，在两点之间游走拖动。相对积极的状态是很好的，积极是解决难题或甚至所有事情的不二法则，积极是让人在符合自己期待的路上前进的保障。被迫，无奈，抵抗的消极心态其实是极不可取的。肉身已在此地，灵魂也不可逃离，且这个世界纷繁复杂，不管是过去现在还是将来，都是一番足够广阔的天地，一个可以促成梦想促成行动的试验场，一个有血有肉有情有义——和它们的相反面——的江湖，有几乎无尽的资源仍待探索与使用。人力、物力、学识智慧、长空与大海，更有无垠星辰，搭上一生都不足，何况已逝去了空荡的前半生。哪怕面对着没人遇到过的最糟糕的绝境，消极总是于事无补，而积极思考积极行动却往往可走出一条生路。积极心态总是好的，没有人会把一把双刃剑拿过来指着说积极也会带来坏处。</p>
+<p>手脚一伸仰天长叹时，觉得呼吸也变得费力疲惫。这从生活实践上属实奇怪，都没有进行什么体力劳动怎也会累。人毕竟不是一个单独生活的物种，人无法在现代文明社会中独立生存。当想要逃离，或者不合群不合意，都会使得身体紧绷，精神焦虑。而想要合群，想要活在这个文明中，就要让他人满意，努力使自己完美的融合进去。这样的目的是无可厚非的，但是，真的不是那么容易做到，或者说，需要许许多多的先决条件。不妨简单想象一下现代文明框架下要求的“人”应该是什么模样：在家里尊敬父母照顾儿女忠于家庭和伴侣，在学习上积极自主认真钻研踊跃交流合作，在工作上勤奋热情恪尽职守听话少说多做，在社会上伸张正义勇敢无畏舍己为人弘扬传播正能量。</p>
+<p>现代文明建立起这样一个人设。暂且细数一下这需要人具备什么品质&amp;能力：谦虚，尊长，爱幼，收入，衷心，主动，认真，吃苦，踏实，交流，表达，倾听，勤奋，热情，同理心，同情心，乐于帮助他人，不求回报。这其中，其实又有一些是其他的基础，例如交流表达这些与人交往的基本技能，如若无法掌握，其他技能也就不能发挥作用。</p>
+<p>我要承认，我作为一个现代人，是不容置疑非常彻底地失败的。</p>
+<h1 id="基础枯涸匮乏"><a href="#基础枯涸匮乏" class="headerlink" title="基础枯涸匮乏"></a>基础枯涸匮乏</h1><p>何谓基础，构成进一步结果的前提，以简单却发挥作用支撑更加的深入和复杂。所有的物质存在甚至不以物质存在的意识，正是都由简单构成复杂，简单的结构即是必不可缺的基础。正视基础的地位十分重要，人有人的基本品质，物质有物质的基本粒子。万事万物从基础得到升华，现有的宇宙理论阐释一切一切的起点都是一个奇点的爆炸。人划分出了数量诸多的领域，有些与其他全无联系，但它们绝都是离基础不可的，没有例外。充斥在我们四周的消费品无一离不开多个行业的支持，行业发展更是无数个行业，行业站立于无数个基础之上。作为一个人的基础，上文提到的品质能力是基础，技能是基础，专业领域也是基础。</p>
+<p>我的人格&amp;思维十分混乱不定，思考——如果也能称得上思考——十分抽象散乱隐晦浪漫。这便是因为基础的极度匮乏。匮乏来自于单调乏味的童年，来自于僵硬晦涩的知识点，来自于冷酷刻板的教师校园。我思维的活跃（并非高人一等而只是一个孩童应有的活跃）因此极大的受到了牵制，交流匮乏，阅读匮乏，知识匮乏，单调划一的生活令视野也受到了极大的限制，甚至在大学前只去过三个市，其中一个市待了一星期给我留下沉重的负面记忆。活跃的思维如同一片水量充沛的云，但它就是达不到能够坠落的沉重，便唯有渐渐的便融匿于浩瀚的天空。绝非有心推脱或横加指责，我也绝对相信大多数人能够有优良品质冷静心平气和的接受现实和挑战，而我，只是在试图分析我的人生轨迹，那个能够塑造一个人，人也能够塑造的东西。说我懦弱，无力塑造自己的人生轨迹，我是不会反驳的。一个有趣的例子：对编程具有无限热情的两年初中时间里，我竟只知道学校课本上介绍的Visual Basic和易语言。</p>
+<p>过去我一直没有这种感受，但近一年的时间里这种感受空前强烈。基础枯竭到的程度令人发指，我实在没见过比我更差更均衡的全面的差的人选（这里或许又是我的视野受限了）。现在束缚我的囚笼铁链已经逐渐地松垮变大，可在困顿中形成的思想惯性却让我像那只被盖上玻璃盖的苍蝇，拿掉玻璃盖也无心无力再尝试飞翔了。面对身上留下松绑的淤青，我感到的只是疲惫，无感。</p>
+<p>截止目前，我仍旧是那只玻璃盖中的苍蝇，现在不再需要和盖子斗争了，而面对的敌人，正是我自己。</p>
+<p>翅膀幼嫩，不经世事，不谙人情世故，恍惚不定，深陷泥淖的自己。</p>
+<p>深刻反省</p>
+<p>于23岁5月16日。</p>
+]]></content>
+      <categories>
+        <category>diary</category>
+      </categories>
+      <tags>
+        <tag>life</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[转载] 历史预测为什么总是错的</title>
+    <url>/why/why-historical-predications-are-always-wrong/</url>
+    <content><![CDATA[<p>杰出的演说者都擅长用情绪煽动他的听众——即使他的理论连他自己都不相信。演讲艺术的真谛并不在于去用逻辑说服别人，演讲艺术的唯一真谛是传递激情。</p>
+<p>理性，欲望与激情，柏拉图在2000多年前便做了精妙的阐释。理性象征着智识，诠释着混沌的宇宙中，人类因何而高贵。欲望象征着本能，是人类动物性的一面，也是平庸的大多数。唯有激情是个难以定性的词语。</p>
+<a id="more"></a>
+<p>世界的目的大多来自于欲望，目的何以实现归结于理性，激情并非起点也并非事物的本质，因此人们往往忽视它的力量，但在很多改变历史进程的节点，只有激情，是真正连接目的和结果的关键。</p>
+<p>破釜沉舟的战役需要激情，登高一呼的革命需要激情，舍身取义的英雄需要激情，但以暴易暴的报复需要激情，犯上作乱的叛乱需要激情，草菅人命的大盗同样也需要激情。</p>
+<p>在哲学家的设想里，理想的社会应该以理性为主导，继而人人追求哲学、艺术，追求纯善与本质。但真实的世界显然不是这样的。因为作为“人类”的集合，理性是人类之所以为人类的基本属性，但<strong>作为个体的人，理性的缺失和欲望的恣意才是更普遍的现实</strong>。</p>
+<p>“我们的精神比我们的身体具有更大的惰性”，大多数人相信地球是个球体并非是因为也像麦哲伦那样做了环球航行，大多数人相信地球是个球体仅仅是因为别人告诉他地球是个球体。假如两千年前的旅行者来到世界的尽头、直布罗陀海峡的赫拉克勒斯之柱，面朝一望无垠的大西洋，“地球是平的”，这对他一样是颠扑不破的真理。</p>
+<p>人类的历史是英雄的历史，但更是人的历史。对历史的准确判断必须基于这个基本原则。英雄人物可以理性可以睿智可以勇敢可以决绝，并不意味着所有人也都可以如此。大多数人都天生脆弱，不会拼死坚持公义与真理，而当见到竖子落井，也难免不升起恻隐之心。<strong>欲望是生来的本能，个体的理性也只是有限残缺的理性，我们中的大多数人游离于两者之间</strong>，所作出的决定，也就容易被内在或外来的激情所支配。</p>
+<p>激情常常是短暂的，易变的，甚至于同样的人在不同的两天，所主导他做出决定的激情在面对同一种选择时是正好相反的。就像大泽乡的暴雨激起了陈胜举事称王的激情，而前一天的他面对武装齐备押解戍卒的官军，或许恐惧的激情占了上风。但激情带来的后果是延续的，乃至是不可逆的。“今亡亦死，举大计亦死，等死，死国可乎？”——这句话一旦说出口，便永远地改变了历史。</p>
+<p><strong>大多数人天生具备脆弱性，这种脆弱来自于对未知的恐惧，恐惧让我们倾向于寻找可以依赖的对象。</strong>对于公众，这种依赖情绪寄托给“意见领袖”或者“专家学者”，也就是所谓的主流观点。对于经济学家，非常常见的情况是把数字当成信仰。因为数字是简洁的，直观的，可以量化的。在极度复杂且不确定的人类社会发展进程中，对于一些人，看到这些统计数据仿佛看到了唯一的救命稻草，从而陷入某种偏执。</p>
+<p>激情指向的不确定性与人们自身的脆弱性，使得<strong>群体的决策本身就不是以基于客观的冷静分析与逻辑理性为基础的</strong>。尽管有人会觉得在超长的时间里一切都会趋于某种动态平衡，历史的运行有自我纠正机制，但对个人而言，这样的时间跨度并非总是可以承受的，人生有多少年呢？</p>
+<p>完全否定理性与逻辑是很危险的，但完全依靠自认为的理性和逻辑，并认为世界就应该如此运行，是更加危险且缺乏智慧的。大多数侃侃而谈预测历史及经济活动走向的人，为了增加自己的说服力，不得不向别人展示各种数据图表以及论证，即使他的论证严谨数据详实（做到这一点很难），也并不比猩猩随机抽取结果来得更准确。因为一些很关键的地方，常常不可量化，甚至于放不到台面上。对于大众而言，最重要的是灌输信念而不是灌输逻辑。<strong>一个似是而非但简单直观的理由比严谨深刻但晦涩难懂的理论要有感染力得多</strong>。</p>
+<p>没有经历过幻灭的人是不懂得什么叫风险的，这样的人数不胜数前赴后继。过去的许多年里，很多谎言和泡沫都是靠简单的信念去支撑，并且总是行之有效，一些通过客观分析和冷静思考的观察者早就发现它偏离了合理值，却不断被事情的发展打脸，以致于只好感叹“这个世界疯了”——不是这个世界疯了，而是这个世界本来就是如此。</p>
+<p>只有认识到世界本身的荒谬性与不合逻辑性，才能真正看清楚历史发展的脉络。历史不是由数据指引的，数据只是过去历史的一种抽象表达，历史是被群众的集体无意识指引的，这种集体无意识既贪婪又盲从，既感性又愚昧，既脆弱又残忍。人一旦将自身置身于群体之中，所思所想很容易变得只是基于动物的本能。导致狂热总是比应有的更狂热，破灭总是比应有的更惨烈，让狂热和破灭相互转换的不是理智，仅仅是支配群体做出决策的激情。将思维从客观事物机械的变化之中跳脱，聚焦在施力于客观事物的人之上，了解人性深处的不合理性和弱点，才能够为把握看似荒诞的历史进程中真正的线索创造可能。</p>
+<p>预测历史进程是一件风险很高的事情，是一件经常被证伪的事情。但若要问起我，我会说，这是一个喧闹的时代，这是一个令人迷失的时代，喧闹的时代会有许多的杂音，迷失的时代让很多人被一些表面的东西冲昏头脑。但未来数十年社会的变革将会远超许多人的想象，并且这种变革绝不仅仅是经济和技术层面的。歌舞升平的年代往往是危机的前夜，但从更宏大的历史格局来看，这将只会是伟大的起点。</p>
+<p>让我们来见证。</p>
+<p>Source: <a href="https://www.zhihu.com/people/shu-dao-guan-shan-yue-guo" target="_blank" rel="noopener">知乎 - 关山越过</a></p>
+]]></content>
+      <categories>
+        <category>why</category>
+      </categories>
+      <tags>
+        <tag>life</tag>
+        <tag>philosophy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[日记] 5月27日</title>
+    <url>/diary/diary/</url>
+    <content><![CDATA[<p>最近几天舍友一直说 you look sad. you are sighing all the time. 果然我内心的焦虑还是生命力强盛，怎么按也按不住。我倒不觉得比前些天更糟糕，也许对于初见的人，我还能更加卖力的掩饰一下，表演一下积极，但过两天也就再没有精力嬉笑插话了。时间也是密密麻麻，一不经意就过去了很多，焦虑一会儿，又一事无成的白白流逝了很多时间，更让人焦虑。这个恶性循环促使我必须现在再反思一下自己。</p>
+<a id="more"></a>
+<p>我的精神心理条件依旧很糟糕。</p>
+<p>可能没有进步，也可能只有略微的进步，略微到还没有产生一丝质变的迹象。比如说每日练习的冥想，现在进行的15分钟我自觉有些盲目了，自认为练了很久了现在应该练15分钟了，可其实我现在5分钟的持续专注都做不到呢。明天开始回到最基础的5分钟练习。</p>
+<p>还想分析下来龙去脉，为何这么糟糕。</p>
+<p>少年时我可以非常专注非常集中的生活在现实世界中，那真是我美好的记忆，虽有些模糊，但足以让我相信活在当下的重要性和乐趣。有这么几个记忆片段：大约在二三年级的时候，我在操场上抬头看着高耸的教学楼，感叹时间这么慢的过，何时才能六年级，才能从小学毕业啊，感觉一辈子都要在这里。大约在六年级的时候，和心动的女生一起讨论阴谋论，谈到时间比以前走的快了，大家感同身受。到了大约十三四岁的时候，世界观得到了巨大的冲击和打乱，在互联网上看到了大量的负面言论，阴谋论，末日论，见识人性丑恶，家庭关系也不同以往，父母困在家庭关系中终于不断地把年轻活力消磨殆尽，持久的冷战加以不时热战。我也是从那时开始，变得更加沉默寡言与世无争，而在现实世界和我之间无形的屏蔽墙也不声不响的按照自然的生命法则建立起来了，并伴随着更多的事件一次次得到加固，尽管我已经十分无感麻木了。</p>
+<p>我的成长是二十分的孤独的，我的精神世界里没有几滴水分和光照。即便物质世界虽不富裕但也不至于匮乏，我的母亲最爱做的事仍是每一顿饭都要严厉呵斥我“再多吃一口”，掉一口饭，摔一个碗，心情好的时候骂一骂，心情不好的时候打一打。很多时候我都能理解她的行为，我的父母亲人都是善良勤劳的好人。但强烈的内疚感和咽下去的泪水留在了一个孩子的心坎里，淹死了想要萌发的种子。手头有寥寥几本书，充满错字而且深奥晦涩，纸张也非常难闻，几次想拿起来读但完全读不下去，唯一一本喜欢的书是“格列佛游记”，是我不记得几岁时从亲戚家要来的。没有过两小无猜，也没有过宠物，因为母亲很讨厌猫猫狗狗。人是有本能的，几番尝试着建立联系无果后，终于彻底关上了与外界的门，掉进了枯涸混乱的内心世界中，面对琳琅满目虚无缥缈的哲学问题，并不会让我更加好过，自然更加与周围环境格格不入，也因贫乏的知识素养，视野的极度受限，深陷入一场没有武器，僵持不下的无义战，被解答不了的难题缠绕，只能浅薄的发问生命的意义在哪里。对于知识的厌恶也在高中达到了高峰——冷酷严肃的教师，死气沉沉的校园，庸俗物质充斥着呼吸的空气，弄虚作假应付了事是必备技能，带点头衔必须要长腔吐痰趾高气昂，让我曾相信读书无用论，除了完成老师的命令，我不肯多看多写一个字。</p>
+<p>已经很久没有沉浸在一件事中享受乐趣的感觉，不论是读一本出色的书/文章，写字听曲画画，吃美食看美女，欣赏/拍摄眼前的自然美景，还是写代码，写文章，写日记，亦或是听到一席直戳内心的话，参与对话与人交流。有时察觉到思绪情绪想要云翻涌起，却也只是平静的水面上起了一丝涟漪。流出的泪水也只有两三滴。鲜艳的色彩也是暗淡，快乐的笑声和有些刺耳，日日夜夜变得千篇一律波澜不惊，注意力的集中和持续是一个遥远的梦想。相应的技能也在一天天中被尘封起来，不进则退。</p>
+<p>有一个很深的感受想分享给每个人，那便是，我们每个人对于自己所遭受的生活困苦的评价非常容易极度乐观。这是生物保护自己存活下去的本能，但人们必须要正确的认识自己所有的经历，才能原谅自己，放下包袱，才能在正确的道路上继续往前走。</p>
+<p>我在这种对自己的推翻，质疑和观察的路上走着，但对于问题的解决并没有清晰的希望，我对于这些年宝贵光阴的白白失去和对自己对别人的伤害感到十分可惜，我没有那种幸运遇到一个人帮扶指点彻底改变我的轨迹，只是命运的安排让我兜兜转转，每一个岔路眼看着沉沦却都没有走下去，在平庸的日子里走到了拯救自己的小路上。我也要感谢所有我遇到的人，不论好与坏，给我人间经历，教训又没有击垮我。更有人那么包容，接纳我的样子陪伴着我。我要把自己从无义战的泥潭中拔出来，伸展伸展束缚良久的手脚，以完全打开的心接纳这个世界原原本本的面貌，理解它的过去与未来并在未来某日再度融入到这个秩序中，做有价值有产出有实际意义的事情——到现在我23岁了还是等于0。我只希望世界再多给我一点点宽容和耐心。</p>
+<p>我等着我自信坚定的醒来睁开双眼，有条不紊的进行我一天满满当当的想做之事的那一天。如果等不到，也不惋惜，坐在命运风帆上，很多事情苛求不得。我非要打破朋友圈的快活寂静的空气也不是什么有效有用之举，最近的积极分享也可以作为一个阶段到此结束了。还有我未来想要做的事情，即便我没有做到，也会有其他人做，想到这些我也便不那么急躁焦虑了。我只想单纯的享受探索自己内外的旅程（也要时刻提醒自己），永远好奇，永远开放，永远继续往前走。</p>
+<p>5月27日<br>多云</p>
+]]></content>
+      <categories>
+        <category>diary</category>
+      </categories>
+      <tags>
+        <tag>life</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>瞎说一下几个生命要素和生命价值与时代</title>
+    <url>/diary/discuss-some-things/</url>
+    <content><![CDATA[<p>随便聊一聊“成熟”、“生命力”、“边界”、“内在觉察”、“自由意志”、“权力”、“超越视界”、“交流”、“文艺”和“生命价值与时代”</p>
+<a id="more"></a>
+<h1 id="成熟"><a href="#成熟" class="headerlink" title="成熟"></a>成熟</h1><p>总是说成熟，什么是成熟？为什么有人看起来早熟？而年纪不小甚至年过花甲的人也会很不成熟？看来不是传统上认为的到了一个年纪人就成熟了，那只是生理意义上的成熟，而且可以说这与我们评价一个人成熟与否基本没有关系，而心理上的成熟更加重要。心理上的成熟该是：不再在他人身上抱过分、夸张的情感寄托，具体表现为大事小事里透露一种被照顾被理解的渴望，不善于表达出或故意隐藏自己的诉求，而别人没有领悟理会又会十分不满意。成熟是与他人建立良性连接的基础，是生活充实，内心坚定，着手探索人生路程的基础。不同的人走向成熟的路各不相同，但走向成熟的路是每个人必须要走的。不成熟，不会让人更快乐，有人纵容除外，但这种纵容对于个人成长没有任何好处。</p>
+<h1 id="生命力"><a href="#生命力" class="headerlink" title="生命力"></a>生命力</h1><p>自己是不是天生阴郁没有活力？且回顾一下自己刚有记忆的童年时，探索欲是否让你不厌其烦的一下午盯着一群蚂蚁，拆开一个老钟表，一步一定要走一个格子；玩耍发疯时可曾觉得疲惫，沙子土堆，玩具布娃娃。可惜人总是生存在一个不可抗拒的大环境里，生活用一件件小事教育了我们要收敛，在每个人身上有些事件是共通的，有些是因人而异的，有些是正向的引导，有些是负面的压制。所以生命力在一些人身上大放光彩，有些人则借此损人利己乐此不疲，还有人生命力几乎消磨殆尽，或者在机体防御机制下知晓到了抛头露面的危险，而变得老实巴交，随风摆动。不必难过，不这样又怎么在恶劣的环境中安然度过至今健在呢。发现生命力缺失那么就要在适当的时候再努力找回来，因为往往在被压抑的时候还年纪尚小，是体会不到自己的能量在流失的。拥有生命力是好的，能把活力从孩童一直保持下来是幸运的。生命力是生命的能源电池，是追求理想目标不可或缺的原动力。</p>
+<h1 id="边界"><a href="#边界" class="headerlink" title="边界"></a>边界</h1><p>边界在生命旅程里一直都是极重要的东西。从生下来，婴儿就要在摸索中得知边界的概念，我眼前的手脚躯干是宇宙间我能够控制自如的部分；一个物体能够从地面上被我用手拿起来——他和大地不是一体的；妈妈和乳房并不属于我并受我的控制，不是每次想要都会马上出现在面前。漫长的生命过程里，静态物质的边界身体健康机能健全的人们都能没有问题的通过触摸探索建立起来，而动态的生命也存在边界——探索的机会不再是绝对的充足了，父母是陪伴自己最久最长的动态的活的生命，不成熟的父母本身就没有清晰的边界划分，尚处探索中的孩童又怎么搞明白呢。边界模糊不定，会导致把与自己交流所用的方式：意愿想法，和与外界交流的方式：语音和动作混淆。错误的控制意愿，不切实际的想法诉求，不会让人更快乐。过分要求別人来满足自己，也便是被称为“自私”的表现。</p>
+<h1 id="内在觉察"><a href="#内在觉察" class="headerlink" title="内在觉察"></a>内在觉察</h1><p>觉察与沉浸相对，都是人的基本技能，小孩子总能做的很好，沉浸在痛快的玩耍中，还能觉察并以之探索这个世界。人类孩子在狗窝长大会建立狗的认知，小狗却无法在人类家庭的教育下与人一样思考。本是一项生来具有的基本技能，在浮躁物质的社会中会变得难能可贵，因为人在这种强调物质过分捧高物质地位的环境中保持沉浸习惯后便会迷失难以自拔了，就像任何习惯的形成一样。内在觉察是与自己做朋友的唯一方式，与自己做朋友，而不是孤立自己忽视自己的情感诉求，人有时容易对自己苛刻无情。这就需要良好觉察力的帮助，与自己保持一个良好的交流，问一问你为什么不高兴，你为什么迷茫无助，你为什么把自己封闭起来，你为什么没有动力，给自己一些关爱——人是有这种能力的。所谓觉察也即对自己内在的观察，即观察写着自己之所以为自己，自己独一无二性，自己与宇宙关系，生命意义，生命之前之后的空白，我是谁我从哪来我要到哪去等等的答题纸。宗教、哲学、心理学、儒释道等学科理论都包括人们对内在世界的理解认识，内在世界和外在世界一样有意义，充满未知并广阔无垠，仍待每一个人继续探索。</p>
+<h1 id="自由意志"><a href="#自由意志" class="headerlink" title="自由意志"></a>自由意志</h1><p>人是十分矛盾的——所有的事物都要赋予一个利与弊好与坏，做一个价值判断。所以觉得矛盾两难真的正常不过，尤其天生更敏感更软心肠的人。自由也在不休的争论中曲折前进，无数先人拿血肉与自己的生命为我们做了解释。这个价值观的冲击太大了，自由对于太多人来说是可怕的东西，尤其是大多数秩序服从的既得利益者——他们也是掌握权力与资源的人，平等的自由意味着他们要交出肆意妄为的权力和盆满钵满的利益，他们本已比自由更自由；还有很多人出于自己坚信的道义信仰而大加反驳，认为这种打破地位传统是荒谬的危险的，他们想要服从带来的安全感。现在人类基本上已经建立起了自由平等普世价值的认同，这是十分不易的。那么到底什么是真正的自由？前两天读到一句话可做回答：你必须首先洞察宇宙的真谛，然后才能成为有自由的人。对真谛有越深的领悟，才能越接近自由。自由首先一定不只是外在世界，物质世界的自由，还有内在世界。那么自由的前提便是对自我和外界有一个平衡，统一，全面，清醒的认识。外在表现为博闻包容，负责尊重，活在当下而不短视，不以物喜不以己悲。</p>
+<h1 id="权力"><a href="#权力" class="headerlink" title="权力"></a>权力</h1><p>人对于权力有一种生来固有的渴望，也可以说它是来自于人对自由的渴望的。拥有更大的权力意味着一个人拥有更大的自由，拥有别人没有的权力意味着拥有别人没有的自由，这给人带来莫大的满足感。可追求权力、权力之争实在不是什么人类历史里美妙的篇章，人性丑恶在权力之争中淋漓尽致的展现，弑父屠兄抄斩政敌都是家常便饭，时至今日仍旧在发生。愚蠢更是常见，哪怕人们从古至今认为争取权力并登上高位的人都是精英中的精英了。事实证明这些政治精英并不与至高无上的权力相搭配，他们玩弄权力的本领越高，越会滋长权力所同时带来的弊端，让人变得愚蠢短视虚伪狠毒，穷尽其力追求权力的稳定维持，这与纯粹美好的理想是绝缘的，他们往往要靠散布谎言或白灰黑色宣传，并出于各方投来的压力大小来做出决定。这个游戏的局越庞大，权力中的个人越没有发言权，越难以对抗权力漩涡中的无形力量。没有束缚的权力之战是十分危险的，会消耗掉大量的社会财富，阻拦破坏一切有可能动摇权力的因素，而这种侵扰又反过来为自己积攒了不稳定因素，这时候就需要更加严格的控制并采取措施转移视线，转移矛盾。可以看出，这种权力的游戏能够带来秩序和安定，但最终都会落入破坏阻碍社会发展，所以不是可持续之计。它造成的破坏性和浪费往往是空前的规模，也几乎必然会在已无法停止的权力斗争中以目睹崩溃而收场。权力之争是人类文明迄今最可怕最丑恶的事情。</p>
+<h1 id="超越视界"><a href="#超越视界" class="headerlink" title="超越视界"></a>超越视界</h1><p>上文提到人有沉浸的技能。通常人不会一直看着天上想象远方星球上生活着的外星人。人群主流意识是踏实的站在地球上的，充斥在我们眼前的实实在在的环境中。开公司卖产品，宣讲拉票，工作购物，看剧聊天玩游戏，旅行定位发片。人们日常99%的生活在这个环境中都得到了满足，也就导致了习惯性的沉浸，变成迷失在其中。这对于日常生活之外的意义探寻，观察力和批判思维是致命的，也默认了现有的社会秩序，默认了在这个秩序中寻求答案，让不断膨胀的物质化商业化吸收了自己，不同人的生活潜移默化的变得千篇一律追求着同样的私家车大户型和真皮提包，视表现不同的人为异端异类，疲惫发牢骚却轻易无法再开启深究反思的能力。超越视界便是唤醒被生活催眠了的自己，在视界之外重新思考这一切，尤其问问自己，是否在向长远的目标前进，走的充实坚定，是否精神与物质得到了同样的满足，抑或是否心底里有一股压抑的不满，无法言说无法释放，生活疲惫看不到出路。功利的角度出发，不论大小商业，短视都是不可取的，短视无法适应长远的商业发展，而往往能攫取大量短期财富的商业都是掠夺性质的，不长久甚至付出比收益更大的代价。功利心，急功近利是个人已被物质化的结果，是难以获得满足的。再度从功利的角度来说：物质富裕不等于精神满足。物质追求并没有错，而清醒的认识能让人冷静，在物质追求的路上也要有精神追求，从中摘取到精神果实才能收获满足。个人成长的角度出发，对视界之外的思考也是能够唤醒自我觉察的，两者相辅相成，在更广的时间跨度中探索人生定位，目标和意义。</p>
+<h1 id="交际沟通"><a href="#交际沟通" class="headerlink" title="交际沟通"></a>交际沟通</h1><p>人是离不开人群的，人生而为群体生活。社会性在前，其次才成之为人。当然不排除个例由于种种罕见的原因真的厌恶群体生活，就像极罕见的有只蜜蜂出生便自己飞到一边去生活——对于蜜蜂来讲往往生存不了多久，幸运的是人通常不至于生存不下去。不与其他人联系，许多情感来源将搁浅，诉求是得不到满足的，快乐便成了一件十分困难的事情。其他人作为我们所依赖以生存的外在环境的一部分，是一个美妙充实的生命体验过程不可缺失的元素。除了一些群体先天不幸带着疾病出生，在童年探索世界的过程中都可以学会，就像使用餐具吃饭一样。后天因素，比如缺乏沟通环境，遇人不善导致社恐等等，之后就要付出更多的练习才可以了，这非常的可惜，但人不论什么技能都要练习才可以的，只是不再是小时候无意识的训练了，或许能够尝试把它当作一项如游泳健身一样的运动来练习吧。当然作为生活在当代的好处，可能性是开放广阔的，交际技能也不是非必须不可。</p>
+<h1 id="文艺"><a href="#文艺" class="headerlink" title="文艺"></a>文艺</h1><p>人有创造，表达的欲望。交流沟通是途径之一，文学艺术是途径之二。不表达自己，千万思绪心中过什么也没留下，那多么寂寞。古人留下来了用尽各种方式所创作出来的文艺作品，岩石壁画上，瓶身瓶底，武器，农用器具等等等，今天小孩子有了更高级的电子画笔，橡皮泥，何处不曾见过人类的创作呢。如今表达的方式太多样了，电影电视剧都是十分流行的创作形式，但创作者还是少数，今天还多了一个门槛大幅降低的视频/文字自媒体和短视频，当然，也带来如今一个现象是创作和流行文化变得十分庸俗化，丝毫不像古代，作一首气拔山河的五言诗，一首写景抒情细腻入微的词。但现在也是平民大众首次能够面向大众进行创作了，短视频的火爆流行也说明了不管是知识分子还是普罗大众，人创作表达的欲望都是存在着的。不管是细腻的还是粗犷的情感，自由的抒发表达带来文艺创作的繁荣，而非莫不发声，于社会于己都是有好处的。</p>
+<h1 id="生命价值与时代"><a href="#生命价值与时代" class="headerlink" title="生命价值与时代"></a>生命价值与时代</h1><p>种种因素杂糅在一起，无疑一眼看上去社会就像混乱噪杂的一锅粥，一点都不安静，一点都不清醒。不乏理性的声音，但发出来仿佛投入一片波涛汹涌的海水，也看不到什么涟漪。倒是假新闻标题党娱乐头条占据着各个屏幕，以语不惊人死不休之势。人生下来不能获得健康成长的保障，不能左右的因素还是诸多存在着。不乏消极厌世的宅男宅女将目光投向他们眼中二次元的完美设定，迷茫漫无目的的人黑压压的涌向大学再漫无目的涌了出来。焦虑是普遍蔓延着的一场全球瘟疫。人类在过去几十年经济科技快速发展的代价如今几乎能看个全貌了。环境恶化，气候改变，经济整体的繁荣大部分流入了最富裕阶层的口袋拉大了贫富差距，全球化发展迅速调头保护主义林立，政治收紧，经济控制加强，阶层流动性几乎停滞，民营企业忧心忡忡。不必意识到宏观的问题，光气氛就足以让人焦虑了。读书工作吃饭赶路都要抓紧时间，赚更多的钱，才能买得起今明天需要的林林总总，相信更多的钱就给孩子提供更好的教育和环境，还有大街小巷等着收钱的课外兴趣班。工资营收是在提高，赚了更多的钱，但要花的钱多的更多。唯利是图的商家压缩成本，食品行业尤其害人惨重。医院人满为患。这种气氛也助长了娱乐庸俗文化泛滥，疲累了一天过后，干嘛再拿遥远深沉的话题折磨自己。这种快速发展带来的快节奏，不是血肉之躯的人类所承受得起的，却也没必要去承受，这种快节奏发展对各方都没有增加收益，只是把未来的收益拿到了现在让数据好看，可各方包括环境付出的代价实在得不偿失。对个人生命价值的思考这时候显得非常重要了，为集体文明发展贡献可喜可贺，但个人也需要个人幸福，不止是大众也包括陷在权力漩涡中的争红了眼的政治家，生活在地球上人类环境中的所有生命。</p>
+]]></content>
+      <categories>
+        <category>diary</category>
+      </categories>
+      <tags>
+        <tag>life</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>与现实世界的错位感</title>
+    <url>/diary/misfit-the-real-world/</url>
+    <content><![CDATA[<p>错位感与社会契约</p>
+<a id="more"></a>
+<h1 id="错位感"><a href="#错位感" class="headerlink" title="错位感"></a>错位感</h1><p>放眼望去的时候，总能看到人们坚定远虑的活着，而他们所着眼的那些东西总是提不起自己的兴趣——房子、存款、靓男靓女，来者不拒，不来也并不乐意索取；总觉得心里有别样的情绪，时而复杂不可琢磨，时而简单委屈惆怅，虽然早习惯了无人关注无人理解甚至无缘诉说，但还是免不了失落可惜；总觉得自己与他们在投入生活着的人全不相同，为了不让自己显眼露头，只好努力装作他们的模样，时常尴尬难堪，落得身心疲惫。内心世界的彷徨挣扎，消耗了太多能量和精力，可还是填补不了这沟壑。生活在一个世界里，却明明不在一个世界。</p>
+<p>一个人所认为的世界的样子，就是他眼中的世界，也就是佛教说的，相由心生。所以，与现实世界的错位感，竟来自于自己的心底相信自己与世界错位。世界就像水一样，游鱼长的不管多奇奇怪怪，总是被包容在其中的，占着他形体所占的那份空间，从来不会错位。而人们更是一样的模样，展开都是一个大字，奇奇怪怪的形状也都没有。</p>
+<p>生下来，我们就开始摸索这个世界，每个孩子都是实打实的度过了生命开端的每秒钟，看看这里，看看那里，视界中的东西，有些在动，有些静止。一天的故事不管好坏都那么悠长，一夜过去如同来到了新生，一节课刚开始就已坐如针毡。如若能一直这样自在的摸索学习，不受打击与挫折，那么便是十分满意的，游玩其中自得其乐，错位感无从得到萌芽之机。</p>
+<p>原来是一些不好的因素。恐惧、内疚、自责、缺爱、冷漠、身心的疼痛等等，突然从头顶浇下来了一盆水。若没有安慰支持，没有鼓励，没有原谅和爱，它们让还在形成世界观的人愈加冷酷，并发觉：这个世界一点都不好，人间不值得。生命的火焰渐渐的摇曳起来，或许是没有了氧气令它变得暗淡下去，直到冒出一股青烟，最终轻轻地熄灭。这时主观意愿便不再想要探索融入了——人又不傻，干嘛看到墙一定要撞过去——可现代人又如何离开现代社会独自生活，还是要被赶鸭子上架。这时候再已没有什么让自己欢愉的理由了，责任、期待还在不断的飞过来，社会对每个人安排了紧紧的日程。生活的一步步必须不断进行下去，看起来不由得选择。亲人朋友这时也已经与自己站的很遥远了，哪怕依旧维持着表面上的联系也还是疏远，甚至不如工作或学习上的同事老师同学与自己更亲近，但他们绝大多数情况下终归代替不了亲人的位置。</p>
+<p>如果这时候，偏于一隅灰心丧气，这道沟怕是永远也迈不过去了。心境里充满着对这个世界体验极不好的情绪和信念，不察觉间，又传染给了眨巴着眼渴望着故事的下一代。这便成了一个人一生故事的梗概。</p>
+<p>如果走向另一条路——这真是需要运气的——路人打开了自己生活罐头的盖子，看到了天空之外的天空，触碰了知识范围之外的知识，或者他还进一步把你拉了出去。多么美好的故事，可最可靠的希望，还是在自己身上。另外记得，从一个生活罐头里出来，就别再进到另一个罐头里盖上盖子了。</p>
+<h1 id="社会契约"><a href="#社会契约" class="headerlink" title="社会契约"></a>社会契约</h1><p>人是不太喜欢抽象模糊找不着边，宗教也要摆一尊神像才可吸引信徒来供奉。组成一个社会群体的每个人之间，必然要形成一个无形的契约，描述群体间共同生活的行为意识准则，让这个群体建立起一些共同的价值观与期待，作为个体间产生交流联系的最基本被默认的共识，好在此之上发挥人性的创造力进行不可避免的博弈——有人的地方，就有江湖。有了交流博弈也就如影随形。尤其在小小城市，小小社区，河水经过都要流淌的平稳缓慢一些，人也更容易达成一个更细致完整的契约，包含着高低等的规规矩矩更加严格，更不容易被打破。</p>
+<p>《我的天才女友》(My Brilliant Friend) 作为一部影视作品难得的对此刻画的非常细致入微。一个相对闭塞的社区，也一定要有一个完整的体系。一个在每个成员心中扎下了根的事无巨细的无形的契约，提供给每个人生活所需的目的，所需的方式，所需用来考虑事情的因果链条的每一个环节。中国古代的严苛礼教文化，更是用千年的时间把”契约精神”发挥到了淋漓尽致，变成了鲁迅一代作家笔下极具讽刺意味的诸多作品。</p>
+<p>不能融入的代价是高昂的。需要承受质疑，被指责被抛弃被视为异类。随着他们年龄越长，或越从中得势，他们越不愿意打破这套规则，因为他们已经用尽毕生在这套规则中摸索了，玩的精巧熟悉手法多样，这契约已经与他们的生命纠缠在一起。并没有什么不可忍受。契约面前，年轻人叫喊的什么解放，什么自由，成何体统。</p>
+]]></content>
+      <categories>
+        <category>diary</category>
+      </categories>
+      <tags>
+        <tag>life</tag>
+        <tag>society</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>与自己和解太难</title>
+    <url>/diary/difficult-to-self-reconciliation/</url>
+    <content><![CDATA[<p>“与自己和解太难”，一句印象很深的话，这句话其实非常到位的击中要害了，所以一想到这方面的话题，不用想就蹦出来了。</p>
+<a id="more"></a>
+<p>与自己和解，没错，很难。必要性不必多说了，与自己和解是人生必要一课。</p>
+<p>那些明显或不明显的童年经历：做一件十分骄傲的好事却没有任何赞赏奖励甚至投来冷漠嘲讽、做的不好没有引导鼓励得来的还是嘲讽甚至一次无情没有余地的打骂、对自己几乎从来没有什么兴致的父母、被同龄人或老师欺侮孤立……。为什么童年经历这么重要，因为一切都还是空白未知尚处探索的阶段，都很容易被吸收，或大或小化作对这个世界认识的拼图的一块，而且童年世界完全不受控制，被带领被指引去看多大的世界就看到了多大的世界，每个人必然能看到的世界范围，只有家、不同的学校和之间所连接的路。已经在内心深处扎根的记忆，事情一遍遍发生训练出来的情绪反应行为反应，已经形成的看待事物的模式——已经俨然成为了自己的一部分。现在，要与自己和解的想法，也即诞生于这个错综复杂所形成的自己。和解，也就是要把这些事件用理性内观检索一番，实施起来靠的还是自己。这些塑造形成自己的事件，由于我们作为幸运的人类——经过了岁月和更广更全面的知识经历的积淀，现在可以勾勒出记忆从前所无法看到、忽视掉的更多方面，加以思考批判，用一个所认为更好更合理的部件替换掉自己人格中的这部分，乞求释然，乞求轻松，乞求成长。</p>
+<p>可是万事万物逃不出一个马太效应的圈圈，瞧，这里也是。想要摆脱的东西，自然是对我们不利的消极因素，没有人想要从勇敢退回恐惧，从坚强退回到懦弱。也即意味着，我们要凭借现在不好的自己的努力，把不好的自己变成一个更好的自己。是的，在这件事上自己是决定性的，来自外界的帮助只能锦上添花而不可能闭上眼睛做完一个手术就脱胎换骨大获痊愈。状态越糟糕、受到越大的创伤、经历越久的噩梦的人，也就越难在这条路上走下去，而起点作为这段成长旅程最艰难的地方，也更多的阻隔障碍。好在，种下了这颗种子以后，知识经历，智慧，是滋润支持这颗种子的土壤阳光，雨露甘泉——它们不断补充进来，成长就会继续，它们要是没了，成长也便死亡。不要停止学习，不要关上自己的门窗，让阳光雨露尽情的袭来自己的脸庞。</p>
+<p>别再加深内疚等悲观的因素，包括觉得事情做的不够好，完全能做得更好。然而事实是这次就是这样子，下次也可能不会好多少。这次说了一堆胡话，下次可能还会说出来。这次冷漠不关心，下次可能也不会更热情。量力而行即可，不必要强求一个糟糕的自己做的像愉快轻松的自己一样好，都没有办法把美给自己，也更给不了别人。反而释怀、轻松的心态才是正确的状态，也是更好的自己的样子，从恶性循环中出来，发现周围的一切好像更加漂亮了一点。不知不觉，也便走向了下一阶段，那个更好的自己，自然而然地分享出去自己所看见的美丽。</p>
+]]></content>
+      <categories>
+        <category>diary</category>
+      </categories>
+      <tags>
+        <tag>life</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>易被忽视的生命历程与时代的紧密联系</title>
+    <url>/diary/the-close-relationship-between-life-course-and-the-times/</url>
+    <content><![CDATA[<p>突然想到这个问题的时候是觉得非常有意思的。一个人，或者说就指着这个人类胚胎，生在不同的时代，命运是怎样的呢？必定是截然不同的。他会从睁开眼睛开始认真的观察所目睹的现实世界，全心全意的吸收所亲历的规则，完美的融入进去那个时代，做其他人也都在做着的事情，可又不只是简单的重复。<a id="more"></a>突然，命运这个词便不再那么神秘了，所谓命运，不就来自于此。</p>
+<p>一生能走出什么样的故事历程，时代该是最重要的因素。时代也便是背景、荧幕，人们都在它前面唱戏表演，一出出史诗，一出出震撼的演出，不时也对背景的布置做一些变动。太熟悉太见惯了，就像空气，反而很容易的就把时代忽略掉了，头脑中思索的事情，似乎都和时代没什么关系。但是，认识它却是很有必要的，空气只需呼吸，时代可直接决定了一个人的一切可能性。</p>
+<p>如今，我们在切身的感受着这个时代的一切，亲身经历着、参与着，这是属于我们的科技时代。1百年前，世界大战战火不停；1千年前，地球是平面的还是常识深入人心，耕地织布劳动一生，连命都不是自己的；1万年前，人们开始尝试利用石器农具耕种圈养，驯化猪牛羊；10万年前，人类还是部落聚居，采果狩猎外出觅食；100万年前，人类开始使用火。340万年的石器时代，2500年的铜器时代，2600年的铁器时代，300年的航海时代，100年的蒸汽时代，70年的电气时代。一个时代越来越转瞬即逝，从前几十代人处在一个相同的时代中，如今一生可能就要度过多个时代。时代改变，那么生活方式、社会形态、环境面貌、人文精神都是在巨大的变化着的。300年前人权自由平等的观念的提出、蔓延是一个影响深刻的分水岭。不远的未来人类进入殖民太空时代，也是一个巨大的分水岭。</p>
+<p>怎么敢说时代不影响一个人的一生轨迹呢，所认识的世界的模样，一生所作的绝大多数选择，所遇到的人和他们带来的亲情爱情友情，以及他们的职业，人格发展和信念，都在时代的桎梏下。尤其，越大的成就能够成为成就，都必须是在正确的时间做了正确的事情，符合时代所强调的需求，便做成了成就。</p>
+<p>影响一个人人生轨迹的因素，大体上可归为三类了：时代背景、遗传性状、后天经历。时代是最不能改变的东西，遗传在不远的未来人为将应该可以干预，现在最容易掌控的，其实就是后天经历。不能改变的事情固然有很多，但要为此难过的话也不必，难过当然不是我们把问题思考至此的目的，何况也还没有到思考的终点。</p>
+<p>我们并没有被限制住了身心的追求，要感谢先人为我们争取到了空前的物质繁荣和自由，也记录下了无数的哲学思考和人文历史。我们虽然每天面对着来自各种力量的信息轰炸，但还是有机会睁一个清醒的眼睛，拨开眼前的迷雾，广开门路敞开心扉，攀到巨人的肩膀上去观察思索，找到前方的路。这个过程，独一无二的经历，和其中得到的真理，才是我们每个人最精彩动人的部分。对此的认识是非常重要的，只要想要的是愉快的生活，追寻的是价值和意义。</p>
+]]></content>
+      <categories>
+        <category>diary</category>
+      </categories>
+      <tags>
+        <tag>life</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>童年，幸运，能力</title>
+    <url>/diary/relation-between-childhood-and-luck/</url>
+    <content><![CDATA[<blockquote>
+<p>幸运的人一生都被童年治愈，不幸的人一生都在治愈童年</p>
+</blockquote>
+<p>初看到了这么一句话时，是有点震惊的。这句话着实对这个每个人都面对着的困境叙述的十分到位。人对于世界最初的认识，最开始建立起的意识观念，爱、相处、自我与价值，认认真真还是轻描淡写，看待他人和事物，胆怯自卑还是自信开放，等等等等组成生命个体与世界相联系的灵魂本质的重要元素，都从童年时期孕育结果。<a id="more"></a>无可避免的，童年所处的环境对于绝大多数人来说也几乎也没有什么个人选择的空间，主要由社会发展程度、父母或其他监护人，给了每个生命成长的环境。而就是在这个人文物理环境中，每个人潜移默化的学习锻炼着下面那些能力。直到某一天阴差阳错——那么也意味着或许那天不会到来——可以开始自己触及心灵深处的思考，什么才是自己需要的，自己经历了什么样的过去造就了什么样的自己，自己过去是什么样子的，自己现在是什么样子的，自己想成为什么样子。</p>
+<p>人，既可以弱小，无助又可怜，又可以塑造着小社会，影响着大社会。一切除了生物本能以外的思考、行为的起点都是一个独立的人，不独立的人使不出自己的劲，而只能听命于人，被他人赋予生命所需要的安全感。独立是步入现代文明的第一步，没有迈出这一步的话，也谈不上对如下几点的思考取舍，实在太遗憾了。</p>
+<h1 id="信念"><a href="#信念" class="headerlink" title="信念"></a>信念</h1><p>信念是人灵魂的电池，为人提供热情、力量、动力、跨越困难障碍的勇气，它有时是对宗教、主义的信仰，有时是爱恋、责任、价值追求、理想，甚至复仇。信念来自于人意识中对某种事物、理念或神秘力量存在的相信，这份相信带来坚定，坚定带来方向，生命力燃烧朝向的方向。没有信念的人，往往不堪信任。有了信念，才使生命的火焰肆意张扬，在风雨中摇曳而不熄。对每个人来说，信念来源和障碍都各不相同，信念给人以动力，却也随着越偏执、越狂热越让人容易失去理智。王小波说，“信仰是重要的，但要从属于理性”。一般在信心饱受打击，建立起的观念被突然摧毁，童年被压制讥讽、被冷落忽视的过程中，生命动力也会随着信念的动摇无声消失。</p>
+<h1 id="语言和表达"><a href="#语言和表达" class="headerlink" title="语言和表达"></a>语言和表达</h1><p>轻松平静、点到为止的表达自己的想法</p>
+<p>玩弄文字，能够在文字中增添或领会深意，作文讲谈行云流水言之有物的能力，实在是人生一件宝器。没错，天赋是非常重要的，天生的对复杂事物敏锐的捕捉感知能力非常重要。随着认识感知的不断增多，经过沉淀糅合并能打乱组合成为跳动在自己笔下的故事。婴儿刚出生便用哭开始了表达，表达对于生存至关重要。学习语言的过程开始，是表达能力进入新阶段的时间点，也是一个给人奠定很大差距的时间点。这时开始接收到的表达逻辑，思维方式，与人表达自然或拘谨，提防或敞开，幽默或死板等，都会结合基因携带的性格特质吸收混合形成自己的表达逻辑和思维方式。不会表达-&gt;学习表达-&gt;能够表达-&gt;练习表达-&gt;表达的恰到好处-&gt;表达的精巧娴熟，能够运用自如，表达能力便成为一个普普通通满足要求的工具。表达不只口头，也有音乐、绘画等艺术途径的抽象表达。童年养成的表达短板，后天练习无疑是困难的，仿佛不合规的基地之上已经建起了摩天高楼，现在发现了隐患要进行修补。目前社会没有一个允许成年人训练提高表达能力的自然环境，学习艺术表达那么就更困难了，被生活磨平至奄奄一息的好奇心，观察力，想象力，抽象思维……，再加上仅存的毅力。也就不会像无知却满怀好奇心的婴儿那样不急不躁轻松自然动力十足，但追求仍旧是有价值的。</p>
+<h1 id="活在当下"><a href="#活在当下" class="headerlink" title="活在当下"></a>活在当下</h1><p>积极地主动地感受、投入身心，觉察到并能掌握着思维走向，而不是沉浸在幻想的思绪的泥潭中(不停的走神)凭借藏识(下意识)对外界刺激作出反应，漫无目的，行动没有意义。人自生下来时，都没有持着这种状态的，必然是抱着探索的精神和好奇心，感受所有这些未曾见过的一切，学习到自己的为人处世之逻辑，成为了现在正读着这句话的人。那么，究竟是什么样的经历使自己，或者会使自己不知不觉里远离了当下，活在泥潭里，值得每个人深思。</p>
+<h1 id="照顾自己"><a href="#照顾自己" class="headerlink" title="照顾自己"></a>照顾自己</h1><p>悉心培育自己各方面能力进步成长，聆听自己，关注自己。尤其在意自己的情绪，摆脱焦虑，摆脱下意识生活会带来的无力感和绝望。面对着充满不安元素的现实世界，为自己的心灵塑造一个良好环境，保护自己内心免受内外界施加的痛苦、恐惧、暴力、悲伤，能够给予自己灵魂以养分。</p>
+<h1 id="认识观察"><a href="#认识观察" class="headerlink" title="认识观察"></a>认识观察</h1><p>外到世界、内到心灵，都保持着一份良好的联系和理解。建立历史观，掌握过去是理解现在的前提，大到宇宙、社会，小到自己。冷静分辨，思维全面，既要廊庙经纶，也需山林泉水。对自己所处的世界、历史进程保持一份了解，还是必要的。</p>
+<h1 id="接纳"><a href="#接纳" class="headerlink" title="接纳"></a>接纳</h1><p>观察后重要的便是能够接纳。接纳自己的当前状态，不自暴自弃过分苛求，相信自己爱自己，一切都是在变化的，唯一不变的事实是永不停止的变化，接纳外界的林林总总，承认现实之所以为现实，从而不易掉入只是相信自己相信的事情的陷阱。</p>
+<h1 id="社交与独处"><a href="#社交与独处" class="headerlink" title="社交与独处"></a>社交与独处</h1><p>单独的一个人在这个世界上，是没有价值的，没有教育、没有语言，也就无法进行更智慧的思考，与其他聪明的动物别无二致。个人价值离不开共同体的价值。社交也因此具有了必要性。而社交能带来的，又不仅仅是流传这些最最基础的基础，还有不同灵魂间的沟通交往，帮助和扶持，使双方每个人发挥大于本身的价值，追求自己之力到达不了的地方。不管挚友、至亲、普天之下的朋友，不粘滞，不索求，干净利落，畅快淋漓的关系，能给生命带来多大的惊喜？</p>
+<h1 id="人性观"><a href="#人性观" class="headerlink" title="人性观"></a>人性观</h1><p>人性首先含有动物性，它是每个生物首先作为个体可以在复杂环境中生存下来的本能。人性，囊括着动物性。动物性也本就不存在人类文化中的善恶标准。崇尚善良、慈悲为怀的个人品质，道德，普世价值的文化，在没有实现以前，长期会是一个人们建立起的无比向往的美好期待和寄托，但首先是人创造出来的，不可离开人而存在，也即是赖以人的人性为基础才得以生存的东西。在有了这种文化以后，有了第一个人开始觉得杀戮同胞太残忍并传播出去以后，有了第一个人开始觉得奴隶他人是残忍的荒谬的以后，人性才开始被辨识，含义范围得到丰富修缮。虽然人性总是显现一层丑恶的意义，因为正是它驱使着人做出种种与人类文化背道而驰的行为，而且它事实上也一直存在在那里，考验总不会得到让人满意的结果，乐观是无益的。可对此而感到悲观恐怕也是无益的，没有必要。最好就如同看待一颗随风摇曳的树，它就是结结实实的存在于那里。明辨至此，也不必自恃道德高尚而去没有底线的纵容隐忍别人，是是非非，也需要一个人建立起自己的观念。</p>
+]]></content>
+      <categories>
+        <category>diary</category>
+      </categories>
+      <tags>
+        <tag>life</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>突然想起去年遇到的小女孩</title>
+    <url>/diary/the-little-girl-in-memory/</url>
+    <content><![CDATA[<p>她就那么不声不响的主动跑了过来，一身红色的碎花连衣裙，扎了两个小辫，一双单眼皮下嵌着乌黑有神的眼睛。抿着嘴，羞答答的微笑，微低着头，轻扭着身子。她话并不多，只管在旁边做些小孩生下来就会用，来吸引注意力的小动作，像是自编的舞蹈。</p>
+<a id="more"></a>
+<h1 id="不知不觉，做了许多年的路客"><a href="#不知不觉，做了许多年的路客" class="headerlink" title="不知不觉，做了许多年的路客"></a>不知不觉，做了许多年的路客</h1><p>一袭灰暗色系的长衣庇体，头戴向前歪斜遮着口目的斗笠，身边只缺了一把佩剑。漫无目的的江湖行走，几粒碎银勉强辗转赶路，也所幸能填饱个肚子。默默无语，流落天涯，并没有多少时光与人敞开胸怀。其实也没有什么话可说，没有读过几本书，没有什么艺术熏陶，没有什么感触能够升华为理想，不曾见过大山，也无面对江海的亲身体验，没有去过什么京城，不知道什么省府大衙。有的只是不高不低的丘陵，不美不丑的灰墙破瓦，不大不小的市镇，高墙把学堂围的整齐，一切一切紧紧包裹在四周，又仿佛无边无际，永远延续下去。惭愧的很，纵有苦涩，思绪万千，却酿不成什么可以摆在桌上拿来与人下酒的天下胸怀，什么理想热枕了。</p>
+<p>内心打了解不开的结，糙钝棘手，不敢再去碰。再无悸动，再无舒爽，只有困倦，只有无感，没有答案。随着年月，已经落上了一层厚厚的尘埃，逐渐也已习惯了这角色，只管走自己的路便是，也免得打搅了原本享受着红尘碌碌，努力生活的人，那是最过意不去的事。可还是惹许多人生厌恶，道歉显出悔意都是于事无补的，只让人更觉得过分异类。</p>
+<h1 id="酒の年"><a href="#酒の年" class="headerlink" title="酒の年"></a>酒の年</h1><p>去年，不知道喝了多少酒。也是生活对我莫大的善意之一，得到了一个挚友的十足包容，也才给了我这个痛饮的机会。只管去饮，耍几回酒疯，哭哑了嗓子，大喊为什么要活着，活着实在太痛苦，只有在没有意识的时候我才会说出来的话。有意识的时候自然不会说，很简单，一是就你苦？比你苦的多了去，你一点也不苦；二是说了没有什么丝毫意义。又哭又喊，累的不得了，渐渐有了意识，也觉得累了，发现挚友原来一直陪我坐在马路边，陪我抹眼泪。我要告诫我自己，我再冷漠再麻木，再无所谓，这个高尚的人我是真的不能辜负啊。</p>
+<p>标题中的学前年龄的小女孩，也是那段短暂的时间内碰到的。</p>
+<p>她就那么不声不响的主动跑了过来，一身红色的碎花连衣裙，扎了两个小辫，一双单眼皮下嵌着乌黑有神的眼睛。抿着嘴，羞答答的微笑，微低着头，轻扭着身子。她话并不多，只管在旁边做些小孩生下来就会用，来吸引注意力的小动作。这就让我很尴尬了。不一会儿又献了一支刚刚学过的舞蹈，她要跳的时候我就开始紧张，跳完以后我心里尤其特别的难过，她有那么多爱那么多阳光和真挚的善意，我的心里却挤不出来一丝一毫的真情回赠与她，我倍感着急忧虑，暗自伤感，学着其他人的样子拍拍手说两句跳的太好了，十足的虚情假意让我自己听了都讨厌。后来她被父母叫回去了，她不一会儿灰溜溜的跑过来，坐到了我的腿上，亲了一口我的脸颊。我心里却只有说不出的复杂纠缠的苦涩。过会再次被叫回去了，几分钟的人生交叉，然后干净利索的就此别过。过后继续吃喝，渐渐又喝多了一点点，掉了几滴眼泪，为了她，祝她人生前路无尽，一生阳光一生幸运。也为了我自己。</p>
+<h1 id="我怎么了"><a href="#我怎么了" class="headerlink" title="我怎么了"></a>我怎么了</h1><p>我是经历过转变的。我十几岁前是完全不同的一个人。虽也相当脆弱，受不起别人的一丝嘲讽；也相当吝啬，决不让同桌多占一丝空间；也相当自卑，一旦站在讲台上就会大汗淋漓，咽喉梗塞。但我积极热情，感情充沛，尤其对于那时候被老师称呼为微机的电脑，更是无比神往，在脑海里想象属于我自己的电脑的模样，它一定要是摆放在一张漂亮的专用电脑桌上，显示器在上面，主机放在桌面以下一个专门的位置上。</p>
+<p>在那短暂的记忆中的几年，令我难忘的老师，触动心灵的和善宽容与温暖，对我的肯定、对我的支持、对我的鼓励的眼神，带着我去看医生，为了给我一个奖状自己额外掏钱买了一张，让我坐在最好的位置上，周围是班级第一第二和我最好的朋友；令我难忘的初次心动，打开纸条的幸福，每天每时盼望着下课回头就可以见到她的幸福，和她玩任何简单到不行的游戏的幸福，听着她推荐的歌曲的幸福，敲击着键盘收发着消息的幸福，每天上学路上都在期盼着能够撞见她。令我难忘的活灵活现的切身体验，都紧紧凑在一起组成那几年。</p>
+<p>清楚记得三年级的时候，抬头仰望着教学楼顶的距离，那里是6年纪学生的教室。现在还仿佛感同身受，那时我在想：我才过了一半啊，6年纪实在是太遥远了。我想象不了初中，无法想象长成初中的大哥哥大姐姐那样，高中大学亦或人生更不在我的意识范围之内。可到今天，为什么，不为什么，我已经大学毕业1年多了。</p>
+<p>最让人无能为力的是，这一切都不知道怎么的，一个个地逐渐从我的生活中消失了，没有一件事在变好，哪怕老师也有一个不变的规律是每换一次一定要更差一些。最喜欢的老师相继在新的学期永远离开不见，六年级终于到了，电脑终于有了，一个廉价的告白后最心动的人也走了，哪怕我知道她也对我有同样的心动。她允许我说出了不该说的话，结果两个脆弱敏感的心的主人谁都无法再面对谁。那个我曾感概的6年级，席卷着第一个没有作业的暑假一下子就过去了，我的人生故事也随着进入了新的一章。</p>
+<p>我怎么了。我现在依旧解答不了。我在初中伊始也曾有梦想的光亮，在计算机世界里翱翔，享受着电子设备散发出的独特的芳香，学会了编程学会了找网站学会了各种奇技淫巧。也曾与新的朋友在游戏中与僵尸搏斗，与幽灵斗智斗勇，玩的十分尽兴，成绩还能双双提高，老师也喜闻乐见让我们坐了很久的同桌。也接连对几个女生心动，她们各不相同，却都像是天使能够温暖我极度弱小稚嫩的心灵。她特别的外向，性格特别好，照顾别人的感情，字特别好看；她特别的乐观可爱，爱笑，甚至感染了我，让我拥有了一身微笑的铠甲；她扎一个马尾特别的漂亮，一个内向的精致的像我一样柔弱细腻，单纯并向往美好的姑娘，话少，温柔，为了我不理会别的男生，用一种特别好闻的洗发水，我像是如获珍宝，努力想学怎么去爱一个人。</p>
+<p>新的一章的序曲彷佛弹奏的舒缓美妙，故事主角是一个并不优秀甚至很糟糕，却又那么真诚，充满热情和感情在围墙里不断摸索成长的少年，可不知什么时候猛然发觉这舒缓的乐曲早已从生活中不见了踪迹。生活开始走向封闭，不再有开怀大笑，不再有写代码的畅快，不再有感情的悸动，朋友恋人，都相继走掉了，游戏排名也一落千丈，再没有一处我活跃的身影，我开始远离本就不多的课下活动，我开始与多数人成为陌生人，我开始无法参与多人交流，我岌岌可危的表达能力极速退化，我开始大脑放空，意识模糊。我开始成为彻彻底底的局外人。</p>
+<p>这一章到现在也没有结束。时光在这意识恍惚感情麻木的隧道中愉快的大步溜走，10年一瞬间。一个青年时代的结束，短暂的欢乐的开始，苦涩的过程和结局。我可以平静的看着任何故事的上演，却无法面对一个人的目光。我可以丢下所有，却不甘心这解不开的心结。生活充满了新的挑战。不管在哪里，特别容易在生活中碰到沉浸于生活的人，他们没有支离破碎的观念和疑虑，执著并相信着，不费余力即可专心应对着挑战，动作自然，前后和谐。我的心绪却是繁冗理不清，灵魂的关键字是焦虑和失控，早已与全身心投入挑战的感觉绝缘。我应对挑战的能量来源，是那侥幸心绪消耗完所有能量后还剩余的一点儿余温。</p>
+<p>这一年我现在还不知道是新的一章的序曲还是仍旧在老的一章里继续。有新的成长，有新的见识。我赞叹生命力量之瑰丽，打造出庞大的抽象的秩序，极大丰富着宇宙的可能性。我是这可能性的受益者，尝尽百味，但总归没有被命运所抛弃，我时常恨我自己，可命运它还总愿意回到我身边。让我跌，却不让我跌进深渊，让我前进，却总不见路在何处。</p>
+<p>我仰慕命运背后的宇宙，无声的容纳着所有。面对它，我惭愧于狭窄的视野思考和观念，惭愧于被耳目呼吸手脚所限，惭愧于仅微不足道的二十年的存在感，惭愧于无法应对小小地球上的小小人类，惭愧于瘠薄脆弱的心灵计较着无所谓无意义无价值，惭愧于无法舒展身心张开双臂，给所及之处的生命传递以无尽的力量和温暖——惭愧于不如一颗树处之泰然与世无争心平气静，不如一只小幼犬能够给人的温度和一生的眷恋。</p>
+<p>失去的是数不清的，要说收获，我只知唯一。令无数人沉醉的现实围墙，我已经再也回不去了，现在是广阔无垠的宇宙、星空、智慧和永恒摆在我的面前。我只是还需要时日，继续一个人江湖行走，再多饮不知多少杯苦酒，走多少的山路和木桥。瘠薄的身影，隐喻着那十分无力的血肉身躯。能生存下去，全凭幸运。能获一良友，三生有幸。</p>
+<h1 id="人生短暂，不该那么艰难"><a href="#人生短暂，不该那么艰难" class="headerlink" title="人生短暂，不该那么艰难"></a>人生短暂，不该那么艰难</h1><p>写这篇日志的直接原因是回来的路上想到了那个小女孩，深感我必须要写点什么。</p>
+<p>写的过程也是完全想到哪里写到哪里的，符合失控状态。经过一次修改，我猜或许目前想说的话也说的差不多了。</p>
+<blockquote>
+<p>“活人和死人的差别是，活人有价值体验，有成就体验，有喜怒哀乐，惊恐，害怕，悲伤的情绪体验。死人是没有任何感受的。如果我们无法体会自己的感受，就会觉得人生特别的虚空，很难寻找到生命的意义。”</p>
+</blockquote>
+<p>死去了多年，不知道什么时候再活过来。</p>
+<p>Sept. 16  2019  润物细无声.</p>
+<p>Sept. 17  2019  修改. 晴.</p>
+<p>Sept. 29  2019  再修. 阴.</p>
+]]></content>
+      <categories>
+        <category>diary</category>
+      </categories>
+      <tags>
+        <tag>life</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>周末札记(9.29)</title>
+    <url>/diary/records-on-weekend-2019-9-29/</url>
+    <content><![CDATA[<p>昨天一只雀落到我窗檐，今天又一只。</p>
+<a id="more"></a>
+<p>又读完了一个章节，感慨故事中人物的精神饱满和精明气势，那份用心和努力程度不亚于努力饰演角色的演员。所不同的是，这些人物饰演的是自己，不是刻意的假装，而是带有自己的诉求目的，带着如空气般隐秘却又鲜明无比的时代印记，度过了一天又一天。他们与风、与城市、与所有元素，因名、因性、因所有缘由相互纠缠在一起，组成一个完整的故事，不可分离。</p>
+<blockquote>
+<p>“一切都是茫然，茫然如我不知我生前为何物所变、死后又变何物。”</p>
+</blockquote>
+<p>当然羡慕这些在这场生命旅程中处之泰然的芸芸人物，他们满足而潇洒，来到这世上便自动继承下逻辑和法则，仿佛金鱼终获落入水中，立刻焕发生命四处游窜。真切鲜活的物理现实，抽象虚渺的形而上。两个对立的表述，明显人类社会更喜欢第一个。可我偏掉进了后者的陷阱。对于现实物理世界，没有丝毫的参与感和欲念，发不发生在我身上都只是冷眼看着故事起落，人来人往。别人的期待最难以承受，感情期待是两倍重击。这些东西太真实了，要发生真实的心理活动和行为，如果不是自发的地情况下，太难做到。时间在模糊的意识间飞快溜走，我彷佛是在困倦的听着另一个人的故事，没有我的现在，没有我的昨天和过去。</p>
+<p>生在地球纪年的尾巴，看着星际纪年的来袭，不知道自己有没有机会进行星际旅程，但总由衷觉得十分可惜。一步之遥就可亲历以星际旅行为思维常态的人类社会，那时人类又会是怎样无情无义，怎样兼爱宽容。我也许也不会像今生这样费尽心力和时间先是原地踏步怀疑人生，而后自我修复，探索成长。这些眼看到嘴边却要错过的美好已经够多，偏也没有好好体验现在，不免觉得懊悔。庆幸的是我依旧只是度过了预期寿命的短暂一部分，甚至还没过半。那么我就依旧有机会在未来以最优体验过活一段时间。这也便是我“虚渺”那一半的人生目的。至于现实世界那一半的目的，看来还需要一段时间去探索发现。</p>
+<p><img src="/images/Screenshot298.png" alt="卫星发射冲破云霄的一刻"></p>
+<p>src: The Planets BBC 2019</p>
+<blockquote>
+<p>火星上资源丰富，它的地下蕴藏着丰富的冰冻水，还有矿物质，像铁、氮、碳、氧，这些东西都是文明发展所需的要素。因此我认为，在我有生之年，将出现火星人，火星人就是我们。我们将会去火星，并且在那里定居，这颗古老的红色星球将成为我们人类走出地球，实现星际漫游的第一步。</p>
+<p>Mars is rich in resources, it has vast reservoirs of water below the surface, and minerals, iron, nitrogen, carbon, oxygen, all the things you need to support a civilization. And that’s why, I think, in my lifetime, there will be Martians, but the Martians will be us. We will go to Mars and make it our home, and that old red word will become our first step beyond the cradle, and out to the stars.</p>
+</blockquote>
+<p><img src="/images/Screenshot299.png" alt="探测器"></p>
+<p>src: The Planets BBC 2019</p>
+<blockquote>
+<p>土星见证了太阳系历史上最壮观的一些场面，现在却在吞噬着讲述它非凡故事的探测器</p>
+<p>The planet that had born witness to some of the greatest dramas of the history of the solar system was now consuming the craft that had told its extraordinary story.</p>
+</blockquote>
+<p><img src="/images/Screenshot296.png" alt="远方的世界"></p>
+<p>src: The Planets BBC 2019</p>
+<blockquote>
+<p>如果我们真在木卫二上发现了生命，会有意义吗？毕竟只是些微生物。是的，而且很重要。我认为我们正处在历史上的一个阶段，我们需要一种自我认可，或者说是提醒，在我们的世界之外还存在着美和知识，甚至是生命和意义。这很重要。</p>
+<p>Would it matter really if we found life on Enceladus? It would only be micros after all, yes, it would matter, we are at a time in our history, I think, where we need reassurance, or perhaps a reminder that there is beauty and knowledge, and perhaps even life and meaning beyond our shores.</p>
+</blockquote>
+<p><img src="/images/Screenshot202.png" alt="优美的地球夜景"></p>
+<p>src: Our Planet Netflix 2019</p>
+<blockquote>
+<p>生命早已和地球构造紧密的结合在一起</p>
+<p>life has woven itself into the fabric of the planet.</p>
+</blockquote>
+<blockquote>
+<p>想想看，大约40亿年前发生的所有偶然事件，只是为了创造出礁池中的这个微小生命。</p>
+<p>think about all the chance events that had to happen over four billion years, just to produce the little creatures in this rock pool.</p>
+</blockquote>
+<p>太阳100亿年的生命，我是多么渺小。一个人走完一辈子的艰难，体会着心酸和痛苦，忍受心灵不断的煎熬，纵使一刻不停的读书，拥有举世瞩目的成就，目光所及的范围相比太阳仍不值一提，地球上的热闹搅不动这万籁俱寂的宁静。</p>
+<p>看过5集BBC纪录片《星球》和30万字《废都》后有感。</p>
+]]></content>
+      <categories>
+        <category>diary</category>
+      </categories>
+      <tags>
+        <tag>life</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>十一月杂记</title>
+    <url>/diary/nov-record/</url>
+    <content><![CDATA[<p>我不知道我们每个人是否天生带有使命，还是只是单纯的随风四处飘动。也可能两者皆有吧，使命和随风摇摆同时在每个人身上发生。 - 阿甘<em>《阿甘正传》Forrest Gump</em></p>
+<a id="more"></a>
+<h1 id="一些琐碎的零星片段"><a href="#一些琐碎的零星片段" class="headerlink" title="一些琐碎的零星片段"></a>一些琐碎的零星片段</h1><blockquote>
+<p>加上拖延症，终于在临近年关12.10发布了</p>
+</blockquote>
+<p><strong>基因与技术</strong> 几天前某基因产品突然弹出个提醒，心理特质报告增添了很多内容，不禁让人想要打开看看究竟。浏览的时候的确有些惊讶，各项指标先不管准确性到底有多少，当真的开始审视自己天生的特质时足以让人心中波澜起伏。这些刻在基因里的特征，就像阿甘所说的天命。祖源、运动能力、代谢能力、遗传疾病、心理特质以及外表特征等等，都通过基因解读的方法给你列出来的时候，怎么不让人感叹呢。每个项目下面还有人整理好的参考文献，相关知识，改进建议。大五人格基因检测和量表测试结果的对比雷达图更是有意思极了。现在人们还只能通过类似于统计对比的方法来解释基因的含义，但已经十分奏效了。基因解读在飞速发展，这是不可小觑的一个发展方向，没有人知道它会把人类带向哪里。基因设计婴儿已经就在不远处了。</p>
+<p>今天看了一篇<a href="https://www.infoq.cn/article/bWhDOufOZrL7r3ZuBopy" target="_blank" rel="noopener">报道</a>，看着技术在井喷，技术在爆发，技术在日新月异，变得越来越合理，越来越美好，越来越理想，为人类的前程点燃了一盏希望的灯光，跟科学一样，从人类中走出来，脱掉了一些缺点，具有自己强壮的生命力。过去的一个世纪史无前例的全球联系也是技术和科学的黄金发展窗口，一切人类的创造物都抓紧了这个机会更新换代，朝夕之间就可以变好几回眉目，技术也不例外。唯独人类自身，还深陷在泥坑里，与自己的斗争还远没有结束，任重而道远。</p>
+<p><img src="/images/e31abdbeb429a244da774da5ef343db1.png" alt="Github 贡献者来自的国家和地区"></p>
+<p><strong>双十一</strong> 没有提前投入时间，临时起意买了些东西，竟然占到了这些便宜：图书每满100减50，图书满100减20，白条满99减15，白条满99减5，全品类满100减12，京贴28.67，满200减40，满100减5。除此之外，今天买的东西无一加价，有一半是史低价格，它们都是平台自营或官方店铺。这个消费狂欢的名头，从前我很不喜欢，现在却有些许感触，不再那么厌恶，起码他们不是玩虚假的价格游戏，而是真的让利。这个盛大的游戏，除了平台狂轰滥炸一番，卖家真的做出了让利，买家真的赚到了便宜。</p>
+<p><strong>飘</strong> 有时脑壳里会突然存在几秒钟的停歇。偶然掏出一根烟的时候，躺在床上思绪好不容易安静下来，聆听自己呼吸的时候。那几秒钟感觉是那么真实，我认为那可能是正常人的心智模式。那种感觉好像是世界突然安静下来了，噪音消退，听到了不存在的秒针舒缓轻柔地滴答作响，我不愿承认的对友人的挂念在脑海中清晰的浮现出来，我记起来了我还活着。不等我感叹完此刻，又会回到从前。在无止尽的纷扰和混乱无章的思绪中，那个有感受的我再度昏沉过去，与清醒和心里的片刻安宁匆匆告别。</p>
+<p>为什么要思考，因为想要得到答案，想要内心认同的真理。问题太多，多到分不清问题是什么，更找不到答案是什么。生命一个奇特的地方在于，时间真的会给许多问题以答案，当然不是时间本身，而是用时间淌过的经历。</p>
+<p><strong>现在和过去</strong> 生活在现代，着实享受着无可挑剔的生活便利，但一个最可恶的亟待消除的小恶魔也在这里：无尽的层出不迭的物质诱惑，相比之下相互沟通和联系反而变得随意和廉价。现代和过去在这两方面几乎颠倒了过来，彷佛也是不可避免的——由于对过去物质的极度贫乏的恐惧，现在正在历经过度反应，攀登物质极度丰富的巅峰。最终不知何时，社会几经跌宕才能整体上回归到一个理性的阶段。物质诱惑侵蚀人的身心健康，毒害社会环境。还害得地球上所有的生物和大自然跟着一起因不负责任的行为而遭殃——快醒醒，我们人类忘记了还有些责任要学会承担。</p>
+<p>我靠在树上，目光模糊地望着不知道为何从此经过，但仍旧络绎不绝的人群，一阵风吹过来，树使劲的摇晃。它在说：你走开，靠着我我很累你知道吗。还是在说：好冷的天啊，请靠我再紧点可以吗。</p>
+<p>从无耻之徒第二集学到了一个词，self-loathing，自我厌恶。自我厌恶导致自我毁灭。</p>
+<p>人无可避免活在自己过去的阴影里。过去具有强大的惯性，过去无法在睡一觉之后就可以随意的忘记，过去使自己可以不费心的朝着习惯的方向去走。</p>
+<p>抱歉，该款机型暂时不具备与人建立联系的功能。我们的工程师正在加紧努力工作，争取功能早日上线~后续可能会通过系统固件升级的方式免费开放给亲测试与使用，具体什么时候上线请留意后续官网的通知呢~💗💗</p>
+<p><strong>生命</strong> 一滩诞生生命前的湖水。要说起来，真是巧合，某天突然一颗满是冰块的彗星划破天空，撞出了一个坑，融化出了一湖水。随后在漫长的时光里，陆陆续续陨落的彗星带来了一些其他不曾有过的元素。像一棵树吸收着阳光和养料只待开花结果，彷佛已万事俱备，静待生命诞生。但这湖水就是一片死寂，十分安宁，奔向天空、翻过山岭的浪花也不存在。放大了多少倍后能看到原始细微的物质相互的撞击合并分裂，正是它们让湖水都变得焦躁温热。但表面还是一片死寂，像是没有希望存在的虚空。这方水坑在茫茫宇宙中微不足道，没有一条记录，从没有被观察，从没有孕育出任何新的因子对外界产生一丝新的变化。风吹带起一丝涟漪，日晒蒸发一些水分，终日与四周和湖底的岩石作伴，万年的时间淌过，未曾有过改变。</p>
+<p><strong>何似在人间</strong> 人间烟火多有意思，谁想远离呢。尤其在我的年纪，以我浅薄的阅历，总能看到新的人事物，倒不是说因为时代的关系科技发展日新月异，而是人本质或称之为人格的细微之处以及各种特质的组合，总会让我在下一个遇到的人身上惊奇的发现有些东西前所未见。每个人身上都有好多故事，多到有些他们自己都不知道。内敛的人，张扬的人，面对生活缓慢迟钝的人，处世老练迅速果断的人，应有尽有。有些人，游刃有余，尽情享乐之余还能望望天，斟酌下未来，有些人，目无远见，也是纵情享乐，却不知道为什么得不到心底的满足，总是除不尽痛苦。</p>
+]]></content>
+      <categories>
+        <category>diary</category>
+      </categories>
+      <tags>
+        <tag>life</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>十二月杂记</title>
+    <url>/diary/dec-record/</url>
+    <content><![CDATA[<p>忙碌无绪的生活中不时会涌现许多的想法，但不勤于动笔的我，转身就忘掉了。其中一些我是觉得十分有价值写下来再回看的，丢掉了很可惜。又到年关。</p>
+<a id="more"></a>
+<h1 id="美好是一个遥远的向往"><a href="#美好是一个遥远的向往" class="headerlink" title="美好是一个遥远的向往"></a>美好是一个遥远的向往</h1><p>疏忽间，一生中第三次抓住了一个十年的尾巴，99、09、19，跨越了两个世纪。纽约时报的一篇十年总结提醒了我这件事我才恍然醒悟，生活到底有多忙碌，自己连这都能遗忘，也许是时事沧桑，并不是那么愉快，促使人本能的去躲避和麻木自己。不同于以往，一个人曾经只有眼前的信息量，远方的书信罕见而珍贵。如今每个人淹没在全世界的信息里，当回事让自己疲惫，不当回事让自己厌倦，总归是让人烦恼。</p>
+<p>当把时间按照十年一节来看的时候，世间变化和个人成长都变得清晰可见，和日常生活的感受判若不同时空。日常生活有日常生活的重要性，宏大时空有宏大时空的趣味。反过来，体验日常生活也饶有趣味，洞察历史进程对于个人也十分重要。唯叹少年不读书，任由活跃的思维在杂草堆里胡乱生长也长成了杂草。生在这二十年中，活在这二十年中，所见所感只囊括了这么短暂的时间，那么的不经意，那么的沉溺其间，在找不到答案的空间里寻找着答案，被庞大无形的力量、文化、进程所裹挟，自己是无力的。</p>
+<p>活在不同的时代，出生时便背上了当时的命运。小人物能够做选择的空间不大，大人物也不过尔尔。不管在什么大小人物身上，一个人大部分的意识组成都是成长过程中所听所见的延续，唯有独立和叛逆的精神，学来也好，天性也罢，值得称道，改变这个世界的面貌。如若不然，新的生命没有带来什么新的精彩，只是对死去的个体的简单重复、代替和补充，毫无新意。</p>
+<p>人类的现代文明最令人值得骄傲之处正在于此，现代社会的模型诞生在科学的基础之上，讲究理性和平等。人与人之间可以用理性来交换知识和想法，新的观点和思维便被自然的尊重，广泛认可的观点便被广泛的接受。这是顺应经物质和精神文明发展自然而然的发展趋势，每个人应享受平等的自由意志、机会和地位，法律则是每个人的权利的保障。民主让群体意志得到表达，个人意志得到尊重和体现。人们和社会得以一起进步成长。过去的那一套我们现在有个名词来称呼它：野蛮。</p>
+<p>现代文明的内涵包括对个体、对所有人、对所有世间存在、对所有世间存在的思想的存在的尊重。自由与包容，是人类一直以来的梦想，但与过去不同的是：自由不再是少数人的自由，包容不再是对少数人的包容。一切权利平等共享。只是称之为现代使得人容易误会成：我所在所生活的地方与时代不就是现代么，那我就生存在现代文明社会中。很不幸，人类的现代化进程，还有遥远的路要走。西方踏着创造科学的早班车先行一步，其他地区还有一段绕不开的漫漫长路。</p>
+<p>全球化的出现初期让人看到无限美好和希望，可以发现不需要去教人乐观的，乐观是人类的本能。可如今的全球化显然不容乐观，商品经济得到了巨大的发展，给发展中国家带来了好处，给发达国家创造了更多的利润；而更重要的文化和知识交流面临着语言隔阂的严峻挑战，人为还在不断建立的墙壁更是令人震惊。很可惜，我们正处在全球化刚迈出了两步，分裂和纷争又回家探亲的阶段。就在今天，俄罗斯成功测试了切开与国际互联网的链接并维持国内网络的正常运转。在今年，抗议活动在全球落地生花。未来会走向哪里？我们是否即将成为新阶段历史的见证人？</p>
+<p>不知道地球或是更沉默而广阔的星际还肯不肯给人类从摇篮走出去的时间。人类的命运并不能简单的保持乐观，就算是能熬过去，也是无数人的付出，血和泪。有理由相信这个茫茫宇宙间有许多文明葬送在这条路上，不管是哪个文明的进化，总要经历物质贫乏，思想浅薄，社会构造简单，少数人统治筹划掌握特权的阶段，而当物质丰富，而精神匮乏，个人开始思考和表达，观点爆发，知识共享的时候，便自动被无形的力量推动迈入下一个平等共享的社会阶段。这时到底要付出多少代价，就非常不可估量了。</p>
+<h1 id="十年总结"><a href="#十年总结" class="headerlink" title="十年总结"></a>十年总结</h1><p>2010年我在哪里？容我想一下，2008年小学毕业，那么哦对，初中二年级。12月23号的话，最近的只有这么两张照片，大概都是来自《初恋这件小事》。从那年的照片里还发现了电影小情人的电影封面，大概那年还看过这部电影吧。很遗憾，留下的东西太少。纵然我有归类整理加以收藏的习惯，也耐不住世事变迁。我曾记得的丢数据的事件有，电脑出故障十分无奈的格式化、不小心格式化、QQ升级搞坏了记录文件、文件太多硬盘太小无奈删掉。所以最终几乎没有留下什么。<img src="/images/image-20191223190457653.png" alt="留存至今的两张图片"></p>
+<p>我可曾有什么十年计划的话，那么今日也是到了验收的时候了。可惜没有。我的家，我的思维，我的生活发生了翻天覆地的变化，而我的慌张，我的无奈，我的脱俗出世生活态度依旧在。十年前我没有精力和气魄去计划十年，十年后的我也依旧没有。十年前的朋友，还剩下两个——等下，当年好像也就只有这么两个，那我倒没有丢下朋友。</p>
+<p>这个十年里，高中和大学被夹在中间，我目前还没有太多话想对它们两个说。简单一句话：高中巩固了我灵魂深处的挣扎和痛苦，它如黑夜般漫长，度过后又从记忆中湮灭；而大学的四年转瞬即逝，大学终于开始把单调乏味的人生白纸抹上了颜色。我喜欢的是大学里的人和发生的事，大学学校本身并不让人喜欢。对于学校本身，让我唯一印象深刻的惊喜是录取通知书里附带的文艺范的小手册，唯二的惊喜是一个活出自我十分潇洒的陌生女生，飞舞张扬颓废积极的性格四年中我没在任何其他同校女生身上看到过，既然也互不认识，就自然划到学校的印象了。</p>
+<p>再转眼间，便到了现在，这十年的尾巴。这一年是匆忙的，闲暇比起大学四年的肆意挥霍少了太多。有时会觉得很被迫，无法随心所欲的倒下休息，很痛苦，可闲下来的时候，也没有多快乐。我承认我的性格古怪，我现在极不喜欢往人群里凑。有几分呆子，我绝学不会油嘴滑舌的世故，但逐渐发现不至于为此瞧不起自己。我发觉如今我对于精力集中、感受当下有着已经养成的生理性的厌恶。当我试图专心去读一本书或读谱练琴，我会呵欠连天、大脑瘫痪。这是我童年之不幸，却也给了我跳出眼前现实的出世思维，以飘渺于人群以外的旁观态度冷静的观察世间。</p>
+<p>纵使我没有什么天大的幸运，也经历过糟糕，可这世间对我不薄。人类不断的取得成就、保持着对抗的精神和为之付出的行动，一切所作所为都使我相信还有希望。这给了我动力与自己对抗，另一方面也想做自己的朋友。我以不再自视或费力气扮演一个观念中的正常人类，我正在尝试接受我自己，接受世间万物的存在，审视自己的能力和使命。</p>
+<p>从今年4月记录以来，看完了59部电影；看完了18部剧作，另有3部在更新；读完了13本书；总共关注了67个优质的YouTube频道。</p>
+<p>再接再厉。</p>
+<p>终稿2020.1.1 14:29</p>
+]]></content>
+      <categories>
+        <category>diary</category>
+      </categories>
+      <tags>
+        <tag>life</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Explore Oracle Cloud Free tier</title>
+    <url>/notes/explore-oracle-cloud/</url>
+    <content><![CDATA[<p>Already heard about that Oracle Cloud provides free VM, let’s try it today. This post will start from applying an account and until getting your own instance running.<br><a id="more"></a> </p>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>As said on oracle’s website, There are several always free benefits for a free tier user account <a href="https://www.oracle.com/ie/cloud/free/#always-free" target="_blank" rel="noopener">1</a>. </p>
+<blockquote>
+<h2 id="What-are-Always-Free-cloud-services"><a href="#What-are-Always-Free-cloud-services" class="headerlink" title="What are Always Free cloud services?"></a>What are Always Free cloud services?</h2><h3 id="Databases"><a href="#Databases" class="headerlink" title="Databases"></a>Databases</h3><p>Your choice of Autonomous Transaction Processing or Autonomous Data Warehouse. </p>
+<p>2 databases total, each with 1 OCPU and 20 GB storage.</p>
+<h3 id="Compute"><a href="#Compute" class="headerlink" title="Compute"></a>Compute</h3><p>2 virtual machines with 1/8 OCPU and 1 GB memory each.</p>
+<h3 id="Storage"><a href="#Storage" class="headerlink" title="Storage"></a>Storage</h3><p>2 Block Volumes, 100 GB total. 10 GB Object Storage. 10 GB Archive Storage.</p>
+<h3 id="Additional-Services"><a href="#Additional-Services" class="headerlink" title="Additional Services"></a>Additional Services</h3><p>Load Balancer: 1 instance, 10 Mbps bandwidth. </p>
+<p>Monitoring: 500 million ingestion datapoints, 1 billion retrieval datapoints. </p>
+<p>Notifications: 1 million sent through https per month, 1,000 sent through email per month.</p>
+<p>Outbound Data Transfer: 10 TB per month.</p>
+</blockquote>
+<h1 id="Register"><a href="#Register" class="headerlink" title="Register"></a>Register</h1><p>In order to use their services, a validate bank card is required, although on the website it says a credit card is necessary, but a debit card is also effective. During the account registering, it will ask you about the home region setting <a href="https://www.oracle.com/cloud/data-regions.html" target="_blank" rel="noopener">2</a>.</p>
+<p><img src="/images/oracle-region.png" alt="Oracle Region Overview"></p>
+<p>You may want to choose one that is near you geographically. Some people said that the free slots might be full on some popular regions, I chose EMEA-UK South, which is working good.</p>
+<p>After applying for an account, it takes some seconds for the oracle system to setup your account credentials and workspace. Then an email will be sent to you saying that your account is ready.</p>
+<p>Congrats! Finally we can start our journey on exploring the real oracle cloud world.</p>
+<h1 id="Create-an-Instance"><a href="#Create-an-Instance" class="headerlink" title="Create an Instance"></a>Create an Instance</h1><p>In the left-side navigator, goto <code>compute &gt; Instances</code>, hit the <code>Create Instance</code> button.</p>
+<p>At first choose an image source that match your taste. After that, you may want to hit <code>Show Shape, Network and Storage Options</code> to change the Boot Volume from default 46.6GB to 100GB, which is the maximum volume that we are allowed to use.  Then add your SSH key, choosing the <code>.pub</code> key file from your computer.</p>
+<blockquote>
+<p><strong>TIP:</strong> in <code>Shown Advanced Options &gt; Networking &gt; Hostname</code>, you can set up a preferred hostname instead of the boring long default one. </p>
+</blockquote>
+<p>We can hit on <code>Create</code> to let oracle preparing our instance now.</p>
+<h1 id="Login-to-the-Instance"><a href="#Login-to-the-Instance" class="headerlink" title="Login to the Instance"></a>Login to the Instance</h1><p>Based on my experience, you need to login as ubuntu / opc on a Ubuntu / CentOS image source.</p>
+<p>A quick reference of the command: <code>$ ssh -l the/path/of/your/private/key &lt;username&gt;@&lt;ip address&gt;</code> </p>
+<h2 id="Allow-to-login-as-the-root-account"><a href="#Allow-to-login-as-the-root-account" class="headerlink" title="Allow to login as the root account"></a>Allow to login as the root account</h2><p>After logged in, the first thing you may want to do is allowing the ssh login of root account. Switched to root user, and just input <code>vi ~/.ssh/authorized_keys</code>, and delete the very first line, which is something looks like:</p>
+<figure class="highlight plain hljs"><table><tr><td class="code"><pre><span class="line">no-port-forwarding,no-agent-forwarding,no-X11-forwarding,command=&quot;echo &apos;Please login as the user \&quot;ubuntu\&quot; rather than the user \&quot;root\&quot;.&apos;;echo;sleep 10&quot; ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDEFYU...</span><br></pre></td></tr></table></figure>
+<h1 id="Manage-the-connectivity"><a href="#Manage-the-connectivity" class="headerlink" title="Manage the connectivity"></a>Manage the connectivity</h1><h2 id="Allow-the-come-in-traffic"><a href="#Allow-the-come-in-traffic" class="headerlink" title="Allow the come-in traffic"></a>Allow the come-in traffic</h2><p>In the Oracle Cloud Console, go to <code>Instances &gt; View instance details</code>, in Instance Information part, click on the Virtual Cloud Network link. Then select <code>Security Lists</code> on the Resources column.</p>
+<p>In <code>Ingress Rules</code>, open the rule detail that you want to make modification, e.g. <code>Ingress Rule 1</code>, change the <code>DESTINATION PORT RANGE</code> from default <code>22</code> to empty.  </p>
+<h2 id="Remove-the-firewall"><a href="#Remove-the-firewall" class="headerlink" title="Remove the firewall"></a>Remove the firewall</h2><p>SSH into the Instance, switch to root user, and input this in the console:</p>
+<figure class="highlight shell hljs"><figcaption><span>script</span></figcaption><table><tr><td class="code"><pre><span class="line">apt purge netfilter-persistent &amp;&amp; reboot    # purge: remove package and configuration</span><br></pre></td></tr></table></figure>
+<h2 id="Preserve-or-change-ip-address"><a href="#Preserve-or-change-ip-address" class="headerlink" title="Preserve or change ip address"></a>Preserve or change ip address</h2><p>In the Oracle Cloud Console, go to <code>Instances &gt; View instance details</code>, find <code>Attached VNICs</code> in the Resources column. Then go <code>View VNIC detials &gt; IP Addresses &gt; Edit</code>.</p>
+<p>Select <code>RESERVED PUBLIC IP</code> to preserve the current IP address.</p>
+<p>To gain a new IP: select <code>NO PUBLIC IP</code> first, then reselect the option you prefer.</p>
+<h1 id="Crate-a-backup-of-the-Block-Volume"><a href="#Crate-a-backup-of-the-Block-Volume" class="headerlink" title="Crate a backup of the Block Volume"></a>Crate a backup of the Block Volume</h1><p>With everything stand by, it’s best to do an important task now – backup our instance. It’s very sweet that Oracle provide everyone with 5 free backup slots. Go to <code>Compute &gt; Boot Volumes</code>, and there will be a <code>Create Manual Backup</code> option available in the context menu of your boot volume. Click it and let Oracle do that for us.</p>
+<p>With that Boot Volume Backup, you can create a boot volume all the time, and create a resurrected instance for that boot volume.</p>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p>After these steps, the instance is well prepared to do anything you want. For example, you may want to bind a domain or subdomain to this server, or deploying a certificate.</p>
+<p>Then, a productive personal used instance is good to go.</p>
+<p>This is my system situation, with a full Ubuntu 18.04 image source after installing apache and docker.</p>
+<figure class="highlight plain hljs"><table><tr><td class="code"><pre><span class="line">System load:  0.0               Processes:              112</span><br><span class="line">Usage of /:   2.1% of 96.75GB   Users logged in:        1</span><br><span class="line">Memory usage: 39%               IP address for ens3:    10.0.0.6</span><br><span class="line">Swap usage:   0%                IP address for docker0: 172.17.0.1</span><br></pre></td></tr></table></figure>
+<p>There are lots of other free service providers that are also available on the Internet <a href="https://github.com/ripienaar/free-for-dev" target="_blank" rel="noopener">3</a>. </p>
+<p>Have to say that being a developer today is so enjoyable and lucky. I didn’t see any other fields that are so openable, so available, and meanwhile, so developed, so advanced and stands in the front of the era. </p>
+<p>It’s a real community that are not separated by geolocation or the power, and see changes happened everyday here.</p>
+<p>It’s the nearest place to see the future coming.</p>
+<p>It’s the best time for each developer to do whatever he/she wants.</p>
+<h2 id="Block-Storage-File-Storage-and-Object-Storage"><a href="#Block-Storage-File-Storage-and-Object-Storage" class="headerlink" title="Block Storage, File Storage and Object Storage"></a>Block Storage, File Storage and Object Storage</h2><p>A question should be wrote down, it is about what’s the difference of these 3 storage mechanisms.</p>
+<p>Based on the findings on the website, I think the essential difference is the communication protocol, which is designed, or to say, used for different aims.</p>
+<ul>
+<li><p>for block storage, the direct interaction between user and hardware is established, user can directly operate on the raw byte data.<br>Although, most of the time we will format it with a particular powerful and user-friendly file system.</p>
+</li>
+<li><p>for file storage, the direct interaction between user and hardware is hidden. User operates on the provided file systems, accessing<br>path tree, folders, write and save files.</p>
+</li>
+<li><p>for object storage, the concepts of path tree, folders or even files are all gone, the only concept left is object. User operates<br>the storage by REST API, GET/POST/PUT/DELETE, or other protocols that just like what you can used to operate objects.</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>notes</category>
+      </categories>
+      <tags>
+        <tag>code</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>今天收到了一张意料之中的罚单</title>
+    <url>/diary/received-a-penalty-notice-today/</url>
+    <content><![CDATA[<p>跟每天一样，坐在电车上惆怅的望着外面。胡乱的看着周围，好像很用心，却看过就会忘掉。</p>
+<a id="more"></a>
+<p>到了一个站点，外面有好多穿着工作服的人，随着车门渐开，他们互相交谈着从不同的门上了车。已经两个月没见到他们了，我想或许今天就是那一天？</p>
+<p>果然从面前车门刚上车后，就开始叫喊请把票拿出来。周围的人陆陆续续拿出了他们的乘车卡。一一看过，礼貌的感谢过前面的人后，他终于走到了我的面前。</p>
+<p>我知道他们看到是学生票的时候，是要看学生打折卡的，可我没有，便给了他学生卡。依旧很礼貌，但这次他没有放过我。</p>
+<p>只是不断的告诉我，有学生票不够，必须要有学生打折卡，去申请一张就好了，在哪里哪里申请，两天就拿到了。不会罚款的，而且14天的期限，两天就可以拿到学生打折卡了，拿到卡以后拍个照片到这个网站上提交一下就可以了，时间很够，放心没事，不会罚款的，那个地方在哪里哪里……。说着掏出了厚厚一沓的票据本，打开了一张开始抄写我的名字。</p>
+<p>一瞬间我彷佛忘记了我的过错，享受着眼前的大叔细细道来的指导，人生路漫漫，总会希望并感激有人情愿献出自己的时间指点一番。</p>
+<p>“告诉我你的住址？”</p>
+<p>“在……。”</p>
+<p>“哪里？不好意思，没听清。”</p>
+<p>“…，… x2。”</p>
+<p>“请再说一遍可以吗？”</p>
+<p>“… ——… x3。”</p>
+<p>“能拼写一下吗？”</p>
+<p>“. , . , . , . , . . x3。”</p>
+<p>“哦是这里啊！不好意思，语言问题，你懂的——好了，出示一下任何证据吧，证明你住在这里。”</p>
+<p>“啊？”，吃惊。</p>
+<p>“任何东西能证明你住在这里的，比如你手机上一定会有一些东西的，或者外卖，快递。” 说着，拿起了对讲机，告诉了不知道什么人这个地址，不知道干什么用，我心里一瞬间的想法是找人调查这个地址住的有没有这个人吧，但我邮箱刚收到一封快递投递的邮件，能证明我的地址，我给了他。</p>
+<p>最终嘱咐完，签字画押，尘埃落定。</p>
+<p>他这份工作做的很完美，没有做错任何事，推动着一切自然而然的发生、结束，没有惊奇，没有出岔子，一切在掌控之中，有礼貌，谈吐之间沁着帮助的口气，有条不紊的执行规则。</p>
+<p>但临近结尾，我才得以清楚的认识到，我只不过是他遇到万千不按规矩来的人中的一员。他过去的所经所历我不曾在场，但今天，我作为一个当事人目睹了过程，组成了他世界里的一份子。这个世界充满好人和坏人，守规矩的人很多，不守规矩的人也很多。他不会错伤一人的，他告诉了一切你需要做的，他没有在交涉中假设你所言为虚，只要照做就不会被罚——但他也不会放过一个，他在心中对你没有一丝多余的信任，你不过是个人而已。</p>
+<p>气温微冷，一只手拎着刚才买的食物，一只手赶紧揣进口袋。</p>
+<p>转身离开的时候，我直笑话自己，不知道是在笑自己什么。我不讨厌不守规矩，一起不守规矩更心喜。可我讨厌不守规矩被人制止，我不讨厌别人，我会讨厌自己。</p>
+<p>回来看着罚单打开日记才发现：这三个月的日期我都是用2019开头的，我竟然一次都没有发现。感谢这张罚单让我瞬间回到了2020年。</p>
+<p>就在这时候，住在一起的一个老大爷把他今天刚拿到的银行储蓄单拿给我看，骄傲的说自己很独立。我突然很不喜欢我自己没有钱，兜里就这点可怜的储蓄。我在碌碌无为，在浪费生命。</p>
+]]></content>
+      <categories>
+        <category>diary</category>
+      </categories>
+      <tags>
+        <tag>life</tag>
+      </tags>
+  </entry>
+</search>

@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+<title>Hexo Blog Establishing Process - Blog of Orangejuice</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <meta name="description" content="Deploy Hexo site files &amp;amp; Install Next-ThemeFirstly, install node.js as the necessary runtime environment for javascript. Then we turn to the folder where we want to put the blog files in and run c">
+<meta name="keywords" content="hexo,github,git pages">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo Blog Establishing Process">
+<meta property="og:url" content="http://orangejuice.cc/notes/blog-system-establish-process/index.html">
+<meta property="og:site_name" content="Blog of Orangejuice">
+<meta property="og:description" content="Deploy Hexo site files &amp;amp; Install Next-ThemeFirstly, install node.js as the necessary runtime environment for javascript. Then we turn to the folder where we want to put the blog files in and run c">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://orangejuice.cc/images/og_image.png">
+<meta property="og:updated_time" content="2019-03-04T21:26:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo Blog Establishing Process">
+<meta name="twitter:description" content="Deploy Hexo site files &amp;amp; Install Next-ThemeFirstly, install node.js as the necessary runtime environment for javascript. Then we turn to the folder where we want to put the blog files in and run c">
+<meta name="twitter:image" content="http://orangejuice.cc/images/og_image.png">
+
+
+
+
+
+
+
+<link rel="icon" href="/images/favicon.svg">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
+
+
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
+
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-136118548-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-136118548-1');
+</script>
+
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+
+<link rel="stylesheet" href="/css/style.css">
+<link rel="alternate" href="/atom.xml" title="Blog of Orangejuice" type="application/atom+xml">
+</head>
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item" href="/">Home</a>
+                
+                <a class="navbar-item" href="/archives">Archives</a>
+                
+                <a class="navbar-item" href="/categories">Categories</a>
+                
+                <a class="navbar-item" href="/tags">Tags</a>
+                
+                <a class="navbar-item" href="/about">About</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                <a class="navbar-item is-hidden-tablet catalogue" title="Catalogue" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
+                
+                <a class="navbar-item search" title="Search" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
+    
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2019-03-04T21:26:39.000Z">2019-03-04</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/notes/">notes</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    12 minutes read (About 1763 words)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span> visits
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                Hexo Blog Establishing Process
+            
+        </h1>
+        <div class="content">
+            <h1 id="Deploy-Hexo-site-files-amp-Install-Next-Theme"><a href="#Deploy-Hexo-site-files-amp-Install-Next-Theme" class="headerlink" title="Deploy Hexo site files &amp; Install Next-Theme"></a>Deploy Hexo site files &amp; Install Next-Theme</h1><p>Firstly, install node.js as the necessary runtime environment for javascript. Then we turn to the folder where we want to put the blog files in and run commands below:</p>
+<figure class="highlight bash hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init blog</span><br><span class="line"><span class="hljs-built_in">cd</span> blog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p>Congrats! Our blog is available now<a id="more"></a>, but it’s running with the default theme and of course we need something different. Next is a great open source theme hosting on github. some ways to get the theme but I will download the theme files directly from <a href="https://github.com/theme-next/hexo-theme-next/releases" target="_blank" rel="noopener">https://github.com/theme-next/hexo-theme-next/releases</a>.</p>
+<p>then, decompress the files into the folder <code>themes</code>, which in the folder you just opened.</p>
+<figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
+<p>Alright, now we can change the theme of Hexo to Next-Theme. In <code>_config.yml</code> file, find this line: <code>theme: xxx</code>, make it <code>theme: next</code>.</p>
+<figure class="highlight yml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># Extensions</span></span><br><span class="line"><span class="hljs-comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="hljs-comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="hljs-attr">theme:</span> <span class="hljs-string">next</span></span><br></pre></td></tr></table></figure>
+<p>4 theme schemes can be chose in Next-Theme, as we can see in <code>themes/next/_config.yml</code>, find this line: <code>scheme: xxx</code>, leave anyone you like without <code>#</code>.</p>
+<figure class="highlight yml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># Schemes</span></span><br><span class="line"><span class="hljs-comment">#scheme: Muse</span></span><br><span class="line"><span class="hljs-comment">#scheme: Mist</span></span><br><span class="line"><span class="hljs-comment">#scheme: Pisces</span></span><br><span class="line"><span class="hljs-attr">scheme:</span> <span class="hljs-string">Gemini</span></span><br></pre></td></tr></table></figure>
+<p>Done. If you want to preview the effect just run <code>hexo server</code> or <code>hexo s</code> in blog folder. </p>
+<h1 id="Customize-the-appearance"><a href="#Customize-the-appearance" class="headerlink" title="Customize the appearance"></a>Customize the appearance</h1><h2 id="change-avatar"><a href="#change-avatar" class="headerlink" title="change avatar"></a>change avatar</h2><p>Prepare an image of the avatar and place the image in the <code>source/images/</code> folder, then modify the config file <code>themes/next/_config.yml</code>:</p>
+<figure class="highlight yml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># Sidebar Avatar</span></span><br><span class="line"><span class="hljs-attr">avatar:</span></span><br><span class="line">  <span class="hljs-comment"># In theme directory (source/images): /images/avatar.gif</span></span><br><span class="line">  <span class="hljs-comment"># In site directory (source/uploads): /uploads/avatar.gif</span></span><br><span class="line">  <span class="hljs-comment"># You can also use other linking images.</span></span><br><span class="line"><span class="hljs-attr">  url:</span> <span class="hljs-string">/images/avatar.jpg</span></span><br><span class="line">  <span class="hljs-comment"># If true, the avatar would be dispalyed in circle.</span></span><br><span class="line"><span class="hljs-attr">  rounded:</span> <span class="hljs-literal">true</span></span><br><span class="line">  <span class="hljs-comment"># The value of opacity should be choose from 0 to 1 to set the opacity of the avatar.</span></span><br><span class="line"><span class="hljs-attr">  opacity:</span> <span class="hljs-number">1</span></span><br><span class="line">  <span class="hljs-comment"># If true, the avatar would be rotated with the cursor.</span></span><br><span class="line"><span class="hljs-attr">  rotated:</span> <span class="hljs-literal">false</span></span><br></pre></td></tr></table></figure>
+<p>Just change url value to the address of the image.</p>
+<h2 id="generate-and-add-sub-pages"><a href="#generate-and-add-sub-pages" class="headerlink" title="generate and add sub-pages"></a>generate and add sub-pages</h2><p>Hexo generates only two pages by default, namely the home page and archive page. In <code>themes/next/_config.yml</code> we can find:</p>
+<figure class="highlight yml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-attr">menu:</span></span><br><span class="line"><span class="hljs-attr">  home:</span> <span class="hljs-string">/</span> <span class="hljs-string">||</span> <span class="hljs-string">home</span></span><br><span class="line"><span class="hljs-attr">  about:</span> <span class="hljs-string">/about/</span> <span class="hljs-string">||</span> <span class="hljs-string">user</span></span><br><span class="line"><span class="hljs-attr">  tags:</span> <span class="hljs-string">/tags/</span> <span class="hljs-string">||</span> <span class="hljs-string">tags</span></span><br><span class="line"><span class="hljs-attr">  categories:</span> <span class="hljs-string">/categories/</span> <span class="hljs-string">||</span> <span class="hljs-string">th</span></span><br><span class="line"><span class="hljs-attr">  archives:</span> <span class="hljs-string">/archives/</span> <span class="hljs-string">||</span> <span class="hljs-string">archive</span></span><br><span class="line">  <span class="hljs-comment">#schedule: /schedule/ || calendar</span></span><br><span class="line">  <span class="hljs-comment">#sitemap: /sitemap.xml || sitemap</span></span><br><span class="line">  <span class="hljs-comment">#commonweal: /404/ || heartbeat</span></span><br></pre></td></tr></table></figure>
+<p>Here I have removed the comments of which page I need, and you can consider the pages you need. At this time, we can see these pages show up on our homepage navigator.</p>
+<p>Go back to blog folder, run <code>hexo new page about</code>, <code>hexo new page tags</code>, <code>hexo new page categories</code> individually. <strong>For tags and categories page file, you need to add one line <code>type: &quot;categories&quot;</code> or <code>type: &quot;tags&quot;</code> in Front Matter to let the Hexo know what this page it is.</strong> </p>
+<p>Ok, about page can be modified freely now, but tags and categories are not our jobs because Hexo will help us to manage these pages automatically ヾ(•ω•`)o.</p>
+<blockquote>
+<p>Tips: <code>comments: false</code> flag can keep one page out of comment feature.</p>
+</blockquote>
+<h2 id="search-feature"><a href="#search-feature" class="headerlink" title="search feature"></a>search feature</h2><p>It’s not available out-of-box, we need do some work.</p>
+<p>Run  <code>npm install hexo-generator-searchdb --save</code> under the blog folder. Then find <code>search</code> in <code>_config.yml</code>, add the following at the end:</p>
+<figure class="highlight yml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-attr">search:</span></span><br><span class="line"><span class="hljs-attr">  path:</span> <span class="hljs-string">search.xml</span></span><br><span class="line"><span class="hljs-attr">  field:</span> <span class="hljs-string">post</span></span><br><span class="line"><span class="hljs-attr">  format:</span> <span class="hljs-string">html</span></span><br><span class="line"><span class="hljs-attr">  limit:</span> <span class="hljs-number">10000</span></span><br></pre></td></tr></table></figure>
+<p>and <code>local_seaerch</code> in <code>themes/next/_config.yml</code>:</p>
+<figure class="highlight yml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># Local search</span></span><br><span class="line"><span class="hljs-attr">local_search:</span></span><br><span class="line"><span class="hljs-attr">  enable:</span> <span class="hljs-literal">true</span></span><br></pre></td></tr></table></figure>
+<h2 id="RSS-feed"><a href="#RSS-feed" class="headerlink" title="RSS feed"></a>RSS feed</h2><p>run <code>npm install --save hexo-generator-feed</code> in blog folder, then open and append these content in <code>_config.yml</code>:</p>
+<figure class="highlight yml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># Extensions</span></span><br><span class="line"><span class="hljs-comment">## Plugins: http://hexo.io/plugins/</span></span><br><span class="line"><span class="hljs-attr">plugins:</span> <span class="hljs-string">hexo-generate-feed</span></span><br></pre></td></tr></table></figure>
+<p>and then find this line and modify it in <code>themes/next/_config.yml</code>:</p>
+<figure class="highlight yml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># Set rss to false to disable feed link.</span></span><br><span class="line"><span class="hljs-comment"># Leave rss as empty to use site's feed link, and install hexo-generator-feed: `npm install hexo-generator-feed --save`.</span></span><br><span class="line"><span class="hljs-comment"># Set rss to specific value if you have burned your feed already.</span></span><br><span class="line"><span class="hljs-attr">rss:</span> <span class="hljs-string">/atom.xml</span></span><br></pre></td></tr></table></figure>
+<h2 id="fork-me-on-github"><a href="#fork-me-on-github" class="headerlink" title="fork me on github"></a>fork me on github</h2><p>Choose a favorite icon <a href="http://tholman.com/github-corners/" target="_blank" rel="noopener">here (image version)</a> or <a href="https://github.com/blog/273-github-ribbons" target="_blank" rel="noopener">here (text version)</a>, then copy the code next to the icon and put it in<code>themes/next/layout/_layout.swig</code> under <code>&lt;div class=&quot;headband&quot;&gt;&lt;/div&gt;</code>.</p>
+<h2 id="word-count-and-reading-time"><a href="#word-count-and-reading-time" class="headerlink" title="word count and reading time"></a>word count and reading time</h2><p>run <code>npm install hexo-symbols-count-time --save</code> in blog folder. Go to the site configuration file <code>_config.yml</code> and copy the following code to the end:</p>
+<figure class="highlight yml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-attr">symbols_count_time:</span></span><br><span class="line"><span class="hljs-attr">  symbols:</span> <span class="hljs-literal">true</span></span><br><span class="line"><span class="hljs-attr">  time:</span> <span class="hljs-literal">true</span></span><br><span class="line"><span class="hljs-attr">  total_symbols:</span> <span class="hljs-literal">true</span></span><br><span class="line"><span class="hljs-attr">  total_time:</span> <span class="hljs-literal">true</span></span><br></pre></td></tr></table></figure>
+<p>then find these in <code>themes/next/_config.yml</code>:</p>
+<figure class="highlight yml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># Post wordcount display settings</span></span><br><span class="line"><span class="hljs-comment"># Dependencies: https://github.com/theme-next/hexo-symbols-count-time</span></span><br><span class="line"><span class="hljs-attr">symbols_count_time:</span></span><br><span class="line"><span class="hljs-attr">  separated_meta:</span> <span class="hljs-literal">true</span></span><br><span class="line"><span class="hljs-attr">  item_text_post:</span> <span class="hljs-literal">true</span></span><br><span class="line"><span class="hljs-attr">  item_text_total:</span> <span class="hljs-literal">false</span></span><br><span class="line"><span class="hljs-attr">  awl:</span> <span class="hljs-number">4</span></span><br><span class="line"><span class="hljs-attr">  wpm:</span> <span class="hljs-number">275</span></span><br></pre></td></tr></table></figure>
+<p>more explains are available on github <a href="https://github.com/theme-next/hexo-symbols-count-time" target="_blank" rel="noopener">here</a>.</p>
+<h2 id="visitors-view-counter"><a href="#visitors-view-counter" class="headerlink" title="visitors/view counter"></a>visitors/view counter</h2><ol>
+<li><p>total visitors number and total views.</p>
+<p>open <code>themes/next/_config.yml</code> file and find the line <code>busuanzi_count</code>:</p>
+<figure class="highlight yml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-attr">busuanzi_count:</span></span><br><span class="line"><span class="hljs-attr">  enable:</span> <span class="hljs-literal">true</span></span><br><span class="line"><span class="hljs-attr">  total_visitors:</span> <span class="hljs-literal">true</span></span><br><span class="line"><span class="hljs-attr">  total_visitors_icon:</span> <span class="hljs-string">user</span></span><br><span class="line"><span class="hljs-attr">  total_views:</span> <span class="hljs-literal">true</span></span><br><span class="line"><span class="hljs-attr">  total_views_icon:</span> <span class="hljs-string">eye</span></span><br><span class="line"><span class="hljs-attr">  post_views:</span> <span class="hljs-literal">false</span></span><br><span class="line"><span class="hljs-attr">  post_views_icon:</span> <span class="hljs-string">eye</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>view number per post.</p>
+<p>in this case we use leancloud as counter service provider. Apply an account and create a project, then put <code>app_id</code> and <code>app_key</code> here.</p>
+<figure class="highlight yml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># Show number of visitors to each article.</span></span><br><span class="line"><span class="hljs-comment"># You can visit https://leancloud.cn to get AppID and AppKey.</span></span><br><span class="line"><span class="hljs-attr">leancloud_visitors:</span></span><br><span class="line"><span class="hljs-attr">  enable:</span> <span class="hljs-literal">true</span></span><br><span class="line"><span class="hljs-attr">  app_id:</span> <span class="hljs-string">&#123;leancloud_appid&#125;</span> <span class="hljs-comment">#&lt;app_id&gt;</span></span><br><span class="line"><span class="hljs-attr">  app_key:</span> <span class="hljs-string">&#123;leancloud_appkey&#125;</span> <span class="hljs-comment">#&lt;app_key&gt;</span></span><br><span class="line">  <span class="hljs-comment"># Dependencies: https://github.com/theme-next/hexo-leancloud-counter-security</span></span><br><span class="line">  <span class="hljs-comment"># If you don't care about security in leancloud counter and just want to use it directly</span></span><br><span class="line">  <span class="hljs-comment"># (without hexo-leancloud-counter-security plugin), set `security` to `false`.</span></span><br><span class="line"><span class="hljs-attr">  security:</span> <span class="hljs-literal">true</span></span><br><span class="line"><span class="hljs-attr">  betterPerformance:</span> <span class="hljs-literal">false</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>   if security set to <code>true</code>, run <code>npm install hexo-symbols-count-time --save</code> in blog folder to install the dependency.</p>
+<blockquote>
+<p>Tips: hexo-leancloud-counter-security is to make sure the data cannot be modified by others intentionally. refer to their document for more information.</p>
+</blockquote>
+<h2 id="comment-feature"><a href="#comment-feature" class="headerlink" title="comment feature"></a>comment feature</h2><p>Valine is a service based on Leancloud to provide comment storage. We use Valine in this case but you can use any other implementations freely.</p>
+<figure class="highlight yml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># Valine</span></span><br><span class="line"><span class="hljs-comment"># You can get your appid and appkey from https://leancloud.cn</span></span><br><span class="line"><span class="hljs-comment"># More info available at https://valine.js.org</span></span><br><span class="line"><span class="hljs-attr">valine:</span></span><br><span class="line"><span class="hljs-attr">  enable:</span> <span class="hljs-literal">true</span> <span class="hljs-comment"># When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.</span></span><br><span class="line"><span class="hljs-attr">  appid:</span> <span class="hljs-string">&#123;leancloud_appid&#125;</span> <span class="hljs-comment"># your leancloud application appid</span></span><br><span class="line"><span class="hljs-attr">  appkey:</span> <span class="hljs-string">&#123;leancloud_appkey&#125;</span> <span class="hljs-comment"># your leancloud application appkey</span></span><br><span class="line"><span class="hljs-attr">  notify:</span> <span class="hljs-literal">false</span> <span class="hljs-comment"># mail notifier, See: https://github.com/xCss/Valine/wiki</span></span><br><span class="line"><span class="hljs-attr">  verify:</span> <span class="hljs-literal">false</span> <span class="hljs-comment"># Verification code</span></span><br><span class="line"><span class="hljs-attr">  placeholder:</span> <span class="hljs-string">Just</span> <span class="hljs-string">go</span> <span class="hljs-string">go</span> <span class="hljs-comment"># comment box placeholder</span></span><br><span class="line"><span class="hljs-attr">  avatar:</span> <span class="hljs-string">mm</span> <span class="hljs-comment"># gravatar style</span></span><br><span class="line"><span class="hljs-attr">  guest_info:</span> <span class="hljs-string">nick,mail,link</span> <span class="hljs-comment"># custom comment header</span></span><br><span class="line"><span class="hljs-attr">  pageSize:</span> <span class="hljs-number">10</span> <span class="hljs-comment"># pagination size</span></span><br><span class="line"><span class="hljs-attr">  visitor:</span> <span class="hljs-literal">false</span> <span class="hljs-comment"># leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html</span></span><br><span class="line"><span class="hljs-attr">  comment_count:</span> <span class="hljs-literal">true</span> <span class="hljs-comment"># if false, comment count will only be displayed in post page, not in home page</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Tips: you don’t need to apply new <code>leancloud_appid</code> and <code>leancloud_appkey</code> if you have do so in the last step.</p>
+</blockquote>
+<h2 id="copyright-per-post"><a href="#copyright-per-post" class="headerlink" title="copyright per post"></a>copyright per post</h2><p>open the file <code>_config.yml</code>, and find follow content:</p>
+<figure class="highlight yml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment"># Creative Commons 4.0 International License.</span></span><br><span class="line"><span class="hljs-comment"># See: https://creativecommons.org/share-your-work/licensing-types-examples</span></span><br><span class="line"><span class="hljs-comment"># Available values of license: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero</span></span><br><span class="line"><span class="hljs-comment"># You can set a language value if you prefer a translated version of CC license.</span></span><br><span class="line"><span class="hljs-comment"># CC licenses are available in 39 languages, where you can find the specific and correct abbreviation you need.</span></span><br><span class="line"><span class="hljs-comment"># Valid values of language: deed.zh, deed.fr, deed.de , etc.</span></span><br><span class="line"><span class="hljs-attr">creative_commons:</span></span><br><span class="line"><span class="hljs-attr">  license:</span> <span class="hljs-string">by-nc-sa</span></span><br><span class="line"><span class="hljs-attr">  sidebar:</span> <span class="hljs-literal">false</span></span><br><span class="line"><span class="hljs-attr">  post:</span> <span class="hljs-literal">true</span></span><br><span class="line"><span class="hljs-attr">  language:</span></span><br></pre></td></tr></table></figure>
+<p>change post value from <code>false</code> to <code>ture</code> it will work.</p>
+<h2 id="live2d-pet"><a href="#live2d-pet" class="headerlink" title="live2d pet"></a>live2d pet</h2><p>It is a pet living on our pages and steering at the mouse cursor where you are pointing at. Very lovely.</p>
+<p>Details can be available <a href="https://github.com/EYHN/hexo-helper-live2d" target="_blank" rel="noopener">here</a>, we won’t talk more on this.</p>
+<p><img src="/images/1552434468503.png" alt="1552434468503"></p>
+<h1 id="Setup-travis-ci-auto-deploy"><a href="#Setup-travis-ci-auto-deploy" class="headerlink" title="Setup travis-ci auto deploy"></a>Setup travis-ci auto deploy</h1><p>The process of registering for this website is omitted. :), here attached is the <code>.travis.yml</code> of mine blog.</p>
+<figure class="highlight yml hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-attr">language:</span> <span class="hljs-string">node_js</span></span><br><span class="line"><span class="hljs-attr">node_js:</span> <span class="hljs-string">stable</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-attr">branches:</span></span><br><span class="line"><span class="hljs-attr">  only:</span></span><br><span class="line"><span class="hljs-bullet">  -</span> <span class="hljs-string">source</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-comment"># Start: Build Lifecycle</span></span><br><span class="line"><span class="hljs-attr">install:</span></span><br><span class="line"><span class="hljs-bullet">  -</span> <span class="hljs-string">npm</span> <span class="hljs-string">install</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-attr">cache:</span></span><br><span class="line"><span class="hljs-attr">  directories:</span></span><br><span class="line"><span class="hljs-bullet">    -</span> <span class="hljs-string">node_modules</span></span><br><span class="line"><span class="hljs-bullet">    -</span> <span class="hljs-string">live2d_models</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-attr">before_script:</span></span><br><span class="line"><span class="hljs-bullet">  -</span> <span class="hljs-string">sed</span> <span class="hljs-bullet">-i</span> <span class="hljs-string">"s~&#123;github_client_id&#125;~$&#123;github_client_id&#125;~"</span> <span class="hljs-string">./themes/next/_config.yml</span></span><br><span class="line"><span class="hljs-bullet">  -</span> <span class="hljs-string">sed</span> <span class="hljs-bullet">-i</span> <span class="hljs-string">"s~&#123;github_client_secret&#125;~$&#123;github_client_secret&#125;~"</span> <span class="hljs-string">./themes/next/_config.yml</span></span><br><span class="line"><span class="hljs-bullet">  -</span> <span class="hljs-string">sed</span> <span class="hljs-bullet">-i</span> <span class="hljs-string">"s~&#123;valine_appid&#125;~$&#123;valine_appid&#125;~"</span> <span class="hljs-string">./themes/next/_config.yml</span></span><br><span class="line"><span class="hljs-bullet">  -</span> <span class="hljs-string">sed</span> <span class="hljs-bullet">-i</span> <span class="hljs-string">"s~&#123;valine_appkey&#125;~$&#123;valine_appkey&#125;~"</span> <span class="hljs-string">./themes/next/_config.yml</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-attr">script:</span></span><br><span class="line"><span class="hljs-bullet">  -</span> <span class="hljs-string">hexo</span> <span class="hljs-string">clean</span></span><br><span class="line"><span class="hljs-bullet">  -</span> <span class="hljs-string">hexo</span> <span class="hljs-string">generate</span></span><br><span class="line">  <span class="hljs-comment"># - hexo lc-counter register baaas18vGYfaega ggsdfaeas12b31saY&amp;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-attr">after_script:</span></span><br><span class="line"><span class="hljs-bullet">  -</span> <span class="hljs-string">sed</span> <span class="hljs-bullet">-i</span> <span class="hljs-string">"s~https://github.com/orangejuice/orangejuice.github.io.git~https://$&#123;ACCESS_TOKEN&#125;@github.com/orangejuice/orangejuice.github.io.git~"</span> <span class="hljs-string">_config.yml</span></span><br><span class="line"><span class="hljs-bullet">  -</span> <span class="hljs-string">hexo</span> <span class="hljs-string">deploy</span></span><br></pre></td></tr></table></figure>
+<p>With the help of it, we submit and push the codes to <code>source</code> branch, and travis-ci will help us to deploy it to <code>master</code> branch.</p>
+<h1 id="Binding-custom-domain-name"><a href="#Binding-custom-domain-name" class="headerlink" title="Binding custom domain name"></a>Binding custom domain name</h1><h2 id="setup-domain-name-resolution"><a href="#setup-domain-name-resolution" class="headerlink" title="setup domain name resolution"></a>setup domain name resolution</h2><p>First, select the domain name resolution function from your domain name registry. Record type (as shown in the figure) we can choose A or CNAME.</p>
+<p>Tips: you can always get the ip address of one domain name by <code>nslookup example.com</code> command in windows.</p>
+<blockquote>
+<p>note: choose A record is better, if not there will be some problems such as the website can not forward to https site automatically.</p>
+</blockquote>
+<p><img src="/images/1552430834238.png" alt="1552430834238"></p>
+<h2 id="config-github-project-settings"><a href="#config-github-project-settings" class="headerlink" title="config github project settings"></a>config github project settings</h2><ol>
+<li>modify custom domain value</li>
+<li>enforce https to ensure security.</li>
+</ol>
+<p><img src="/images/1552430629201.png" alt="1552430629201"></p>
+<h1 id="Start-writing"><a href="#Start-writing" class="headerlink" title="Start writing"></a>Start writing</h1><ol>
+<li><code>hexo new post &quot;your post title&quot;</code></li>
+<li>modify the post content.</li>
+<li>commit and push the file.</li>
+</ol>
+<blockquote>
+<p>Tips: there are some tricks to help us organize posts more efficiently. For example, how to keep out the draft out of rendering? you can find more on the docs of Hexo: <a href="https://hexo.io/docs/writing" target="_blank" rel="noopener">https://hexo.io/docs/writing</a></p>
+</blockquote>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ol>
+<li>Hexo docs   <a href="https://hexo.io/docs/" target="_blank" rel="noopener">https://hexo.io/docs/</a></li>
+<li>Next-Theme Github homepage   <a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">https://github.com/theme-next/hexo-theme-next</a></li>
+<li>summarize of hexo blog establishing process  <a href="http://eternalzttz.com/hexo-next.html" target="_blank" rel="noopener">http://eternalzttz.com/hexo-next.html</a></li>
+<li>cloudflare <a href="https://medium.com/tool-s/將你的網站加上-https-cloudflare-6569f5365c7d" target="_blank" rel="noopener">https://medium.com/tool-s/將你的網站加上-https-cloudflare-6569f5365c7d</a></li>
+<li>domain name resolution <a href="https://segmentfault.com/a/1190000011203711" target="_blank" rel="noopener">https://segmentfault.com/a/1190000011203711</a></li>
+</ol>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/git-pages/">git pages</a>, <a class="has-link-grey -link" href="/tags/github/">github</a>, <a class="has-link-grey -link" href="/tags/hexo/">hexo</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/notes/old-photo-colorize-tool-based-on-deep-learning/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">基于机器学习的老照片上色工具</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/notes/hello-world/">
+                <span class="level-item">Hello World</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">Comments</h3>
+        
+<script>
+    var disqus_config = function () {
+        this.page.url = 'http://orangejuice.cc/notes/blog-system-establish-process/';
+        this.page.identifier = 'notes/blog-system-establish-process/';
+    };
+    (function() {
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'orangejuicecc' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<div id="disqus_thread">
+    
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+    </div>
+</div>
+</div>
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left is-sticky">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    
+                        <figure class="image container is-128x128 has-mb-6">
+                            <img class="is-rounded" src="/images/avatar.jpg" alt="orangejuice">
+                        </figure>
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        orangejuice
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        Life is made up of accidents and mistakes.
+                    </p>
+                    
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Posts
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        29
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Categories
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        4
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        Tags
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        15
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="https://github.com/orangejuice/" target="_blank">
+                Follow</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="https://github.com/orangejuice/">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+            <a class="level-item button is-white is-marginless" target="_blank" title="RSS" href="/atom.xml">
+                
+                <i class="fas fa-rss"></i>
+                
+            </a>
+            
+        </div>
+        
+    </div>
+</div>
+    
+        
+<div class="card widget" id="toc">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Catalogue
+            </h3>
+            <ul class="menu-list"><li>
+        <a class="is-flex" href="#Deploy-Hexo-site-files-amp-Install-Next-Theme">
+        <span class="has-mr-6">1</span>
+        <span>Deploy Hexo site files &amp; Install Next-Theme</span>
+        </a></li><li>
+        <a class="is-flex" href="#Customize-the-appearance">
+        <span class="has-mr-6">2</span>
+        <span>Customize the appearance</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#change-avatar">
+        <span class="has-mr-6">2.1</span>
+        <span>change avatar</span>
+        </a></li><li>
+        <a class="is-flex" href="#generate-and-add-sub-pages">
+        <span class="has-mr-6">2.2</span>
+        <span>generate and add sub-pages</span>
+        </a></li><li>
+        <a class="is-flex" href="#search-feature">
+        <span class="has-mr-6">2.3</span>
+        <span>search feature</span>
+        </a></li><li>
+        <a class="is-flex" href="#RSS-feed">
+        <span class="has-mr-6">2.4</span>
+        <span>RSS feed</span>
+        </a></li><li>
+        <a class="is-flex" href="#fork-me-on-github">
+        <span class="has-mr-6">2.5</span>
+        <span>fork me on github</span>
+        </a></li><li>
+        <a class="is-flex" href="#word-count-and-reading-time">
+        <span class="has-mr-6">2.6</span>
+        <span>word count and reading time</span>
+        </a></li><li>
+        <a class="is-flex" href="#visitors-view-counter">
+        <span class="has-mr-6">2.7</span>
+        <span>visitors/view counter</span>
+        </a></li><li>
+        <a class="is-flex" href="#comment-feature">
+        <span class="has-mr-6">2.8</span>
+        <span>comment feature</span>
+        </a></li><li>
+        <a class="is-flex" href="#copyright-per-post">
+        <span class="has-mr-6">2.9</span>
+        <span>copyright per post</span>
+        </a></li><li>
+        <a class="is-flex" href="#live2d-pet">
+        <span class="has-mr-6">2.10</span>
+        <span>live2d pet</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Setup-travis-ci-auto-deploy">
+        <span class="has-mr-6">3</span>
+        <span>Setup travis-ci auto deploy</span>
+        </a></li><li>
+        <a class="is-flex" href="#Binding-custom-domain-name">
+        <span class="has-mr-6">4</span>
+        <span>Binding custom domain name</span>
+        </a><ul class="menu-list"><li>
+        <a class="is-flex" href="#setup-domain-name-resolution">
+        <span class="has-mr-6">4.1</span>
+        <span>setup domain name resolution</span>
+        </a></li><li>
+        <a class="is-flex" href="#config-github-project-settings">
+        <span class="has-mr-6">4.2</span>
+        <span>config github project settings</span>
+        </a></li></ul></li><li>
+        <a class="is-flex" href="#Start-writing">
+        <span class="has-mr-6">5</span>
+        <span>Start writing</span>
+        </a></li><li>
+        <a class="is-flex" href="#Reference">
+        <span class="has-mr-6">6</span>
+        <span>Reference</span>
+        </a></li></ul>
+        </div>
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            Archives
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2020/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2020</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/12/">
+                <span class="level-start">
+                    <span class="level-item">December 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/11/">
+                <span class="level-start">
+                    <span class="level-item">November 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/09/">
+                <span class="level-start">
+                    <span class="level-item">September 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/07/">
+                <span class="level-start">
+                    <span class="level-item">July 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/06/">
+                <span class="level-start">
+                    <span class="level-item">June 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">4</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/05/">
+                <span class="level-start">
+                    <span class="level-item">May 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">5</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/04/">
+                <span class="level-start">
+                    <span class="level-item">April 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">2</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">March 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">10</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/02/">
+                <span class="level-start">
+                    <span class="level-item">February 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Categories
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/diary/">
+            <span class="level-start">
+                <span class="level-item">diary</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">12</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/news/">
+            <span class="level-start">
+                <span class="level-item">news</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/notes/">
+            <span class="level-start">
+                <span class="level-item">notes</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">13</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/why/">
+            <span class="level-start">
+                <span class="level-item">why</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">2</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/diary/received-a-penalty-notice-today/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="今天收到了一张意料之中的罚单">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-06T18:44:16.000Z">2020-03-06</time></div>
+                    <a href="/diary/received-a-penalty-notice-today/" class="has-link-black-ter is-size-6">今天收到了一张意料之中的罚单</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/diary/">diary</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/notes/explore-oracle-cloud/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Explore Oracle Cloud Free tier">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T14:26:49.000Z">2020-02-17</time></div>
+                    <a href="/notes/explore-oracle-cloud/" class="has-link-black-ter is-size-6">Explore Oracle Cloud Free tier</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/notes/">notes</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/diary/dec-record/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="十二月杂记">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-11T19:26:49.000Z">2019-12-11</time></div>
+                    <a href="/diary/dec-record/" class="has-link-black-ter is-size-6">十二月杂记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/diary/">diary</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/diary/nov-record/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="十一月杂记">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-07T19:05:23.000Z">2019-11-07</time></div>
+                    <a href="/diary/nov-record/" class="has-link-black-ter is-size-6">十一月杂记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/diary/">diary</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/diary/records-on-weekend-2019-9-29/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="周末札记(9.29)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-29T09:38:38.000Z">2019-09-29</time></div>
+                    <a href="/diary/records-on-weekend-2019-9-29/" class="has-link-black-ter is-size-6">周末札记(9.29)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/diary/">diary</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/code/">
+                        <span class="tag">code</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/consciousness/">
+                        <span class="tag">consciousness</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/deep-learning/">
+                        <span class="tag">deep learning</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/education/">
+                        <span class="tag">education</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/git-pages/">
+                        <span class="tag">git pages</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/github/">
+                        <span class="tag">github</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hexo/">
+                        <span class="tag">hexo</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/history/">
+                        <span class="tag">history</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/life/">
+                        <span class="tag">life</span>
+                        <span class="tag is-grey">15</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/philosophy/">
+                        <span class="tag">philosophy</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/planet-environment/">
+                        <span class="tag">planet&amp;environment</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/regexp/">
+                        <span class="tag">regexp</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/series/">
+                        <span class="tag">series</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/society/">
+                        <span class="tag">society</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/windows/">
+                        <span class="tag">windows</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/code/" style="font-size: 15px;">code</a> <a href="/tags/consciousness/" style="font-size: 10px;">consciousness</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/education/" style="font-size: 10px;">education</a> <a href="/tags/git-pages/" style="font-size: 10px;">git pages</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/history/" style="font-size: 17.5px;">history</a> <a href="/tags/life/" style="font-size: 20px;">life</a> <a href="/tags/philosophy/" style="font-size: 10px;">philosophy</a> <a href="/tags/planet-environment/" style="font-size: 12.5px;">planet&environment</a> <a href="/tags/regexp/" style="font-size: 10px;">regexp</a> <a href="/tags/series/" style="font-size: 12.5px;">series</a> <a href="/tags/society/" style="font-size: 10px;">society</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a>
+    </div>
+</div>
+
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Recent
+        </h3>
+        
+        <article class="media">
+            
+            <a href="/diary/received-a-penalty-notice-today/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="今天收到了一张意料之中的罚单">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-03-06T18:44:16.000Z">2020-03-06</time></div>
+                    <a href="/diary/received-a-penalty-notice-today/" class="has-link-black-ter is-size-6">今天收到了一张意料之中的罚单</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/diary/">diary</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/notes/explore-oracle-cloud/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Explore Oracle Cloud Free tier">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-17T14:26:49.000Z">2020-02-17</time></div>
+                    <a href="/notes/explore-oracle-cloud/" class="has-link-black-ter is-size-6">Explore Oracle Cloud Free tier</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/notes/">notes</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/diary/dec-record/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="十二月杂记">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-12-11T19:26:49.000Z">2019-12-11</time></div>
+                    <a href="/diary/dec-record/" class="has-link-black-ter is-size-6">十二月杂记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/diary/">diary</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/diary/nov-record/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="十一月杂记">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-11-07T19:05:23.000Z">2019-11-07</time></div>
+                    <a href="/diary/nov-record/" class="has-link-black-ter is-size-6">十一月杂记</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/diary/">diary</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <a href="/diary/records-on-weekend-2019-9-29/" class="media-left">
+                <p class="image is-64x64">
+                    <img class="thumbnail" src="/images/thumbnail.svg" alt="周末札记(9.29)">
+                </p>
+            </a>
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-09-29T09:38:38.000Z">2019-09-29</time></div>
+                    <a href="/diary/records-on-weekend-2019-9-29/" class="has-link-black-ter is-size-6">周末札记(9.29)</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/diary/">diary</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                Tags
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/code/">
+                        <span class="tag">code</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/consciousness/">
+                        <span class="tag">consciousness</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/deep-learning/">
+                        <span class="tag">deep learning</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/education/">
+                        <span class="tag">education</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/git-pages/">
+                        <span class="tag">git pages</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/github/">
+                        <span class="tag">github</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/hexo/">
+                        <span class="tag">hexo</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/history/">
+                        <span class="tag">history</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/life/">
+                        <span class="tag">life</span>
+                        <span class="tag is-grey">15</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/philosophy/">
+                        <span class="tag">philosophy</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/planet-environment/">
+                        <span class="tag">planet&amp;environment</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/regexp/">
+                        <span class="tag">regexp</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/series/">
+                        <span class="tag">series</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/society/">
+                        <span class="tag">society</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/windows/">
+                        <span class="tag">windows</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            Tag Cloud
+        </h3>
+        <a href="/tags/code/" style="font-size: 15px;">code</a> <a href="/tags/consciousness/" style="font-size: 10px;">consciousness</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/education/" style="font-size: 10px;">education</a> <a href="/tags/git-pages/" style="font-size: 10px;">git pages</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/history/" style="font-size: 17.5px;">history</a> <a href="/tags/life/" style="font-size: 20px;">life</a> <a href="/tags/philosophy/" style="font-size: 10px;">philosophy</a> <a href="/tags/planet-environment/" style="font-size: 12.5px;">planet&environment</a> <a href="/tags/regexp/" style="font-size: 10px;">regexp</a> <a href="/tags/series/" style="font-size: 12.5px;">series</a> <a href="/tags/society/" style="font-size: 10px;">society</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a>
+    </div>
+</div>
+
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="/">
+                
+                    <img src="/images/logo.svg" alt="Hexo Blog Establishing Process" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2020 orangejuice&nbsp;
+                Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> & <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                <br>
+                <span id="busuanzi_container_site_uv">
+                Visited by <span id="busuanzi_value_site_uv">0</span> users
+                </span>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("en");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
+    
+
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
+    });
+</script>
+
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
+        }
+    });
+});
+</script>
+
+    
+    
+
+<a id="back-to-top" title="Back to Top" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
+
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
+
+    
+    
+    
+
+    
+
+
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="Type something...">
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":150,"height":300,"hOffset":50,"vOffset":-40},"mobile":{"show":false,"scale":0.5}});</script></body>
+</html>
